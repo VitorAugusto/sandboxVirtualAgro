@@ -1,5 +1,6 @@
 <?php
 
+//ESSE ARQUIVO TOOLS CONTÉM UM CONJUNTO DE FERRAMENTAS(TOOLS) ÚTEIS PARA O VIRTUAL-AGRO.
 include('masterDAO.php');
 
 
@@ -69,6 +70,57 @@ function anuncioExiste($idAnun){
 function meuAnuncio($idAnunciante,$meuId){
 
 	return ($idAnunciante == $meuId);
+}
+
+function produtoExiste($idProd){
+	$comandoProdutoExiste = "SELECT * from produtos WHERE id = '$idProd'";
+
+	$display = mysqli_query($GLOBALS['dao'], $comandoProdutoExiste);
+
+	return (mysqli_num_rows($display) > 0 );
+}
+
+function getImagemProduto($idProd){
+
+	$comandoGetImagemProduto = "SELECT imagemprincipal FROM produtos WHERE id = '$idProd'";
+
+	$display = mysqli_query($GLOBALS['dao'], $comandoGetImagemProduto);
+
+	$imagem = mysqli_fetch_array($display);
+
+	echo "<img src=imagens/".$imagem['imagemprincipal'] . ">";
+}
+
+function produtoTemImagensAdicionais($idProd){ //VERIFICA SE O PRODUTO TEM IMAGENS ADIDIONAIS - ADD1 E ADD2.
+
+	$comandoVerificarImagensAdicionais = "SELECT imagemadd1, imagemadd2 FROM produtos WHERE id = '$idProd'";
+
+	$display = mysqli_query($GLOBALS['dao'], $comandoVerificarImagensAdicionais);
+
+	while($foi = mysqli_fetch_array($display)){
+
+		if(is_null($foi['imagemadd1']) AND is_null($foi['imagemadd2'])){
+
+			return false;
+		}else{
+			return true;
+		}
+
+	}
+}
+
+function getImagensAdicionais($idProd){
+
+	$comandoGetImagensAdicionais = "SELECT imagemadd1, imagemadd2 FROM produtos WHERE id = '$idProd' ";
+
+	$display = mysqli_query($GLOBALS['dao'], $comandoGetImagensAdicionais);
+
+
+	$imagens = mysqli_fetch_array($display);
+
+	echo "<img src=imagens/".$imagens['imagemadd1'] . ">";
+	echo "<img src=imagens/".$imagens['imagemadd2'] . ">";
+
 }
 
 
