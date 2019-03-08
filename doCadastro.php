@@ -25,4 +25,10 @@ $senha = $_POST["campoSenha"];
 
     }
 
+    function getStatusCadastro(){
+        //ESSA FUNÇÃO RETORNA O STATUS DO CADASTRO. PRA EVITAR DUPLICAÇÃO.
+
+        echo "FUNÇÃO EM CONSTRUÇÃO";
+    }
+
 ?>
