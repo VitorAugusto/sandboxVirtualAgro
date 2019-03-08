@@ -77,6 +77,7 @@ $meuNome = $_SESSION['nome'];
 	  	<button>PUBLICAR ANÚNCIO</button>
 	  </form>
 
+ <h2> <a href='site.php'> VOLTAR </a> </h2>
 	  
 
 </body>
