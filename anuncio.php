@@ -64,5 +64,7 @@ if(anuncioExiste($_GET['idAnuncio'])){
 	echo $colunaAnuncio['texto_anuncio'];
 
 	?>
+
+	<h2> <a href='site.php'> VOLTAR </a> </h2>
 </body>
 </html>
