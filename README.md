@@ -1,0 +1,5 @@
+# sandboxVirtualAgro
+sandbox do Virtual AGRO - AMBIENTE PARA CRIAÇÃO DO VIRTUAL AGRO.
+
+
+ESSE ARQUIVO SERÁ ATUALIZADO AOS POUCOS.
