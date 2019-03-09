@@ -1,0 +1,28 @@
+--SCRIPT PRA POPULAR E CRIAR O BANCO DE DADOS , PARA FINS DE TESTES--
+
+
+
+CREATE DATABASE IF NOT EXISTS virtualagro;
+
+use virtualagro;
+CREATE TABLE cadastros(id INT PRIMARY KEY AUTO_INCREMENT,
+  nome VARCHAR(100),
+  username VARCHAR(100),
+  senha VARCHAR(100));
+
+INSERT INTO cadastros(nome, username, senha) VALUES ('NOME TESTE 1', 'teste1', 'teste1' );
+INSERT INTO cadastros(nome, username, senha) VALUES ('NOME TESTE 2', 'teste2', 'teste2' );
+INSERT INTO cadastros(nome, username, senha) VALUES ('NOME TESTE 3', 'teste3', 'teste3' );
+
+
+
+
+CREATE TABLE anuncios(id INT PRIMARY KEY AUTO_INCREMENT,
+  id_anunciante int,
+  tipo_anuncio ENUM('FRUTA','LEGUME','VERDURA'),
+  texto_anuncio TEXT, FOREIGN KEY (id_anunciante) references cadastros(id));
+
+INSERT INTO anuncios(id_anunciante, tipo_anuncio, texto_anuncio) VALUES (1,"LEGUME","GRANDE VOLUME DE DISTRIBUIÇÃO DE LEGUMES");
+INSERT INTO anuncios(id_anunciante, tipo_anuncio, texto_anuncio) VALUES(2,"FRUTA", "CEREJA");
+INSERT INTO anuncios(id_anunciante, tipo_anuncio, texto_anuncio) VALUES(3,"VERDURA", "RABANETE");
+INSERT INTO anuncios(id_anunciante, tipo_anuncio, texto_anuncio) VALUES(2,"FRUTA", "BANANA");
