@@ -6,9 +6,11 @@ html {
 
 body {
     padding-top: 110px;
+    background-color: #51f8d4;
+    width: 100%;
 }
 
-header .navigation {
+header.navigation {
     position: fixed;
     top: 0;
     left: 0;
@@ -19,8 +21,6 @@ header .navigation {
     display: flex;
     width: 100%;
     align-items: center;
-
-
     z-index: 100;
 }
 
@@ -32,6 +32,9 @@ nav,
 section {
     display: block;
 }
+
+
+
 footer {
     clear: both;
 }
@@ -39,9 +42,14 @@ footer {
 span {
     font-weight: 700;
     color: #ffffff;
-
 }
 
+input{
+    padding: 9px;
+    padding-left: 40px;
+    border-radius: 20px;
+    border-color: transparent;
+}
 .container-header {
     max-width: 768px;
     margin: 0 auto;
@@ -73,14 +81,12 @@ footer:before {
     right: 0;
     height: 4px;
     width: 100%;
-    background: linear-gradient(270deg, #fe4298, #162668)
+    background: linear-gradient(270deg, #51f8d4, #1b6e5c)
 }
 
 footer .brand {
     text-align: center;
     display: block;
-    margin-bottom: 40px;
-    margin-top: 20px
 }
 
 footer .copyright {
@@ -102,12 +108,13 @@ footer hr {
     box-sizing: border-box;
     border: none;
     background-color: #ffffff;
-    margin: 20px 0
+    margin: 20px 150px;
 }
 
 .logo-header {
-    width: 120px;
+    width: 240px;
     height: auto;
+    margin-right: 70px;
 }
 
 .right-side {
@@ -253,16 +260,21 @@ footer hr {
     margin-right: 10px;
 }
 
+.all {
+    padding-top: 50px;
+}
+
 .buscar {
     color: #fff;
     background-color: #2a7766;
     border-color: transparent;
-    transition: all .4s ease;
-    border-radius: 4px;
+    border-radius: 10px;
     align-items: center;
     display: block;
     margin-left: auto;
-    margin-right: auto
+    margin-right: auto;
+    width: 100px;
+    height: 40px;
 }
 
 .linha {
@@ -274,26 +286,55 @@ footer hr {
     justify-content: center;
     justify-content: space-between;
 }
-.all
+.login-senha {
+    position: relative;
+    width: 250px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+
+.login {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: 0 0;
+    border: none;
+    color: rgb(126, 119, 119);
+    padding: 0;
+    margin: 0;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: color .3s;
+    z-index: 99;
+}
+
 .container {
     display: block;
-    background-color: #51f8d4;
-    width: 100%;
+
 }
 
 .conteudo {
-    max-width: 768px;
+    max-width: 760px;
     margin: 0 auto;
     box-sizing: border-box;
     padding: 0 20px;
+    padding-bottom: 50px;
 }
 
-.conteudo:onafter,
-.conteudo:before {
-    content: " ";
-    display: table;
+.conteudo h3, h4{
+    margin-top: 20px;
+    margin-bottom: 0;
 }
 
-.conteudo:after {
-    clear: both;
+a {
+    color: #ffffff;
+}
+
+a:hover {
+    
+    text-decoration: none;
+    color: #ffffff;
 }
