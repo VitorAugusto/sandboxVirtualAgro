@@ -5,16 +5,10 @@ html {
 }
 
 body {
-    margin: 0
+    padding-top: 110px;
 }
 
-header {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-}
-
-header.navigation {
+header .navigation {
     position: fixed;
     top: 0;
     left: 0;
@@ -25,10 +19,9 @@ header.navigation {
     display: flex;
     width: 100%;
     align-items: center;
+
+
     z-index: 100;
-    transition: -webkit-transform .3s ease;
-    transition: transform .3s ease;
-    transition: transform .3s ease, -webkit-transform .3s ease;
 }
 
 article,
@@ -38,6 +31,9 @@ header,
 nav,
 section {
     display: block;
+}
+footer {
+    clear: both;
 }
 
 span {
@@ -54,7 +50,7 @@ span {
     flex-direction: row;
     align-items: center;
     padding: 0 10px;
-    position: relative
+    position: relative;
 }
 
 footer {
@@ -278,17 +274,26 @@ footer hr {
     justify-content: center;
     justify-content: space-between;
 }
-
-#conteudo {
+.all
+.container {
+    display: block;
     background-color: #51f8d4;
+    width: 100%;
 }
 
-#conteudo:onafter,
-#conteudo:before {
+.conteudo {
+    max-width: 768px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+
+.conteudo:onafter,
+.conteudo:before {
     content: " ";
     display: table;
 }
 
-#conteudo:after {
+.conteudo:after {
     clear: both;
 }
