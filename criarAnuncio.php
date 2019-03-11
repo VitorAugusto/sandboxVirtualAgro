@@ -7,6 +7,7 @@
 <body>
 
 	<?php
+	include_once('tools.php');
 
   session_start();
 
@@ -23,7 +24,25 @@
 
 
 	<form action="preAnuncio.php" method="post">
-		<label>TIPO DO PRODUTO</label>
+
+		<label> QUERO ANUNCIAR </label>
+		 <select>
+		 	<option value="">--</option>
+		 	<!-- VAI CONSTRUIR OS OPTION -->
+		 	<?php
+		 	listarTodosProdutos();
+
+		 	?>
+		 </select>
+		 <br>
+
+		 <input type="radio" name="atributo"> KG
+		 <input type="radio" name="atributo"> UNIDADE
+		 <input type="radio" name="atributo"> 1/2KG
+		 <input type="radio" name="atributo"> PACOTE
+		 <input type="radio" name="atributo"> BANDEJA
+
+<!-- 		<label>TIPO DO PRODUTO</label>
 		<select name="tipoProduto" required="">
 			<option value="">----</option>
 			<option value="FRUTA">FRUTA</option>
@@ -39,7 +58,7 @@
 		<input type="text" name="textoAnuncio" required="">
 		<br>
 		<input type="submit" name="">
-		<br>
+		<br> -->
 	</form>
 
 	<h2> <a href='site.php'> VOLTAR </a> </h2>

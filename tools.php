@@ -177,6 +177,21 @@ function getAnunciantes($produto){ //RETORNA OS ANUNCIANTES DAQUELE CERTO produt
 
 }
 
+function listarTodosProdutos(){
+
+	$comandoListarProdutos = "SELECT nome FROM produtos";
+
+	mysqli_query($GLOBALS['dao'], "set names 'utf8'");
+
+	$display = mysqli_query($GLOBALS['dao'], $comandoListarProdutos);
+
+	while($coluna = mysqli_fetch_array($display)){
+		echo "<option>". ($coluna['nome']) ."</option>";
+	}
+
+
+}
+
 
 
 
