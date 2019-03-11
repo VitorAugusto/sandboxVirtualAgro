@@ -55,12 +55,12 @@
         	    	</button>
 				</form>
 
-				<h3 style="color: #1b6e5c;">Não é cadastrado?</h3>
+				<h3>Não é cadastrado?</h3>
 				<a href="cadastro.php">
 					<b>CADASTRO</b>
 				</a>
 
-				<h4 style="color: #1b6e5c;"> QUER VER TODOS OS ANÚNCIOS?</h4>
+				<h4> QUER VER TODOS OS ANÚNCIOS?</h4>
 				<a href="allAnuncios.php">
 					<b>TODOS OS ANÚNCIOS</b>
 				</a>
