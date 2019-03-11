@@ -17,8 +17,12 @@ INSERT INTO cadastros(nome, username, senha) VALUES ('NOME TESTE 3', 'teste3', '
 
 CREATE TABLE IF NOT EXISTS anuncios(id INT PRIMARY KEY AUTO_INCREMENT,
   id_anunciante int,
-  tipo_anuncio ENUM('FRUTA', 'VERDURA','LEGUME','TEMPERO','OUTRO'),
-  texto_anuncio TEXT, FOREIGN KEY (id_anunciante) references cadastros(id));
+  categoria ENUM('FRUTA', 'VERDURA','LEGUME','TEMPERO','OUTRO'),
+  texto_anuncio TEXT,
+  FOREIGN KEY (id_anunciante) references cadastros(id),
+  id_produto INT,
+  FOREIGN KEY (id_produto) references produtos(id),
+  observacao TEXT);
 
 INSERT INTO anuncios(id_anunciante, tipo_anuncio, texto_anuncio) VALUES (1,"LEGUME","GRANDE VOLUME DE DISTRIBUIÇÃO DE LEGUMES");
 INSERT INTO anuncios(id_anunciante, tipo_anuncio, texto_anuncio) VALUES(2,"FRUTA", "CEREJA");
