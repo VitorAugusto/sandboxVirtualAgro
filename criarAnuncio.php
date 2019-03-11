@@ -29,6 +29,8 @@
 			<option value="FRUTA">FRUTA</option>
 			<option value="VERDURA">VERDURA</option>
 			<option value="LEGUME">LEGUME</option>
+			<option value="TEMPERO">TEMPERO</option>
+			<option value="OUTRO">OUTRO</option>
 		</select>
 
 		<br>
