@@ -25,11 +25,32 @@ session_start();
   header('location:index.php');
   }
 
+  $meuNome = $_SESSION['nome'];
+  $produto = $_POST['produto'];
+  $atributo = $_POST['atributo'];
+  $observacao = $_POST['textoAnuncio'];
 
-$meuTipoProduto = $_POST['tipoProduto'];
-$meuTextoAnuncio = $_POST['textoAnuncio'];
-$meuId = $_SESSION['id'];
-$meuNome = $_SESSION['nome'];
+  $textoAnuncioMontado = "VENDO ". $produto;
+
+  switch($atributo){
+
+  	case 'kg':
+  		$textoAnuncioMontado = $textoAnuncioMontado . " POR QUILO.";
+  		break;
+  	case 'un':
+  		$textoAnuncioMontado = $textoAnuncioMontado . " POR UNIDADE.";
+  		break;
+  	case '1/2kg':
+  		$textoAnuncioMontado = $textoAnuncioMontado . " NO MEIO QUILO (1/2KG).";
+  		break;
+  	case 'pacote':
+  		$textoAnuncioMontado = $textoAnuncioMontado . " POR PACOTE.";
+  		break;
+  	case 'bandeja':
+  		$textoAnuncioMontado = $textoAnuncioMontado . " NA BANDEJA.";
+  		break;
+  }
+
 
 	?>
 
@@ -39,17 +60,16 @@ $meuNome = $_SESSION['nome'];
 		<h1> NOME DO AGRICULTOR </h1>
 
 	<?php
-	//echo $colunaAnuncio['id_anunciante'];
 
 	echo $meuNome;
 
 	?>
 
-	<h1> TIPO DE ANÚNCIO </h1>
+	<h1> PRODUTO </h1>
 
 	<?php
 
-	echo $meuTipoProduto;
+	echo $produto;
 
 	?>
 	<h1> CONTATO DO AGRICULTOR </h1>
@@ -62,7 +82,13 @@ $meuNome = $_SESSION['nome'];
 
 	<?php
 
-	echo $meuTextoAnuncio;
+
+	echo $textoAnuncioMontado;
+	echo "<br>";
+
+	echo "-X-X-X-X- OBSERVAÇÃO -X-X-X-X-";
+    echo "<br>";
+	echo $observacao;
 
 	?>
 
@@ -72,8 +98,6 @@ $meuNome = $_SESSION['nome'];
 	  <br>
 
 	  <form action="postAnuncio.php" method="post">
-	  	<input type="hidden" name="tipoProduto" value="<?php echo $meuTipoProduto ?>">
-	  	<input type="hidden" name="textoAnuncio" value="<?php echo $meuTextoAnuncio ?>">
 	  	<button>PUBLICAR ANÚNCIO</button>
 	  </form>
 
