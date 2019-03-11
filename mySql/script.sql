@@ -34,3 +34,6 @@ CREATE TABLE IF NOT EXISTS produtos(id INT PRIMARY KEY AUTO_INCREMENT,
   imagemprincipal varchar(100),
   imagemadd1 varchar(100),
   imagemadd2 varchar(100));
+
+
+
