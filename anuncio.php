@@ -6,7 +6,7 @@
 
 
 
-include('tools.php');
+include_once('tools.php');
 
 if(anuncioExiste($_GET['idAnuncio'])){
 	echo "ANÚNCIO EXISTE";
@@ -18,7 +18,7 @@ if(anuncioExiste($_GET['idAnuncio'])){
 
 
 	$comandoSelectAnuncio = "SELECT * from anuncios WHERE id = '$_GET[idAnuncio]'";
-    $displayAnuncio = mysqli_query($minhaConexao, $comandoSelectAnuncio);
+    $displayAnuncio = mysqli_query($GLOBALS['dao'], $comandoSelectAnuncio);
     $colunaAnuncio = mysqli_fetch_array($displayAnuncio);
 
 
@@ -33,6 +33,12 @@ if(anuncioExiste($_GET['idAnuncio'])){
 
 </head>
 <body>
+
+	<?php
+	$comandoGetIdProduto = "SELECT id_produto FROM anuncios WHERE id = '$_GET[idAnuncio]'";
+	$display = mysqli_query($GLOBALS['dao'], $comandoGetIdProduto);
+	getImagemProduto(mysqli_fetch_row($display)[0]);
+	?>
 
 
 	<h1> NOME DO AGRICULTOR </h1>
@@ -65,6 +71,6 @@ if(anuncioExiste($_GET['idAnuncio'])){
 
 	?>
 
-	<h2> <a href='site.php'> VOLTAR </a> </h2>
+	<h2> <a href='allAnuncios.php'> VOLTAR </a> </h2>
 </body>
 </html>

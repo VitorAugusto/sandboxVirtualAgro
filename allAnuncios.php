@@ -23,6 +23,13 @@ session_start();
 echo "<br>";
 echo "<div class='container'>";	 //
 echo "<div class='row'>";	 //
+//
+	$comandoGetIdProduto = "SELECT id_produto FROM anuncios WHERE id = '$coluna[id]'";  //ESSE MÓDULO AQUI ADICIONA AS IMAGENS NO ALL ANUNCIOS
+	$display = mysqli_query($GLOBALS['dao'], $comandoGetIdProduto);
+	echo "<div class='col-sm'>"; //
+	getImagemProduto(mysqli_fetch_row($display)[0]);
+	echo "</div>"; //
+//
 echo "<div class='col-sm'>"; //
 echo "ID DO ANÚNCIO: " . $coluna['id'] ;
 echo "</div>"; //
