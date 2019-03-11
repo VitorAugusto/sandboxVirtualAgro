@@ -44,11 +44,11 @@ if(anuncioExiste($_GET['idAnuncio'])){
 
 	?>
 
-	<h1> TIPO DE ANÚNCIO </h1>
+	<h1> CATEGORIA </h1>
 
 	<?php
 
-	echo $colunaAnuncio['tipo_anuncio'];
+	echo $colunaAnuncio['categoria'];
 
 	?>
 	<h1> CONTATO DO AGRICULTOR </h1>

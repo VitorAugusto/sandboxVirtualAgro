@@ -32,7 +32,7 @@ echo "<b>ANUNCIANTE: </b>  "; nomeDoAnunciante($coluna['id_anunciante']); // TEM
 echo "</div>"; //
 echo "<br>";
 echo "<div class='col-sm'>"; //
-echo "<b>TIPO DE ANUNCIO: </b>" . $coluna['tipo_anuncio'] ;
+echo "<b>CATEGORIA: </b>" . $coluna['categoria'] ;
 echo "</div>"; //
 echo "<br>";
 echo "<div class='col-sm'>"; //

@@ -31,7 +31,7 @@ echo "ID DO ANÚNCIO: " . $coluna['id'] ;
 echo "<br>";
 echo "ID DO ANUNCIANTE: " . $coluna['id_anunciante'];
 echo "<br>";
-echo "TIPO DE ANUNCIO: " . $coluna['tipo_anuncio'] ;
+echo "CATEGORIA: " . $coluna['categoria'] ;
 echo "<br>";
 echo "TEXTO DO ANÚNCIO: " . $coluna['texto_anuncio'];
 echo "<br>";

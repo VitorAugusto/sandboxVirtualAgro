@@ -88,7 +88,8 @@ session_start();
 
 	echo "-X-X-X-X- OBSERVAÇÃO -X-X-X-X-";
     echo "<br>";
-	echo $observacao;
+    echo $_POST['textoAnuncio'];
+
 
 	?>
 
@@ -98,6 +99,9 @@ session_start();
 	  <br>
 
 	  <form action="postAnuncio.php" method="post">
+	  	<input type="hidden" name="produto" value="<?php echo $produto  ?>">
+	  	<input type="hidden" name="conteudo" value="<?php  echo $textoAnuncioMontado ?>">
+	  	<input type="hidden" name="observacao" value="<?php  echo $observacao ?>">
 	  	<button>PUBLICAR ANÚNCIO</button>
 	  </form>
 

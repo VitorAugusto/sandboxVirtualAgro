@@ -192,6 +192,29 @@ function listarTodosProdutos(){
 
 }
 
+function getIdProdutoPeloNome($nome){
+	$comandoGetId = "SELECT id from produtos WHERE nome = '$nome'";
+
+	mysqli_query($GLOBALS['dao'], "set names 'utf8'");
+	$display = mysqli_query($GLOBALS['dao'], $comandoGetId);
+
+	return(mysqli_fetch_row($display)[0]);
+
+
+}
+
+function getCategoriaProdutoPeloId($id){
+
+	$comandoGetCategoria = "SELECT categoria from produtos WHERE id = '$id'";
+
+	mysqli_query($GLOBALS['dao'], "set names 'utf8'");
+
+	$display = mysqli_query($GLOBALS['dao'],$comandoGetCategoria);
+
+	return(mysqli_fetch_row($display)[0]);
+
+}
+
 
 
 
