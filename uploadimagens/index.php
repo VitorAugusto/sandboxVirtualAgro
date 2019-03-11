@@ -2,7 +2,7 @@
 
 if(isset($_POST['botao'])){
 
-	$categoria = $_POST['categoria'];
+$categoria = $_POST['categoria'];
 
 
 $db_host = 'localhost'; //endereço
@@ -40,26 +40,6 @@ for ($i=0; $i < sizeof($_FILES['image']['name']); $i++) {
 }
 
 
-
-	// $imagem = $categoria ."/". $_FILES['image']['name'];
-
-	// $nomeproduto = pathinfo($_FILES['image']['name'], PATHINFO_FILENAME);
-
-
-	// $comandoSQL = "INSERT INTO produtos (nome,categoria,imagemprincipal) VALUES ('$nomeproduto','$categoria','$imagem')";
-
-	// mysqli_query($minhaConexao,$comandoSQL);
-
-	// if(move_uploaded_file($_FILES['image']['tmp_name'], $target)){
-
-	// 	$msg = "SUCESSO";
-	// }else{
-	// 	$msg = "ERRO";
-	// }
-
-
-
-
 }
 
 
@@ -76,7 +56,10 @@ for ($i=0; $i < sizeof($_FILES['image']['name']); $i++) {
 </head>
 <body>
 
-	<form method="post" action="index.php" enctype="multipart/form-data">
+	<h2> PÁGINA PARA ADICIONAR PRODUTOS AO VIRTUAL AGRO - JUNTO COM SUAS IMAGENS</h2>
+
+
+	<form method="post" action="index.php" enctype="multipart/form-data" >
 
 		<input type="file" name="image[]" required="" multiple="multiple">
 

@@ -50,6 +50,8 @@ function nomeDoAnunciante($idAnun){
 
    $selectNomeAnunciante = "select nome from cadastros WHERE ID = '$idAnun' ";
 
+   mysqli_query($GLOBALS['dao'], "set names 'utf8'");
+
    $displayAnunciante = mysqli_query($GLOBALS['dao'],$selectNomeAnunciante);
 
 	while ($coluna = mysqli_fetch_array($displayAnunciante)) {
@@ -88,7 +90,7 @@ function getImagemProduto($idProd){
 
 	$imagem = mysqli_fetch_array($display);
 
-	echo "<img src=imagens/".$imagem['imagemprincipal'] . ">";
+	echo "<img src=imagens/".$imagem['imagemprincipal'] . " width=200px align=left>";
 }
 
 function produtoTemImagensAdicionais($idProd){ //VERIFICA SE O PRODUTO TEM IMAGENS ADIDIONAIS - ADD1 E ADD2.
@@ -122,6 +124,75 @@ function getImagensAdicionais($idProd){
 	echo "<img src=imagens/".$imagens['imagemadd2'] . ">";
 
 }
+
+function existemAnunciantes($produto){ //RETORNA SE EXISTEM ANUNCIANTES DAQUELE PRODUTO
+	$comandoExistemAnunciantes = "SELECT * from anuncios WHERE id_produto = '$produto'";
+
+	$display = mysqli_query($GLOBALS['dao'],$comandoExistemAnunciantes);
+
+	return (mysqli_num_rows($display) > 0 );
+}
+
+function construirTabelaAnunciantes(){
+
+	echo "<table border=3 cellspacing=5>"; 
+
+	echo "<th>NOME AGRICULTOR</th>";
+	echo "<th>TELEFONE</th>";
+	echo "<th>DESCRIÇÃO</th>";
+
+
+}
+
+function getAnunciantes($produto){ //RETORNA OS ANUNCIANTES DAQUELE CERTO produto
+
+	$comandoGetAnunciantes = "SELECT * from anuncios WHERE id_produto = '$produto'";
+
+	mysqli_query($GLOBALS['dao'], "set names 'utf8'");
+
+	$display = mysqli_query($GLOBALS['dao'], $comandoGetAnunciantes);
+
+	if(mysqli_num_rows($display) > 0 ){ //SE EXISTEM ANUNCIANTES DAQUELE PRODUTO
+
+		while($coluna = mysqli_fetch_array($display)){
+
+
+			// CADA COLUNA PRA SER PREENCHIDA É UM <tr>, CADA VALOR DESSA COLUNA É UM <td>
+
+		echo "<tr>";
+
+		echo "<td>";
+		nomeDoAnunciante($coluna['id_anunciante']);  //PREENCHE NOME
+		echo "</td>";
+		echo "<td>". "(73) ".rand() . "</td>"; //PREENCHE TELEFONE
+		echo "<td>". $coluna['texto_anuncio'] . "</td>"; //PREENCHE O TEXTO DO ANÚNCIO
+
+		echo "</tr>";
+
+		}
+
+
+
+	}
+
+}
+
+function listarTodosProdutos(){
+
+	$comandoListarProdutos = "SELECT nome FROM produtos";
+
+	mysqli_query($GLOBALS['dao'], "set names 'utf8'");
+
+	$display = mysqli_query($GLOBALS['dao'], $comandoListarProdutos);
+
+	while($coluna = mysqli_fetch_array($display)){
+		echo "<option value=$coluna[nome]>". ($coluna['nome']) ."</option>";
+	}
+
+
+}
+
+
 
 
 

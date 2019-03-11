@@ -13,7 +13,7 @@ https://www.sosfeira.com.br/frutas/abacaxi
 <body>
 
 	<?php
-	include('tools.php');
+	include_once('tools.php');
 
 
 	if(produtoExiste($_GET['idProduto'])){
@@ -30,6 +30,25 @@ https://www.sosfeira.com.br/frutas/abacaxi
 
 
 	?>
+
+
+<h1> AGRICULTORES </h1>
+
+<?php
+
+if(existemAnunciantes($_GET['idProduto'])){
+	//constroi tabela, etc
+
+	construirTabelaAnunciantes();
+	getAnunciantes($_GET['idProduto']);
+
+	echo "</table>";
+}else{
+	ECHO "AINDA NÃO EXISTEM ANUNCIANTES PRA ESSE PRODUTO";
+}
+
+?>
+
 
 
 </body>

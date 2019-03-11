@@ -7,6 +7,7 @@
 <body>
 
 	<?php
+	include_once('tools.php');
 
   session_start();
 
@@ -23,23 +24,36 @@
 
 
 	<form action="preAnuncio.php" method="post">
-		<label>TIPO DO PRODUTO</label>
-		<select name="tipoProduto" required="">
-			<option value="">----</option>
-			<option value="FRUTA">FRUTA</option>
-			<option value="VERDURA">VERDURA</option>
-			<option value="LEGUME">LEGUME</option>
-			<option value="TEMPERO">TEMPERO</option>
-			<option value="OUTRO">OUTRO</option>
-		</select>
 
+		<label> QUERO ANUNCIAR </label>
+		 <select required="" name="produto">
+		 	<option value="">--</option>
+		 	<!-- VAI CONSTRUIR OS OPTION -->
+		 	<?php
+		 	listarTodosProdutos();
+
+		 	?>
+		 </select>
+		 <br>
+
+		 <input type="radio" name="atributo" value="kg" checked=""> KG
+		 <br>
+		 <input type="radio" name="atributo" value="un"> UNIDADE
+		 <br>
+		 <input type="radio" name="atributo" value="1/2kg"> 1/2KG
+		 <br>
+		 <input type="radio" name="atributo" value="pacote"> PACOTE
+		 <br>
+		 <input type="radio" name="atributo" value="bandeja"> BANDEJA
+		 <br>
+
+		<label>OBSERVAÇÕES</label>
+		<!-- <input type="textarea" name="textoAnuncio" required=""> -->
+		<textarea name="textoAnuncio"></textarea>
 		<br>
 
-		<label>TEXTO DO ANÚNCIO</label>
-		<input type="text" name="textoAnuncio" required="">
-		<br>
-		<input type="submit" name="">
-		<br>
+		<input type="submit" name="botao">
+
 	</form>
 
 	<h2> <a href='site.php'> VOLTAR </a> </h2>

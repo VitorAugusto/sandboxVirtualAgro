@@ -50,6 +50,7 @@ $nome = $_POST["campoNome"];
 $username = $_POST["campoUsername"];
 $senha = $_POST["campoSenha"];
 
+mysqli_query($GLOBALS['dao'], "set names 'utf8'");
 
 mysqli_query($GLOBALS['dao'],"INSERT INTO cadastros(nome, username, senha) VALUES ('$nome','$username','$senha')");
 $_SESSION['login'] = $username;

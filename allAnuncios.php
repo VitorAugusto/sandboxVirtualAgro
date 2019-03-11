@@ -13,6 +13,7 @@ session_start();
 
 
    $selectTodosAnuncios = "SELECT * from anuncios";
+   mysqli_query($GLOBALS['dao'], "set names 'utf8'");
 
 
    	$displayTodosAnuncios = mysqli_query($GLOBALS['dao'], $selectTodosAnuncios);
