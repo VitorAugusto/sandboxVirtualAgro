@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>CRIAR ANÙNCIO - Virtual Agro</title>
+		<title>NOVO ANÚNCIO - Virtual Agro</title>
 		<meta charset="UTF-8">
 		<link rel="icon" type="image/png" sizes="64x64" href="imagens/logo/virtual-agro-logo-png.png">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
