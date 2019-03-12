@@ -309,6 +309,7 @@ footer hr {
     cursor: pointer;
     transition: color .3s;
     z-index: 99;
+    
 }
 
 .container {

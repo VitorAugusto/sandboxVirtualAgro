@@ -37,7 +37,7 @@
                                 <p class="search-label description">Com o Virtual Agro você pode conferir os números de telefone e whatsapp de agricultores de sua região. Com isso oferecemos uma opção pra quem deseja consumir produtos 100% orgânicos e sem agrotóxicos. Confira!
                                 </p>
                                 <br>
-                                <div class="search-label">O que você procura?</div>
+                                <div class="label-chamada">O que você procura?</div>
                                 <div class="linha">
                                     <div class="check-box">
                                         <input id="" class="" type="checkbox" name="" value="" alt="Frutas" checked>

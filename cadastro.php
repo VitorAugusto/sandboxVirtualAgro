@@ -28,19 +28,19 @@
 				<form action="accessManager.php?tipoOperacao=cadastro" method="POST">
 					<div class="login-senha">
 						<input type="text" name="campoNome" required="" placeholder="NOME">
-						<button class="login" type="submit">
+						<button class="login" type="submit" disabled="disabled">
 							<i class="fas fa-user-check"></i>
 						</button>
 					</div>
 					<div class="login-senha">
 						<input type="text" name="campoUsername" required="" placeholder="USERNAME">
-						<button class="login" type="submit">
+						<button class="login" type="submit" disabled="disabled">
 							<i class="fas fa-user"></i>
 						</button>
 					</div>
 					<div class="login-senha">
 					<input type="password" name="campoSenha" required="" placeholder="SENHA">
-						<button class="login" type="submit">
+						<button class="login" type="submit" disabled="disabled">
 							<i class="fas fa-key"></i>
 						</button>
 					</div>

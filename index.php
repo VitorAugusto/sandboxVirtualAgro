@@ -33,19 +33,18 @@
 
 						header('location:site.php');
 					}
-
 				?>
 				
 				<form action="accessManager.php?tipoOperacao=login" method="post">	
 					<div class="login-senha">
 						<input type="text" name="campoUsername" placeholder="LOGIN">
-						<button class="login" type="submit">
+						<button class="login" type="submit" disabled="disabled">
 							<i class="fas fa-user"></i>
 						</button>
 					</div>			
 					<div class="login-senha">
 						<input type="password" name="campoSenha" placeholder="SENHA">
-						<button class="login" type="submit">
+						<button class="login" type="submit" disabled="disabled">
 							<i class="fas fa-key"></i>
 						</button>
 					</div>						
