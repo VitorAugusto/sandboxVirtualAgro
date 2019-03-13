@@ -16,7 +16,28 @@
                     <button type="button" class="btn-menu  js-btn-menu">
                         <span class="icon-menu"><i class="fa fa-bars"></i></span>
                         <span class="text-menu">MENU</span>
+
+                        <div class="box-menu">
+                            <ul class="submenu">
+                                <li><a href="index.php">Login</a></li>
+                                <li><a href="cadastro.php">Cadastre-se</a></li>
+                                <li><a href="faleconosco.php">Fale Conosco</a></li>
+                                <li><a href="faq">FAQ</a></li>
+                            </ul>
+                        </div>
                     </button>
+
+
+              <!--  <div class="sub-menu">
+                        <ul>
+                            <li>Deslogar</li>
+                            <li>Criar Anúncio</li>
+                            <li>Meus Anúncios</li>
+                            <li>Todos Anúncios</li>
+                            <li>Fale Conosco</li>
+                            <li>FAQ</li>
+                        </ul>
+                    </div> -->
                 </div>
                 <img class="logo-header" src="imagens/logo/virtual-agro-logo-nome.png">
                 <div class="right-side">                                        

@@ -141,6 +141,38 @@ footer hr {
     background-color: rgba(144, 164, 174, .15);
 }
 
+
+.box-menu {
+	float: left;
+	display: block;
+	position: relative;
+}
+
+.box-menu > a {
+	padding: 10px 40px;
+	display: block;
+}
+.btn-menu:hover .submenu {
+	display:block;
+}
+
+.submenu {
+	width: 130%;
+	position: absolute;
+	top: 0%;
+	left: 0px;
+	display:none;
+}
+
+.submenu li {
+	display: block;
+}
+
+.submenu li a {
+	padding: 10px 30px;
+	display: block;
+}
+
 .icon-menu{
     font-size: 18px;
     font-weight: 400;
@@ -293,6 +325,10 @@ footer hr {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 30px;
+}
+
+.label-chamada {
+
 }
 
 .login {
