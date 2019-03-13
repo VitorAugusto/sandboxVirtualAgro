@@ -17,7 +17,7 @@ INSERT INTO cadastros(nome, username, senha) VALUES ('NOME TESTE 3', 'teste3', '
 
 CREATE TABLE IF NOT EXISTS anuncios(id INT PRIMARY KEY AUTO_INCREMENT,
   id_anunciante int,
-  categoria ENUM('FRUTA', 'VERDURA','LEGUME','TEMPERO','OUTRO'),
+  categoria ENUM('FRUTA', 'VERDURA','LEGUME','TEMPERO','OUTRO', 'ESPECIARIA', 'OVO', 'CEREAIS E GRÃOS'),
   texto_anuncio TEXT,
   FOREIGN KEY (id_anunciante) references cadastros(id),
   id_produto INT,
