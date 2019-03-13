@@ -138,7 +138,7 @@ footer hr {
 }
 
 .btn-menu:hover {
-    background-color: rgba(144, 164, 174, .15);
+    background-color: #1b6e5c;
 }
 
 
@@ -153,15 +153,18 @@ footer hr {
 	display: block;
 }
 .btn-menu:hover .submenu {
-	display:block;
+    display:block;
+    
 }
 
 .submenu {
-	width: 130%;
-	position: absolute;
-	top: 0%;
-	left: 0px;
-	display:none;
+    display:none;
+    top: 300%;
+    left: 0px;
+    padding: 10px 18px;
+    box-shadow: 0px 1px 1px rgba(0,0,0,0.15);
+    border-radius: 3px;
+    background: #1b6e5c;
 }
 
 .submenu li {
@@ -181,6 +184,22 @@ footer hr {
     line-height: 1.11;
     letter-spacing: normal;
     color: #ffffff;
+}
+ul{
+        /* width: 100%; */
+
+}
+ul:after {
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    top: 0%;
+    left: 15px;
+    content: '';
+    transform: translate(0%, -100%);
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid #1b6e5c;
 }
 
 .icon-text {

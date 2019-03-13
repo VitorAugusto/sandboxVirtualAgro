@@ -11,18 +11,26 @@
 
   </head>
   <body>
-  <header class="navigation">
-				<div class="container-header">
-					<div class="left-side">
-						<button type="button" class="btn-menu  js-btn-menu">
-						<span class="icon-menu"><i class="fa fa-bars"></i></span>
-						<span class="text-menu">MENU</span>
-					</button>
-				</div>
-				<img class="logo-header" src="imagens/logo/virtual-agro-logo-nome.png">
-				<div class="right-side">                                        
-				</div>                
-			</div>            
+    <header class="navigation">
+			<div class="container-header">
+				<div class="left-side">
+					<button type="button" class="btn-menu  js-btn-menu">
+					  <span class="icon-menu"><i class="fa fa-bars"></i></span>
+					  <span class="text-menu">MENU</span>
+            <div class="box-menu">
+                            <ul class="submenu">
+                                <li><a href="index.php">Login</a></li>
+                                <li><a href="cadastro.php">Cadastre-se</a></li>
+                                <li><a href="faleconosco.php">Fale Conosco</a></li>
+                                <li><a href="faq.php">FAQ</a></li>
+                            </ul>
+                        </div>
+				  </button>
+			  </div>
+			  <img class="logo-header" src="imagens/logo/virtual-agro-logo-nome.png">
+			  <div class="right-side">                                        
+			  </div>                
+		  </div>            
 		</header>
 		<div class="all">
 			<section class="conteudo">

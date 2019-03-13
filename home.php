@@ -22,7 +22,7 @@
                                 <li><a href="index.php">Login</a></li>
                                 <li><a href="cadastro.php">Cadastre-se</a></li>
                                 <li><a href="faleconosco.php">Fale Conosco</a></li>
-                                <li><a href="faq">FAQ</a></li>
+                                <li><a href="faq.php">FAQ</a></li>
                             </ul>
                         </div>
                     </button>
