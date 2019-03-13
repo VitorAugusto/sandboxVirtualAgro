@@ -71,6 +71,9 @@ for ($i=0; $i < sizeof($_FILES['image']['name']); $i++) {
 			<option value="legume">LEGUME</option>
 			<option value="tempero">TEMPERO</option>
 			<option value="outro">OUTRO</option>
+			<option value="ovo">OVO</option>
+			<option value="especiaria"></option>
+			<option value="cereais e grãos">CEREAIS E GRÃOS</option>
 		</select>
 		<br>
 	    <input type="submit" name="botao">
