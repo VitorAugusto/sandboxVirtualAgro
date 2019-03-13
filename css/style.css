@@ -5,6 +5,7 @@ html {
 }
 
 body {
+    height: 1000px;
     padding-top: 110px;
     background-color: #51f8d4;
     width: 100%;
