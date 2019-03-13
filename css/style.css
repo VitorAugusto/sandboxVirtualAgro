@@ -161,9 +161,10 @@ footer hr {
     display:none;
     top: 300%;
     left: 0px;
+    width: 120px;
     padding: 10px 18px;
     box-shadow: 0px 1px 1px rgba(0,0,0,0.15);
-    border-radius: 3px;
+    border-radius: 10px;
     background: #1b6e5c;
 }
 
