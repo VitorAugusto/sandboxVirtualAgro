@@ -31,7 +31,11 @@
 				  </button>
 			  </div>
 			  <img class="logo-header" src="imagens/logo/virtual-agro-logo-nome.png">
-			  <div class="right-side">                                        
+			  <div class="right-side">    
+          <button type=button class='btn-login'>
+	          <span class='icon-menu'><i class="fas fa-sign-out-alt"></i></span>
+            <a href="logout.php">sair</a>
+	        </button>                                    
 			  </div>                
 		  </div>            
 		</header>
@@ -64,10 +68,6 @@
 
         <a href="allAnuncios.php">
         TODOS OS ANÚNCIOS
-        </a>
-
-        <a href="logout.php">
-        DESLOGAR
         </a>
 			</section>
 		</div>		               
