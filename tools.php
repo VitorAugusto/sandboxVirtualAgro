@@ -215,6 +215,33 @@ function getCategoriaProdutoPeloId($id){
 
 }
 
+function construirMenuLateralSemLogin(){
+
+	                       echo "<div class=box-menu>";
+                           echo "<ul class=submenu>";
+                           echo "<li><a href=index.php>Login</a></li>";
+                           echo  "<li><a href=cadastro.php>Cadastre-se</a></li>";
+                           echo  "<li><a href=faleconosco.php>Fale Conosco</a></li>";
+                           echo  "<li><a href=faq.php>FAQ</a></li>";
+                            echo "</ul>";
+                        echo "</div>";
+}
+
+function construirMenuLateralComLogin(){
+
+	              echo " <div class=box-menu>";
+                        echo "<ul class=submenu>";
+                            echo "<li>Deslogar</li>";
+                            echo "<li>Criar Anúncio</li>";
+                            echo "<li>Meus Anúncios</li>";
+                            echo "<li>Todos Anúncios</li>";
+                            echo "<li>Fale Conosco</li>";
+                            echo "<li>FAQ</li>";
+                       echo "</ul>";
+                    echo "</div> ";
+
+}
+
 
 
 
