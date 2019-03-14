@@ -1,3 +1,19 @@
+/* ANTES DE FAZER TUDO ISSO. VERIFIQUE SE O ARQUIVO 
+php.ini
+no DIRETÓRIO
+
+xamp ou wamp64 /bin/php/php5.6.25/ php.ini
+
+mude o DE
+max_file_uploads = 20
+PARA
+max_file_uploads = 100
+ou mais.
+*/
+
+
+
+
 show databases ;
 
 CREATE DATABASE IF NOT EXISTS virtualagro;
