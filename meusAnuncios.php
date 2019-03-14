@@ -38,8 +38,6 @@
 			<section class="conteudo">
 				<?php 
 
-					include('tools.php');
-
 					if (!isset($_SESSION['id'])) {
 						ECHO "ACESSO NÃO AUTORIZADO";
 					}else{

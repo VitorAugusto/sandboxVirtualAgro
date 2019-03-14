@@ -43,9 +43,7 @@
 		<div class="all">
 			<section class="conteudo">
                 <?php
-                     include('tools.php');
 
-                    session_start();
 
                     $selectTodosAnuncios = "SELECT * from anuncios";
                     mysqli_query($GLOBALS['dao'], "set names 'utf8'");

@@ -60,8 +60,10 @@ for ($i=0; $i < sizeof($_FILES['image']['name']); $i++) {
 
 	<h2> PÁGINA PARA ADICIONAR PRODUTOS AO VIRTUAL AGRO - JUNTO COM SUAS IMAGENS</h2>
 
+	<?php header("Content-Type: text/html; charset=utf-8"); ?>
 
-	<form method="post" action="index.php" enctype="multipart/form-data" >
+
+	<form method="post" action="index.php" enctype="multipart/form-data" accept-charset="utf8" >
 
 		<input type="file" name="image[]" required="" multiple="multiple">
 
@@ -73,10 +75,8 @@ for ($i=0; $i < sizeof($_FILES['image']['name']); $i++) {
 			<option value="legume">LEGUME</option>
 			<option value="tempero">TEMPERO</option>
 			<option value="outro">OUTRO</option>
-			<option value="ovo">OVO</option>
-			<!-- ajaja -->
 			<option value="especiaria">ESPECIARIA</option>
-			<option value="cereais e grãos">CEREAIS E GRÃOS</option>
+			<option value="grãos">GRÃOS</option>
 		</select>
 		<br>
 	    <input type="submit" name="botao">
