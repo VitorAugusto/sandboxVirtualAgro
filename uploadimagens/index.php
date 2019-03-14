@@ -22,10 +22,12 @@ for ($i=0; $i < sizeof($_FILES['image']['name']); $i++) {
 
 	$nomeproduto = pathinfo($_FILES['image']['name'][$i], PATHINFO_FILENAME);
 
+	$nomeSemUnder = str_replace('_', ' ', $nomeproduto);
 
-	$comandoSQL = "INSERT INTO produtos (nome,categoria,imagemprincipal) VALUES ('$nomeproduto','$categoria','$imagem')";
 
-	mysqli_query($minhaConexao, "set names 'utf8'");
+	$comandoSQL = "INSERT INTO produtos (nome,categoria,imagemprincipal) VALUES ('$nomeSemUnder','$categoria','$imagem')";
+
+	//mysqli_query($minhaConexao, "set names 'utf8'");
 
 	mysqli_query($minhaConexao,$comandoSQL);
 
