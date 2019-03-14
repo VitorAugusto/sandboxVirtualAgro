@@ -9,9 +9,7 @@ function getNome($itemA, $itemB){
 	$login = $itemA;
 	$senha = $itemB;
 
-
   	$displayNome = mysqli_query($GLOBALS['dao'], "SELECT nome FROM cadastros WHERE username = '$login' AND senha= '$senha'");
-
 
   	return (mysqli_fetch_row($displayNome)[0]);
 
@@ -171,8 +169,6 @@ function getAnunciantes($produto){ //RETORNA OS ANUNCIANTES DAQUELE CERTO produt
 
 		}
 
-
-
 	}
 
 }
@@ -217,34 +213,35 @@ function getCategoriaProdutoPeloId($id){
 
 function construirMenuLateralSemLogin(){
 
-	                       echo "<div class=box-menu>";
-                           echo "<ul class=submenu>";
-                           echo "<li><a href=index.php>Login</a></li>";
-                           echo  "<li><a href=cadastro.php>Cadastre-se</a></li>";
-                           echo  "<li><a href=faleconosco.php>Fale Conosco</a></li>";
-                           echo  "<li><a href=faq.php>FAQ</a></li>";
-                            echo "</ul>";
-                        echo "</div>";
+	echo "<div class='box-menu'>";
+	echo "<ul class='submenu'>";
+	echo "<li><a href='home.php'>Home</a></li>";
+	echo "<li><a href='index.php'>Login</a></li>";
+    echo "<li><a href='cadastro.php'>Cadastre-se</a></li>";
+	echo "<li><a href='faleconosco.php'>Fale Conosco</a></li>";
+    echo "<li><a href='faq.php'>FAQ</a></li>";
+    echo "</ul>";
+	echo "</div>";
 }
 
 function construirMenuLateralComLogin(){
 
-	              echo " <div class=box-menu>";
-                        echo "<ul class=submenu>";
-                            echo "<li>Deslogar</li>";
-                            echo "<li>Criar Anúncio</li>";
-                            echo "<li>Meus Anúncios</li>";
-                            echo "<li>Todos Anúncios</li>";
-                            echo "<li>Fale Conosco</li>";
-                            echo "<li>FAQ</li>";
-                       echo "</ul>";
-                    echo "</div> ";
-
+	echo " <div class='box-menu'>";
+	echo "<ul class='submenu'>";
+	echo "<li><a href='home.php'>Home</a></li>";
+    echo "<li><a href='criarAnuncio.php'>Criar Anúncio</a></li>";
+    echo "<li><a href='meusAnuncios.php'>Meus Anúncios</a></li>";
+	echo "<li><a href='faleconosco.php'>Fale Conosco</a></li>";
+	echo "<li><a href='faq.php'>FAQ</a></li>";
+	echo "<li><a href='logout.php'>Deslogar</a></li>";
+    echo "</ul>";
+    echo "</div> ";
 }
 
-
-
-
-
-
+function construirMenuLogin(){
+	echo "<button type=button class='btn-login'>";
+	echo "<span class='icon-menu'><i class='fas fa-sign-in-alt'></i></span>";
+	echo "<a href='index.php'>login</a>";
+	echo "</button>";
+}
 ?>

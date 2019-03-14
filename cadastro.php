@@ -16,18 +16,26 @@
 						<button type="button" class="btn-menu  js-btn-menu">
 						<span class="icon-menu"><i class="fa fa-bars"></i></span>
 						<span class="text-menu">MENU</span>
-						<div class="box-menu">
-                            <ul class="submenu">
-                                <li><a href="index.php">Login</a></li>
-                                <li><a href="cadastro.php">Cadastre-se</a></li>
-                                <li><a href="faleconosco.php">Fale Conosco</a></li>
-                                <li><a href="faq.php">FAQ</a></li>
-                            </ul>
-                        </div>
+                        <?php 
+
+                            include_once('tools.php');
+                            session_start();
+
+                            if(!isset($_SESSION['id'])){
+                                construirMenuLateralSemLogin(); 
+                            }else{
+                                construirMenuLateralComLogin();
+                            }
+                        ?>
 					</button>
 				</div>
 				<img class="logo-header" src="imagens/logo/virtual-agro-logo-nome.png">
 				<div class="right-side">                                        
+					<?php
+                        if(!isset($_SESSION['id'])) {
+                            construirMenuLogin();
+                        }
+                    ?>
 				</div>                
 			</div>            
 		</header>

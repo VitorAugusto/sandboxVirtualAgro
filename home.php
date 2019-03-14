@@ -13,17 +13,14 @@
         <header class="navigation">
             <div class="container-header">
                 <div class="left-side">
-                    <button type="button" class="btn-menu  js-btn-menu">
+                    <button type="button" class="btn-menu">
                         <span class="icon-menu">
-                            <i class="fa fa-bars">
-                                
-                            </i>
+                            <i class="fa fa-bars"></i>
                         </span>
                         <span class="text-menu">MENU</span>
-
                         <?php 
-                        include_once('tools.php');
 
+                        include_once('tools.php');
                         session_start();
 
                         if(!isset($_SESSION['id'])){
@@ -32,31 +29,16 @@
                             construirMenuLateralComLogin();
                         }
                         ?>
-
-<!--                         <div class="box-menu">
-                            <ul class="submenu">
-                                <li><a href="index.php">Login</a></li>
-                                <li><a href="cadastro.php">Cadastre-se</a></li>
-                                <li><a href="faleconosco.php">Fale Conosco</a></li>
-                                <li><a href="faq.php">FAQ</a></li>
-                            </ul>
-                        </div> -->
                     </button>
 
-
-              <!--  <div class="sub-menu">
-                        <ul>
-                            <li>Deslogar</li>
-                            <li>Criar Anúncio</li>
-                            <li>Meus Anúncios</li>
-                            <li>Todos Anúncios</li>
-                            <li>Fale Conosco</li>
-                            <li>FAQ</li>
-                        </ul>
-                    </div> -->
                 </div>
                 <img class="logo-header" src="imagens/logo/virtual-agro-logo-nome.png">
                 <div class="right-side">                                        
+                    <?php
+                        if(!isset($_SESSION['id'])) {
+                            construirMenuLogin();
+                        }
+                    ?>
                 </div>                
             </div>            
         </header>

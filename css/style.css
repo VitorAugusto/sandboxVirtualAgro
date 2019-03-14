@@ -142,7 +142,30 @@ footer hr {
     background-color: #1b6e5c;
 }
 
+.btn-login{
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    background: 0 0;
+    border: none;
+    border-radius: 20px;
+    transition: all .4s ease;
+    cursor: pointer;
+    color: #41c0a5;
+    background-color: #1b6e5c;
+    font-size: 20px;
+    font-weight: bold;
+}
 
+.btn-login:hover{
+    background-color: #ffffff;
+    font-weight: bold;
+}
+
+.btn-login:hover a, .btn-login:hover .icon-menu {
+    color: #41c0a5;
+}
 .box-menu {
 	float: left;
 	display: block;
@@ -355,10 +378,6 @@ ul:after {
     margin-bottom: 30px;
 }
 
-.label-chamada {
-
-}
-
 .login {
     position: absolute;
     left: 0;
@@ -372,13 +391,11 @@ ul:after {
     height: 40px;
     cursor: pointer;
     transition: color .3s;
-    z-index: 99;
-  
+    z-index: 99;  
 }
 
 .container {
     display: block;
-
 }
 
 .conteudo {
