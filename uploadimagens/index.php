@@ -71,22 +71,6 @@ for ($i=0; $i < sizeof($_FILES['image']['name']); $i++) {
 
 	<h3>ADICIONAR PRODUTOS AO VIRTUAL AGRO </h3>
 
-	ANTES DE FAZER TUDO ISSO. 
-	<br>VERIFIQUE O ARQUIVO 
-php.ini
-no DIRETÓRIO
-
-xamp ou wamp64 /bin/php/php5.6.25/ php.ini
-<br>
-
-mude
-<br>
-<b>max_file_uploads = 20 </b>
-<br>
-PARA
-<br>
-<b>max_file_uploads = 100 </b>
-
 
 	<form method="post" action="index.php" enctype="multipart/form-data" accept-charset="iso-8859-1" >
 

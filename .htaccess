@@ -1,0 +1,2 @@
+php_value max_file_uploads 1000
+php_value upload_max_filesize 100M
