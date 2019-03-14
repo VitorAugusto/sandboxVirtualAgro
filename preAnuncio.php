@@ -22,7 +22,6 @@
                         <?php 
 
                             include_once('tools.php');
-                            session_start();
 
                             if(!isset($_SESSION['id'])){
                                 construirMenuLateralSemLogin(); 

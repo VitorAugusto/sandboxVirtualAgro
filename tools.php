@@ -186,7 +186,8 @@ function listarTodosProdutos(){
 	$display = mysqli_query($GLOBALS['dao'], $comandoListarProdutos);
 
 	while($coluna = mysqli_fetch_array($display)){
-		echo "<option value=$coluna[nome]>". ($coluna['nome']) ."</option>";
+		//echo "<option value=$coluna[nome]>". ($coluna['nome']) ."</option>";
+		echo '<option value="'.$coluna['nome'].'">'.$coluna['nome'].'</option>';
 	}
 
 

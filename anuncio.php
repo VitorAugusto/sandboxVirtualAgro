@@ -13,6 +13,7 @@
 			}
 
 			$comandoSelectAnuncio = "SELECT * from anuncios WHERE id = '$_GET[idAnuncio]'";
+			mysqli_query($GLOBALS['dao'], "set names 'utf8'");
 			$displayAnuncio = mysqli_query($GLOBALS['dao'], $comandoSelectAnuncio);
 			$colunaAnuncio = mysqli_fetch_array($displayAnuncio);
 		?>
@@ -59,6 +60,7 @@
 			<section class="conteudo">				
 				<?php
 					$comandoGetIdProduto = "SELECT id_produto FROM anuncios WHERE id = '$_GET[idAnuncio]'";
+
 					$display = mysqli_query($GLOBALS['dao'], $comandoGetIdProduto);
 					getImagemProduto(mysqli_fetch_row($display)[0]);
 				?>

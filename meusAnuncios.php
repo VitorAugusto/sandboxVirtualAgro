@@ -44,6 +44,8 @@
 						$meuid = $_SESSION['id'];
 
 						$selectMeusAnuncios = "SELECT * from anuncios WHERE id_anunciante = '$meuid'";
+						
+						mysqli_query($GLOBALS['dao'], "set names 'utf8'");
 
 						$displayMeusAnuncios = mysqli_query($GLOBALS['dao'],$selectMeusAnuncios);
 
