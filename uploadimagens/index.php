@@ -1,5 +1,6 @@
 <?php
 
+
 if(isset($_POST['botao'])){
 
 $categoria = $_POST['categoria'];
@@ -27,6 +28,13 @@ for ($i=0; $i < sizeof($_FILES['image']['name']); $i++) {
 	mysqli_query($minhaConexao, "set names 'utf8'");
 
 	mysqli_query($minhaConexao,$comandoSQL);
+
+	//$novoNome = utf8_decode($_FILES['image']['name'][$i]);
+
+
+	//move_uploaded_file($_FILES['image']['tmp_name'][$i], $novoNome);
+
+	//echo $novoNome;
 
 	if(move_uploaded_file($_FILES['image']['tmp_name'][$i], $target)){
 
@@ -60,10 +68,8 @@ for ($i=0; $i < sizeof($_FILES['image']['name']); $i++) {
 
 	<h2> PÁGINA PARA ADICIONAR PRODUTOS AO VIRTUAL AGRO - JUNTO COM SUAS IMAGENS</h2>
 
-	<?php header("Content-Type: text/html; charset=utf-8"); ?>
 
-
-	<form method="post" action="index.php" enctype="multipart/form-data" accept-charset="utf8" >
+	<form method="post" action="index.php" enctype="multipart/form-data" accept-charset="iso-8859-1" >
 
 		<input type="file" name="image[]" required="" multiple="multiple">
 

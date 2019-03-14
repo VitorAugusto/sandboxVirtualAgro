@@ -14,7 +14,7 @@ INSERT INTO cadastros(nome, username, senha) VALUES ('NOME TESTE 3', 'teste3', '
 
 CREATE TABLE IF NOT EXISTS produtos(id INT PRIMARY KEY AUTO_INCREMENT,
   nome TEXT,
-  categoria ENUM('FRUTA', 'VERDURA','LEGUME','TEMPERO','OUTRO', 'GRÃOS'),
+  categoria ENUM('FRUTA', 'VERDURA','LEGUME','TEMPERO','OUTRO','ESPECIARIA','GRÃOS'),
   imagemprincipal varchar(100),
   imagemadd1 varchar(100),
   imagemadd2 varchar(100));
@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS produtos(id INT PRIMARY KEY AUTO_INCREMENT,
 
 CREATE TABLE IF NOT EXISTS anuncios(id INT PRIMARY KEY AUTO_INCREMENT,
   id_anunciante int,
-  categoria ENUM('FRUTA', 'VERDURA','LEGUME','TEMPERO','OUTRO', 'GRÃOS'),
+  categoria ENUM('FRUTA', 'VERDURA','LEGUME','TEMPERO','OUTRO', 'ESPECIARIA','GRÃOS'),
   texto_anuncio TEXT,
   FOREIGN KEY (id_anunciante) references cadastros(id),
   id_produto INT,
