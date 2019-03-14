@@ -38,14 +38,16 @@
 			<section class="conteudo">
 				<?php
 
-					session_start();
-					include('tools.php');
-
 					if(isset($_SESSION['id'])){ //SE ESTIVER LOGADO
-						if(meuAnuncio(getIdAnuncianteIdAnuncio($_GET['idAnuncio']), $_SESSION['id'])){
+						if(anuncioExiste($_GET['idAnuncio']) AND meuAnuncio(getIdAnuncianteIdAnuncio($_GET['idAnuncio']), $_SESSION['id'])){
 							ECHO "ESSE ANÚNCIO É SEU";
+
+							excluirAnuncio($_GET['idAnuncio']);
+							
+							header('location:meusAnuncios.php');
+
 						}else{
-							ECHO "ESSE ANÚNCIO NÃO TE PERTENCE";
+							ECHO "ESSE ANÚNCIO NÃO TE PERTENCE OU NÃO EXISTE";
 						}
 					} else{				
 						ECHO "OPERAÇÃO INVÁLIDA";

@@ -249,4 +249,12 @@ function construirMenuLogin(){
 	echo "<a href='index.php'>login</a>";
 	echo "</button>";
 }
+
+function excluirAnuncio($idAnun){
+
+	$comandoExcluirAnuncio = "DELETE FROM anuncios WHERE id = '$idAnun'";
+
+	mysqli_query($GLOBALS['dao'],$comandoExcluirAnuncio);
+}
+
 ?>
