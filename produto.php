@@ -7,21 +7,7 @@ https://www.sosfeira.com.br/frutas/abacaxi
 <html>
 	
 	<head>
-		<?php
-			include_once('tools.php');
 
-			if(anuncioExiste($_GET['idAnuncio'])){
-				echo "ANÚNCIO EXISTE";
-			}else{
-
-				ECHO "ANÚNCIO NÃO EXISTE";
-				header('location:index.php');
-			}
-
-			$comandoSelectAnuncio = "SELECT * from anuncios WHERE id = '$_GET[idAnuncio]'";
-			$displayAnuncio = mysqli_query($GLOBALS['dao'], $comandoSelectAnuncio);
-			$colunaAnuncio = mysqli_fetch_array($displayAnuncio);
-		?>
 
 		<title>PRODUTO - VIRTUAL AGRO</title>
 		<meta charset="UTF-8">

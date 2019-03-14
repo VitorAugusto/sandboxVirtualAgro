@@ -24,6 +24,8 @@ for ($i=0; $i < sizeof($_FILES['image']['name']); $i++) {
 
 	$comandoSQL = "INSERT INTO produtos (nome,categoria,imagemprincipal) VALUES ('$nomeproduto','$categoria','$imagem')";
 
+	mysqli_query($minhaConexao, "set names 'utf8'");
+
 	mysqli_query($minhaConexao,$comandoSQL);
 
 	if(move_uploaded_file($_FILES['image']['tmp_name'][$i], $target)){
