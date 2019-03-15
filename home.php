@@ -2,6 +2,11 @@
 <html lang="pt-br">
     <head>
         <title>HOME - Virtual Agro</title>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+            
+        </script>
+
         <meta charset="UTF-8">
         <link rel="icon" type="image/png" sizes="64x64" href="imagens/logo/virtual-agro-logo-png.png">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -12,10 +17,21 @@
 
         <script>
 
-            function construirExibicaoProdutos(){
-                var conteudo = document.querySelector(".conteudo");
+            window.onload = function(){
 
-                conteudo.style.display = "none";
+                document.getElementById("conteudo2").style.display = "none";
+            }
+
+            function construirExibicaoProdutos(){
+                //var conteudo1 = document.querySelector(".conteudo");
+
+                var conteudo1 = document.getElementById("conteudo1");
+
+                conteudo1.style.display = "none";
+
+                var conteudo2 = document.getElementById("conteudo2");
+                conteudo2.style.display = "block";
+
 
                 checarProdutos();
             }
@@ -25,13 +41,24 @@
             var produtosParaBusca = [];
             var checkboxes = document.querySelectorAll('input[type=checkbox]:checked');
             for (var i = 0; i < checkboxes.length; i++) {
-            produtosParaBusca.push(checkboxes[i].value)
+            produtosParaBusca.push(checkboxes[i].value) 
         }
 
         for (var i = 0; i < produtosParaBusca.length; i++) {
             console.log(produtosParaBusca[i]);
         }
-            }
+
+        var sendData = function() {
+  $.post('search.php', {
+    data: produtosParaBusca
+  }, function(response) {
+    console.log(response);
+  });
+}
+
+sendData();
+
+        }
 
 
 
@@ -72,7 +99,7 @@
             </div>            
         </header>
         <div class="all">
-            <section class="conteudo">
+            <section class="conteudo" id="conteudo1">
                         <div class="clearfix">
             
                             <h1 class="search-title">
@@ -115,6 +142,11 @@
                                 </button>
                             <!-- </form> -->
                     </div>
+            </section>
+            <section class="conteudo" id="conteudo2">
+                <p>
+                    AQUI EU VOU EXIBIR OS PRODUTOS QUE VOCÊ SELECIONOU
+                </p>
             </section>
         </div>
        

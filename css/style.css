@@ -32,7 +32,7 @@ footer,
 header,
 nav,
 section {
-    display: block;
+    display: none;
 }
 
 footer {
@@ -405,6 +405,7 @@ ul:after {
     padding: 0 20px;
     padding-bottom: 50px;
 }
+
 
 .conteudo h3, h4{
     margin-top: 20px;
