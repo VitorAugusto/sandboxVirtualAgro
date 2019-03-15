@@ -1,4 +1,31 @@
 <!DOCTYPE html>
+							<?php 
+
+								include_once('tools.php');
+								session_start();
+
+								if(!isset($_SESSION['id'])){
+									construirMenuLateralSemLogin(); 
+								}else{
+									construirMenuLateralComLogin();
+								}
+							?>
+
+						<?php
+
+					if(isset($_SESSION['id'])){ //SE ESTIVER LOGADO
+						if(anuncioExiste($_GET['idAnuncio']) AND meuAnuncio(getIdAnuncianteIdAnuncio($_GET['idAnuncio']), $_SESSION['id'])){
+							ECHO "ESSE ANÚNCIO É SEU";
+
+
+						}else{
+							header('location:site.php');
+						}
+					} else{					
+						header('location:site.php');
+					}
+				?>
+
 <html>
     <head>
 	<title>EDITAR ANÚNCIO - VIRTUAL AGRO</title>
@@ -16,17 +43,6 @@
 						<button type="button" class="btn-menu  js-btn-menu">
 							<span class="icon-menu"><i class="fa fa-bars"></i></span>
 							<span class="text-menu">MENU</span>
-							<?php 
-
-								include_once('tools.php');
-								session_start();
-
-								if(!isset($_SESSION['id'])){
-									construirMenuLateralSemLogin(); 
-								}else{
-									construirMenuLateralComLogin();
-								}
-							?>
 						</button>
 					</div>
 				<img class="logo-header" src="imagens/logo/virtual-agro-logo-nome.png">
@@ -36,18 +52,63 @@
 		</header>
 		<div class="all">
 			<section class="conteudo">
-				<?php
+				<form action="preAnuncio.php" method="post">
 
-					if(isset($_SESSION['id'])){ //SE ESTIVER LOGADO
-						if(meuAnuncio(getIdAnuncianteIdAnuncio($_GET['idAnuncio']), $_SESSION['id'])){
-							ECHO "ESSE ANÚNCIO É SEU";
-						}else{
-							ECHO "ESSE ANÚNCIO NÃO TE PERTENCE";
-						}
-					} else{					
-						ECHO "OPERAÇÃO INVÁLIDA";
-					}
-				?>
+					<label> QUERO ANUNCIAR </label>
+		 			<select required="" name="produto">
+		 				<option value="">--</option>
+		 				<!-- VAI CONSTRUIR OS OPTION -->
+		 				<?php
+		 					listarTodosProdutos();
+		 				?>
+		 			</select>
+
+						<div class="linha">
+							<div class="check-box">
+								<input id="" class="" type="radio" name="atributo" value="kg" alt="Kg" checked>
+									<label for="">
+										<span class="icon-menu"><span class="icon"></span></span>
+										<span class="icon-text"><b>KG</b></span>
+									</label>
+							</div>                    
+							<div class="check-box">
+								<input id="" class="" type="radio" name="atributo" value="un" alt="Unidade">
+									<label for="">
+										<span class="icon-menu"><span class="icon"></span></span>
+										<span class="icon-text">UNIDADE</span>
+									</label>
+							</div>
+							<div class="check-box">
+								<input id="" class="" type="radio" name="atributo" value="1/2kg" alt="1/2kg">
+									<label for="">
+										<span class="icon-menu"><span class="icon"></span></span>
+										<span class="icon-text">1/2KG</span>
+									</label>
+							</div>
+							<div class="check-box">
+								<input id="" class="" type="radio" name="atributo" value="pacote" alt="Pacote">
+									<label for="">
+										<span class="icon-menu"><span class="icon"></span></span>
+										<span class="icon-text">PACOTE</span>
+									</label>
+							</div>
+							<div class="check-box">
+								<input id="" class="" type="radio" name="atributo" value="bandeja" alt="Bandeja">
+									<label for="">
+										<span class="icon-menu"><span class="icon"></span></span>
+										<span class="icon-text">BANDEJA</span>
+									</label>
+							</div>												
+	                	</div>
+
+					<label>OBSERVAÇÕES</label>
+					<!-- <input type="textarea" name="textoAnuncio" required=""> -->
+					<textarea name="textoAnuncio"></textarea>
+					<button class="buscar" type="submit">
+                		<span class="icon-text">ENVIAR</span>
+            	        <span class="icon-menu"><i class="fa fa-chevron-circle-right"></i></span>
+        	    	</button>
+				</form>
 			</section>
 		</div>		               
 		<footer>

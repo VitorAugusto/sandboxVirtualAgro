@@ -8,6 +8,35 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link href="css/style.css" rel="stylesheet">
+
+
+        <script>
+
+            function construirExibicaoProdutos(){
+                var conteudo = document.querySelector(".conteudo");
+
+                conteudo.style.display = "none";
+
+                checarProdutos();
+            }
+
+            function checarProdutos(){
+
+            var produtosParaBusca = [];
+            var checkboxes = document.querySelectorAll('input[type=checkbox]:checked');
+            for (var i = 0; i < checkboxes.length; i++) {
+            produtosParaBusca.push(checkboxes[i].value)
+        }
+
+        for (var i = 0; i < produtosParaBusca.length; i++) {
+            console.log(produtosParaBusca[i]);
+        }
+            }
+
+
+
+            
+        </script>
     </head>
     <body>
         <header class="navigation">
@@ -52,39 +81,39 @@
                             </h1>
                         </div>
                         <div class="search-content">
-                            <form method="GET" action="" accept-charset="UTF-8" class="" id="" name="">
+                            <!-- <form id="home"> -->
                                 <p class="search-label description">Com o Virtual Agro você pode conferir os números de telefone e whatsapp de agricultores de sua região. Com isso oferecemos uma opção pra quem deseja consumir produtos 100% orgânicos e sem agrotóxicos. Confira!
                                 </p>
                                 <br>
                                 <div class="label-chamada">O que você procura?</div>
                                 <div class="linha">
                                     <div class="check-box">
-                                        <input id="" class="" type="checkbox" name="" value="" alt="Frutas" checked>
+                                        <input id="" class="" type="checkbox" name="buscaproduto" value="Frutas" alt="Frutas" checked>
                                         <label for="">
                                             <span class="icon-menu"><span class="icon"></span></span>
                                             <span class="icon-text">FRUTAS</span>
                                         </label>
                                     </div>                    
                                     <div class="check-box">
-                                        <input id="" class="" type="checkbox" name="" value="" alt="Legumes">
+                                        <input id="" class="" type="checkbox" name="buscaproduto" value="Legumes" alt="Legumes">
                                         <label for="">
                                             <span class="icon-menu"><span class="icon"></span></span>
                                             <span class="icon-text">LEGUMES</span>
                                         </label>
                                     </div>
                                     <div class="check-box">
-                                        <input id="" class="" type="checkbox" name="" value="" alt="Verduras">
+                                        <input id="" class="" type="checkbox" name="buscaproduto" value="Verduras" alt="Verduras">
                                         <label for="">
                                             <span class="icon-menu"><span class="icon"></span></span>
                                             <span class="icon-text">VERDURAS</span>
                                         </label>
                                     </div>
                                 </div>
-                                <button class="buscar" type="submit">
+                                <button class="buscar" type="submit" onclick="construirExibicaoProdutos()">
                                     <span class="icon-text">BUSCAR</span>
                                     <span class="icon-menu"><i class="fa fa-chevron-circle-right"></i></span>
                                 </button>
-                            </form>
+                            <!-- </form> -->
                     </div>
             </section>
         </div>
