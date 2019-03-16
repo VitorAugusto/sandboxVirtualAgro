@@ -17,6 +17,8 @@
 
         <script>
 
+            var produtosParaBusca = [];
+
             window.onload = function(){
 
                 document.getElementById("conteudo2").style.display = "none";
@@ -38,26 +40,29 @@
 
             function checarProdutos(){
 
-            var produtosParaBusca = [];
             var checkboxes = document.querySelectorAll('input[type=checkbox]:checked');
             for (var i = 0; i < checkboxes.length; i++) {
             produtosParaBusca.push(checkboxes[i].value) 
         }
 
-        for (var i = 0; i < produtosParaBusca.length; i++) {
+            for (var i = 0; i < produtosParaBusca.length; i++) {
             console.log(produtosParaBusca[i]);
         }
+            carregarImagens();
+        }
 
-        var sendData = function() {
-  $.post('search.php', {
-    data: produtosParaBusca
-  }, function(response) {
-    console.log(response);
-  });
-}
+        function carregarImagens(){
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("POST", "search.php", true);
+            xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
-sendData();
+            xhttp.onreadystatechange = function(){
+                if(this.readyState == 4 && this.status == 200){
+                    document.getElementById("conteudo2").innerHTML = this.responseText
+                }
+            };
 
+            xhttp.send("produtos" + JSON.stringify(produtosParaBusca));
         }
 
 
