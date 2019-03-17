@@ -32,7 +32,7 @@ footer,
 header,
 nav,
 section {
-    display: none;
+    display: block;
 }
 
 footer {

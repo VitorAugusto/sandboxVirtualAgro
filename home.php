@@ -15,60 +15,7 @@
         <link href="css/style.css" rel="stylesheet">
 
 
-        <script>
 
-            var produtosParaBusca = [];
-
-            window.onload = function(){
-
-                document.getElementById("conteudo2").style.display = "none";
-            }
-
-            function construirExibicaoProdutos(){
-                //var conteudo1 = document.querySelector(".conteudo");
-
-                var conteudo1 = document.getElementById("conteudo1");
-
-                conteudo1.style.display = "none";
-
-                var conteudo2 = document.getElementById("conteudo2");
-                conteudo2.style.display = "block";
-
-
-                checarProdutos();
-            }
-
-            function checarProdutos(){
-
-            var checkboxes = document.querySelectorAll('input[type=checkbox]:checked');
-            for (var i = 0; i < checkboxes.length; i++) {
-            produtosParaBusca.push(checkboxes[i].value) 
-        }
-
-            for (var i = 0; i < produtosParaBusca.length; i++) {
-            console.log(produtosParaBusca[i]);
-        }
-            carregarImagens();
-        }
-
-        function carregarImagens(){
-            var xhttp = new XMLHttpRequest();
-            xhttp.open("POST", "search.php", true);
-            xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-
-            xhttp.onreadystatechange = function(){
-                if(this.readyState == 4 && this.status == 200){
-                    document.getElementById("conteudo2").innerHTML = this.responseText
-                }
-            };
-
-            xhttp.send("produtos" + JSON.stringify(produtosParaBusca));
-        }
-
-
-
-            
-        </script>
     </head>
     <body>
         <header class="navigation">
@@ -104,7 +51,7 @@
             </div>            
         </header>
         <div class="all">
-            <section class="conteudo" id="conteudo1">
+            <section class="conteudo">
                         <div class="clearfix">
             
                             <h1 class="search-title">
@@ -141,17 +88,12 @@
                                         </label>
                                     </div>
                                 </div>
-                                <button class="buscar" type="submit" onclick="construirExibicaoProdutos()">
+                                <button class="buscar" type="submit">
                                     <span class="icon-text">BUSCAR</span>
                                     <span class="icon-menu"><i class="fa fa-chevron-circle-right"></i></span>
                                 </button>
                             <!-- </form> -->
                     </div>
-            </section>
-            <section class="conteudo" id="conteudo2">
-                <p>
-                    AQUI EU VOU EXIBIR OS PRODUTOS QUE VOCÊ SELECIONOU
-                </p>
             </section>
         </div>
        
