@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<?php
+
+include_once('tools.php');
+session_start();
+
+?>
 <html lang="pt-br">
 <head>
     <title>HOME - Virtual Agro</title>
@@ -51,12 +57,60 @@
         }
 
         function voltar(){
-            document.getElementById('conteudo1').style.display = 'block';
-            document.getElementById('conteudo2').style.display = 'none';
+
+           document.getElementById('conteudo1').style.display = 'block';
+           document.getElementById('conteudo2').style.display = 'none';
+           location.reload();
+
+       }
+
+       function back(){
+        document.getElementById('detalhesproduto').style.display = 'none';
+        document.getElementById('telaprodutos').style.display = 'block';
+        document.getElementById('detalhesproduto').remove();
+        rollbackBotaoVoltar();
+    }
+
+    function rollbackBotaoVoltar(){
+        document.getElementById('botaoVoltar').setAttribute("onclick","voltar()");
+    }
+
+    function exibirProdutoDetails(idProd){
+        document.getElementById('botaoVoltar').setAttribute("onclick","back()");
+        document.getElementById('conteudo2').style.display = 'block';
+        document.getElementById('telaprodutos').style.display = 'none';
+
+
+        var divDetalhesProduto = document.createElement("div");
+
+        divDetalhesProduto.setAttribute("id", "detalhesproduto");
+
+
+
+
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                    //var resposta = document.createTextNode(this.responseText);
+                    //divDetalhesProduto.textContent = this.responseText;
+                    document.getElementById("conteudo2").appendChild(divDetalhesProduto);
+                    document.getElementById('detalhesproduto').style.display = 'block';
+                    document.getElementById("detalhesproduto").innerHTML = this.responseText;
+
+                }
+            };
+            xhttp.open("GET", "produto.php?idProduto="+ idProd , true);
+
+            //xhttp.setRequestHeader("Content-Type", "application/json");
+
+            xhttp.send();
+
+
         }
 
 
-</script>
+    </script>
 
 
 
@@ -70,11 +124,8 @@
                         <i class="fa fa-bars"></i>
                     </span>
                     <span class="text-menu">MENU</span>
+
                     <?php 
-
-                    include_once('tools.php');
-                    session_start();
-
                     if(!isset($_SESSION['id'])){
                      construirMenuLateralSemLogin(); 
                  }else{
@@ -172,7 +223,7 @@
         </section>
         <section class="conteudo" id="conteudo2">
             <h2> PÁGINA EM MANUTENÇÃO !!! </h2>
-            <h2> <a href='' onclick="voltar()"> VOLTAR </a> </h2>
+            <h2> <a href='#' onclick="voltar()" id="botaoVoltar"> VOLTAR </a> </h2>
         </section>
     </div>
 
