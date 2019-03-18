@@ -6,7 +6,8 @@
 
 include_once('tools.php');
 
-// if(!isset($_GET['categoria'])){
+//echo "<h2> <a href='' onclick=voltar()> VOLTAR </a> </h2>";
+
 if(empty($_GET['categoria'])){
 	// SE NÃO MANDOU NENHUMA CATEGORIA NO GET, IMPRIMIR TODOS OS PRODUTOS.
 
@@ -16,20 +17,21 @@ if(empty($_GET['categoria'])){
 
 	$display = mysqli_query($GLOBALS['dao'], $comando);
 
-	echo "<table border=5>";
-	echo "<th> IMAGEM </th>";
-	echo "<th> NOME </th>";
+	//echo "<table border=5>";
+	//echo "<th> IMAGEM </th>";
+	//echo "<th> NOME </th>";
 
 	while ($coluna = mysqli_fetch_array($display)) { // CADA COLUNA PRA SER PREENCHIDA É UM <tr>, CADA VALOR DESSA COLUNA É UM <td>
 		echo "<tr>";
 
-		echo "<td>". getImagemProduto($coluna['id']) . "</td>";
+		echo "<td>". "<a href=produto?idProduto=$coluna[id]>".getImagemProduto($coluna['id']) . "</a>". "</td>"; // IMAGEM COM LINK
+		//echo "<td>". getImagemProduto($coluna['id']) . "</td>"; // IMAGEM SEM LINK
 		echo "<td>" . mb_strtoupper($coluna['nome']) . "</td>";
 
 		echo "</tr>";
 	}
 
-	echo "</table>";
+	//echo "</table>";
 
 }else{ //MANDOU CATEGORIA, ou um array de categorias
 
@@ -47,20 +49,21 @@ if(empty($_GET['categoria'])){
 
 	$display = mysqli_query($GLOBALS['dao'],$comando);
 
-	echo "<table border=5>";
-	echo "<th> IMAGEM </th>";
-	echo "<th> NOME </th>";
+	//echo "<table border=5>";
+	//echo "<th> IMAGEM </th>";
+	//echo "<th> NOME </th>";
 
 	while ($coluna = mysqli_fetch_array($display)) { // CADA COLUNA PRA SER PREENCHIDA É UM <tr>, CADA VALOR DESSA COLUNA É UM <td>
 		echo "<tr>";
 
-		echo "<td>". getImagemProduto($coluna['id']) . "</td>";
+		echo "<td>". "<a href=produto?idProduto=$coluna[id]>".getImagemProduto($coluna['id']) . "</a>". "</td>"; // IMAGEM COM LINK
+		//echo "<td>". getImagemProduto($coluna['id']) . "</td>"; // IMAGEM SEM LINK
 		echo "<td>" . mb_strtoupper($coluna['nome']) . "</td>";
 
 		echo "</tr>";
 	}
 
-	echo "</table>";
+	//echo "</table>";
 
 
 }

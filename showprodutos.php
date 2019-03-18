@@ -24,7 +24,7 @@
 			var xhttp = new XMLHttpRequest();
 			xhttp.onreadystatechange = function() {
 				if (this.readyState == 4 && this.status == 200) {
-					document.getElementById("campo").innerHTML = this.responseText;
+					document.getElementById("campo").innerHTML += this.responseText;
 				}
 			};
 			xhttp.open("GET", "search.php?categoria="+ categorias, true);

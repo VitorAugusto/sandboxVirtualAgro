@@ -84,6 +84,8 @@ function getImagemProduto($idProd){
 
 	$comandoGetImagemProduto = "SELECT imagemprincipal FROM produtos WHERE id = '$idProd'";
 
+	mysqli_query($GLOBALS['dao'], "set names 'utf8'");
+
 	$display = mysqli_query($GLOBALS['dao'], $comandoGetImagemProduto);
 
 	$imagem = mysqli_fetch_array($display);
