@@ -49,7 +49,7 @@ https://www.sosfeira.com.br/frutas/abacaxi
 
 					if(produtoExiste($_GET['idProduto'])){
 						ECHO "ESSE PRODUTO EXISTE";
-						getImagemProduto($_GET['idProduto']);
+						echo getImagemProduto($_GET['idProduto']);
 					}else{
 						ECHO "ESSE PRODUTO NÃO EXISTE";
 					}

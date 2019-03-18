@@ -84,13 +84,11 @@ function getImagemProduto($idProd){
 
 	$comandoGetImagemProduto = "SELECT imagemprincipal FROM produtos WHERE id = '$idProd'";
 
-	mysqli_query($GLOBALS['dao'], "set names 'utf8'");
-
 	$display = mysqli_query($GLOBALS['dao'], $comandoGetImagemProduto);
 
 	$imagem = mysqli_fetch_array($display);
 
-	echo "<img src=imagens/".$imagem['imagemprincipal'] . " width=200px align=left>";
+	return ("<img src=imagens/".$imagem['imagemprincipal'] . " width=200px>");
 }
 
 function produtoTemImagensAdicionais($idProd){ //VERIFICA SE O PRODUTO TEM IMAGENS ADIDIONAIS - ADD1 E ADD2.
