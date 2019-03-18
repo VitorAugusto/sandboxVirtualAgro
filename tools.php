@@ -90,7 +90,7 @@ function getImagemProduto($idProd){
 
 	$imagem = mysqli_fetch_array($display);
 
-	echo "<img src=imagens/".$imagem['imagemprincipal'] . " width=200px align=left>";
+	return ("<img src=imagens/".$imagem['imagemprincipal'] . " width=200px>");
 }
 
 function produtoTemImagensAdicionais($idProd){ //VERIFICA SE O PRODUTO TEM IMAGENS ADIDIONAIS - ADD1 E ADD2.

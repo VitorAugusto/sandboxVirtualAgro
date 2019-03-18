@@ -35,6 +35,12 @@ section {
     display: block;
 }
 
+#conteudo2{
+    margin-left: 10px;
+    display: none;
+}
+
+
 footer {
     clear: both;
 }
