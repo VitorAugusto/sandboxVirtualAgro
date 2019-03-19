@@ -9,9 +9,9 @@ function getNome($itemA, $itemB){
 	$login = $itemA;
 	$senha = $itemB;
 
-  	$displayNome = mysqli_query($GLOBALS['dao'], "SELECT nome FROM cadastros WHERE username = '$login' AND senha= '$senha'");
+	$displayNome = mysqli_query($GLOBALS['dao'], "SELECT nome FROM cadastros WHERE username = '$login' AND senha= '$senha'");
 
-  	return (mysqli_fetch_row($displayNome)[0]);
+	return (mysqli_fetch_row($displayNome)[0]);
 
 }
 
@@ -20,9 +20,9 @@ function getId($itemA, $itemB){
 	$login = $itemA;
 	$senha = $itemB;
 
-  	$displayId = mysqli_query($GLOBALS['dao'], "SELECT id FROM cadastros WHERE username = '$login' AND senha= '$senha'");
+	$displayId = mysqli_query($GLOBALS['dao'], "SELECT id FROM cadastros WHERE username = '$login' AND senha= '$senha'");
 
-  	return (mysqli_fetch_row($displayId)[0]);
+	return (mysqli_fetch_row($displayId)[0]);
 
 }
 
@@ -46,11 +46,11 @@ function getIdAnunciosIdAnunciante($itemA){ //itemA recebe o ID DO ANUNCIANTE, e
 function nomeDoAnunciante($idAnun){
 
 
-   $selectNomeAnunciante = "select nome from cadastros WHERE ID = '$idAnun' ";
+	$selectNomeAnunciante = "select nome from cadastros WHERE ID = '$idAnun' ";
 
-   mysqli_query($GLOBALS['dao'], "set names 'utf8'");
+	mysqli_query($GLOBALS['dao'], "set names 'utf8'");
 
-   $displayAnunciante = mysqli_query($GLOBALS['dao'],$selectNomeAnunciante);
+	$displayAnunciante = mysqli_query($GLOBALS['dao'],$selectNomeAnunciante);
 
 	while ($coluna = mysqli_fetch_array($displayAnunciante)) {
 		echo $coluna['nome'];
@@ -161,9 +161,9 @@ function getAnunciantes($produto){ //RETORNA OS ANUNCIANTES DAQUELE CERTO produt
 
 			// CADA COLUNA PRA SER PREENCHIDA É UM <tr>, CADA VALOR DESSA COLUNA É UM <td>
 
-		echo "<tr>";
+			echo "<tr>";
 
-		echo "<td>";
+			echo "<td>";
 		nomeDoAnunciante($coluna['id_anunciante']);  //PREENCHE NOME
 		echo "</td>";
 		echo "<td>". "(73) ".rand() . "</td>"; //PREENCHE TELEFONE
@@ -171,8 +171,23 @@ function getAnunciantes($produto){ //RETORNA OS ANUNCIANTES DAQUELE CERTO produt
 
 		echo "</tr>";
 
-		}
+	}
 
+}
+
+}
+
+function getNumeroAnunciantes($produto){
+
+	if(existemAnunciantes($produto)){
+
+		$comandoGetNumeroAnuciantes = "SELECT * from anuncios WHERE id_produto = '$produto'";
+
+		$display = mysqli_query($GLOBALS['dao'], $comandoGetNumeroAnuciantes);
+
+		return (mysqli_num_rows($display));
+	}else{
+		return ('0');
 	}
 
 }
@@ -222,10 +237,10 @@ function construirMenuLateralSemLogin(){
 	echo "<ul class='submenu'>";
 	echo "<li><a href='home.php'>Home</a></li>";
 	echo "<li><a href='index.php'>Login</a></li>";
-    echo "<li><a href='cadastro.php'>Cadastre-se</a></li>";
+	echo "<li><a href='cadastro.php'>Cadastre-se</a></li>";
 	echo "<li><a href='faleconosco.php'>Fale Conosco</a></li>";
-    echo "<li><a href='faq.php'>FAQ</a></li>";
-    echo "</ul>";
+	echo "<li><a href='faq.php'>FAQ</a></li>";
+	echo "</ul>";
 	echo "</div>";
 }
 
@@ -234,13 +249,13 @@ function construirMenuLateralComLogin(){
 	echo " <div class='box-menu'>";
 	echo "<ul class='submenu'>";
 	echo "<li><a href='home.php'>Home</a></li>";
-    echo "<li><a href='criarAnuncio.php'>Criar Anúncio</a></li>";
-    echo "<li><a href='meusAnuncios.php'>Meus Anúncios</a></li>";
+	echo "<li><a href='criarAnuncio.php'>Criar Anúncio</a></li>";
+	echo "<li><a href='meusAnuncios.php'>Meus Anúncios</a></li>";
 	echo "<li><a href='faleconosco.php'>Fale Conosco</a></li>";
 	echo "<li><a href='faq.php'>FAQ</a></li>";
 	echo "<li><a href='logout.php'>Deslogar</a></li>";
-    echo "</ul>";
-    echo "</div> ";
+	echo "</ul>";
+	echo "</div> ";
 }
 
 function construirMenuLogin(){

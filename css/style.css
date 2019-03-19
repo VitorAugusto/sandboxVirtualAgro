@@ -35,7 +35,7 @@ section {
     display: block;
 }
 
-#conteudo2{
+#conteudo2{ 
     margin-left: 10px;
     display: none;
 }
@@ -48,7 +48,15 @@ footer {
 span {
     font-weight: 700;
     color: #ffffff;
+   /* color: green;*/
 }
+
+.spanProdutos{
+    font-weight: 700;
+    color: green;
+}
+
+
 
 input{
     padding: 9px;

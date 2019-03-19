@@ -4,6 +4,8 @@
 
 //ESSA PÁGINA FAZ TODO O MOTOR DE BUSCA DE IMAGENS DO PRODUTO PELA CATEGORIA ESCOLHIDA.
 
+//ESSE PÁGINA ESTÁ MUITO ACOPLADA À HOME.
+
 include_once('tools.php');
 
 //echo "<h2> <a href='' onclick=voltar()> VOLTAR </a> </h2>";
@@ -19,18 +21,29 @@ if(empty($_GET['categoria'])){
 
 	$display = mysqli_query($GLOBALS['dao'], $comando);
 
-	echo "<table border=5>";
-	echo "<th> IMAGEM </th>";
-	echo "<th> NOME </th>";
+	//echo "<table border=5>";
+	//echo "<th> IMAGEM </th>";
+	//echo "<th> NOME </th>";
 
 	while ($coluna = mysqli_fetch_array($display)) { // CADA COLUNA PRA SER PREENCHIDA É UM <tr>, CADA VALOR DESSA COLUNA É UM <td>
-		echo "<tr>";
-
-		echo "<td>". "<a href=# onclick=exibirProdutoDetails($coluna[id])>".getImagemProduto($coluna['id']) . "</a>". "</td>"; // IMAGEM COM LINK
+		echo "<ul class='list-group'>";
+		//echo "<tr>";
+		echo "<li class='list-group-item d-flex justify-content-between align-items-center'>". 
+		"<a href=# onclick=exibirProdutoDetails($coluna[id])>".
+		getImagemProduto($coluna['id']) . 
+		"</a>". "<span class='spanProdutos'> ANUNCIANTES : </span>". "<span class='badge badge-primary badge-pill'>". getNumeroAnunciantes($coluna['id']) . "</span>" . "</li>";
+		//echo "<td>". "<a href=# onclick=exibirProdutoDetails($coluna[id])>".getImagemProduto($coluna['id']) . "</a>". "</td>"; // IMAGEM COM LINK
 		//echo "<td>". getImagemProduto($coluna['id']) . "</td>"; // IMAGEM SEM LINK
-		echo "<td>" . mb_strtoupper($coluna['nome']) . "</td>";
+		echo "<li class='list-group-item'>" .
+		 mb_strtoupper($coluna['nome']) . 
+		// "<span class='badge badge-primary badge-pill'>14</span>".
+		 "</li>";
 
-		echo "</tr>";
+		//echo "</tr>";
+
+		echo "</ul>";
+
+		echo "<br>";
 	}
 
 	echo "</table>";
@@ -51,22 +64,24 @@ if(empty($_GET['categoria'])){
 
 	$display = mysqli_query($GLOBALS['dao'],$comando);
 
-	echo "<table border=5>";
-	echo "<th> IMAGEM </th>";
-	echo "<th> NOME </th>";
+	//echo "<table border=5>";
+	//echo "<th> IMAGEM </th>";
+	//echo "<th> NOME </th>";
 
 	while ($coluna = mysqli_fetch_array($display)) { // CADA COLUNA PRA SER PREENCHIDA É UM <tr>, CADA VALOR DESSA COLUNA É UM <td>
-		echo "<tr>";
+		//echo "<tr>";
+
+		echo "<ul>";
 
 		//echo "<td>". "<a href=produto?idProduto=$coluna[id]>".getImagemProduto($coluna['id']) . "</a>". "</td>"; // IMAGEM COM LINK
 		//echo "<td>". getImagemProduto($coluna['id']) . "</td>"; // IMAGEM SEM LINK
-		echo "<td>". "<a href=# onclick=exibirProdutoDetails($coluna[id])>".getImagemProduto($coluna['id']) . "</a>". "</td>";
-		echo "<td>" . mb_strtoupper($coluna['nome']) . "</td>";
+		echo "<li>". "<a href=# onclick=exibirProdutoDetails($coluna[id])>".getImagemProduto($coluna['id']) . "</a>". "</li>";
+		echo "<li>" . mb_strtoupper($coluna['nome']) . "</li>";
 
-		echo "</tr>";
+		echo "</ul>";
 	}
 
-	echo "</table>";
+	//echo "</table>";
 
 
 }
