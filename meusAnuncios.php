@@ -30,7 +30,7 @@
 					</button>
 				</div>
 				<img class="logo-header" src="imagens/logo/virtual-agro-logo-nome.png">
-				<div class="right-side">                                        
+				<div class="right-side">                                      
 				</div>                
 			</div>            
 		</header>
