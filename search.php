@@ -4,6 +4,8 @@
 
 //ESSA PÁGINA FAZ TODO O MOTOR DE BUSCA DE IMAGENS DO PRODUTO PELA CATEGORIA ESCOLHIDA.
 
+//ESSE PÁGINA ESTÁ MUITO ACOPLADA À HOME.
+
 include_once('tools.php');
 
 //echo "<h2> <a href='' onclick=voltar()> VOLTAR </a> </h2>";
