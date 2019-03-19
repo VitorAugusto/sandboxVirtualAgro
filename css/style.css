@@ -227,7 +227,7 @@ li:hover a {
 }
 
 
-ul:after {
+.navigation ul:after {
     width: 0px;
     height: 0px;
     position: absolute;
@@ -412,11 +412,116 @@ ul:after {
     padding-bottom: 50px;
 }
 
-
 .conteudo h3, h4{
     margin-top: 20px;
     margin-bottom: 0;
     color: #1b6e5c
+}
+
+form.form-cadastro {
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    position: relative;
+    text-align: center;
+
+}
+form.form-cadastro fieldset {
+    background: #fff;
+
+    border: 0 none;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    box-shadow: 0 0 15px 1px rgba(0,0,0,0.4);
+    padding: 20px 30px;
+    box-sizing: border-box;
+    width: 80%;
+    margin: 0 10%;
+    position: absolute;
+}
+
+form.form-cadastro fieldset:not(:first-of-type) {
+    display: none;
+}
+form.form-cadastro input, form.form-cadastro textarea {
+    padding: 10px;
+    border: 1px solid #2a7766;
+    border-radius: 20px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    outline: none;
+    box-sizing: border-box;
+    width: 100%;
+    font: 14px tahoma;
+    margin-bottom: 10px;
+}
+
+form.form-cadastro h2, form.form-cadastro h3 {
+    font-size: 20px;
+    float: left;
+    margin-top: 0;
+    margin-bottom: 4%;
+}
+
+form.form-cadastro .acao {
+    width: 100px;
+    background: #2a7766;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    float: left;
+    padding: 12px 0;
+    margin-right: 20px;
+}
+form.form-cadastro .progresso {
+    margin-bottom: 30px;
+    overflow: hidden;
+    counter-reset: step;
+}
+form.form-cadastro ul{
+    padding-left: 10px;
+}
+form.form-cadastro .progresso li{
+    list-style-type: none;
+    color: #2a7766;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 20px;
+    float: left;
+    width: 33.33%;
+    position: relative;    
+
+}
+form.form-cadastro .progresso li:before{
+    content: counter(step);
+    counter-increment: step;
+    width: 40px;
+    display: block;
+    line-height: 40px;
+    background: #fff;
+    color: #2a7766;
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 40px;
+    margin: 0 auto 10px;
+}
+form.form-cadastro .progresso li:after{
+    content: '';
+    width: 100%;
+    background: #fff;
+    height: 2px;
+    position: absolute;
+    top: 20px;
+    left: -50%;
+    z-index: -1;
+}
+form.form-cadastro .progresso li:first-child:after{
+    content: none;
+}
+form.form-cadastro .progresso li.ativo:after, form.form-cadastro .progresso li.ativo:before{
+    background: #2a7766;
+    color: #fff;
+    text-shadow: 0 2px 0;
 }
 
 a {

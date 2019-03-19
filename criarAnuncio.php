@@ -47,13 +47,13 @@
 						header('location:index.php');
 					}
 				?>
-
+<!--
 				<form action="preAnuncio.php" method="post">
 
 					<label> QUERO ANUNCIAR </label>
 		 			<select required="" name="produto">
 		 				<option value="">--</option>
-		 				<!-- VAI CONSTRUIR OS OPTION -->
+		 				 VAI CONSTRUIR OS OPTION 
 		 				<?php
 		 					listarTodosProdutos();
 		 				?>
@@ -98,12 +98,78 @@
 	                	</div>
 
 					<label>OBSERVAÇÕES</label>
-					<!-- <input type="textarea" name="textoAnuncio" required=""> -->
+					 <input type="textarea" name="textoAnuncio" required=""> 
 					<textarea name="textoAnuncio"></textarea>
 					<button class="buscar" type="submit">
                 		<span class="icon-text">ENVIAR</span>
             	        <span class="icon-menu"><i class="fa fa-chevron-circle-right"></i></span>
         	    	</button>
+				</form>
+				-->
+				<form class="form-cadastro" action="accessManager.php?tipoOperacao=cadastro" method="POST">
+					<ul class="progresso">
+						<li class="ativo">Início</li>
+						<li>Meio</li>
+						<li>Fim</li>
+					</ul>
+					<fieldset>
+						<h2>Novo Anúncio</h2>
+						<h3>Quero anúnciar</h3>
+						<select required="" name="produto">
+		 				<option value="">--</option>
+							<?php
+								listarTodosProdutos();
+							?>
+						 </select>    
+						 <input type="submit" name="next" class="next acao" value="Próximo">        	    	        	    	
+    	    	
+					</fieldset>
+					<fieldset>
+						<h2>Novo Anúncio</h2>
+						<h3>Desejo anúnciar como...</h3>
+						<div class="check-box">
+								<input id="" class="" type="radio" name="atributo" value="un" alt="Unidade">
+									<label for="">
+										<span class="icon-menu"><span class="icon"></span></span>
+										<span class="icon-text">UNIDADE</span>
+									</label>
+							</div>
+							<div class="check-box">
+								<input id="" class="" type="radio" name="atributo" value="1/2kg" alt="1/2kg">
+									<label for="">
+										<span class="icon-menu"><span class="icon"></span></span>
+										<span class="icon-text">1/2KG</span>
+									</label>
+							</div>
+							<div class="check-box">
+								<input id="" class="" type="radio" name="atributo" value="pacote" alt="Pacote">
+									<label for="">
+										<span class="icon-menu"><span class="icon"></span></span>
+										<span class="icon-text">PACOTE</span>
+									</label>
+							</div>
+							<div class="check-box">
+								<input id="" class="" type="radio" name="atributo" value="bandeja" alt="Bandeja">
+									<label for="">
+										<span class="icon-menu"><span class="icon"></span></span>
+										<span class="icon-text">BANDEJA</span>
+									</label>
+							</div>												
+						<input type="submit" name="prev" class="prev acao" value="Anterior">
+						<input type="submit" name="next" class="next acao" value="Próximo">        	    	        	    	
+					</fieldset>
+					<fieldset>
+						<h2>Novo Anúncio</h2><br>
+						<h3>Observações</h3>
+
+						<textarea name="textoAnuncio"></textarea>
+						<input type="submit" name="prev" class="prev acao" value="Anterior">
+						<input class="acao" type="submit" value="Finalizar">
+					</fieldset>
+
+					<script type="text/javascript" src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+					<script type="text/javascript" src="js/functions.js"></script>
+
 				</form>
 
 			<h2> <a href='site.php'> VOLTAR </a> </h2>

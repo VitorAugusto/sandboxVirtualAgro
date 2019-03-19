@@ -72,7 +72,7 @@ https://www.sosfeira.com.br/frutas/abacaxi
 
 			</section>
 		</div>		               
-		<!-- <footer>
+		<footer>
 			<div>
 				<a class="brand" href="#">
 					<img class="logo" src="./imagens/logo/virtual-agro-logo-png.png" alt="">            
@@ -80,6 +80,6 @@ https://www.sosfeira.com.br/frutas/abacaxi
 				<hr>
 				<div class="copyright">Copyright 2019 © <a href="#"><b>Virtual Agro</b></a>.</div>
 			</div>
-		</footer> -->
+		</footer> 
 	</body>
 </html>

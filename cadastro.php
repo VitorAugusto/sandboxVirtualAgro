@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>CADASTRO</title>
+		<title>CADASTRO - Virtual Agro</title>
 		<meta charset="UTF-8">
 		<link rel="icon" type="image/png" sizes="64x64" href="imagens/logo/virtual-agro-logo-png.png">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -41,7 +41,7 @@
 		</header>
 		<div class="all">
 			<section class="conteudo">
-				<form action="accessManager.php?tipoOperacao=cadastro" method="POST">
+				<!-- <form action="accessManager.php?tipoOperacao=cadastro" method="POST">
 					<div class="login-senha">
 						<input type="text" name="campoNome" required="" placeholder="NOME">
 						<button class="login" type="submit" disabled="disabled">
@@ -64,6 +64,45 @@
                 		<span class="icon-text">ENVIAR</span>
             	        <span class="icon-menu"><i class="fa fa-chevron-circle-right"></i></span>
         	    	</button>				
+				</form> -->
+
+				<form class="form-cadastro" action="accessManager.php?tipoOperacao=cadastro" method="POST">
+					<ul class="progresso">
+						<li class="ativo">Início</li>
+						<li>Meio</li>
+						<li>Fim</li>
+					</ul>
+					<fieldset>
+						<h2>Configurações da conta</h2>
+						<h3>Configurações Iníciais</h3>
+						<input type="text" name="campoNome" required="" placeholder="NOME">
+						<input type="text" name="campoUsername" required="" placeholder="USERNAME">
+						<input type="password" name="campoSenha" required="" placeholder="SENHA">
+						<input  name="next" class="next acao" type="submit" value="Próximo">        	    	
+
+					</fieldset>
+					<fieldset>
+						<h2>Configurações da conta</h2>
+						<h3>Configurações Central</h3>
+						<input type="text" name="campoNome" required="" placeholder="NOME">
+						<input type="text" name="campoUsername" required="" placeholder="USERNAME">
+						<input type="password" name="campoSenha" required="" placeholder="SENHA">
+						<input type="submit" name="prev" class="prev acao" value="Anterior">
+						<input type="submit" name="next" class="next acao" value="Próximo">        	    	        	    	
+					</fieldset>
+					<fieldset>
+						<h2>Configurações da conta</h2>
+						<h3>Configurações Finais</h3>
+						<input type="text" name="campoNome" required="" placeholder="NOME">
+						<input type="text" name="campoUsername" required="" placeholder="USERNAME">
+						<input type="password" name="campoSenha" required="" placeholder="SENHA">
+						<input type="submit" name="prev" class="prev acao" value="Anterior">
+						<input class="acao" type="submit" value="Finalizar">
+					</fieldset>
+
+					<script type="text/javascript" src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+					<script type="text/javascript" src="js/functions.js"></script>
+
 				</form>
 			</section>
 		</div>		               
