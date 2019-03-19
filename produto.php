@@ -6,7 +6,7 @@ https://www.sosfeira.com.br/frutas/abacaxi
  -->
 <html>
 	
-	<head>
+	<!-- <head>
 
 
 		<title>PRODUTO - VIRTUAL AGRO</title>
@@ -23,19 +23,19 @@ https://www.sosfeira.com.br/frutas/abacaxi
 					<div class="left-side">
 						<button type="button" class="btn-menu  js-btn-menu">
 						<span class="icon-menu"><i class="fa fa-bars"></i></span>
-						<span class="text-menu">MENU</span>
+						<span class="text-menu">MENU</span> -->
                         <?php 
 
-                            include_once('tools.php');
-                            session_start();
+                            // include_once('tools.php');
+                            // session_start();
 
-                            if(!isset($_SESSION['id'])){
-                                construirMenuLateralSemLogin(); 
-                            }else{
-                                construirMenuLateralComLogin();
-                            }
+                            // if(!isset($_SESSION['id'])){
+                            //     construirMenuLateralSemLogin(); 
+                            // }else{
+                            //     construirMenuLateralComLogin();
+                            // }
                         ?>
-					</button>
+					<!-- </button>
 				</div>
 				<img class="logo-header" src="imagens/logo/virtual-agro-logo-nome.png">
 				<div class="right-side">                                        
@@ -43,7 +43,7 @@ https://www.sosfeira.com.br/frutas/abacaxi
 			</div>            
 		</header>
 		<div class="all">
-			<section class="conteudo">				
+			<section class="conteudo">	 -->			
 				<?php
 					include_once('tools.php');
 
@@ -70,9 +70,9 @@ https://www.sosfeira.com.br/frutas/abacaxi
 				}
 			?>
 
-			</section>
+			<!-- </section>
 		</div>		               
-		<!-- <footer>
+		<footer>
 			<div>
 				<a class="brand" href="#">
 					<img class="logo" src="./imagens/logo/virtual-agro-logo-png.png" alt="">            
@@ -80,6 +80,6 @@ https://www.sosfeira.com.br/frutas/abacaxi
 				<hr>
 				<div class="copyright">Copyright 2019 © <a href="#"><b>Virtual Agro</b></a>.</div>
 			</div>
-		</footer> -->
-	</body>
+		</footer>
+	</body> -->
 </html>
