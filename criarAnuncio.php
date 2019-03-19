@@ -106,7 +106,8 @@
         	    	</button>
 				</form>
 				-->
-				<form class="form-cadastro" action="accessManager.php?tipoOperacao=cadastro" method="POST">
+				<!--<form class="form-cadastro" action="accessManager.php?tipoOperacao=cadastro" method="POST">-->
+				<form class="form-cadastro" action="preAnuncio.php" method="post">
 					<ul class="progresso">
 						<li class="ativo">Início</li>
 						<li>Meio</li>

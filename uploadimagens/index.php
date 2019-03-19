@@ -1,3 +1,5 @@
+
+
 <?php
 
 
@@ -27,7 +29,7 @@ for ($i=0; $i < sizeof($_FILES['image']['name']); $i++) {
 
 	$comandoSQL = "INSERT INTO produtos (nome,categoria,imagemprincipal) VALUES ('$nomeSemUnder','$categoria','$imagem')";
 
-	//mysqli_query($minhaConexao, "set names 'utf8'");
+	mysqli_query($minhaConexao, "set names 'utf8'");
 
 	mysqli_query($minhaConexao,$comandoSQL);
 
@@ -61,6 +63,7 @@ for ($i=0; $i < sizeof($_FILES['image']['name']); $i++) {
 <html>
 
 <head>
+<meta charset="UTF-8">
 	<title>
 		Image Upload
 
@@ -72,7 +75,7 @@ for ($i=0; $i < sizeof($_FILES['image']['name']); $i++) {
 	<h3>ADICIONAR PRODUTOS AO VIRTUAL AGRO </h3>
 
 
-	<form method="post" action="index.php" enctype="multipart/form-data" accept-charset="iso-8859-1" >
+	<form method="post" action="index.php" enctype="multipart/form-data">
 
 		<input type="file" name="image[]" required="" multiple="multiple">
 
