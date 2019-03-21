@@ -54,7 +54,7 @@
 		 			<select required="" name="produto">
 		 				<option value="">--</option>
 		 				 VAI CONSTRUIR OS OPTION 
-		 				<?php
+		 				?php
 		 					listarTodosProdutos();
 		 				?>
 		 			</select>
@@ -111,61 +111,35 @@
 					<ul class="progresso">
 						<li class="ativo">Início</li>
 						<li>Meio</li>
-						<li>Fim</li>
+						<li>Fim</li>						
 					</ul>
+					
 					<fieldset>
 						<h2>Novo Anúncio</h2>
-						<h3>Quero anúnciar</h3>
-						<select required="" name="produto">
-		 				<option value="">--</option>
-							<?php
-								listarTodosProdutos();
-							?>
-						 </select>    
-						 <input type="submit" name="next" class="next acao" value="Próximo">        	    	        	    	
-    	    	
-					</fieldset>
-					<fieldset>
-						<h2>Novo Anúncio</h2>
-						<h3>Desejo anúnciar como...</h3>
-						<div class="check-box">
-								<input id="" class="" type="radio" name="atributo" value="un" alt="Unidade">
-									<label for="">
-										<span class="icon-menu"><span class="icon"></span></span>
-										<span class="icon-text">UNIDADE</span>
-									</label>
-							</div>
-							<div class="check-box">
-								<input id="" class="" type="radio" name="atributo" value="1/2kg" alt="1/2kg">
-									<label for="">
-										<span class="icon-menu"><span class="icon"></span></span>
-										<span class="icon-text">1/2KG</span>
-									</label>
-							</div>
-							<div class="check-box">
-								<input id="" class="" type="radio" name="atributo" value="pacote" alt="Pacote">
-									<label for="">
-										<span class="icon-menu"><span class="icon"></span></span>
-										<span class="icon-text">PACOTE</span>
-									</label>
-							</div>
-							<div class="check-box">
-								<input id="" class="" type="radio" name="atributo" value="bandeja" alt="Bandeja">
-									<label for="">
-										<span class="icon-menu"><span class="icon"></span></span>
-										<span class="icon-text">BANDEJA</span>
-									</label>
-							</div>												
-						<input type="submit" name="prev" class="prev acao" value="Anterior">
-						<input type="submit" name="next" class="next acao" value="Próximo">        	    	        	    	
-					</fieldset>
-					<fieldset>
-						<h2>Novo Anúncio</h2><br>
-						<h3>Observações</h3>
+						<h3>Qual produto anúnciar...</h3>
+						<input type="text" name="campoNome" required="" placeholder="NOME">
+						<input type="text" name="campoUsername" required="" placeholder="USERNAME">
+						<input type="password" name="campoSenha" required="" placeholder="SENHA">
+						<input type="button" name="next" class="next acao" value="Próximo">        	    	
 
-						<textarea name="textoAnuncio"></textarea>
-						<input type="submit" name="prev" class="prev acao" value="Anterior">
-						<input class="acao" type="submit" value="Finalizar">
+					</fieldset>
+					<fieldset>
+						<h2>Novo Anúncio</h2>
+						<h3>Como deseja anúnciar...</h3>
+						<input type="text" name="campoNome" required="" placeholder="NOME">
+						<input type="text" name="campoUsername" required="" placeholder="USERNAME">
+						<input type="password" name="campoSenha" required="" placeholder="SENHA">
+						<input type="button" name="prev" class="prev acao" value="Anterior">
+						<input type="button" name="next" class="next acao" value="Próximo">        	    	        	    	
+					</fieldset>
+					<fieldset>
+						<h2>Configurações finais</h2>
+						<h3>Confirmar anúncio</h3>
+						<input type="text" name="campoNome" required="" placeholder="NOME">
+						<input type="text" name="campoUsername" required="" placeholder="USERNAME">
+						<input type="password" name="campoSenha" required="" placeholder="SENHA">
+						<input type="button" name="prev" class="prev acao" value="Anterior">
+						<input type="submit" class="acao" value="Finalizar">
 					</fieldset>
 
 					<script type="text/javascript" src="//code.jquery.com/jquery-3.3.1.min.js"></script>

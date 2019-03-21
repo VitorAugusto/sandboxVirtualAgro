@@ -66,14 +66,11 @@ for ($i=0; $i < sizeof($_FILES['image']['name']); $i++) {
 <meta charset="UTF-8">
 	<title>
 		Image Upload
-
 	</title>
 </head>
 <body>
 
-
 	<h3>ADICIONAR PRODUTOS AO VIRTUAL AGRO </h3>
-
 
 	<form method="post" action="index.php" enctype="multipart/form-data">
 

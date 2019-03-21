@@ -11,34 +11,34 @@
 	</head>
 	<body>
 	<header class="navigation">
-				<div class="container-header">
-					<div class="left-side">
-						<button type="button" class="btn-menu  js-btn-menu">
-						<span class="icon-menu"><i class="fa fa-bars"></i></span>
-						<span class="text-menu">MENU</span>
-                        <?php 
+		<div class="container-header">
+			<div class="left-side">
+				<button type="button" class="btn-menu  js-btn-menu">
+					<span class="icon-menu"><i class="fa fa-bars"></i></span>
+					<span class="text-menu">MENU</span>
+                    <?php 
 
-                            include_once('tools.php');
-                            session_start();
+                        include_once('tools.php');
+                        session_start();
 
-                            if(!isset($_SESSION['id'])){
-                                construirMenuLateralSemLogin(); 
-                            }else{
-                                construirMenuLateralComLogin();
-                            }
-                        ?>
-					</button>
-				</div>
-				<img class="logo-header" src="imagens/logo/virtual-agro-logo-nome.png">
-				<div class="right-side">                                        
-					<?php
-                        if(!isset($_SESSION['id'])) {
-                            construirMenuLogin();
+                        if(!isset($_SESSION['id'])){
+                            construirMenuLateralSemLogin(); 
+                        }else{
+                            construirMenuLateralComLogin();
                         }
                     ?>
-				</div>                
-			</div>            
-		</header>
+				</button>
+			</div>
+			<img class="logo-header" src="imagens/logo/virtual-agro-logo-nome.png">
+			<div class="right-side">                                        
+				<?php
+                    if(!isset($_SESSION['id'])) {
+                        construirMenuLogin();
+                    }
+                ?>
+			</div>                
+		</div>            
+	</header>
 		<div class="all">
 			<section class="conteudo">
 				<!-- <form action="accessManager.php?tipoOperacao=cadastro" method="POST">
@@ -66,38 +66,36 @@
         	    	</button>				
 				</form> -->
 
-				<form class="form-cadastro" action="accessManager.php?tipoOperacao=cadastro" method="POST">
+				<form class="form-cadastro" action="accessManager.php?tipoOperacao=cadastro" method="POST" name="formulario">
 					<ul class="progresso">
 						<li class="ativo">Início</li>
 						<li>Meio</li>
 						<li>Fim</li>
 					</ul>
+					<div class="erro"></div>
 					<fieldset>
 						<h2>Configurações da conta</h2>
 						<h3>Configurações Iníciais</h3>
-						<input type="text" name="campoNome" required="" placeholder="NOME">
-						<input type="text" name="campoUsername" required="" placeholder="USERNAME">
-						<input type="password" name="campoSenha" required="" placeholder="SENHA">
-						<input  name="next" class="next acao" type="submit" value="Próximo">        	    	
+						<input type="text" name="campoNome" required="" placeholder="Digite o seu nome...">
+						<input type="text" name="campoUsername" required="" placeholder="Digite um apelido...">
+						<input type="text" name="campoTelefone" required="" placeholder="Digite o seu telefone...">
+						<input type="button" name="proximo" class="next acao" value="Próximo">        	    	
 
 					</fieldset>
 					<fieldset>
 						<h2>Configurações da conta</h2>
-						<h3>Configurações Central</h3>
-						<input type="text" name="campoNome" required="" placeholder="NOME">
-						<input type="text" name="campoUsername" required="" placeholder="USERNAME">
-						<input type="password" name="campoSenha" required="" placeholder="SENHA">
-						<input type="submit" name="prev" class="prev acao" value="Anterior">
-						<input type="submit" name="next" class="next acao" value="Próximo">        	    	        	    	
+						<h3>Um sms será enviado para você!</h3>
+						<input type="text" name="" required="" placeholder="Digite o código do sms...">
+						<input type="button" name="prev" class="prev acao" value="Anterior">
+						<input type="button" name="proximo2" class="next acao" value="Próximo">        	    	        	    	
 					</fieldset>
 					<fieldset>
 						<h2>Configurações da conta</h2>
 						<h3>Configurações Finais</h3>
-						<input type="text" name="campoNome" required="" placeholder="NOME">
-						<input type="text" name="campoUsername" required="" placeholder="USERNAME">
-						<input type="password" name="campoSenha" required="" placeholder="SENHA">
-						<input type="submit" name="prev" class="prev acao" value="Anterior">
-						<input class="acao" type="submit" value="Finalizar">
+						<input type="password" name="campoSenha" required="" placeholder="Digite uma senha...">
+						<input type="password" name="confirmaSenha" required="" placeholder="Confirme a senha...">
+						<input type="button" name="prev" class="prev acao" value="Anterior">
+						<input type="submit" class="acao" value="Finalizar">
 					</fieldset>
 
 					<script type="text/javascript" src="//code.jquery.com/jquery-3.3.1.min.js"></script>

@@ -455,8 +455,8 @@ form.form-cadastro input, form.form-cadastro textarea {
     padding: 10px;
     border: 1px solid #2a7766;
     border-radius: 20px;
-    -moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
     outline: none;
     box-sizing: border-box;
     width: 100%;
@@ -513,7 +513,7 @@ form.form-cadastro .progresso li:before{
     -webkit-border-radius: 40px;
     margin: 0 auto 10px;
 }
-form.form-cadastro .progresso li:after{
+form.form-cadastro .progresso li:after {
     content: '';
     width: 100%;
     background: #fff;
@@ -523,13 +523,18 @@ form.form-cadastro .progresso li:after{
     left: -50%;
     z-index: -1;
 }
-form.form-cadastro .progresso li:first-child:after{
+form.form-cadastro .progresso li:first-child:after {
     content: none;
 }
-form.form-cadastro .progresso li.ativo:after, form.form-cadastro .progresso li.ativo:before{
+form.form-cadastro .progresso li.ativo:after, form.form-cadastro .progresso li.ativo:before {
     background: #2a7766;
     color: #fff;
     text-shadow: 0 2px 0;
+}
+.erro-css {
+    background: #f13e3e;
+    color: white;
+    font-weight: bold;
 }
 
 a {
