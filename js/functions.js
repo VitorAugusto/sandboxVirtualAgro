@@ -54,10 +54,9 @@ $(function(){
                 url: 'accessManager.php?tipoOperacao=cadastro',
                 data: {cadastrar: 'sim', campos: array},
                 success: function(valor){
-                    $('.erro').html(valor);
+                    window.location.replace("site.php");
                 }
-            });
-            
+            }); 
         }
         evento.preventDefault();
     });

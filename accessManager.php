@@ -38,20 +38,29 @@ switch ($tipoOperacao) {
     
 	  case 'cadastro':
 
-      $nome = $_POST["campoNome"];
-      $username = $_POST["campoUsername"];
-      $senha = $_POST["campoSenha"];
+      if(isset($_POST['cadastrar']) && $_POST['cadastrar'] == 'sim'):
+        $inserir = array();
+        $post = $_POST['campos'];
+        foreach($post as $indice => $valor){
+          $inserir[$valor['name']] = $valor['value'];
+        }
+        $nome     = $inserir['campoNome'];
+        $username = $inserir['campoUsername']; 
+        $senha    = $inserir['campoSenha'];
 
-      mysqli_query($GLOBALS['dao'], "set names 'utf8'");
+        mysqli_query($GLOBALS['dao'], "set names 'utf8'");
 
-      mysqli_query($GLOBALS['dao'],"INSERT INTO cadastros(nome, username, senha) VALUES ('$nome','$username','$senha')");
-      $_SESSION['login'] = $username;
-      $_SESSION['senha'] = $senha;
-      $_SESSION['nome'] = $nome;
-      $_SESSION['id'] = getId($username, $senha);
-      header('location:site.php'); //CADASTRO EFETUADO COM SUCESSO.
+        mysqli_query($GLOBALS['dao'],"INSERT INTO cadastros(nome, username, senha) VALUES ('$nome','$username','$senha')");
 
-		  break;
-  }
+        $_SESSION['login'] = $username;
+        $_SESSION['senha'] = $senha;
+        $_SESSION['nome']  = $nome;
+        $_SESSION['id']    = getId($username, $senha);
+        
+        //header('location:site.php'); //CADASTRO EFETUADO COM SUCESSO.
+        //window.location.replace("site.php");
 
+      endif;
+      break;
+    }
 ?>
