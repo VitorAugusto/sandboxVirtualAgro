@@ -38,7 +38,7 @@ $(function(){
             proximo($(this));
     });
 
-    $('input[type=submit]').click(function(evento){
+    $('input[name=login]').click(function(evento){
         var array = formulario.serializeArray();
         if(array[3].value == ''){
             $('.erro').html('<div class="erro-css"><p>Digite uma senha!</p></div>');

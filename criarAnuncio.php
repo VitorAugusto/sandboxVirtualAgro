@@ -107,28 +107,80 @@
 				</form>
 				-->
 				<!--<form class="form-cadastro" action="accessManager.php?tipoOperacao=cadastro" method="POST">-->
-				<form class="form-cadastro" action="preAnuncio.php" method="post">
+				<form class="form-cadastro"name="anunciar">
 					<ul class="progresso">
-						<li class="ativo">Início</li>
-						<li>Meio</li>
-						<li>Fim</li>						
+						<li class="ativo">Categoria</li>
+						<li>Produto</li>
+						<li>Forma</li>	
+						<li></li>					
 					</ul>
-					
+					<div class="erro"></div>
 					<fieldset>
 						<h2>Novo Anúncio</h2>
-						<h3>Qual produto anúnciar...</h3>
-						<input type="text" name="campoNome" required="" placeholder="NOME">
-						<input type="text" name="campoUsername" required="" placeholder="USERNAME">
-						<input type="password" name="campoSenha" required="" placeholder="SENHA">
-						<input type="button" name="next" class="next acao" value="Próximo">        	    	
-
+						<h3>Escolha a categoria para anúnciar...</h3>
+						<br><br><br><br>
+						<select>
+							<option value="frutas">frutas</option>
+							<option value="verduras">verduras</option>
+							<option value="legumes">legumes</option>
+							<option value="graos">graos</option>
+							<option value="temperos">temperos</option>
+							<option value="especiarias">especiarias</option>
+							<option value="outros">outros</option>
+						</select>
+						<br><br>
+						<input type="button" name="proximo" class="next acao" value="Próximo">        	    							
 					</fieldset>
 					<fieldset>
 						<h2>Novo Anúncio</h2>
-						<h3>Como deseja anúnciar...</h3>
-						<input type="text" name="campoNome" required="" placeholder="NOME">
-						<input type="text" name="campoUsername" required="" placeholder="USERNAME">
-						<input type="password" name="campoSenha" required="" placeholder="SENHA">
+						<h3>Escolha o produto...</h3>
+						<select required="" name="produto">
+							<option value="">--</option>				
+							<?php
+								listarTodosProdutos();
+							?>
+		 				</select>
+						<input type="button" name="prev" class="prev acao" value="Anterior">
+						<input type="button" name="proximo2" class="next acao" value="Próximo">        	    	
+					</fieldset>
+					<fieldset>
+						<h2>Novo Anúncio</h2>
+						<h3>Como deseja anúnciar...</h3><br><br><br><br>
+						<div class="check-box">
+								<input id="" class="" type="radio" name="atributo" value="kg" alt="Kg" checked>
+									<label for="">
+										<span class="icon-menu"><span class="icon"></span></span>
+										<span class="icon-text"><b>KG</b></span>
+									</label>
+							</div>                    
+							<div class="check-box">
+								<input id="" class="" type="radio" name="atributo" value="un" alt="Unidade">
+									<label for="">
+										<span class="icon-menu"><span class="icon"></span></span>
+										<span class="icon-text">UNIDADE</span>
+									</label>
+							</div>
+							<div class="check-box">
+								<input id="" class="" type="radio" name="atributo" value="1/2kg" alt="1/2kg">
+									<label for="">
+										<span class="icon-menu"><span class="icon"></span></span>
+										<span class="icon-text">1/2KG</span>
+									</label>
+							</div>
+							<div class="check-box">
+								<input id="" class="" type="radio" name="atributo" value="pacote" alt="Pacote">
+									<label for="">
+										<span class="icon-menu"><span class="icon"></span></span>
+										<span class="icon-text">PACOTE</span>
+									</label>
+							</div>
+							<div class="check-box">
+								<input id="" class="" type="radio" name="atributo" value="bandeja" alt="Bandeja">
+									<label for="">
+										<span class="icon-menu"><span class="icon"></span></span>
+										<span class="icon-text">BANDEJA</span>
+									</label>
+							</div>						
 						<input type="button" name="prev" class="prev acao" value="Anterior">
 						<input type="button" name="next" class="next acao" value="Próximo">        	    	        	    	
 					</fieldset>
@@ -143,11 +195,11 @@
 					</fieldset>
 
 					<script type="text/javascript" src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-					<script type="text/javascript" src="js/functions.js"></script>
+					<script type="text/javascript" src="js/functions-anuncio.js"></script>
 
 				</form>
 
-			<h2> <a href='site.php'> VOLTAR </a> </h2>
+			<h2> <a href='site.php'>VOLTAR</a> </h2>
 
 		</section>
 		</div>		               

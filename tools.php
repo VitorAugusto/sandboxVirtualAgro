@@ -3,7 +3,6 @@
 //ESSE ARQUIVO TOOLS CONTÉM UM CONJUNTO DE FERRAMENTAS(TOOLS) ÚTEIS PARA O VIRTUAL-AGRO.
 include('masterDAO.php');
 
-
 function getNome($itemA, $itemB){
 
 	$login = $itemA;
@@ -12,7 +11,6 @@ function getNome($itemA, $itemB){
 	$displayNome = mysqli_query($GLOBALS['dao'], "SELECT nome FROM cadastros WHERE username = '$login' AND senha= '$senha'");
 
 	return (mysqli_fetch_row($displayNome)[0]);
-
 }
 
 function getId($itemA, $itemB){
@@ -23,7 +21,6 @@ function getId($itemA, $itemB){
 	$displayId = mysqli_query($GLOBALS['dao'], "SELECT id FROM cadastros WHERE username = '$login' AND senha= '$senha'");
 
 	return (mysqli_fetch_row($displayId)[0]);
-
 }
 
 
@@ -34,18 +31,14 @@ function getIdAnuncianteIdAnuncio($itemA){ //itemA recebe o ID DO ANÚNCIO , e r
 	return (mysqli_fetch_row($displayIdAnunciante)[0]);
 }
 
-
-
 function getIdAnunciosIdAnunciante($itemA){ //itemA recebe o ID DO ANUNCIANTE, e retorna UM OU MAIS ID DE ANÚNCIOS. PORQUE UM ANUNCIANTE PODE TER VÁRIOS ANÚNCIOS.
 
 	$displayIdAnuncio = mysqli_query($GLOBALS['dao'], "SELECT id FROM anuncios WHERE id_anunciante = '$itemA'");
 
 	return mysqli_fetch_row($displayIdAnuncio);
-
 }
 
 function nomeDoAnunciante($idAnun){
-
 
 	$selectNomeAnunciante = "select nome from cadastros WHERE ID = '$idAnun' ";
 
@@ -56,7 +49,6 @@ function nomeDoAnunciante($idAnun){
 	while ($coluna = mysqli_fetch_array($displayAnunciante)) {
 		echo $coluna['nome'];
 	}
-
 }
 
 function anuncioExiste($idAnun){
@@ -108,7 +100,6 @@ function produtoTemImagensAdicionais($idProd){ //VERIFICA SE O PRODUTO TEM IMAGE
 		}else{
 			return true;
 		}
-
 	}
 }
 
@@ -120,12 +111,10 @@ function getImagensAdicionais($idProd){
 
 	$display = mysqli_query($GLOBALS['dao'], $comandoGetImagensAdicionais);
 
-
 	$imagens = mysqli_fetch_array($display);
 
 	echo "<img src=imagens/".$imagens['imagemadd1'] . ">";
 	echo "<img src=imagens/".$imagens['imagemadd2'] . ">";
-
 }
 
 function existemAnunciantes($produto){ //RETORNA SE EXISTEM ANUNCIANTES DAQUELE PRODUTO
@@ -159,23 +148,17 @@ function getAnunciantes($produto){ //RETORNA OS ANUNCIANTES DAQUELE CERTO produt
 
 		while($coluna = mysqli_fetch_array($display)){
 
-
-			// CADA COLUNA PRA SER PREENCHIDA É UM <tr>, CADA VALOR DESSA COLUNA É UM <td>
+		// CADA COLUNA PRA SER PREENCHIDA É UM <tr>, CADA VALOR DESSA COLUNA É UM <td>
 
 			echo "<tr>";
-
 			echo "<td>";
-		nomeDoAnunciante($coluna['id_anunciante']);  //PREENCHE NOME
-		echo "</td>";
-		echo "<td>". "(73) ".rand() . "</td>"; //PREENCHE TELEFONE
-		echo "<td>". $coluna['texto_anuncio'] . "</td>"; //PREENCHE O TEXTO DO ANÚNCIO
-
-		echo "</tr>";
-
+			nomeDoAnunciante($coluna['id_anunciante']);  //PREENCHE NOME
+			echo "</td>";
+			echo "<td>". "(73) ".rand() . "</td>"; //PREENCHE TELEFONE
+			echo "<td>". $coluna['texto_anuncio'] . "</td>"; //PREENCHE O TEXTO DO ANÚNCIO
+			echo "</tr>";
+		}
 	}
-
-}
-
 }
 
 function getNumeroAnunciantes($produto){
@@ -205,8 +188,6 @@ function listarTodosProdutos(){
 		//echo "<option value=$coluna[nome]>". ($coluna['nome']) ."</option>";
 		echo '<option value="'.$coluna['nome'].'">'.$coluna['nome'].'</option>';
 	}
-
-
 }
 
 function getIdProdutoPeloNome($nome){
@@ -216,8 +197,6 @@ function getIdProdutoPeloNome($nome){
 	$display = mysqli_query($GLOBALS['dao'], $comandoGetId);
 
 	return(mysqli_fetch_row($display)[0]);
-
-
 }
 
 function getCategoriaProdutoPeloId($id){
@@ -229,7 +208,6 @@ function getCategoriaProdutoPeloId($id){
 	$display = mysqli_query($GLOBALS['dao'],$comandoGetCategoria);
 
 	return(mysqli_fetch_row($display)[0]);
-
 }
 
 function construirMenuLateralSemLogin(){
