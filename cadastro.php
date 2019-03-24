@@ -99,7 +99,8 @@
 					</fieldset>
 
 					<script type="text/javascript" src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-					<script type="text/javascript" src="js/functions-cadastro.js"></script>
+					<script type="text/javascript" src="js/functions-cadastro.js?v=<?php echo time(); ?>"></script>
+					<!-- SCRIPT RENOVADO -->
 
 				</form>
 			</section>

@@ -54,7 +54,7 @@ $(function(){
                 url: 'accessManager.php?tipoOperacao=cadastro',
                 data: {campos: array},
                 success: function(valor){
-                    //window.location.replace("site.php");
+                    window.location.replace("site.php");
                 }
             }); 
         }
