@@ -38,12 +38,13 @@ switch ($tipoOperacao) {
     
 	  case 'cadastro':
 
-      if(isset($_POST['cadastrar']) && $_POST['cadastrar'] == 'sim'):
         $inserir = array();
         $post = $_POST['campos'];
+
         foreach($post as $indice => $valor){
           $inserir[$valor['name']] = $valor['value'];
         }
+
         $nome     = $inserir['campoNome'];
         $username = $inserir['campoUsername']; 
         $senha    = $inserir['campoSenha'];
@@ -60,7 +61,6 @@ switch ($tipoOperacao) {
         //header('location:site.php'); //CADASTRO EFETUADO COM SUCESSO.
         //window.location.replace("site.php");
 
-      endif;
       break;
     }
 ?>
