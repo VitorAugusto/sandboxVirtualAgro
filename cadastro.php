@@ -66,7 +66,7 @@
         	    	</button>				
 				</form> -->
 
-				<form class="form-cadastro" action="accessManager.php?tipoOperacao=cadastro" method="POST" name="formulario">
+				<form class="form-cadastro" name="formulario">
 					<ul class="progresso">
 						<li class="ativo">Início</li>
 						<li>Meio</li>
@@ -95,11 +95,11 @@
 						<input type="password" name="campoSenha" required="" placeholder="Digite uma senha...">
 						<input type="password" name="confirmaSenha" required="" placeholder="Confirme a senha...">
 						<input type="button" name="prev" class="prev acao" value="Anterior">
-						<input type="submit" class="acao" value="Finalizar">
+						<input type="submit" name="login" class="acao" value="Finalizar">
 					</fieldset>
 
 					<script type="text/javascript" src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-					<script type="text/javascript" src="js/functions.js"></script>
+					<script type="text/javascript" src="js/functions-cadastro.js"></script>
 
 				</form>
 			</section>

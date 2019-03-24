@@ -1,6 +1,6 @@
 $(function(){
     var atual_fs, next_fs, prev_fs;
-    var formulario = $('form[name=formulario]');
+    var anunciar = $('form[name=anunciar]');
 
     function proximo(elem){
         atual_fs = $(elem).parent();
@@ -22,24 +22,24 @@ $(function(){
     });
     
     $('input[name=proximo]').click(function(){
-        var array = formulario.serializeArray();
+    var anunciar = $('form[name=anunciar]');
+        var array = anunciar.serializeArray();
+            $('.erro').html('');
+            proximo($(this));        
+    });
+    
+    $('input[name=proximo2]').click(function(){
+        var array = anunciar.serializeArray();
         if(array[0].value == ''){
-            $('.erro').html('<div class="erro-css"><p>Digite o seu nome</p></div>');
-        }else if(array[1].value == ''){
-            $('.erro').html('<div class="erro-css"><p>Digite um login</p></div>');
+            $('.erro').html('<div class="erro-css"><p>Escolha o produto que deseja anúnciar</p></div>');
         }else{
             $('.erro').html('');
             proximo($(this));
         }
     });
-    
-    $('input[name=proximo2]').click(function(){
-            $('.erro').html('');
-            proximo($(this));
-    });
 
-    $('input[type=submit]').click(function(evento){
-        var array = formulario.serializeArray();
+    $('input[name=anuncio]').click(function(evento){
+        var array = anunciar.serializeArray();
         if(array[3].value == ''){
             $('.erro').html('<div class="erro-css"><p>Digite uma senha!</p></div>');
         }else if(array[3].value.length < 6){
@@ -52,9 +52,9 @@ $(function(){
             $.ajax({
                 method: 'post',
                 url: 'accessManager.php?tipoOperacao=cadastro',
-                data: {campos: array},
+                data: {cadastrar: 'sim', campos: array},
                 success: function(valor){
-                    //window.location.replace("site.php");
+                    window.location.replace("site.php");
                 }
             }); 
         }
