@@ -20,12 +20,7 @@
 
 						include_once('tools.php');
 						session_start();
-
-						if(!isset($_SESSION['id'])){
-							construirMenuLateralSemLogin(); 
-						}else{
-							construirMenuLateralComLogin();
-						}
+						construirMenuLateralComLogin();						
 					?>
 				</button>
 			</div>
@@ -106,21 +101,21 @@
         	    	</button>
 				</form>
 				-->
-				<!--<form class="form-cadastro" action="accessManager.php?tipoOperacao=cadastro" method="POST">-->
-				<form class="form-cadastro"name="anunciar">
-					<ul class="progresso">
+				<form class="form-cadastro" name="anunciar">
+					<ul class="progresso" id="progresso-anuncio">
 						<li class="ativo">Categoria</li>
 						<li>Produto</li>
 						<li>Forma</li>	
-						<li></li>					
+						<li>OBSERVAÇÕES</li>
+						<li>Pré-Anúncio</li>					
 					</ul>
 					<div class="erro"></div>
 					<fieldset>
 						<h2>Novo Anúncio</h2>
 						<h3>Escolha a categoria para anúnciar...</h3>
 						<br><br><br><br>
-						<select>
-							<option value="frutas">frutas</option>
+						<select name="categoria" id="categoria">
+							<option value="frutas">FRUTA</option>
 							<option value="verduras">verduras</option>
 							<option value="legumes">legumes</option>
 							<option value="graos">graos</option>
@@ -133,13 +128,11 @@
 					</fieldset>
 					<fieldset>
 						<h2>Novo Anúncio</h2>
-						<h3>Escolha o produto...</h3>
-						<select required="" name="produto">
-							<option value="">--</option>				
-							<?php
-								listarTodosProdutos();
-							?>
+						<h3>Escolha um produto para anunciar</h3>
+						<select required="" name="produto" id="produto">
+							<option value="">Escolha a Subcategoria</option>
 		 				</select>
+						 <br><br>
 						<input type="button" name="prev" class="prev acao" value="Anterior">
 						<input type="button" name="proximo2" class="next acao" value="Próximo">        	    	
 					</fieldset>
@@ -182,14 +175,20 @@
 									</label>
 							</div>						
 						<input type="button" name="prev" class="prev acao" value="Anterior">
-						<input type="button" name="next" class="next acao" value="Próximo">        	    	        	    	
+						<input type="button" name="proximo3" class="next acao" value="Próximo">        	    	        	    	
 					</fieldset>
 					<fieldset>
-						<h2>Configurações finais</h2>
-						<h3>Confirmar anúncio</h3>
-						<input type="text" name="campoNome" required="" placeholder="NOME">
-						<input type="text" name="campoUsername" required="" placeholder="USERNAME">
-						<input type="password" name="campoSenha" required="" placeholder="SENHA">
+						<h2>Novo Anúncio</h2>
+						<h3>Observações sobre o produto</h3>
+					<!--	<input type="textarea" name="textoAnuncio" required=""> -->
+						<textarea name="textoAnuncio"></textarea>
+						<input type="button" name="prev" class="prev acao" value="Anterior">
+						<input type="button" name="proximo4" class="next acao" value="Próximo">        	    	
+					</fieldset>
+					<fieldset>
+						<h2>Novo Anúncio</h2>
+						<h3>Confirmar esse anúncio???</h3>
+
 						<input type="button" name="prev" class="prev acao" value="Anterior">
 						<input type="submit" class="acao" value="Finalizar">
 					</fieldset>
