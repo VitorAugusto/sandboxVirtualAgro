@@ -426,6 +426,8 @@ li:hover a {
     color: #1b6e5c
 }
 
+/*ESTILO PARA FORM DE FAZER CADASTRO  */
+
 form.form-cadastro {
     width: 500px;
     height: 500px;
@@ -533,6 +535,115 @@ form.form-cadastro .progresso li.ativo:after, form.form-cadastro .progresso li.a
     color: #fff;
     text-shadow: 0 2px 0;
 }
+
+/*ESTILO PARA FORM DE CRIAR ANÚNCIO  */
+form.form-anuncio {
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    position: relative;
+    text-align: center;
+
+}
+form.form-anuncio fieldset {
+    background: #fff;
+
+    border: 0 none;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    box-shadow: 0 0 15px 1px rgba(0,0,0,0.4);
+    padding: 20px 30px;
+    box-sizing: border-box;
+    width: 80%;
+    margin: 0 10%;
+    position: absolute;
+}
+
+form.form-anuncio fieldset:not(:first-of-type) {
+    display: none;
+}
+form.form-anuncio input, form.form-anuncio textarea {
+    padding: 10px;
+    border: 1px solid #2a7766;
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    width: 100%;
+    font: 14px tahoma;
+    margin-bottom: 10px;
+}
+
+form.form-anuncio h2, form.form-anuncio h3 {
+    font-size: 20px;
+    float: left;
+    margin-top: 0;
+    margin-bottom: 4%;
+}
+
+form.form-anuncio .acao {
+    width: 100px;
+    background: #2a7766;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    float: left;
+    padding: 12px 0;
+    margin-right: 20px;
+}
+form.form-anuncio .progresso {
+    margin-bottom: 30px;
+    overflow: hidden;
+    counter-reset: step;
+}
+form.form-anuncio ul{
+    padding-left: 10px;
+}
+form.form-anuncio .progresso li{
+    list-style-type: none;
+    color: #2a7766;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 20px;
+    float: left;
+    width: 20.33%;
+    position: relative;    
+
+}
+form.form-anuncio .progresso li:before{
+    content: counter(step);
+    counter-increment: step;
+    width: 40px;
+    display: block;
+    line-height: 40px;
+    background: #fff;
+    color: #2a7766;
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 40px;
+    margin: 0 auto 10px;
+}
+form.form-anuncio .progresso li:after {
+    content: '';
+    width: 100%;
+    background: #fff;
+    height: 2px;
+    position: absolute;
+    top: 20px;
+    left: -50%;
+    z-index: -1;
+}
+form.form-anuncio .progresso li:first-child:after {
+    content: none;
+}
+form.form-anuncio .progresso li.ativo:after, form.form-anuncio .progresso li.ativo:before {
+    background: #2a7766;
+    color: #fff;
+    text-shadow: 0 2px 0;
+}
+
+
 .erro-css {
     background: #f13e3e;
     color: white;
