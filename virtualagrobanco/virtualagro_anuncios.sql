@@ -1,0 +1,2 @@
+INSERT INTO virtualagro.anuncios (id, id_anunciante, categoria, texto_anuncio, id_produto, observacao) VALUES (4, 1, 'LEGUME', 'VENDO batata doce POR UNIDADE.', 42, '');
+INSERT INTO virtualagro.anuncios (id, id_anunciante, categoria, texto_anuncio, id_produto, observacao) VALUES (5, 1, 'FRUTA', 'VENDO abacaxi POR UNIDADE.', 2, '');

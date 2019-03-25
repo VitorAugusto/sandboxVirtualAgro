@@ -54,7 +54,9 @@ $(function(){
             proximo($(this));
         }
     });
+    
 
+<<<<<<< HEAD
     $('input[name=proximo3]').click(function(){
        // if(array[1].value == ''){
       //      $('.erro').html('<div class="erro-css"><p>Escolha o produto que deseja anúnciar</p></div>');
@@ -88,3 +90,28 @@ $(function(){
         evento.preventDefault();
     });
 });
+=======
+    // $('input[name=anuncio]').click(function(evento){
+    //     var array = anunciar.serializeArray();
+    //     if(array[3].value == ''){
+    //         $('.erro').html('<div class="erro-css"><p>Digite uma senha!</p></div>');
+    //     }else if(array[3].value.length < 6){
+    //         $('.erro').html('<div class="erro-css"><p>Senha informada menor que 6 digitos!</p></div>');
+    //     }else if(array[4].value == ''){
+    //         $('.erro').html('<div class="erro-css"><p>Confirme a senha!</p></div>');
+    //     }else if(array[3].value != array[4].value){
+    //         $('.erro').html('<div class="erro-css"><p>As senhas informadas não correspondem!</p></div>');
+    //     }else{
+    //         // $.ajax({
+    //         //     method: 'post',
+    //         //     url: 'accessManager.php?tipoOperacao=cadastro',
+    //         //     data: {cadastrar: 'sim', campos: array},
+    //         //     success: function(valor){
+    //         //         window.location.replace("site.php");
+    //         //     }
+    //         // }); 
+    //     }
+    //     evento.preventDefault();
+    // });
+});
+>>>>>>> b132c1182361064642e1f1745acd62d8e15aad13

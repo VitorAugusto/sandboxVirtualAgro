@@ -52,7 +52,7 @@ $(function(){
             $.ajax({
                 method: 'post',
                 url: 'accessManager.php?tipoOperacao=cadastro',
-                data: {cadastrar: 'sim', campos: array},
+                data: {campos: array},
                 success: function(valor){
                     window.location.replace("site.php");
                 }

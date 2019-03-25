@@ -1,0 +1,13 @@
+INSERT INTO virtualagro.cadastros (id, nome, username, senha) VALUES (1, 'NOME TESTE 1', 'teste1', 'teste1');
+INSERT INTO virtualagro.cadastros (id, nome, username, senha) VALUES (2, 'NOME TESTE 2', 'teste2', 'teste2');
+INSERT INTO virtualagro.cadastros (id, nome, username, senha) VALUES (3, 'NOME TESTE 3', 'teste3', 'teste3');
+INSERT INTO virtualagro.cadastros (id, nome, username, senha) VALUES (4, 'NOME TESTE 1', 'teste1', 'teste1');
+INSERT INTO virtualagro.cadastros (id, nome, username, senha) VALUES (5, 'NOME TESTE 2', 'teste2', 'teste2');
+INSERT INTO virtualagro.cadastros (id, nome, username, senha) VALUES (6, 'NOME TESTE 3', 'teste3', 'teste3');
+INSERT INTO virtualagro.cadastros (id, nome, username, senha) VALUES (7, '', '', '');
+INSERT INTO virtualagro.cadastros (id, nome, username, senha) VALUES (8, '', '', '');
+INSERT INTO virtualagro.cadastros (id, nome, username, senha) VALUES (9, 'joao', 'aa', '123456');
+INSERT INTO virtualagro.cadastros (id, nome, username, senha) VALUES (10, 'CARLOS', 'CARLOS', '123456');
+INSERT INTO virtualagro.cadastros (id, nome, username, senha) VALUES (11, 'YAN', 'yan', '123456');
+INSERT INTO virtualagro.cadastros (id, nome, username, senha) VALUES (12, 'macedo', '123', 'macedo');
+INSERT INTO virtualagro.cadastros (id, nome, username, senha) VALUES (13, 'yyy', 'yy', '444444');
