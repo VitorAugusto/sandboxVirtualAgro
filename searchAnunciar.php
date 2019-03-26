@@ -37,7 +37,7 @@ if(empty($_GET['categoria'])){
 		// "</span>" . 
 		// "</li>";
 		//echo "<td>". "<a href=# onclick=exibirProdutoDetails($coluna[id])>".getImagemProduto($coluna['id']) . "</a>". "</td>"; // IMAGEM COM LINK
-		echo "<td>". getImagemProduto($coluna['id']) . "</td>"; // IMAGEM SEM LINK
+		echo "<td>". "<a href='#' class='escolherProduto'>". getImagemProduto($coluna['id']) . "</a>" . "</td>"; // IMAGEM SEM LINK
 		echo "<td>" .  mb_strtoupper($coluna['nome']) . "</td>";
 		// "<span class='badge badge-primary badge-pill'>14</span>".
 		// "</li>";
@@ -76,7 +76,7 @@ if(empty($_GET['categoria'])){
 		//echo "<ul>";
 
 		//echo "<td>". "<a href=produto?idProduto=$coluna[id]>".getImagemProduto($coluna['id']) . "</a>". "</td>"; // IMAGEM COM LINK
-		echo "<td>". getImagemProduto($coluna['id']) . "</td>"; // IMAGEM SEM LINK
+		echo "<td>". "<a href='#' class='escolherProduto'>". getImagemProduto($coluna['id']) . "</a>" . "</td>";
 		// echo "<li>". "<a href=# onclick=exibirProdutoDetails($coluna[id])>".getImagemProduto($coluna['id']) . "</a>". "</li>";
 		echo "<td>" . mb_strtoupper($coluna['nome']) . "</td>";
 

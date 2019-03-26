@@ -21,7 +21,6 @@
 					<span class="text-menu">MENU</span>
 					<?php 
 
-
 					include_once('tools.php');
 					session_start();
 
@@ -42,7 +41,6 @@
 	<div class="all">
 		<section class="conteudo">
 			<?php
-			include_once('tools.php');
 
   					if((!isset ($_SESSION['id']))){ //CASO NÃO ESTEJA LOGADO
   						unset($_SESSION['nome']);
@@ -52,167 +50,125 @@
   						header('location:index.php');
   					}
   					?>
-<!--
-				<form action="preAnuncio.php" method="post">
 
-					<label> QUERO ANUNCIAR </label>
-		 			<select required="" name="produto">
-		 				<option value="">--</option>
-		 				 VAI CONSTRUIR OS OPTION 
-		 				?php
-		 					listarTodosProdutos();
-		 				?>
-		 			</select>
+  					<form class="form-anuncio" name="anunciar">
+  						<ul class="progresso" id="progresso-anuncio">
 
-						<div class="linha">
-							<div class="check-box">
-								<input id="" class="" type="radio" name="atributo" value="kg" alt="Kg" checked>
-									<label for="">
-										<span class="icon-menu"><span class="icon"></span></span>
-										<span class="icon-text"><b>KG</b></span>
-									</label>
-							</div>                    
-							<div class="check-box">
-								<input id="" class="" type="radio" name="atributo" value="un" alt="Unidade">
-									<label for="">
-										<span class="icon-menu"><span class="icon"></span></span>
-										<span class="icon-text">UNIDADE</span>
-									</label>
-							</div>
-							<div class="check-box">
-								<input id="" class="" type="radio" name="atributo" value="1/2kg" alt="1/2kg">
-									<label for="">
-										<span class="icon-menu"><span class="icon"></span></span>
-										<span class="icon-text">1/2KG</span>
-									</label>
-							</div>
-							<div class="check-box">
-								<input id="" class="" type="radio" name="atributo" value="pacote" alt="Pacote">
-									<label for="">
-										<span class="icon-menu"><span class="icon"></span></span>
-										<span class="icon-text">PACOTE</span>
-									</label>
-							</div>
-							<div class="check-box">
-								<input id="" class="" type="radio" name="atributo" value="bandeja" alt="Bandeja">
-									<label for="">
-										<span class="icon-menu"><span class="icon"></span></span>
-										<span class="icon-text">BANDEJA</span>
-									</label>
-							</div>												
-	                	</div>
+  							<li class="ativo">Categoria</li>
+  							<li>Produto</li>
+  							<li>Forma</li>	
+  							<li>OBSERVAÇÕES</li>					
+  							<li>PRÉ-ANÚNCIO</li>					
 
-					<label>OBSERVAÇÕES</label>
-					 <input type="textarea" name="textoAnuncio" required=""> 
-					<textarea name="textoAnuncio"></textarea>
-					<button class="buscar" type="submit">
-                		<span class="icon-text">ENVIAR</span>
-            	        <span class="icon-menu"><i class="fa fa-chevron-circle-right"></i></span>
-        	    	</button>
-				</form>
+  						</ul>
 
-			-->
-			<form class="form-cadastro" name="anunciar">
-				<ul class="progresso" id="progresso-anuncio">
+  						<div class="erro"></div>
 
-					<li class="ativo">Categoria</li>
-					<li>Produto</li>
-					<li>Forma</li>	
-					<li>OBSERVAÇÕES</li>					
-					<li>PRÉ-ANÚNCIO</li>					
-
-				</ul>
-
-				<div class="erro"></div>
-
-				<fieldset id="etapa1CriarAnuncio"> <!--  AQUI ELE ESCOLHE A CATEGORIA -->
-					<ul class="list-group">
+  						<fieldset id="etapa1CriarAnuncio" name="1"> <!--  AQUI ELE ESCOLHE A CATEGORIA -->
+  							<ul class="list-group">
 
 
-						<li class="list-group-item"> <a href="#"> 
-						<img src="imagens/fruta/main.jpg" width="300px">
-						</a>
-						<span class="badge badge-primary badge-pill"> FRUTAS </span>
-					    </li>
+  								<li class="list-group-item"> <a href="#" class="escolherCategoria"> 
+  									<img src="imagens/fruta/main.jpg" width="300px">
+  									<span class="badge badge-primary badge-pill"> FRUTAS </span>
+  								</a>
+  								<input type="hidden" name="categoria" value="'FRUTA'">
+  							</li>
 
-					  <li class="list-group-item"> <a href="#"> 
-					  <img src="imagens/verdura/main.jpg" width="300px">
-					  </a>
-					  <span class="badge badge-primary badge-pill"> VERDURAS </span>
-				      </li>
-
-
-				    <li class="list-group-item"> <a href="#"> 
-				    <img src="imagens/legume/main.jpg" width="300px">
-				    </a>
-				    <span class="badge badge-primary badge-pill"> LEGUMES </span>
-			        </li>
+  							<li class="list-group-item"> <a href="#" class="escolherCategoria"> 
+  								<img src="imagens/verdura/main.jpg" width="300px">
+  								<span class="badge badge-primary badge-pill"> VERDURAS </span>
+  							</a>
+  							<input type="hidden" name="categoria" value="'VERDURA'">
+  						</li>
 
 
-			        <li class="list-group-item"> <a href="#"> 
-				    <img src="imagens/grãos/main.jpg" width="300px">
-			        </a>
-			        <span class="badge badge-primary badge-pill"> GRÃOS </span>
-		            </li>
-
-		           <li class="list-group-item"> <a href="#"> 
-			       <img src="imagens/tempero/main.jpg" width="300px">
-		           </a>
-		           <span class="badge badge-primary badge-pill"> TEMPERO </span>
-	               </li>
+  						<li class="list-group-item"> <a href="#" class="escolherCategoria"> 
+  							<img src="imagens/legume/main.jpg" width="300px">
+  							<span class="badge badge-primary badge-pill"> LEGUMES </span>
+  						</a>
+  						<input type="hidden" name="categoria" value="'LEGUME'">
+  					</li>
 
 
-	               <li class="list-group-item"> <a href="#"> 
-		           <img src="imagens/especiaria/main.jpg" width="300px">
-	               </a>
-	               <span class="badge badge-primary badge-pill"> ESPECIARIA </span>
-                   </li>
+  					<li class="list-group-item"> <a href="#" class="escolherCategoria"> 
+  						<img src="imagens/grãos/main.jpg" width="300px">
+  						<span class="badge badge-primary badge-pill"> GRÃOS </span>
+  					</a>
+  					<input type="hidden" name="categoria" value="'GRÃOS'">
+  				</li>
+
+  				<li class="list-group-item"> <a href="#" class="escolherCategoria"> 
+  					<img src="imagens/tempero/main.jpg" width="300px">
+  					<span class="badge badge-primary badge-pill"> TEMPERO </span>
+  				</a>
+  				<input type="hidden" name="categoria" value="'TEMPERO'">
+  			</li>
 
 
-                   <li class="list-group-item"> <a href="#"> 
-	               <img src="imagens/outro/main.jpg" width="300px">
-                   </a>
-                   <span class="badge badge-primary badge-pill"> OUTROS </span>
-                   </li>
+  			<li class="list-group-item"> <a href="#" class="escolherCategoria"> 
+  				<img src="imagens/especiaria/main.jpg" width="300px">
+  				<span class="badge badge-primary badge-pill"> ESPECIARIA </span>
+  			</a>
+  			<input type="hidden" name="categoria" value="'ESPECIARIA'">
+
+  		</li>
 
 
-			 </ul>
-					</fieldset>
+  		<li class="list-group-item"> <a href="#" class="escolherCategoria"> 
+  			<img src="imagens/outro/main.jpg" width="300px">
+  			<span class="badge badge-primary badge-pill"> OUTROS </span>
+  		</a>
+  		<input type="hidden" name="categoria" value="'OUTRO'">
+  	</li>
 
 
-					<fieldset id="etapa2CriarAnuncio"> <!-- AQUI ELE SELECIONA OS PRODUTOS DA CATEGORIA-->
+  </ul>
 
-					</fieldset>
+  <input type="hidden" name="proximo" class="next acao" value="Próximo">
+  <a href="" name="lol"></a>
+</fieldset>
+
+
+<fieldset id="etapa2CriarAnuncio" name="2"> <!-- AQUI ELE SELECIONA OS PRODUTOS DA CATEGORIA-->
+
+<!-- 
+	<input type="button" name="proximo" class="next acao" value="Próximo">
+	<input type="button" name="prev" class="prev acao" value="Anterior"> -->
+
+</fieldset>
 
 
 
-					<fieldset id="etapa3CriarAnuncio"> <!-- AQUI ELE DEFINE A FORMA (ATRIBUTO) - KG , UNIDADE, PACOTE, BANDEJA, ETC-->
+<fieldset id="etapa3CriarAnuncio" name="3"> <!-- AQUI ELE DEFINE A FORMA (ATRIBUTO) - KG , UNIDADE, PACOTE, BANDEJA, ETC-->
+	<input type="button" name="proximo" class="next acao" value="Próximo">
+	<input type="button" name="prev" class="prev acao" value="Anterior">
+</fieldset>
 
-					</fieldset>
 
 
-
-					<fieldset id="etapa4CriarAnuncio"> <!-- AQUI ELE COLOCA AS OBSERVAÇÕES -->
-
-					</fieldset>
+<fieldset id="etapa4CriarAnuncio" name="4"> <!-- AQUI ELE COLOCA AS OBSERVAÇÕES -->
+	<input type="button" name="proximo" class="next acao" value="Próximo">
+	<input type="button" name="prev" class="prev acao" value="Anterior">
+</fieldset>
 
 
 
 
-					<fieldset id="etapa5CriarAnuncio"> <!-- AQUI MOSTRA O PRÉ - ANÚNCIO , COM BOTÃO PARA CONFIRMAR . -->
-						
-					</fieldset>
+<fieldset id="etapa5CriarAnuncio" name="5"> <!-- AQUI MOSTRA O PRÉ - ANÚNCIO , COM BOTÃO PARA CONFIRMAR . -->
+	<input type="button" name="prev" class="prev acao" value="Anterior">
+</fieldset>
 
 
-					<script type="text/javascript" src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-					<script type="text/javascript" src="js/functions-anuncio.js?v=<?php echo time(); ?>"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="js/functions-criarAnuncio.js?v=<?php echo time(); ?>"></script>
 
-				</form>
+</form>
 
-				<h2> <a href='site.php'>VOLTAR</a> </h2>
+<h2> <a href='site.php'>VOLTAR</a> </h2>
 
-			</section>
-		</div>		               
+</section>
+</div>		               
 		<!-- <footer>
 			<div>
 				<a class="brand" href="#">
