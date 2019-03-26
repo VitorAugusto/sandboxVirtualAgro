@@ -75,7 +75,7 @@ function produtoExiste($idProd){
 
 function getImagemProduto($idProd){
 
-	$comandoGetImagemProduto = "SELECT imagemprincipal FROM produtos WHERE id = '$idProd'";
+	$comandoGetImagemProduto = "SELECT imagemprincipal FR;OM produtos WHERE id = '$idProd'";
 
 	mysqli_query($GLOBALS['dao'], "set names 'utf8'");
 

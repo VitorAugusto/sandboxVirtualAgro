@@ -22,15 +22,32 @@ $(function(){
     });
     
     $('input[name=proximo]').click(function(){
-    var anunciar = $('form[name=anunciar]');
-        var array = anunciar.serializeArray();
-            $('.erro').html('');
-            proximo($(this));        
+        $('.erro').html('');
+        $('#categoria').change(function(e){
+            var categoria = $('#categoria').val();
+            $('.erro').html('<span class="mensagem">Aguarde, carregando ...</span>');  
+             
+            $.getJSON('accessManager.php?tipoOperacao=consultaProduto='+categoria, function (dados){ 
+             
+               if (dados.length > 0){    
+                  var option = '<option>Selecione o Produto</option>';
+                  $.each(dados, function(i, obj){
+                      option += '<option value="'+obj.nome+'">'+obj.nome+'</option>';
+                  })
+                  $('.erro').html('<span class="mensagem">Total de estados encontrados.: '+dados.length+'</span>'); 
+               }else{
+                  $('.erro').html('<span class="mensagem">Não foram encontrados estados para esse país!</span>');  
+               }
+               $('#produto').html(option).show(); 
+               proximo($(this));
+
+            })
+        })
     });
     
     $('input[name=proximo2]').click(function(){
         var array = anunciar.serializeArray();
-        if(array[0].value == ''){
+        if(array[2].value == '--'){
             $('.erro').html('<div class="erro-css"><p>Escolha o produto que deseja anúnciar</p></div>');
         }else{
             $('.erro').html('');
@@ -39,6 +56,41 @@ $(function(){
     });
     
 
+<<<<<<< HEAD
+    $('input[name=proximo3]').click(function(){
+       // if(array[1].value == ''){
+      //      $('.erro').html('<div class="erro-css"><p>Escolha o produto que deseja anúnciar</p></div>');
+        //}else{
+            $('.erro').html('');
+            proximo($(this));
+        //}
+    });
+
+    $('input[name=proximo4]').click(function(){
+       // if(array[1].value == ''){
+      //      $('.erro').html('<div class="erro-css"><p>Escolha o produto que deseja anúnciar</p></div>');
+        //}else{
+            $('.erro').html('');
+            proximo($(this));
+        //}
+    });
+
+    $('input[type=submit]').click(function(evento){
+        var array = anunciar.serializeArray();
+
+            $.ajax({
+                method: 'post',
+                url: 'postAnuncio.php',
+                data: {anunci: 'sim', campos: array},
+                success: function(valor){
+                    $('.erro').html(valor);                    
+                }
+            }); 
+        
+        evento.preventDefault();
+    });
+});
+=======
     // $('input[name=anuncio]').click(function(evento){
     //     var array = anunciar.serializeArray();
     //     if(array[3].value == ''){
@@ -62,3 +114,4 @@ $(function(){
     //     evento.preventDefault();
     // });
 });
+>>>>>>> b132c1182361064642e1f1745acd62d8e15aad13

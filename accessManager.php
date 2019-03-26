@@ -9,8 +9,15 @@ session_start();
 session_regenerate_id(true);
 
 $tipoOperacao = $_GET['tipoOperacao'];
+$opcao = isset($_GET['opcao']) ? $_GET['opcao'] : '';
+$valor = isset($_GET['valor']) ? $_GET['valor'] : ''; 
 
 switch ($tipoOperacao) {
+
+  case 'consultaProduto':
+
+    echo produto($valor);
+  break;
 
 	case 'login':
 
@@ -62,5 +69,21 @@ switch ($tipoOperacao) {
         //window.location.replace("site.php");
 
       break;
+    }
+
+    function produto($categoria){
+
+      $sql = "SELECT nome FROM produtos WHERE categoria = '$pacategoriais' ORDER BY nome";
+        
+        mysqli_query($GLOBALS['dao'], "set names 'utf8'");
+        mysqli_query($GLOBALS['dao'],$sql);
+      
+      while ($row_sub_cat = mysqli_fetch_assoc($sql)) {
+        $categorias_post[] = array(
+          'nome' => utf8_encode($row_sub_cat['nome'])
+        );
+      }
+      
+      echo(json_encode($ategorias_post));
     }
 ?>
