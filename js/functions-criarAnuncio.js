@@ -37,6 +37,8 @@ $('.escolherCategoria').click(function(){
 	var val = $(this).closest("li").find("input[name='categoria']").val(); //CAPTURA A CATEGORIA SELECIONADA
 	console.log("categoria selecionada : " + val);
 
+	montarAnuncio(val,1);
+
 	mostrarProdutos(val);
 
 });
@@ -45,11 +47,46 @@ $('.escolherCategoria').click(function(){
 $("body").on("click", ".escolherProduto", function(){
 
 
-	alert("CLICOU NO PRODUTO !");
 
-	console.log("CLICOU NO PRODUTO");
+	var val = $(this).closest("tr").find("td[name='produto']").text();
+
+	console.log("CLICOU NO PRODUTO : " + val);
+
+	proximo($('div[id=telaprodutos]'));
+
+	montarAnuncio(val,2);
 
 });
+
+function montarAnuncio(item, step){
+
+	var categoria;
+	var produto;
+	var medida;
+	var observacao;
+	var anuncioMontado = [];
+
+	switch(step){
+
+		case 1:
+		categoria = item;
+		console.log("ADICIONADO : " + item + " À CATEGORIA");
+		break;
+
+		case 2:
+		produto = item;
+		console.log("ADICIONADO : " + item + " AO PRODUTO");
+		break;
+
+		case 3:
+		medida = item;
+		break;
+
+		case 4:
+		observacao = item;
+		break;
+	}
+}
 
 
 function mostrarProdutos(cat){

@@ -141,8 +141,48 @@
 
 
 <fieldset id="etapa3CriarAnuncio" name="3"> <!-- AQUI ELE DEFINE A FORMA (ATRIBUTO) - KG , UNIDADE, PACOTE, BANDEJA, ETC-->
-	<input type="button" name="proximo" class="next acao" value="Próximo">
-	<input type="button" name="prev" class="prev acao" value="Anterior">
+  <div class="linha">
+
+              <div class="check-box">
+                <input id="" class="" type="radio" name="atributo" value="kg" alt="Kg" checked>
+                  <label for="">
+                    <span class="icon-menu"><span class="icon"></span></span>
+                    <span class="icon-text"><b>KG</b></span>
+                  </label>
+              </div>                    
+              <div class="check-box">
+                <input id="" class="" type="radio" name="atributo" value="un" alt="Unidade">
+                  <label for="">
+                    <span class="icon-menu"><span class="icon"></span></span>
+                    <span class="icon-text">UNIDADE</span>
+                  </label>
+              </div>
+              <div class="check-box">
+                <input id="" class="" type="radio" name="atributo" value="1/2kg" alt="1/2kg">
+                  <label for="">
+                    <span class="icon-menu"><span class="icon"></span></span>
+                    <span class="icon-text">1/2KG</span>
+                  </label>
+              </div>
+              <div class="check-box">
+                <input id="" class="" type="radio" name="atributo" value="pacote" alt="Pacote">
+                  <label for="">
+                    <span class="icon-menu"><span class="icon"></span></span>
+                    <span class="icon-text">PACOTE</span>
+                  </label>
+              </div>
+              <div class="check-box">
+                <input id="" class="" type="radio" name="atributo" value="bandeja" alt="Bandeja">
+                  <label for="">
+                    <span class="icon-menu"><span class="icon"></span></span>
+                    <span class="icon-text">BANDEJA</span>
+                  </label>
+              </div>
+            </div>
+              <input type="button" name="proximo" class="next acao" value="Próximo">
+  <input type="button" name="prev" class="prev acao" value="Anterior">
+
+
 </fieldset>
 
 

@@ -78,7 +78,7 @@ if(empty($_GET['categoria'])){
 		//echo "<td>". "<a href=produto?idProduto=$coluna[id]>".getImagemProduto($coluna['id']) . "</a>". "</td>"; // IMAGEM COM LINK
 		echo "<td>". "<a href='#' class='escolherProduto'>". getImagemProduto($coluna['id']) . "</a>" . "</td>";
 		// echo "<li>". "<a href=# onclick=exibirProdutoDetails($coluna[id])>".getImagemProduto($coluna['id']) . "</a>". "</li>";
-		echo "<td>" . mb_strtoupper($coluna['nome']) . "</td>";
+		echo "<td name='produto'>" . mb_strtoupper($coluna['nome']) . "</td>";
 
 		echo "</tr>";
 
