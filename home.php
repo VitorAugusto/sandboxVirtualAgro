@@ -22,7 +22,7 @@ session_start();
     <link href="css/style.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" />
     <!-- ESSE NOVO LINK PRO NOSSO CSS IMPEDE AQUELE BUG QUE A GENTE MUDAVA NO CSS, MAS NÃO MUDAVA NO SITE. -->
     <!-- REPLICAR EM TODAS AS PÁGINAS INTERATIVAS -->
-
+    
     <script type="text/javascript">
         var categorias = [];
 
