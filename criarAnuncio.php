@@ -57,7 +57,7 @@
   							<li class="ativo">Categoria</li>
   							<li>Produto</li>
   							<li>Forma</li>	
-  							<li>OBSERVAÇÕES</li>					
+  							<!-- <li>OBSERVAÇÕES</li>	 -->				
   							<li>PRÉ-ANÚNCIO</li>					
 
   						</ul>
@@ -143,61 +143,74 @@
 <fieldset id="etapa3CriarAnuncio" name="3"> <!-- AQUI ELE DEFINE A FORMA (ATRIBUTO) - KG , UNIDADE, PACOTE, BANDEJA, ETC-->
   <div class="linha">
 
-              <div class="check-box">
-                <input id="" class="" type="radio" name="atributo" value="KG" alt="Kg" checked>
-                  <label for="">
-                    <span class="icon-menu"><span class="icon"></span></span>
-                    <span class="icon-text"><b>KG</b></span>
-                  </label>
-              </div>                    
-              <div class="check-box">
-                <input id="" class="" type="radio" name="atributo" value="UNIDADE" alt="Unidade">
-                  <label for="">
-                    <span class="icon-menu"><span class="icon"></span></span>
-                    <span class="icon-text">UNIDADE</span>
-                  </label>
-              </div>
-              <div class="check-box">
-                <input id="" class="" type="radio" name="atributo" value="1/2KG" alt="1/2kg">
-                  <label for="">
-                    <span class="icon-menu"><span class="icon"></span></span>
-                    <span class="icon-text">1/2KG</span>
-                  </label>
-              </div>
-              <div class="check-box">
-                <input id="" class="" type="radio" name="atributo" value="PACOTE" alt="Pacote">
-                  <label for="">
-                    <span class="icon-menu"><span class="icon"></span></span>
-                    <span class="icon-text">PACOTE</span>
-                  </label>
-              </div>
-              <div class="check-box">
-                <input id="" class="" type="radio" name="atributo" value="BANDEJA" alt="Bandeja">
-                  <label for="">
-                    <span class="icon-menu"><span class="icon"></span></span>
-                    <span class="icon-text">BANDEJA</span>
-                  </label>
-              </div>
-            </div>
-              <input type="button" name="proximo" class="next acao" value="Próximo">
-  <input type="button" name="prev" class="prev acao" value="Anterior">
-
+    <div class="check-box">
+      <input id="" class="" type="radio" name="atributo" value="KG" alt="Kg" checked=''>
+      <label for="">
+        <span class="icon-menu"><span class="icon"></span></span>
+        <span class="icon-text"><b>KG</b></span>
+      </label>
+    </div>                    
+    <div class="check-box">
+      <input id="" class="" type="radio" name="atributo" value="UNIDADE" alt="Unidade">
+      <label for="">
+        <span class="icon-menu"><span class="icon"></span></span>
+        <span class="icon-text">UNIDADE</span>
+      </label>
+    </div>
+    <div class="check-box">
+      <input id="" class="" type="radio" name="atributo" value="1/2KG" alt="1/2kg">
+      <label for="">
+        <span class="icon-menu"><span class="icon"></span></span>
+        <span class="icon-text">1/2KG</span>
+      </label>
+    </div>
+    <div class="check-box">
+      <input id="" class="" type="radio" name="atributo" value="PACOTE" alt="Pacote">
+      <label for="">
+        <span class="icon-menu"><span class="icon"></span></span>
+        <span class="icon-text">PACOTE</span>
+      </label>
+    </div>
+    <div class="check-box">
+      <input id="" class="" type="radio" name="atributo" value="BANDEJA" alt="Bandeja">
+      <label for="">
+        <span class="icon-menu"><span class="icon"></span></span>
+        <span class="icon-text">BANDEJA</span>
+      </label>
+    </div>
+  </div>
+  <input type="button" name="prev" class="prev acao" value="Voltar">
+  <input type="button" name="proximo" class="next acao" value="Pronto" id="showPreAnuncio">
 
 </fieldset>
 
 
 
-<fieldset id="etapa4CriarAnuncio" name="4"> <!-- AQUI ELE COLOCA AS OBSERVAÇÕES -->
-	<input type="button" name="proximo" class="next acao" value="Próximo">
-	<input type="button" name="prev" class="prev acao" value="Anterior">
-</fieldset>
+<!-- <fieldset id="etapa4CriarAnuncio" name="4"> --> <!-- AQUI ELE COLOCA AS OBSERVAÇÕES -->
+
+  <!-- <input type="textarea" name="observacoes" placeholder="INSIRA AQUI A SUA OBSERVAÇÃO"> -->
+
+  <!-- <textarea rows="4" cols="50" placeholder="SUAS OBSERVAÇÕES" name="observacoes" id="obs"></textarea> -->
+
+<!-- 	<input type="button" name="prev" class="prev acao" value="Voltar">
+  <input type="button" name="proximo" class="next acao" value="Pronto" id="showPreAnuncio">
+</fieldset> -->
 
 
 
 
 <fieldset id="etapa5CriarAnuncio" name="5"> <!-- AQUI MOSTRA O PRÉ - ANÚNCIO , COM BOTÃO PARA CONFIRMAR . -->
-	<input type="button" name="prev" class="prev acao" value="Anterior">
+	<!-- <input type="button" name="prev" class="prev acao" value="Anterior"> -->
+
+
+  <div class="form-group basic-textarea rounded-corners">
+    <textarea class="form-control z-depth-1" id="obs" rows="3" name="observacao"></textarea>
+  </div>
+  <input type="button" name="prev" class="prev acao" value="Voltar"> <!-- NÃO FUNCIONANDO !! -->
+  <button class="btn btn-primary" id="publicarButton" onclick="publicarAnuncio()"> PUBLICAR </button>
 </fieldset>
+
+
 
 
 <script type="text/javascript" src="//code.jquery.com/jquery-3.3.1.min.js"></script>

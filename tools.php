@@ -83,7 +83,21 @@ function getImagemProduto($idProd){
 
 	$imagem = mysqli_fetch_array($display);
 
-	return ("<img src=imagens/".$imagem['imagemprincipal'] . " width=200px>");
+	return ("<img src=imagens/".$imagem['imagemprincipal'] . " width=300px>");
+}
+
+function getImagemCategoria($cat){
+
+	$comandoGetImagemCategoria = "SELECT imagem FROM categoria WHERE nome = $cat";
+
+	mysqli_query($GLOBALS['dao'], "set names 'utf8'");
+
+	$display = mysqli_query($GLOBALS['dao'], $comandoGetImagemCategoria);
+
+	$imagem = mysqli_fetch_array($display);
+
+	return ("<img src=imagens/".$imagem['imagem'] . " width=300px>");
+
 }
 
 function produtoTemImagensAdicionais($idProd){ //VERIFICA SE O PRODUTO TEM IMAGENS ADIDIONAIS - ADD1 E ADD2.

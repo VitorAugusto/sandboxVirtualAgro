@@ -1,7 +1,19 @@
 document.getElementById("etapa2CriarAnuncio").style.display = 'none';
 document.getElementById("etapa3CriarAnuncio").style.display = 'none';
-document.getElementById("etapa4CriarAnuncio").style.display = 'none';
+// document.getElementById("etapa4CriarAnuncio").style.display = 'none';
 document.getElementById("etapa5CriarAnuncio").style.display = 'none';
+
+
+var categoria;
+var produto;
+var medida;
+var observacao;
+var anuncioMontado = {}
+
+function getAnuncioMontado(){
+
+	return anuncioMontado;
+}
 
 
 
@@ -59,24 +71,57 @@ $("body").on("click", ".escolherProduto", function(){ //ETAPA 2, AQUI ELE ESCOLH
 
 });
 
-$("#etapa3CriarAnuncio").on("click", $("input[name='atributo']"), function(){ //ETAPA 3 , CAPTURA O ATRIBUTO DO ANÚNCIO, KG , 1/2KG, BANDEJA, ETC
+// $("#etapa3CriarAnuncio").on("click", $("input[name='proximo']"), function(){ //ETAPA 3 , CAPTURA O ATRIBUTO DO ANÚNCIO, KG , 1/2KG, BANDEJA, ETC
+// 	// var atributo = $("input[name='atributo']:checked").val();
+
+// 	// medida = atributo;
+
+// 	// console.log(medida);
+// 	//console.log(atributo);
+// 	//montarAnuncio(atributo, 3);
+
+// });
+
+
+ // $('#obs').on('change', function(){ // CAPTURA A OBSERVAÇÃO
+
+ // 	if($('#obs').val() === ''){
+ // 		console.log("nenhuma observação");
+ // 	}else{
+ // 		console.log($('#obs').val());
+ // 		observacao = $('#obs').val();
+ // 	}
+ // });
+
+
+$('#showPreAnuncio').on('click', function(){ //ETAPA 5 , MOSTRAR O PRÉ ANÚNCIO 
+
 	var atributo = $("input[name='atributo']:checked").val();
-	//console.log(atributo);
-	montarAnuncio(atributo, 3);
-	// $("input[name='atributo']").click(function(){
-	// 	atributo = $("input[name='atributo']:checked").val();
-	// 	montarAnuncio(atributo, 3);
- //    });
+
+	medida = atributo;
+
+	console.log("tela de pré anúncio");
+
+	var content = JSON.stringify(anuncioMontado);
+
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			//document.getElementById("etapa5CriarAnuncio").innerHTML += this.responseText;
+		}
+	};
+	xhttp.open("POST", "preAnuncio.php" , true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	// xhttp.send("categoria="+categoria+"&produto="+produto+"&medida="+medida+"&observacao="+observacao);
+	xhttp.send("categoria="+categoria+"&produto="+produto+"&medida="+medida);
+
 
 });
 
-function montarAnuncio(item, step){
 
-	var categoria;
-	var produto;
-	var medida;
-	var observacao;
-	var anuncioMontado = [];
+
+
+function montarAnuncio(item, step){
 
 	switch(step){
 
@@ -95,11 +140,22 @@ function montarAnuncio(item, step){
 		console.log("ADICIONADO : " + item + " À MEDIDA");
 		break;
 
-		case 4:
-		console.log("ADICIONADO : " + item + " COMO OBSERVAÇÃO ");
-		observacao = item;
-		break;
+		// case 4:
+		// console.log("ADICIONADO : " + item + " COMO OBSERVAÇÃO ");
+		// observacao = item;
+		// break;
 	}
+
+	// if(observacao == null){
+	// 	observacao = '';
+	// }
+
+	// anuncioMontado = {
+	// 	categoria:categoria,
+	// 	produto:produto,
+	// 	medida:medida,
+	// 	observacao:observacao
+	// }
 }
 
 
@@ -117,6 +173,24 @@ function mostrarProdutos(cat){
 
 	xhttp.send();
 }
+
+function publicarAnuncio(){
+
+	observ = document.getElementById("obs").value;
+
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			window.location.href = "meusAnuncios.php";
+		}
+	};
+	xhttp.open("POST", "newPostAnuncio.php" , true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	// xhttp.send("categoria="+categoria+"&produto="+produto+"&medida="+medida+"&observacao="+observacao);
+	xhttp.send("categoria="+categoria+"&produto="+produto+"&medida="+medida +"&observacao="+observ);
+
+}
+
 
 
 

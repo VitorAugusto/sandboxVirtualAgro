@@ -41,4 +41,34 @@ INSERT INTO anuncios(id_anunciante, tipo_anuncio, texto_anuncio) VALUES(2,"FRUTA
 
 
 
+select * from produtos;
 
+show tables;
+
+CREATE TABLE categoria(id INT PRIMARY KEY AUTO_INCREMENT, nome TEXT, imagem TEXT);
+
+desc categoria;
+
+INSERT INTO categoria(nome,imagem) VALUES ('FRUTA', 'fruta/main.jpg');
+
+INSERT INTO categoria(nome,imagem) VALUES ('VERDURA', 'verdura/main.jpg');
+
+INSERT INTO categoria(nome,imagem) VALUES ('LEGUME', 'legume/main.jpg');
+
+INSERT INTO categoria(nome,imagem) VALUES ('TEMPERO', 'tempero/main.jpg');
+
+INSERT INTO categoria(nome,imagem) VALUES ('ESPECIARIA', 'especiaria/main.jpg');
+
+INSERT INTO categoria(nome,imagem) VALUES ('GRÃOS', 'grãos/main.jpg');
+
+INSERT INTO categoria(nome,imagem) VALUES ('OUTRO', 'outro/main.jpg');
+
+select * from categoria;
+
+desc anuncios;
+
+
+
+select * from anuncios;
+select * from produtos where nome = "AMEIXA";
+SELECT imagem from categoria WHERE nome = 'fruta';

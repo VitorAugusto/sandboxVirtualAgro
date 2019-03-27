@@ -1,21 +1,33 @@
 <?php
-    session_start();
-    include('tools.php');
+include_once('tools.php');
 
-	$tipoCategoria = $_REQUEST['tipoCategoria'];
-	
-	$result_sub_cat = "SELECT nome FROM produtos WHERE categoria = '$tipoCategoria' ORDER BY nome";
-
-    
-    mysqli_query($GLOBALS['dao'], "set names 'utf8'");
-    mysqli_query($GLOBALS['dao'],$result_sub_cat);
-
-	while ($row_sub_cat = mysqli_fetch_assoc($resultado_sub_cat) ) {
-		$sub_categorias_post[] = array(
-			'nome' => utf8_encode($row_sub_cat['nome']),
-		);
-	}
-	
-	echo(json_encode($sub_categorias_post));
+$categoria =  $_POST['categoria'];
+$produto = $_POST['produto'];
+$medida = $_POST['medida'];
 
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+		<p>TELA DE PRÉ ANÚNCIO</p>
+		<title></title>
+	</head>
+	<body>
+
+
+		<?php
+		echo "<ul class='list-group'>";
+		echo "<li class='list-group-item d-flex justify-content-between align-items-center'> " . getImagemProduto(getIdProdutoPeloNome($produto)) . "</li>";
+		echo "<li class='list-group-item d-flex justify-content-between align-items-center'> " . 
+		"<span class='badge badge-primary badge-pill' name='nomeProduto'>". $produto . "</span>".
+		"<span class='badge badge-primary badge-pill' name='nomeProduto'>". $medida . "</span>"
+		. "</li>";
+
+		echo "</ul>";
+
+		?>
+
+	</body>
+
+	</html>
