@@ -30,7 +30,7 @@ $('input[name=proximo]').click(function(){
 
 
 
-$('.escolherCategoria').click(function(){
+$('.escolherCategoria').click(function(){ //ETAPA 1 , AQUI ELE ESCOLHE A CATEGORIA
 	proximo($('a[name=lol]'));  //QUANDO CLICAR NA CATEGORIA ESSA FUNÇÃO É DISPARADA. 
 
 
@@ -41,20 +41,32 @@ $('.escolherCategoria').click(function(){
 
 	mostrarProdutos(val);
 
+
 });
 
 
-$("body").on("click", ".escolherProduto", function(){
+$("body").on("click", ".escolherProduto", function(){ //ETAPA 2, AQUI ELE ESCOLHE O PRODUTO QUE QUER ANÚNCIAR
 
 
 
-	var val = $(this).closest("tr").find("td[name='produto']").text();
+	var val = $(this).closest("li").find("span[name='produto']").text();
 
 	console.log("CLICOU NO PRODUTO : " + val);
 
 	proximo($('div[id=telaprodutos]'));
 
 	montarAnuncio(val,2);
+
+});
+
+$("#etapa3CriarAnuncio").on("click", $("input[name='atributo']"), function(){ //ETAPA 3 , CAPTURA O ATRIBUTO DO ANÚNCIO, KG , 1/2KG, BANDEJA, ETC
+	var atributo = $("input[name='atributo']:checked").val();
+	//console.log(atributo);
+	montarAnuncio(atributo, 3);
+	// $("input[name='atributo']").click(function(){
+	// 	atributo = $("input[name='atributo']:checked").val();
+	// 	montarAnuncio(atributo, 3);
+ //    });
 
 });
 
@@ -80,9 +92,11 @@ function montarAnuncio(item, step){
 
 		case 3:
 		medida = item;
+		console.log("ADICIONADO : " + item + " À MEDIDA");
 		break;
 
 		case 4:
+		console.log("ADICIONADO : " + item + " COMO OBSERVAÇÃO ");
 		observacao = item;
 		break;
 	}

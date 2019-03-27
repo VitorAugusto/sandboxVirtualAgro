@@ -144,35 +144,35 @@
   <div class="linha">
 
               <div class="check-box">
-                <input id="" class="" type="radio" name="atributo" value="kg" alt="Kg" checked>
+                <input id="" class="" type="radio" name="atributo" value="KG" alt="Kg" checked>
                   <label for="">
                     <span class="icon-menu"><span class="icon"></span></span>
                     <span class="icon-text"><b>KG</b></span>
                   </label>
               </div>                    
               <div class="check-box">
-                <input id="" class="" type="radio" name="atributo" value="un" alt="Unidade">
+                <input id="" class="" type="radio" name="atributo" value="UNIDADE" alt="Unidade">
                   <label for="">
                     <span class="icon-menu"><span class="icon"></span></span>
                     <span class="icon-text">UNIDADE</span>
                   </label>
               </div>
               <div class="check-box">
-                <input id="" class="" type="radio" name="atributo" value="1/2kg" alt="1/2kg">
+                <input id="" class="" type="radio" name="atributo" value="1/2KG" alt="1/2kg">
                   <label for="">
                     <span class="icon-menu"><span class="icon"></span></span>
                     <span class="icon-text">1/2KG</span>
                   </label>
               </div>
               <div class="check-box">
-                <input id="" class="" type="radio" name="atributo" value="pacote" alt="Pacote">
+                <input id="" class="" type="radio" name="atributo" value="PACOTE" alt="Pacote">
                   <label for="">
                     <span class="icon-menu"><span class="icon"></span></span>
                     <span class="icon-text">PACOTE</span>
                   </label>
               </div>
               <div class="check-box">
-                <input id="" class="" type="radio" name="atributo" value="bandeja" alt="Bandeja">
+                <input id="" class="" type="radio" name="atributo" value="BANDEJA" alt="Bandeja">
                   <label for="">
                     <span class="icon-menu"><span class="icon"></span></span>
                     <span class="icon-text">BANDEJA</span>

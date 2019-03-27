@@ -66,26 +66,31 @@ if(empty($_GET['categoria'])){
 
 	$display = mysqli_query($GLOBALS['dao'],$comando);
 
-	echo "<table border=5>";
-	echo "<th> IMAGEM </th>";
-	echo "<th> NOME </th>";
+	//echo "<table border=5>";
+	//echo "<th> IMAGEM </th>";
+	//echo "<th> NOME </th>";
 
 	while ($coluna = mysqli_fetch_array($display)) { // CADA COLUNA PRA SER PREENCHIDA É UM <tr>, CADA VALOR DESSA COLUNA É UM <td>
-		echo "<tr>";
+		//echo "<tr>";
 
-		//echo "<ul>";
+		echo "<ul class='list-group'>";
 
 		//echo "<td>". "<a href=produto?idProduto=$coluna[id]>".getImagemProduto($coluna['id']) . "</a>". "</td>"; // IMAGEM COM LINK
-		echo "<td>". "<a href='#' class='escolherProduto'>". getImagemProduto($coluna['id']) . "</a>" . "</td>";
-		// echo "<li>". "<a href=# onclick=exibirProdutoDetails($coluna[id])>".getImagemProduto($coluna['id']) . "</a>". "</li>";
-		echo "<td name='produto'>" . mb_strtoupper($coluna['nome']) . "</td>";
+		echo "<li class='list-group-item d-flex justify-content-between align-items-center'>". "<a href='#' class='escolherProduto'>". getImagemProduto($coluna['id']) . 
+		"<span class='badge badge-primary badge-pill' name='produto'>". mb_strtoupper($coluna['nome']) . "</span>".
+		"</a>" . 
+		"</li>";
 
-		echo "</tr>";
+		//echo "<span class='badge badge-primary badge-pill'>". mb_strtoupper($coluna['nome']) . "</span>";
 
-		//echo "</ul>";
+		//echo "<li name='produto' class='list-group-item'>" . mb_strtoupper($coluna['nome']) . "</li>";
+
+		//echo "</tr>";
+
+		echo "</ul>";
 	}
 
-	echo "</table>";
+	//echo "</table>";
 
 
 }

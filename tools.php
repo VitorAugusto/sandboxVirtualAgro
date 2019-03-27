@@ -240,7 +240,8 @@ function construirMenuLateralComLogin(){
 function construirMenuLogin(){
 	echo "<button type=button class='btn-login'>";
 	echo "<span class='icon-menu'><i class='fas fa-sign-in-alt'></i></span>";
-	echo "<a href='index.php'>login</a>";
+	echo "<a href='index.php'>login";
+	echo "</a>";
 	echo "</button>";
 }
 
