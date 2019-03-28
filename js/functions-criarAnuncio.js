@@ -26,7 +26,7 @@ function proximo(elem){
 	next_fs.show(800);
 }
 
-$('.prev').click(function(){
+$("body").on("click", ".prev", function(){
 	atual_fs = $(this).parent();
 	prev_fs = $(this).parent().prev();
 
@@ -107,7 +107,7 @@ $('#showPreAnuncio').on('click', function(){ //ETAPA 5 , MOSTRAR O PRÉ ANÚNCIO
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
-			//document.getElementById("etapa5CriarAnuncio").innerHTML += this.responseText;
+			document.getElementById("etapa5CriarAnuncio").innerHTML = this.responseText;
 		}
 	};
 	xhttp.open("POST", "preAnuncio.php" , true);
@@ -181,14 +181,14 @@ function publicarAnuncio(){
 		var xhttp = new XMLHttpRequest();
 		xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
-			window.location.href = "meusAnuncios.php";
+
 		}
 	};
 	xhttp.open("POST", "newPostAnuncio.php" , true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	// xhttp.send("categoria="+categoria+"&produto="+produto+"&medida="+medida+"&observacao="+observacao);
 	xhttp.send("categoria="+categoria+"&produto="+produto+"&medida="+medida +"&observacao="+observ);
-
+	window.location.replace('meusAnuncios.php');
 }
 
 

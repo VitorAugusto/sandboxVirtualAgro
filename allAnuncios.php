@@ -45,7 +45,7 @@
                 <?php
 
 
-                    $selectTodosAnuncios = "SELECT * from anuncios";
+                    $selectTodosAnuncios = "SELECT * from anuncios ORDER BY id DESC";
                     mysqli_query($GLOBALS['dao'], "set names 'utf8'");
 
                     $displayTodosAnuncios = mysqli_query($GLOBALS['dao'], $selectTodosAnuncios);

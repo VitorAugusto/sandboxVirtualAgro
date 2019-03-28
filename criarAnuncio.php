@@ -200,14 +200,7 @@
 
 
 <fieldset id="etapa5CriarAnuncio" name="5"> <!-- AQUI MOSTRA O PRÉ - ANÚNCIO , COM BOTÃO PARA CONFIRMAR . -->
-	<!-- <input type="button" name="prev" class="prev acao" value="Anterior"> -->
-
-
-  <div class="form-group basic-textarea rounded-corners">
-    <textarea class="form-control z-depth-1" id="obs" rows="3" name="observacao"></textarea>
-  </div>
-  <input type="button" name="prev" class="prev acao" value="Voltar"> <!-- NÃO FUNCIONANDO !! -->
-  <button class="btn btn-primary" id="publicarButton" onclick="publicarAnuncio()"> PUBLICAR </button>
+  
 </fieldset>
 
 
