@@ -1,6 +1,4 @@
-show databases ;
-
-CREATE DATABASE IF NOT EXISTS virtualagro;
+﻿CREATE DATABASE IF NOT EXISTS virtualagro;
 
 use virtualagro;
 
@@ -20,9 +18,6 @@ CREATE TABLE IF NOT EXISTS produtos(id INT PRIMARY KEY AUTO_INCREMENT,
   imagemadd1 varchar(100),
   imagemadd2 varchar(100));
 
-
-
-
 CREATE TABLE IF NOT EXISTS anuncios(id INT PRIMARY KEY AUTO_INCREMENT,
   id_anunciante int,
   categoria ENUM('FRUTA', 'VERDURA','LEGUME','TEMPERO','OUTRO', 'ESPECIARIA','GRÃOS'),
@@ -30,8 +25,18 @@ CREATE TABLE IF NOT EXISTS anuncios(id INT PRIMARY KEY AUTO_INCREMENT,
   FOREIGN KEY (id_anunciante) references cadastros(id),
   id_produto INT,
   FOREIGN KEY (id_produto) references produtos(id),
-  observacao TEXT);
+  observacao TEXT,
+  preco TEXT);
 
+CREATE TABLE categoria(id INT PRIMARY KEY AUTO_INCREMENT, nome TEXT, imagem TEXT);
+
+INSERT INTO virtualagro.categoria (id, nome, imagem) VALUES (1, 'FRUTA', 'fruta/main.jpg');
+INSERT INTO virtualagro.categoria (id, nome, imagem) VALUES (2, 'VERDURA', 'verdura/main.jpg');
+INSERT INTO virtualagro.categoria (id, nome, imagem) VALUES (3, 'LEGUME', 'legume/main.jpg');
+INSERT INTO virtualagro.categoria (id, nome, imagem) VALUES (4, 'TEMPERO', 'tempero/main.jpg');
+INSERT INTO virtualagro.categoria (id, nome, imagem) VALUES (5, 'ESPECIARIA', 'especiaria/main.jpg');
+INSERT INTO virtualagro.categoria (id, nome, imagem) VALUES (6, 'GRÃOS', 'grãos/main.jpg');
+INSERT INTO virtualagro.categoria (id, nome, imagem) VALUES (7, 'OUTRO', 'outro/main.jpg');
 
 INSERT INTO virtualagro.produtos (id, nome, categoria, imagemprincipal, imagemadd1, imagemadd2) VALUES (1, 'abacate', 'FRUTA', 'fruta/abacate.jpg', null, null);
 INSERT INTO virtualagro.produtos (id, nome, categoria, imagemprincipal, imagemadd1, imagemadd2) VALUES (2, 'abacaxi', 'FRUTA', 'fruta/abacaxi.jpg', null, null);
@@ -132,5 +137,8 @@ INSERT INTO virtualagro.produtos (id, nome, categoria, imagemprincipal, imagemad
 INSERT INTO virtualagro.produtos (id, nome, categoria, imagemprincipal, imagemadd1, imagemadd2) VALUES (97, 'lentilha', 'GRÃOS', 'grãos/lentilha.jpg', null, null);
 INSERT INTO virtualagro.produtos (id, nome, categoria, imagemprincipal, imagemadd1, imagemadd2) VALUES (98, 'quinoa', 'GRÃOS', 'grãos/quinoa.jpg', null, null);
 INSERT INTO virtualagro.produtos (id, nome, categoria, imagemprincipal, imagemadd1, imagemadd2) VALUES (99, 'soja', 'GRÃOS', 'grãos/soja.jpg', null, null);
-INSERT INTO virtualagro.anuncios (id, id_anunciante, categoria, texto_anuncio, id_produto, observacao) VALUES (4, 1, 'LEGUME', 'VENDO batata doce POR UNIDADE.', 42, '');
-INSERT INTO virtualagro.anuncios (id, id_anunciante, categoria, texto_anuncio, id_produto, observacao) VALUES (5, 1, 'FRUTA', 'VENDO abacaxi POR UNIDADE.', 2, '');
+
+INSERT INTO virtualagro.anuncios (id, id_anunciante, categoria, texto_anuncio, id_produto, observacao, preco) VALUES (6, 3, 'FRUTA', 'KG', 3, 'ABACATE MADURO.', null);
+INSERT INTO virtualagro.anuncios (id, id_anunciante, categoria, texto_anuncio, id_produto, observacao, preco) VALUES (7, 3, 'FRUTA', 'KG', 3, 'ABACATE MADURO.', null);
+INSERT INTO virtualagro.anuncios (id, id_anunciante, categoria, texto_anuncio, id_produto, observacao, preco) VALUES (38, 1, 'TEMPERO', 'KG', 63, '', '6,00');
+INSERT INTO virtualagro.anuncios (id, id_anunciante, categoria, texto_anuncio, id_produto, observacao, preco) VALUES (39, 1, 'ESPECIARIA', 'PACOTE', 87, 'pacote pequeno, pra vender rápido.', '4,00');

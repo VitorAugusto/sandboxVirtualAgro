@@ -45,7 +45,7 @@
 					}else{
 						$meuid = $_SESSION['id'];
 
-						$selectMeusAnuncios = "SELECT * from anuncios WHERE id_anunciante = '$meuid'";
+						$selectMeusAnuncios = "SELECT * from anuncios WHERE id_anunciante = '$meuid' ORDER BY id DESC";
 						
 						mysqli_query($GLOBALS['dao'], "set names 'utf8'");
 
