@@ -15,9 +15,11 @@ $produto = $_POST['produto'];
 $idProduto = getIdProdutoPeloNome($produto);
 $medida = $_POST['medida'];
 $obs = $_POST['observacao'];
+$preco = $_POST['preco'];
 
-$comandoPublicarAnuncio = "INSERT INTO anuncios(id_anunciante,categoria,texto_anuncio,id_produto,observacao) VALUES
-('$idAnunciante', '$newCat', '$medida', '$idProduto', '$obs')";
+
+$comandoPublicarAnuncio = "INSERT INTO anuncios(id_anunciante,categoria,texto_anuncio,id_produto,observacao,preco) VALUES
+('$idAnunciante', '$newCat', '$medida', '$idProduto', '$obs', '$preco')";
 
 
 mysqli_query($GLOBALS['dao'], "set names 'utf8'");

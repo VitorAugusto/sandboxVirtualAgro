@@ -67,6 +67,8 @@ select * from categoria;
 
 desc anuncios;
 
+ALTER TABLE anuncios ADD COLUMN preco FLOAT;
+ALTER TABLE anuncios MODIFY COLUMN preco TEXT;
 
 
 select * from anuncios;
