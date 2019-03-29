@@ -3,6 +3,17 @@
 //ESSE ARQUIVO TOOLS CONTÉM UM CONJUNTO DE FERRAMENTAS(TOOLS) ÚTEIS PARA O VIRTUAL-AGRO.
 include('masterDAO.php');
 
+
+function newGetId($itemA, $itemB){
+
+	$telefone = $itemA;
+	$pin = $itemB;
+
+	$displayNewId = mysqli_query($GLOBALS['dao'], "SELECT id FROM cadastros2 WHERE telefone = '$telefone' AND pin = MD5($pin)");
+
+	return(mysqli_fetch_row($displayNewId)[0]);
+}
+
 function getNome($itemA, $itemB){
 
 	$login = $itemA;
