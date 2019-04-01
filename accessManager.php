@@ -19,7 +19,7 @@ switch ($tipoOperacao) {
   $pin = $_POST['pin'];
   $newTel = preg_replace("/[^a-fA-F0-9]/",'',$telefone);
 
-  $comandoLogin = "SELECT id,nome FROM cadastros WHERE telefone = '$newTel' AND pin = MD5($pin)";
+  $comandoLogin = "SELECT id,nome FROM cadastros WHERE telefone = '$newTel' AND pin = MD5('$pin')";
 
   $displayLogin = mysqli_query($GLOBALS['dao'], $comandoLogin);
 
@@ -67,7 +67,7 @@ switch ($tipoOperacao) {
 
   mysqli_query($GLOBALS['dao'], "set names 'utf8'");
 
-  $comandoCadastrar = "INSERT INTO cadastros(nome,telefone,pin) VALUES ('$nome', '$newTel', MD5($pin))";
+  $comandoCadastrar = "INSERT INTO cadastros(nome,telefone,pin) VALUES ('$nome', '$newTel', MD5('$pin'))";
 
   mysqli_query($GLOBALS['dao'], $comandoCadastrar);
 
