@@ -1,6 +1,6 @@
 /* Máscaras ER */
 
-console.log("v2 java cadastro");
+console.log("v2 javcstro");
 
 //-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X- MÁSCARA DE NÚMERO TELEFONE -X-X-X-X-X-X
 
@@ -32,6 +32,7 @@ window.onload = function(){
 var nome;
 var telefone;
 var pin;
+var gg;
 
 $(function(){
     var atual_fs, next_fs, prev_fs;
@@ -56,31 +57,41 @@ $(function(){
         prev_fs.show(800);
     });
 
+    $('#telefone').keyup(function(){
+        if($('#telefone').val().length == 15){
+            checkTelefone($('#telefone').val());
+        }
+    });
 
     $('input[name=proximo]').on('click', function(){
-
+        
         var array = formulario.serializeArray();
 
         if(array[0].value == ''){ //campo NOME
              lancarErro(1);//erro 1
         }else if(array[1].value == ''){ //campo TELEFONE 
              lancarErro(2);//erro 2
-         }else if(array[1].value.length != 15 ){
+         }else if(array[1].value.length != 15){
             lancarErro(3);//erro 3
         }else{
+            if(telefoneJaCadastrado()){
+                lancarErro(9);
+            }else{
+
             lancarErro(99); //erro 99 limpa o campo de erro
             nome = array[0].value;
             telefone = array[1].value;
             proximo($(this)); //todos os campos preenchidos e diferentes de ''
+
         }
-    });
+    }
+});
     
     $('input[name=proximo2]').on('click', function(){  //verificação do SMS
 
         lancarErro(99);             //erro 4 caso código incorreto
         proximo($(this));
     });
-
 
 
     $('input[name=cadastrar]').on('click', function(evento){
@@ -131,6 +142,29 @@ $(function(){
     });
 });
 
+
+
+function checkTelefone(tel){
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            gg = this.responseText;
+        }
+    };
+    xhttp.open("POST", "accessManager.php?tipoOperacao=consulta" , true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.send("telefone="+tel);
+}
+
+function telefoneJaCadastrado(){
+
+    if(gg == 4){
+        return true;
+    }else{
+        return false;
+    }
+}
+
 function lancarErro(codigoErro){
     //função para lançar erros na hora do cadastro.
 
@@ -157,7 +191,7 @@ function lancarErro(codigoErro){
         break;
 
         case 6:
-        $('.erro').html('<div class="erro-css"><p>Insira um pin de no mínimo 4 digitos!</p></div>');
+        $('.erro').html('<div class="erro-css"><p>Insira um pin de 4 digitos!</p></div>');
         break;
 
         case 7:
@@ -166,6 +200,10 @@ function lancarErro(codigoErro){
 
         case 8:
         $('.erro').html('<div class="erro-css"><p>Os PINS não correspondem !</p></div>');
+        break;
+
+        case 9:
+        $('.erro').html('<div class="erro-css"><p>NÚMERO DE TELEFONE JÁ CADASTRADO !</p></div>');
         break;
 
         case 99: //LIMPAR CAMPO DE ERROS

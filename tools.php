@@ -4,34 +4,41 @@
 include('masterDAO.php');
 
 
-function newGetId($itemA, $itemB){
+// function newGetId($itemA, $itemB){
 
-	$telefone = $itemA;
-	$pin = $itemB;
+// 	$telefone = $itemA;
+// 	$pin = $itemB;
 
-	$displayNewId = mysqli_query($GLOBALS['dao'], "SELECT id FROM cadastros2 WHERE telefone = '$telefone' AND pin = MD5($pin)");
+// 	$displayNewId = mysqli_query($GLOBALS['dao'], "SELECT id FROM cadastros WHERE telefone = '$telefone' AND pin = MD5($pin)");
 
-	return(mysqli_fetch_row($displayNewId)[0]);
-}
+// 	return(mysqli_fetch_row($displayNewId)[0]);
+// }
 
-function getNome($itemA, $itemB){
+function getNome($itemA){ //Pegar nome pelo id
 
-	$login = $itemA;
-	$senha = $itemB;
+	$id = $itemA;
 
-	$displayNome = mysqli_query($GLOBALS['dao'], "SELECT nome FROM cadastros WHERE username = '$login' AND senha= '$senha'");
+	$displayNome = mysqli_query($GLOBALS['dao'], "SELECT nome FROM cadastros WHERE id = '$id'");
 
 	return (mysqli_fetch_row($displayNome)[0]);
 }
 
-function getId($itemA, $itemB){
+function getId($itemA){ //pegar id pelo telefone
 
-	$login = $itemA;
-	$senha = $itemB;
+	$telefone = $itemA;
 
-	$displayId = mysqli_query($GLOBALS['dao'], "SELECT id FROM cadastros WHERE username = '$login' AND senha= '$senha'");
+	$displayId = mysqli_query($GLOBALS['dao'], "SELECT id FROM cadastros WHERE telefone = '$telefone'");
 
 	return (mysqli_fetch_row($displayId)[0]);
+}
+
+function getTelefone($itemA){ //get telefone pelo id
+
+	$id = $itemA;
+
+	$displayTelefone = mysqli_query($GLOBALS['dao'], "SELECT telefone FROM cadastros WHERE id = '$id'");
+
+	return (mysqli_fetch_row($displayTelefone)[0]);
 }
 
 
@@ -99,7 +106,7 @@ function getImagemProduto($idProd){
 
 function getImagemCategoria($cat){
 
-	$comandoGetImagemCategoria = "SELECT imagem FROM categoria WHERE nome = $cat";
+	$comandoGetImagemCategoria = "SELECT imagem FROM categoria WHERE nome = '$cat'";
 
 	mysqli_query($GLOBALS['dao'], "set names 'utf8'");
 

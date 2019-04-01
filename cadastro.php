@@ -76,7 +76,7 @@
         	    		<li>Fim</li>
 
         	    	</ul>
-        	    	<div class="erro">
+        	    	<div class="erro" id="mensagem" style="width: fit-content; margin: auto">
         	    		<!-- CAMPO DE MENSAGEM DE ERRO -->
         	    	</div>
 
@@ -104,35 +104,35 @@
 
         	    	<fieldset id="etapa3Cadastro"> <!-- DEFINE O PIN DE ACESSO 4 DÍGITOS -->
         	    		<h2>Configurações da conta</h2>
-        	    		<h3>Configurações Finais</h3>
-        	    		<input type="number" name="campoSenha" required="" placeholder="Informe um PIN DE ACESSO..." maxlength="1" pattern="[0-9]+">
-        	    		<input type="number" name="confirmaSenha" required="" placeholder="Confirme O PIN." maxlength="1" pattern="[0-9]+">
+        	    		<h3>Insira PIN de 4 digitos - esse PIN servirá como sua senha</h3>
+        	    		<input type="password" name="campoSenha" required="" placeholder="Informe um PIN DE ACESSO..." maxlength="4" pattern="[0-9]+">
+        	    		<input type="password" name="confirmaSenha" required="" placeholder="Confirme O PIN." maxlength="4" pattern="[0-9]+">
         	    		<input type="button" name="prev" class="prev acao" value="Anterior">
 
         	    		<input type="submit" name="cadastrar" class="acao" value="Finalizar">
         	    	</fieldset>
         	    	
 
-<script type="text/javascript" src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-<script type="text/javascript" src="js/functions-cadastro_v2.js?v=<?php echo time(); ?>"></script>
-<!-- SCRIPT RENOVADO -->
+        	    	<script type="text/javascript" src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+        	    	<script type="text/javascript" src="js/functions-cadastro_v2.js?v=<?php echo time(); ?>"></script>
+        	    	<!-- SCRIPT RENOVADO -->
 
-</form>
-</section>
-</div>		               
-<footer>
-	<div>
-		<a class="brand" href="#">
-			<img class="logo" src="./imagens/logo/virtual-agro-logo-png.png" alt="">            
-		</a>
-		<hr>
-		<div class="copyright">Copyright 2019 © <a href="#"><b>Virtual Agro</b></a>.</div>
-	</div>
-</footer>
+        	    </form>
+        	</section>
+        </div>		               
+        <footer>
+        	<div>
+        		<a class="brand" href="#">
+        			<img class="logo" src="./imagens/logo/virtual-agro-logo-png.png" alt="">            
+        		</a>
+        		<hr>
+        		<div class="copyright">Copyright 2019 © <a href="#"><b>Virtual Agro</b></a>.</div>
+        	</div>
+        </footer>
 
-<?php
+        <?php
 
-?>
+        ?>
 
-</body>
-</html>
+    </body>
+    </html>

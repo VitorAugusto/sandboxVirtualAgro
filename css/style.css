@@ -48,7 +48,7 @@ footer {
 span {
     font-weight: 700;
     color: #ffffff;
-   /* color: green;*/
+    /* color: green;*/
 }
 
 .spanProdutos{
@@ -373,6 +373,21 @@ li:hover a {
     width: 100px;
     height: 40px;
 }
+
+.entrar{
+    color: #fff;
+    background-color: #2a7766;
+    border-color: transparent;
+    border-radius: 10px;
+    align-items: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 40px;
+    text-align: center;
+    padding-left: 10px;
+}
+
 
 .linha {
     margin-top: 10px;

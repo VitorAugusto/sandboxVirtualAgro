@@ -10,52 +10,88 @@ session_regenerate_id(true);
 
 $tipoOperacao = $_GET['tipoOperacao'];
 
-echo $tipoOperacao;
 
 switch ($tipoOperacao) {
 
 	case 'login':
 
-  $login = $_POST['campoUsername'];
-  $senha = $_POST['campoSenha'];
+  $telefone = $_POST['telefone'];
+  $pin = $_POST['pin'];
+  $newTel = preg_replace("/[^a-fA-F0-9]/",'',$telefone);
 
-  $result = mysqli_query($GLOBALS['dao'], "SELECT * FROM cadastros WHERE username = '$login' AND senha = '$senha'");
+  $comandoLogin = "SELECT id,nome FROM cadastros WHERE telefone = '$newTel' AND pin = MD5($pin)";
 
-  if(mysqli_num_rows ($result) > 0 ){
-    $_SESSION['login'] = $login;
-    $_SESSION['senha'] = $senha;
-    $_SESSION['nome'] = getNome($login, $senha);
-    $_SESSION['id'] = getId($login, $senha);
-      header('location:site.php'); //LOGIN EFETUADO COM SUCESSO - REDIRECIONA PARA O SITE VIRTUAL AGRO
+  $displayLogin = mysqli_query($GLOBALS['dao'], $comandoLogin);
+
+  if(mysqli_num_rows($displayLogin)){ //SE VOCÊ TEM CADASTRO;
+
+    $coluna = mysqli_fetch_array($displayLogin);
+
+    $_SESSION['id'] = $coluna['id'];
+    $_SESSION['nome'] = $coluna['nome'];
+
+    echo "1"; //CÓDIGO DE SUCESSO
+
+  }else{ //CASO PIN INCORRETO MAS O TELEFONE CERTO
+
+
+    $comandoChecar = "SELECT id FROM cadastros WHERE telefone = '$newTel'";
+
+    $displayChecar = mysqli_query($GLOBALS['dao'],$comandoChecar);
+
+    if(mysqli_num_rows($displayChecar)){
+      echo "2"; //PIN INCORRETO
     }else{
-      unset ($_SESSION['login']);
-      unset ($_SESSION['senha']);
-      unset ($_SESSION['nome']);
-      unset ($_SESSION['id']);
-      header('location:index.php'); // NÃO EXISTE CADASTRO - VOLTA PRA ORIGEM
-      
+      echo "3"; //CADASTRO NÃO EXISTE
     }
 
-    break;
-    
-    case 'cadastro':
-    
+  }
 
-    $nome = $_POST['nome'];
+
+  break;
+
+
+
+
+
+
+  case 'cadastro':
+
+
+  $nome = $_POST['nome'];
+  $telefone = $_POST['telefone'];
+  $newTel = preg_replace("/[^a-fA-F0-9]/",'',$telefone);
+  $pin = $_POST['pin'];
+
+
+
+  mysqli_query($GLOBALS['dao'], "set names 'utf8'");
+
+  $comandoCadastrar = "INSERT INTO cadastros(nome,telefone,pin) VALUES ('$nome', '$newTel', MD5($pin))";
+
+  mysqli_query($GLOBALS['dao'], $comandoCadastrar);
+
+    $_SESSION['id'] = getId($newTel); //get id pelo telefone, e insere na variável de sessão.
+    $_SESSION['nome'] = $nome; //variável de sessão nome.
+
+    break;
+
+
+    case 'consulta':
+
     $telefone = $_POST['telefone'];
     $newTel = preg_replace("/[^a-fA-F0-9]/",'',$telefone);
-    $pin = $_POST['pin'];
 
 
+    $comandoVerificarTelefone = "SELECT id from cadastros WHERE telefone = '$newTel'";
 
-    mysqli_query($GLOBALS['dao'], "set names 'utf8'");
+    $displayVerificarTelefone = mysqli_query($GLOBALS['dao'], $comandoVerificarTelefone);
 
-    $comandoCadastrar = "INSERT INTO cadastros2(nome,telefone,pin) VALUES ('$nome', '$newTel', MD5($pin))";
-
-    mysqli_query($GLOBALS['dao'], $comandoCadastrar);
-
-    $_SESSION['id'] = newGetId($newTel,$pin);
-    $_SESSION['nome'] = $nome;
+    if(mysqli_num_rows($displayVerificarTelefone)){
+      echo "4"; //NÚMERO JÁ CADASTRADO
+    }else{
+      echo "5"; //NÚMERO NÃO CADASTRADO
+    }
 
     break;
   }
