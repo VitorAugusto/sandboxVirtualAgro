@@ -46,8 +46,6 @@
         <?php
 
           if((!isset ($_SESSION['id']))){ //SE USUÁRIO NÃO ESTIVER LOGADO , SE O ID NÃO ESTIVER NA SESSÃO.
-            unset($_SESSION['login']);
-            unset($_SESSION['senha']);
             unset($_SESSION['nome']);
             unset($_SESSION['id']);
             header('location:index.php');

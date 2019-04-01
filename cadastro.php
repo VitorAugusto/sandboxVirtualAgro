@@ -70,50 +70,51 @@
 
         	    <form class="form-cadastro" name="formulario">
         	    	<ul class="progresso">
+
         	    		<li class="ativo">Início</li>
         	    		<li>Meio</li>
         	    		<li>Fim</li>
-        	    		<li> lol </li>
-        	    	</ul>
-        	    	<div class="erro"></div>
 
-        	    	<fieldset id="etapa1Cadastro"> <!-- AQUI ELE INSERE O NOME DELE, OU O NOME DA ORGANIZAÇÃO -->
+        	    	</ul>
+        	    	<div class="erro" id="mensagem" style="width: fit-content; margin: auto">
+        	    		<!-- CAMPO DE MENSAGEM DE ERRO -->
+        	    	</div>
+
+        	    	<fieldset id="etapa1Cadastro"> <!-- AQUI ELE INSERE O NOME DELE, E O NÚMERO DE TELEFONE -->
         	    		<h2>Configurações da conta</h2>
         	    		<h3>Configurações Iníciais</h3>
         	    		<input type="text" name="campoNome" required="" placeholder="Digite o seu nome...">
-        	    		<input type="text" name="campoUsername" required="" placeholder="Digite um apelido...">
-        	    		<input type="text" name="campoTelefone" required="" placeholder="Digite o seu telefone...">
+        	    		<input type="text" name="telefone" required="" placeholder="Digite o seu telefone..." id="telefone" maxlength="15" pattern="[0-9]+">
+
         	    		<input type="button" name="proximo" class="next acao" value="Próximo">        	    	
         	    	</fieldset>
 
 
-        	    	<fieldset id="etapa2Cadastro"> <!-- AQUI ELE INSERE O NÚMERO DE TELEFONE -->
+        	    	<fieldset id="etapa2Cadastro"> <!-- VERIFICAÇÃO OPT , VIA SMS -->
         	    		<h2>Configurações da conta</h2>
         	    		<h3>Um sms será enviado para você!</h3>
-        	    		<input type="text" name="" required="" placeholder="Digite o código do sms...">
+        	    		<input type="number" name="" placeholder="Digite o código do sms...">
+
         	    		<input type="button" name="prev" class="prev acao" value="Anterior">
         	    		<input type="button" name="proximo2" class="next acao" value="Próximo">        	    	        	    	
         	    	</fieldset>
 
 
-        	    	<fieldset id="etapa3Cadastro"> CONFIRMAÇÃO SMS DO NÚMERO DE TELEFONE
-        	    		<input type="button" name="prev" class="prev acao" value="Anterior">
-        	    		<input type="button" name="proximo2" class="next acao" value="Próximo">
-        	    	</fieldset>
 
 
-
-        	    	<fieldset id="etapa4Cadastro"> <!-- DEFINE O PIN DE ACESSO (MELHOR) -->
+        	    	<fieldset id="etapa3Cadastro"> <!-- DEFINE O PIN DE ACESSO 4 DÍGITOS -->
         	    		<h2>Configurações da conta</h2>
-        	    		<h3>Configurações Finais</h3>
-        	    		<input type="password" name="campoSenha" required="" placeholder="Digite uma senha...">
-        	    		<input type="password" name="confirmaSenha" required="" placeholder="Confirme a senha...">
+        	    		<h3>Insira PIN de 4 digitos - esse PIN servirá como sua senha</h3>
+        	    		<input type="password" name="campoSenha" required="" placeholder="Informe um PIN DE ACESSO..." maxlength="4" pattern="[0-9]+">
+        	    		<input type="password" name="confirmaSenha" required="" placeholder="Confirme O PIN." maxlength="4" pattern="[0-9]+">
         	    		<input type="button" name="prev" class="prev acao" value="Anterior">
-        	    		<input type="submit" name="login" class="acao" value="Finalizar">
+
+        	    		<input type="submit" name="cadastrar" class="acao" value="Finalizar">
         	    	</fieldset>
+        	    	
 
         	    	<script type="text/javascript" src="//code.jquery.com/jquery-3.3.1.min.js"></script>
-        	    	<script type="text/javascript" src="js/functions-cadastro.js?v=<?php echo time(); ?>"></script>
+        	    	<script type="text/javascript" src="js/functions-cadastro_v2.js?v=<?php echo time(); ?>"></script>
         	    	<!-- SCRIPT RENOVADO -->
 
         	    </form>
@@ -130,7 +131,7 @@
         </footer>
 
         <?php
-        
+
         ?>
 
     </body>
