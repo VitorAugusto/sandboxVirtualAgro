@@ -144,3 +144,5 @@ INSERT INTO virtualagro.anuncios (id, id_anunciante, categoria, texto_anuncio, i
 INSERT INTO virtualagro.anuncios (id, id_anunciante, categoria, texto_anuncio, id_produto, observacao, preco) VALUES (7, 3, 'FRUTA', 'KG', 3, 'ABACATE MADURO.', null);
 INSERT INTO virtualagro.anuncios (id, id_anunciante, categoria, texto_anuncio, id_produto, observacao, preco) VALUES (38, 1, 'TEMPERO', 'KG', 63, '', '6,00');
 INSERT INTO virtualagro.anuncios (id, id_anunciante, categoria, texto_anuncio, id_produto, observacao, preco) VALUES (39, 1, 'ESPECIARIA', 'PACOTE', 87, 'pacote pequeno, pra vender rápido.', '4,00');
+
+SET PASSWORD FOR 'root'@'localhost' = PASSWORD('virtualagroeunapolisbahia');
