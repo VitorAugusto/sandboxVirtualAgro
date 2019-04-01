@@ -2,6 +2,9 @@ CREATE DATABASE IF NOT EXISTS virtualagro;
 
 use virtualagro;
 
+CREATE USER 'adminvirtualagro'@'localhost' IDENTIFIED BY 'virtualagroeunapolisbahia';
+GRANT ALL PRIVILEGES ON * . * TO 'adminvirtualagro'@'localhost';
+
 CREATE table cadastros(id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
   nome LONGTEXT NOT NULL,
   telefone VARCHAR(50)NOT NULL,

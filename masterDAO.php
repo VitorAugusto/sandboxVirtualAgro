@@ -1,8 +1,8 @@
 <?php
 	$db_host = 'localhost'; //endereço
 	$db_database = 'virtualagro'; //banco de dados
-	$db_username = 'root';//usuário
-	$db_password = ''; //senha
+	$db_username = 'adminvirtualagro';//usuário
+	$db_password = 'virtualagroeunapolisbahia'; //senha
 
 	$minhaConexao = mysqli_connect($db_host,$db_username,$db_password,$db_database);
 
