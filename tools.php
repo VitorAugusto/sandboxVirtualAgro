@@ -159,7 +159,7 @@ function existemAnunciantes($produto){ //RETORNA SE EXISTEM ANUNCIANTES DAQUELE 
 
 function construirTabelaAnunciantes(){
 
-	echo "<table border=3 cellspacing=5>"; 
+	echo "<table cellpadding='5px'spacepadding='5px'>"; 
 
 	echo "<th>NOME AGRICULTOR</th>";
 	echo "<th>TELEFONE</th>";

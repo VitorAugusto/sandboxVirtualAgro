@@ -696,8 +696,28 @@ a:hover {
     border-radius: 50%;
     /* align-items: center; */
     margin: 0 auto;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .4);
 }
 .borda img{
     margin: 10px;
     border-radius: 50%;
+}
+#detalhesproduto {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .4);
+}
+#detalhesproduto h1{
+    text-align: center;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+#detalhesproduto table{
+    width: 100%;
+}
+#detalhesproduto tr:first-child{
+    border-bottom: solid 1px #1b6e5c;
+    color: #1b6e5c;
+    font-weight: bolder;
 }
