@@ -36,10 +36,8 @@ section {
 }
 
 #conteudo2{ 
-    margin-left: 10px;
     display: none;
 }
-
 
 footer {
     clear: both;
@@ -55,8 +53,6 @@ span {
     font-weight: 700;
     color: green;
 }
-
-
 
 input{
     padding: 9px;
@@ -273,7 +269,16 @@ li:hover a {
     text-align: center;
     color: #ffffff;
 }
-
+.list-group{
+    max-width: 250px;
+    border-radius: 20px;
+    padding: 10px;
+}
+li > a > img {
+    border-radius: 50%;
+    border: solid 2px #088000;
+    max-width: 200px;
+}
 .check-box { 
     position: relative;
     display: flex;
