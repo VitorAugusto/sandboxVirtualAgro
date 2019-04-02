@@ -688,3 +688,16 @@ a:hover {
     text-decoration: none;
     color: #ffffff;
 }
+/*Página produto*/
+.borda{
+    width: 320px;
+    height: 320px;
+    background: linear-gradient(45deg, #155724, #17a2b8, #51f8d4);
+    border-radius: 50%;
+    /* align-items: center; */
+    margin: 0 auto;
+}
+.borda img{
+    margin: 10px;
+    border-radius: 50%;
+}

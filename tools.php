@@ -230,6 +230,14 @@ function getIdProdutoPeloNome($nome){
 
 	return(mysqli_fetch_row($display)[0]);
 }
+function getNomeProdutoPeloID($id){
+	$comandoGetNome = "SELECT nome from produtos WHERE id = '$id'";
+
+	mysqli_query($GLOBALS['dao'], "set names 'utf8'");
+	$display = mysqli_query($GLOBALS['dao'], $comandoGetNome);
+
+	return(mysqli_fetch_row($display)[0]);
+}
 
 function getCategoriaProdutoPeloId($id){
 
