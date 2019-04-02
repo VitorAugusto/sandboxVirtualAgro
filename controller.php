@@ -13,7 +13,9 @@ class Controller
         switch ($_POST["action"]) {
             case "send_otp":
                 
-                $mobile_number = $_POST['mobile_number'];
+                $mobile_number = $_POST['mobile_number']; //CAPTURA O NUM. DE TELEFONE
+                $newTel = preg_replace("/[^a-fA-F0-9]/",'',$mobile_number); //NÚMERO DE TELEFONE LIMPO
+                $telefoneDef = '55'.$newTel;
                 
                 $apiKey = urlencode('YOUR_API_KEY');
                 $Textlocal = new Textlocal(false, false, $apiKey);

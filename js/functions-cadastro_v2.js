@@ -89,8 +89,19 @@ $(function(){
     
     $('input[name=proximo2]').on('click', function(){  //verificação do SMS
 
-        lancarErro(99);             //erro 4 caso código incorreto
-        proximo($(this));
+        if($('#sms').val() == ''){
+            alert("vazio");
+        }else{
+
+            if($('#sms').val().length != 6 || $('#sms').val().length > 6){
+                alert("código inválido");
+            }else{
+
+            }
+
+        }
+
+
     });
 
 
@@ -142,7 +153,24 @@ $(function(){
     });
 });
 
+function enviarOTP() { //enviar one-time-password
 
+    var number = $("#telefone").val(); //captura número 
+    if (number.length == 15 && number != null) {
+        var input = {
+            "mobile_number" : number,
+            "action" : "send_otp"
+        };
+        $.ajax({
+            url : 'controller.php',
+            type : 'POST',
+            data : input,
+            success : function(response) {
+                console.log("enviou post pro controller");
+            }
+        });
+    } 
+}
 
 function checkTelefone(tel){
     var xhttp = new XMLHttpRequest();
@@ -155,6 +183,7 @@ function checkTelefone(tel){
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttp.send("telefone="+tel);
 }
+
 
 function telefoneJaCadastrado(){
 
