@@ -92,8 +92,8 @@
 
         	    	<fieldset id="etapa2Cadastro"> <!-- VERIFICAÇÃO OPT , VIA SMS -->
         	    		<h2>Configurações da conta</h2>
-        	    		<h3>Um sms será enviado para você!</h3>
-        	    		<input type="number" name="" placeholder="Digite o código do sms...">
+        	    		<h3>Um SMS foi enviado para você!</h3>
+        	    		<input type="number" placeholder="Digite o código do sms..." id="sms" max="6" maxlength="6">
 
         	    		<input type="button" name="prev" class="prev acao" value="Anterior">
         	    		<input type="button" name="proximo2" class="next acao" value="Próximo">        	    	        	    	

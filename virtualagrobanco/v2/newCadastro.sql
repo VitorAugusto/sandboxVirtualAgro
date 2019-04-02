@@ -41,6 +41,8 @@ SELECT id FROM cadastros where telefone = 73981443066 AND pin = MD5(5454);
 
 select * from anuncios;
 select * from cadastros;
+
+delete from cadastros WHERE id = 5;
 delete from cadastros;
 
 DELETE FROM anuncios;

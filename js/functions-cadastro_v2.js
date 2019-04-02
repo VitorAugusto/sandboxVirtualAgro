@@ -33,6 +33,7 @@ var nome;
 var telefone;
 var pin;
 var gg;
+var otpValido;
 
 $(function(){
     var atual_fs, next_fs, prev_fs;
@@ -63,8 +64,14 @@ $(function(){
         }
     });
 
+    $('#sms').on('keyup', function(){
+        if($('#sms').val().length > 5){
+            verificarOTP($('#sms').val()); //verifica otp
+        }
+    });
+
     $('input[name=proximo]').on('click', function(){
-        
+
         var array = formulario.serializeArray();
 
         if(array[0].value == ''){ //campo NOME
@@ -81,16 +88,63 @@ $(function(){
             lancarErro(99); //erro 99 limpa o campo de erro
             nome = array[0].value;
             telefone = array[1].value;
+
+            enviarOTP(telefone);
             proximo($(this)); //todos os campos preenchidos e diferentes de ''
 
         }
     }
 });
-    
-    $('input[name=proximo2]').on('click', function(){  //verificação do SMS
 
-        lancarErro(99);             //erro 4 caso código incorreto
-        proximo($(this));
+    function enviarOTP(tel){
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+            }
+        };
+        xhttp.open("POST", "controllerSMS.php?action=enviar_otp" , true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("telefone="+tel);
+
+    }
+
+    function verificarOTP(otp){
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                otpValido = this.responseText;
+            }
+        };
+        xhttp.open("POST", "controllerSMS.php?action=verificar_otp" , true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("otp="+otp);
+
+    }
+    
+    $('input[name=proximo2]').on('click', function(){  //verificação do SMS msg91
+
+        if($('#sms').val() == ''){
+            lancarErro(11);
+        }else{
+
+            if($('#sms').val().length != 6 || $('#sms').val().length > 6){
+                lancarErro(10);
+            }else{ //AQUI RODA A ROTINA DE VERIFICAR OTP
+
+                if(otpValido == 1){ //vê se a resposta do servidor foi 1 ou 2
+                    lancarErro(99);
+                    proximo($(this)); //código correto
+                }else{
+                    lancarErro(12);
+                }
+
+            }
+
+        }
+
+
     });
 
 
@@ -156,6 +210,7 @@ function checkTelefone(tel){
     xhttp.send("telefone="+tel);
 }
 
+
 function telefoneJaCadastrado(){
 
     if(gg == 4){
@@ -204,6 +259,18 @@ function lancarErro(codigoErro){
 
         case 9:
         $('.erro').html('<div class="erro-css"><p>NÚMERO DE TELEFONE JÁ CADASTRADO !</p></div>');
+        break;
+
+        case 10:
+        $('.erro').html('<div class="erro-css"><p>CÓDIGO DE 6 DÍGITOS</p></div>');
+        break;
+
+        case 11:
+        $('.erro').html('<div class="erro-css"><p>INSIRA O CÓDIGO ! !</p></div>');
+        break;
+
+        case 12:
+        $('.erro').html('<div class="erro-css"><p>Código Incorreto - Insira novamente </p></div>');
         break;
 
         case 99: //LIMPAR CAMPO DE ERROS
