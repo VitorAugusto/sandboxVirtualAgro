@@ -80,23 +80,23 @@ if(empty($_GET['categoria'])){
 		"<a href=# onclick=exibirProdutoDetails($coluna[id])>".
 		getImagemProduto($coluna['id']) . 
 		"</a>". 
-		"<span class='spanProdutos'> ANUNCIANTES : </span>". 
-		"<span class='badge badge-primary badge-pill'>". 
-		getNumeroAnunciantes($coluna['id']) . 
-		"</span>" . 
 		"</li>";
 		//echo "<td>". "<a href=# onclick=exibirProdutoDetails($coluna[id])>".getImagemProduto($coluna['id']) . "</a>". "</td>"; // IMAGEM COM LINK
 		//echo "<td>". getImagemProduto($coluna['id']) . "</td>"; // IMAGEM SEM LINK
 		echo "<li class='list-group-item'>" .
+		"<span class='spanProdutos'>".
 		 mb_strtoupper($coluna['nome']) . 
+		 "</span>". 
 		// "<span class='badge badge-primary badge-pill'>14</span>".
 		 "</li>";
-
+		 echo "<li class='list-group-item'>".
+		 "<span class='spanProdutos'> ANUNCIANTES : </span>". 
+		 "<span class='badge badge-primary badge-pill'>". 
+		 getNumeroAnunciantes($coluna['id']) . 
+		 "</span>". 
+		 "</li>";
 		//echo "</tr>";
-
 		echo "</ul>";
-
-		echo "<br>";
 	}
 
 	//echo "</table>";
