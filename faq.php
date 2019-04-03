@@ -41,7 +41,7 @@
 		</header>
 		<div class="all">
 			<section class="conteudo">
-<h1>FAQ</h1>
+				<h1>Dúvidas Frequentes</h1>
 			</section>
 		</div>		               
 		<footer>
@@ -50,7 +50,7 @@
 					<img class="logo" src="./imagens/logo/virtual-agro-logo-png.png" alt="">            
 				</a>
 				<hr>
-				<div class="copyright">Copyright 2019 © <a href="#"><b>Virtual Agro</b></a>.</div>
+				<div class="copyright">Copyright 2019 &copy; <a href="#"><b>Virtual Agro</b></a>.</div>
 			</div>
 		</footer>
     </body>

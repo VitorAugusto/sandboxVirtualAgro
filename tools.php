@@ -258,7 +258,7 @@ function construirMenuLateralSemLogin(){
 	echo "<li><a href='index.php'>Login</a></li>";
 	echo "<li><a href='cadastro.php'>Cadastre-se</a></li>";
 	echo "<li><a href='faleconosco.php'>Fale Conosco</a></li>";
-	echo "<li><a href='faq.php'>FAQ</a></li>";
+	echo "<li><a href='faq.php'>Dúvidas</a></li>";
 	echo "</ul>";
 	echo "</div>";
 }
