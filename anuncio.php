@@ -83,7 +83,10 @@
 				<h1> CONTATO DO AGRICULTOR </h1>
 
 				<?php
-					echo rand();
+							$telefone = getTelefone($colunaAnuncio['id_anunciante']);
+							$ddd = substr($telefone, 0, 2);
+							$numero = substr($telefone, 2);
+							echo '(' . $ddd . ')' . " ".$numero ;
 				?>
 
 				<h2> CONTEÚDO DO ANÚNCIO</h2>

@@ -179,6 +179,9 @@ function getAnunciantes($produto){ //RETORNA OS ANUNCIANTES DAQUELE CERTO produt
 	if(mysqli_num_rows($display) > 0 ){ //SE EXISTEM ANUNCIANTES DAQUELE PRODUTO
 
 		while($coluna = mysqli_fetch_array($display)){
+			$telefone = getTelefone($coluna['id_anunciante']);
+			$ddd = substr($telefone, 0, 2);
+			$numero = substr($telefone, 2);
 
 		// CADA COLUNA PRA SER PREENCHIDA É UM <tr>, CADA VALOR DESSA COLUNA É UM <td>
 
@@ -186,7 +189,7 @@ function getAnunciantes($produto){ //RETORNA OS ANUNCIANTES DAQUELE CERTO produt
 			echo "<td>";
 			nomeDoAnunciante($coluna['id_anunciante']);  //PREENCHE NOME
 			echo "</td>";
-			echo "<td>". "(73) ".rand() . "</td>"; //PREENCHE TELEFONE
+			echo "<td>". '(' . $ddd . ')' . " ".$numero . "</td>"; //PREENCHE TELEFONE
 			echo "<td>". $coluna['texto_anuncio'] . "</td>"; //PREENCHE O TEXTO DO ANÚNCIO
 			echo "</tr>";
 		}
