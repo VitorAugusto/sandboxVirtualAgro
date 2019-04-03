@@ -46,12 +46,12 @@ footer {
 span {
     font-weight: 700;
     color: #ffffff;
-    /* color: green;*/
+    /* color: #088000;*/
 }
 
 .spanProdutos{
     font-weight: 700;
-    color: green;
+    color: #088000;
 }
 
 input{
@@ -124,7 +124,7 @@ footer hr {
 .logo-header {
     width: 240px;
     height: auto;
-    margin-right: 70px;
+    margin: 0 auto;
 }
 
 .right-side {
@@ -690,12 +690,13 @@ a:hover {
 }
 /*Página produto*/
 .borda{
+    /*Borda gradiente da imagem principal;*/
     width: 320px;
     height: 320px;
     background: linear-gradient(45deg, #155724, #17a2b8, #51f8d4);
     border-radius: 50%;
     /* align-items: center; */
-    margin: 0 auto;
+    margin: 0px auto 30px auto;
     box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .4);
 }
 .borda img{
@@ -708,10 +709,11 @@ a:hover {
     border-radius: 20px;
     box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .4);
 }
-#detalhesproduto h1{
+#detalhesproduto h1, h2{
     text-align: center;
     font-weight: bolder;
     text-transform: uppercase;
+    margin-top: 10px;
 }
 #detalhesproduto table{
     width: 100%;
@@ -720,4 +722,19 @@ a:hover {
     border-bottom: solid 1px #1b6e5c;
     color: #1b6e5c;
     font-weight: bolder;
+    font-size: 20px;
+}
+#detalhesproduto h3{
+    color: #1b6e5c;
+    text-align: center;
+    font-weight: 900;
+    opacity: 0.8;
+    font-size: 180px;
+    margin: 0;
+}
+#detalhesproduto p{
+    font-weight: 500;
+    text-align: center;
+    font-size: 20px;
+    padding: 20px;
 }

@@ -12,8 +12,7 @@
 		ECHO "ESSE PRODUTO NÃO EXISTE";
 	}
 
-
-	echo "<h1>AGRICULTORES</h1>";
+	echo "<h2>Agricultores</h2>";
 
 	if(existemAnunciantes($_GET['idProduto'])){
 		//constroi tabela, etc
@@ -22,6 +21,10 @@
 
 		echo "</table>";
 	}else{
-		ECHO "AINDA NÃO EXISTEM ANUNCIANTES PRA ESSE PRODUTO";
+		echo "<div class='semAnunciantes'>";
+		echo "<h3>Oops!</h3>";
+		echo "<p>AINDA NÃO EXISTEM ANUNCIANTES PRA ESSE PRODUTO.</p>";
+		echo "<tr>";
+		echo "</div>";
 	}
 ?>
