@@ -52,7 +52,7 @@
           }
 
           echo "<div class='' id='menu-anunciante'>";
-          echo "<h2>Seja Bem-Vindo, ",$_SESSION['nome']," ao</h2>";
+          echo "<h2>Seja Bem-Vindo, <p>",$_SESSION['nome'],", ao</h2>";
           echo "<h1>VIRTUAL AGRO!</h1>";
           echo "<div>";
           echo "<a href='criarAnuncio.php'><span><i class='fas fa-cart-plus'></i></span>CRIAR ANÚNCIO</a>";

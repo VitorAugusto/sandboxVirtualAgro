@@ -775,3 +775,9 @@ a:hover {
     margin-bottom: 30px;
 }
 /*Página criarAnuncio.php*/
+
+/* linha pra separar na tabela */
+.separador {
+  border-left: 2px solid green;
+  height: 100px;
+}
