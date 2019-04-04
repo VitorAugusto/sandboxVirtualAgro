@@ -6,11 +6,6 @@
 include_once('tools.php');
 session_start();
 
-if(!isset($_SESSION['id'])){
-	construirMenuLateralSemLogin(); 
-}else{
-	construirMenuLateralComLogin();
-}
 ?>
 <head>
 	<title>EDITAR ANÚNCIO - VIRTUAL AGRO</title>
@@ -25,16 +20,44 @@ if(!isset($_SESSION['id'])){
 	<header class="navigation">
 		<div class="container-header">
 			<div class="left-side">
-				<button type="button" class="btn-menu  js-btn-menu">
-					<span class="icon-menu"><i class="fa fa-bars"></i></span>
+				<button type="button" class="btn-menu">
+					<span class="icon-menu">
+						<i class="fa fa-bars"></i>
+					</span>
 					<span class="text-menu">MENU</span>
+
+					<?php 
+					if(!isset($_SESSION['id'])){
+						construirMenuLateralSemLogin(); 
+					}else{
+						construirMenuLateralComLogin();
+					}
+					?>
 				</button>
+
 			</div>
 			<img class="logo-header" src="imagens/logo/virtual-agro-logo-nome.png">
 			<div class="right-side">                                        
+				<?php
+				if(!isset($_SESSION['id'])) {
+					construirMenuLogin();
+				}
+				?>
 			</div>                
 		</div>            
 	</header>
+	<?php
+
+	if(anuncioExiste($_GET['idAnuncio']) AND meuAnuncio(getIdAnuncianteIdAnuncio($_GET['idAnuncio']), $_SESSION['id'])){ //VERIFICA SE É MEU ANÚNCIO
+		ECHO "ESSE ANÚNCIO É SEU";
+
+
+	}else{
+		ECHO "ESSE ANÚNCIO NÃO TE PERTENCE OU NÃO EXISTE";
+		header('location: meusAnuncios.php');
+	}
+
+	?>
 	<div class="all">
 		<section class="conteudo">
 			<form action="preAnuncio.php" method="post">
