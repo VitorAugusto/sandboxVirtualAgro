@@ -71,7 +71,6 @@ input{
     padding: 0 10px;
     position: relative;
 }
-
 footer {
     background: #1b6e5c;
     padding: 20px;
@@ -82,7 +81,6 @@ footer {
     padding: 0 15px;
     box-sizing: border-box;
 }
-
 footer:before {
     content: "";
     position: absolute;
@@ -690,7 +688,7 @@ a:hover {
     text-decoration: none;
     color: #ffffff;
 }
-/*Página produto*/
+/*Página produto.php*/
 .borda{
     /*Borda gradiente da imagem principal;*/
     width: 320px;
@@ -740,3 +738,40 @@ a:hover {
     font-size: 20px;
     padding: 20px;
 }
+/*Página site.php*/
+#menu-anunciante{
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .4);
+    text-align: center;
+    width: 100%;
+}
+#menu-anunciante div{
+    width: 190px;
+    height: 202px;
+    background-color: #1b6e5c;
+    opacity: 0.8;
+    margin: 8px;
+    border-radius: 20px;
+    /* position: absolute; */
+    display: inline-block;
+    font-weight: bolder;
+}
+#menu-anunciante span i{
+    font-size: 100px;
+    margin: 30px;
+}
+#menu-anunciante{
+    text-align: center;
+    font-weight: 900;
+    margin: 0;
+}
+#menu-anunciante h1{
+    color: #1b6e5c;
+    font-weight: 900;
+    opacity: 0.8;
+    font-size: 60px;
+    margin-bottom: 30px;
+}
+/*Página criarAnuncio.php*/

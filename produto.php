@@ -23,7 +23,7 @@
 	}else{
 		echo "<div class='semAnunciantes'>";
 		echo "<h3>Oops!</h3>";
-		echo "<p>AINDA NÃO EXISTEM ANUNCIANTES PRA ESSE PRODUTO.</p>";
+		echo "<p>AINDA NÃO EXISTEM ANUNCIANTES PARA ESSE PRODUTO.</p>";
 		echo "<tr>";
 		echo "</div>";
 	}

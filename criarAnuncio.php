@@ -215,15 +215,15 @@
 
 </section>
 </div>		               
-		<!-- <footer>
+		<footer>
 			<div>
 				<a class="brand" href="#">
 					<img class="logo" src="./imagens/logo/virtual-agro-logo-png.png" alt="">            
 				</a>
 				<hr>
-				<div class="copyright">Copyright 2019 © <a href="#"><b>Virtual Agro</b></a>.</div>
+				<div class="copyright">Copyright 2019 &copy; <a href="#"><b>Virtual Agro</b></a>.</div>
 			</div>
-		</footer> -->
+		</footer>
 
 	</body>
 	</html>

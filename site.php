@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SEU PERFIL - Virtual Agro</title>
+    <title>MEU PERFIL - Virtual Agro</title>
 		<meta charset="UTF-8">
 		<link rel="icon" type="image/png" sizes="64x64" href="imagens/logo/virtual-agro-logo-png.png">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
@@ -51,24 +51,22 @@
             header('location:index.php');
           }
 
-          echo "BEM VINDO AO SITE";
-          echo "<br>";
-          echo $_SESSION['nome'];
-          echo "<br>";
-          echo "SEU ID : ". $_SESSION['id'];
+          echo "<div class='' id='menu-anunciante'>";
+          echo "<h2>Seja Bem-Vindo, ",$_SESSION['nome']," ao</h2>";
+          echo "<h1>VIRTUAL AGRO!</h1>";
+          echo "<div>";
+          echo "<a href='criarAnuncio.php'><span><i class='fas fa-cart-plus'></i></span>CRIAR ANÚNCIO</a>";
+          echo "</div>";
+          echo "<div>";
+          echo "<a href='meusAnuncios.php'><span><i class='fas fa-bullhorn'></i></span>MEUS ANÚNCIOS</a>";
+          echo "</div>";
+          echo "<div>";
+          echo "<a href='allAnuncios.php'><span><i class='fas fa-store'></i></span>TODOS OS ANÚNCIOS</a>";
+          echo "</div>";
+          echo "</div>"
         ?>
 
-        <a href="criarAnuncio.php">
-        CRIAR ANÚNCIO
-        </a>
 
-        <a href="meusAnuncios.php">
-        MEUS ANÚNCIOS
-        </a>
-
-        <a href="allAnuncios.php">
-        TODOS OS ANÚNCIOS
-        </a>
 			</section>
 		</div>		               
 		<footer>
