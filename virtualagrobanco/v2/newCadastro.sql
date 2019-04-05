@@ -39,7 +39,9 @@ INSERT INTO cadastros (nome,telefone,pin) VALUES ('NOME TESTE 3', 73111111, MD5(
 
 SELECT id FROM cadastros where telefone = 73981443066 AND pin = MD5(5454);
 
-select * from anuncios;
+select * from anuncios where id = 43;
+
+
 select * from cadastros;
 
 delete from cadastros WHERE id = 5;

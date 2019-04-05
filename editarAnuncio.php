@@ -48,85 +48,92 @@ session_start();
 	</header>
 	<?php
 
-	if(anuncioExiste($_GET['idAnuncio']) AND meuAnuncio(getIdAnuncianteIdAnuncio($_GET['idAnuncio']), $_SESSION['id'])){ //VERIFICA SE É MEU ANÚNCIO
-		ECHO "ESSE ANÚNCIO É SEU";
+	if(!anuncioExiste($_GET['idAnuncio']) AND !meuAnuncio(getIdAnuncianteIdAnuncio($_GET['idAnuncio']), $_SESSION['id'])){ //VERIFICA SE É MEU ANÚNCIO
 
-
-	}else{
 		ECHO "ESSE ANÚNCIO NÃO TE PERTENCE OU NÃO EXISTE";
 		header('location: meusAnuncios.php');
+
 	}
 
 	?>
 	<div class="all">
 		<section class="conteudo">
-			<form action="preAnuncioEditar.php" method="post">
+			<form action="newEditarAnuncio.php" method="post">
 
-				<label> EDITAR ANÚNCIO </label>
-				<select required="" name="produto">
-					<option value="">--</option>
-					<!-- VAI CONSTRUIR OS OPTION -->
-					<?php
-					listarTodosProdutos();
-					?>
-				</select>
+				<input type="hidden" id="idanunciohelper" name="idanunciohelper" value="<?php  echo $_GET['idAnuncio']; ?>">
+				<p>
+					<p></p>
 
-				<div class="linha">
-					<div class="check-box">
-						<input id="" class="" type="radio" name="medida" value="kg" alt="Kg" checked>
-						<label for="">
-							<span class="icon-menu"><span class="icon"></span></span>
-							<span class="icon-text"><b>KG</b></span>
-						</label>
-					</div>                    
-					<div class="check-box">
-						<input id="" class="" type="radio" name="medida" value="un" alt="Unidade">
-						<label for="">
-							<span class="icon-menu"><span class="icon"></span></span>
-							<span class="icon-text">UNIDADE</span>
-						</label>
-					</div>
-					<div class="check-box">
-						<input id="" class="" type="radio" name="medida" value="1/2kg" alt="1/2kg">
-						<label for="">
-							<span class="icon-menu"><span class="icon"></span></span>
-							<span class="icon-text">1/2KG</span>
-						</label>
-					</div>
-					<div class="check-box">
-						<input id="" class="" type="radio" name="medida" value="pacote" alt="Pacote">
-						<label for="">
-							<span class="icon-menu"><span class="icon"></span></span>
-							<span class="icon-text">PACOTE</span>
-						</label>
-					</div>
-					<div class="check-box">
-						<input id="" class="" type="radio" name="medida" value="bandeja" alt="Bandeja">
-						<label for="">
-							<span class="icon-menu"><span class="icon"></span></span>
-							<span class="icon-text">BANDEJA</span>
-						</label>
-					</div>												
-				</div>
 
-				<label>OBSERVAÇÕES</label>
-				<!-- <input type="textarea" name="textoAnuncio" required=""> -->
-				<textarea name="textoAnuncio"></textarea>
-				<button class="buscar" type="submit">
-					<span class="icon-text">ENVIAR</span>
-					<span class="icon-menu"><i class="fa fa-chevron-circle-right"></i></span>
-				</button>
-			</form>
-		</section>
-	</div>		               
-	<footer>
-		<div>
-			<a class="brand" href="#">
-				<img class="logo" src="./imagens/logo/virtual-agro-logo-png.png" alt="">            
-			</a>
-			<hr>
-			<div class="copyright">Copyright 2019 © <a href="#"><b>Virtual Agro</b></a>.</div>
-		</div>
-	</footer>
-</body>
-</html>
+					<h5> MUDAR A MEDIDA </h5>
+					<div class="linha">
+						<div class="check-box">
+							<input id="KG" class="" type="radio" name="medida" value="KG" alt="Kg">
+							<label for="">
+								<span class="icon-menu"><span class="icon"></span></span>
+								<span class="icon-text"><b>KG</b></span>
+							</label>
+						</div>                    
+						<div class="check-box">
+							<input id="UNIDADE" class="" type="radio" name="medida" value="UNIDADE" alt="Unidade">
+							<label for="">
+								<span class="icon-menu"><span class="icon"></span></span>
+								<span class="icon-text">UNIDADE</span>
+							</label>
+						</div>
+						<div class="check-box">
+							<input id="1/2KG" class="" type="radio" name="medida" value="1/2KG" alt="1/2kg">
+							<label for="">
+								<span class="icon-menu"><span class="icon"></span></span>
+								<span class="icon-text">1/2KG</span>
+							</label>
+						</div>
+						<div class="check-box">
+							<input id="PACOTE" class="" type="radio" name="medida" value="PACOTE" alt="Pacote">
+							<label for="">
+								<span class="icon-menu"><span class="icon"></span></span>
+								<span class="icon-text">PACOTE</span>
+							</label>
+						</div>
+						<div class="check-box">
+							<input id="BANDEJA" class="" type="radio" name="medida" value="BANDEJA" alt="Bandeja">
+							<label for="">
+								<span class="icon-menu"><span class="icon"></span></span>
+								<span class="icon-text">BANDEJA</span>
+							</label>
+						</div>												
+					</div>
+
+					<h6>Mais algum detalhe ?</h6>
+					<div class="form-group basic-textarea rounded-corners">
+						<textarea class="form-control z-depth-1" id="obs" rows="3" name="observacao" placeholder="Detalhes...observações..."></textarea>
+					</div>
+
+
+					<h5>Preço</h5>
+					R$<input type="text" name="valor" placeholder="PREÇO" onKeyPress="return(moeda(this,'.',',',event))" id="preco" required="" onfocus="this.value=''">
+
+
+
+
+					<button class="buscar" type="submit">
+						<span class="icon-text">ENVIAR</span>
+						<span class="icon-menu"><i class="fa fa-chevron-circle-right"></i></span>
+					</button>
+
+					<script type="text/javascript" src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+					<script type="text/javascript" src="js/functions-editarAnuncio.js?v=<?php echo time(); ?>"></script>
+				</form>
+			</section>
+		</div>		               
+		<footer>
+			<div>
+				<a class="brand" href="#">
+					<img class="logo" src="./imagens/logo/virtual-agro-logo-png.png" alt="">            
+				</a>
+				<hr>
+				<div class="copyright">Copyright 2019 © <a href="#"><b>Virtual Agro</b></a>.</div>
+			</div>
+		</footer>
+	</body>
+	</html>

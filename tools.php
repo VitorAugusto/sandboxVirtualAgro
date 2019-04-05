@@ -104,6 +104,19 @@ function getImagemProduto($idProd){
 	return ("<img src=imagens/".$imagem['imagemprincipal'] . " width=300px>");
 }
 
+function getImagemProdutoOption($idProd){
+
+	$comandoGetImagemProduto = "SELECT imagemprincipal FROM produtos WHERE id = '$idProd'";
+
+	mysqli_query($GLOBALS['dao'], "set names 'utf8'");
+
+	$display = mysqli_query($GLOBALS['dao'], $comandoGetImagemProduto);
+
+	$imagem = mysqli_fetch_array($display);
+
+	return ($imagem['imagemprincipal']);
+}
+
 function getImagemCategoria($cat){
 
 	$comandoGetImagemCategoria = "SELECT imagem FROM categoria WHERE nome = '$cat'";
