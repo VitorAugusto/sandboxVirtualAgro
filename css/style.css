@@ -813,3 +813,9 @@ a:hover {
     font-size: 60px;*/
     margin-bottom: 30px;
 }
+/* linha pra separar na tabela */
+.separador {
+  border-left: 2px solid green;
+  height: 100px;
+}
+

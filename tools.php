@@ -161,10 +161,10 @@ function construirTabelaAnunciantes(){
 
 	echo "<table cellpadding='5px'spacepadding='5px'>"; 
 
-	echo "<th>NOME AGRICULTOR</th>";
-	echo "<th>TELEFONE</th>";
+	echo "<th>AGRICULTOR</th>";
 	echo "<th>DESCRIÇÃO</th>";
-
+	echo "<th>PREÇO</th>";
+	echo "<th>ENTRAR EM CONTATO</th>";
 
 }
 
@@ -182,6 +182,9 @@ function getAnunciantes($produto){ //RETORNA OS ANUNCIANTES DAQUELE CERTO produt
 			$telefone = getTelefone($coluna['id_anunciante']);
 			$ddd = substr($telefone, 0, 2);
 			$numero = substr($telefone, 2);
+			$telefoneFull = "55".$telefone;
+			
+			$textoBasico = "Olá, quero saber mais sobre seu anúncio de ". mb_strtoupper(getNomeProdutoPeloID($coluna['id_produto'])) ." no VirtualAgro.net ";
 
 		// CADA COLUNA PRA SER PREENCHIDA É UM <tr>, CADA VALOR DESSA COLUNA É UM <td>
 
@@ -189,8 +192,17 @@ function getAnunciantes($produto){ //RETORNA OS ANUNCIANTES DAQUELE CERTO produt
 			echo "<td>";
 			nomeDoAnunciante($coluna['id_anunciante']);  //PREENCHE NOME
 			echo "</td>";
-			echo "<td>". '(' . $ddd . ')' . " ".$numero . "</td>"; //PREENCHE TELEFONE
+			//echo "<td>". '(' . $ddd . ')' . " ".$numero . "</td>"; //PREENCHE TELEFONE
 			echo "<td>". $coluna['texto_anuncio'] . "</td>"; //PREENCHE O TEXTO DO ANÚNCIO
+			echo "<td>" . "R$".$coluna['preco']. "</td>"; //PREÇO DO ANÚNCIO
+			echo "<td>" .
+			 "<a href='tel:{$telefoneFull}' class='btn btn-info btn-lg'>
+			 <span class='glyphicon glyphicon-earphone'></span> LIGAR
+			 </a>" .
+			 "<a href='https://api.whatsapp.com/send?phone={$telefoneFull}&text={$textoBasico}'>
+			 <span class='fab fa-whatsapp' style='color:#088000;font-size: 45px;position: absolute;margin-inline-start: 50px;'></span>
+			 </a>" 
+			 ."</td>"; //EM CONT
 			echo "</tr>";
 		}
 	}
