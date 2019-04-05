@@ -26,29 +26,29 @@ if(empty($_GET['categoria'])){
 	//echo "<th> NOME </th>";
 
 	while ($coluna = mysqli_fetch_array($display)) { // CADA COLUNA PRA SER PREENCHIDA É UM <tr>, CADA VALOR DESSA COLUNA É UM <td>
-		echo "<ul class='list-group'>";
+		echo "<a href=# onclick=exibirProdutoDetails($coluna[id])>".
+		"<ul class='list-group'>";
 		//echo "<tr>";
 		echo "<li class='list-group-item d-flex justify-content-between align-items-center'>". 
-		"<a href=# onclick=exibirProdutoDetails($coluna[id])>".
 		getImagemProduto($coluna['id']) . 
-		"</a>". 
-		"<span class='spanProdutos'> ANUNCIANTES : </span>". 
-		"<span class='badge badge-primary badge-pill'>". 
-		getNumeroAnunciantes($coluna['id']) . 
-		"</span>" . 
 		"</li>";
 		//echo "<td>". "<a href=# onclick=exibirProdutoDetails($coluna[id])>".getImagemProduto($coluna['id']) . "</a>". "</td>"; // IMAGEM COM LINK
 		//echo "<td>". getImagemProduto($coluna['id']) . "</td>"; // IMAGEM SEM LINK
 		echo "<li class='list-group-item'>" .
+		"<span class='spanProdutos'>".
 		 mb_strtoupper($coluna['nome']) . 
+		 "</span>". 
 		// "<span class='badge badge-primary badge-pill'>14</span>".
 		 "</li>";
-
+		 echo "<li class='list-group-item'>".
+		 "<span class='spanProdutos'> ANUNCIANTES : </span>". 
+		 "<span class='badge badge-primary badge-pill'>". 
+		 getNumeroAnunciantes($coluna['id']) . 
+		 "</span>". 
+		 "</li>";
 		//echo "</tr>";
-
-		echo "</ul>";
-
-		echo "<br>";
+		echo "</ul>".
+		"</a>";
 	}
 
 	//echo "</table>";
