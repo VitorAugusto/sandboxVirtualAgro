@@ -63,7 +63,7 @@ session_start();
     <section class="conteudo" id="conteudo1">
         <div class="clearfix">
 
-            <h1 class="search-title">
+            <h1 class="clearmix">
                 PRODUTOS ORGÂNICOS<br>
                 <span>LIVRES DE AGROTÓXICOS</span>
             </h1>

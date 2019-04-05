@@ -49,62 +49,42 @@
                     mysqli_query($GLOBALS['dao'], "set names 'utf8'");
 
                     $displayTodosAnuncios = mysqli_query($GLOBALS['dao'], $selectTodosAnuncios);
-
+                    
+                    echo "<h1 class='chamadaPrincipal'>Todos os Anuncios</h1>";
                     while($coluna = mysqli_fetch_array($displayTodosAnuncios)){
-                        echo "<br>";
-                        echo "<div class='container'>";	 //
-                        echo "<div class='row'>";	 //
-                        //
+                        echo "<a href='anuncio.php?idAnuncio={$coluna['id']}'>";
+                        echo "<ul class='list-group' id='ulAnuncio'>";
                         $comandoGetIdProduto = "SELECT id_produto FROM anuncios WHERE id = '$coluna[id]'";  //ESSE MÓDULO AQUI ADICIONA AS IMAGENS NO ALL ANUNCIOS
                         $display = mysqli_query($GLOBALS['dao'], $comandoGetIdProduto);
-                        echo "<div class='col-sm'>"; //
+                        echo "<li class='list-group-item' id='imgAnuncio'>"; //
                         echo getImagemProduto(mysqli_fetch_row($display)[0]);
-                        echo "</div>"; //
+                        echo "</li>"; //
                         //
-                        echo "<div class='col-sm'>"; //
-                        echo "ID DO ANÚNCIO: " . $coluna['id'] ;
-                        echo "</div>"; //
-                        echo "<br>";
-                        echo "<div class='col-sm'>"; //
-                        echo "<b>ANUNCIANTE: </b>  "; nomeDoAnunciante($coluna['id_anunciante']); // TEM Q MOSTRAR O NOME DO ANUNCIANTE
-                        echo "</div>"; //
-                        echo "<br>";
-                        echo "<div class='col-sm'>"; //
-                        echo "<b>CATEGORIA: </b>" . $coluna['categoria'] ;
-                        echo "</div>"; //
-                        echo "<br>";
-                        echo "<div class='col-sm'>"; //
-                        echo "<b>TEXTO DO ANÚNCIO: </b>" . $coluna['texto_anuncio'];
-                        echo "</div>"; //
-                        echo "<br>";
-                        echo "<div class='col-sm'>"; //
-                        echo "<a href='anuncio.php?idAnuncio={$coluna['id']}'> VISITAR ANÚNCIO </a>";
-                        echo "</div>"; //
-                        echo "<br>";
+                        echo "<li class='list-group-item'>"; //
+                        echo "<span class='spanProdutos'>Anunciante:"; nomeDoAnunciante($coluna['id_anunciante'])."</span>"; // TEM Q MOSTRAR O NOME DO ANUNCIANTE
+                        echo "</li>"; //
+                        echo "<li class='list-group-item'>"; //
+                        echo "<span class='spanProdutos'>Categoria:</span><p>". $coluna['categoria']."</p>";
+                        echo "</li>"; //
+                        echo "<li class='list-group-item'>"; //
+                        echo "<span class='spanProdutos'>TEXTO DO ANÚNCIO:" . $coluna['texto_anuncio']."</span>";
+                        echo "</li>"; //
 
                         if(isset($_SESSION['id'])){ //CASO ESTEJA LOGADO
                             if(meuAnuncio($coluna['id_anunciante'], $_SESSION['id'])){ //CASO APAREÇA ALGUM ANÚNCIO DELE NA PÁGINA - TODOS OS ANÚNCIOS-
-                                echo "<div class='col-sm'>"; //
-                                echo "---Opções--";
-                                echo "</div>"; //
-                                echo "<div class='col-sm'>"; //
+                                echo "<li class='list-group-item'>"; //
                                 echo "<a href='editarAnuncio.php?idAnuncio={$coluna['id']}'> EDITAR ANÚNCIO </a>";
-                                echo "</div>"; //
-                                //echo "-";
-                                echo "<div class='col-sm'>"; //
+                                echo "</li>"; //
+                                echo "<li class='list-group-item'>"; //
                                 echo "<a href='excluirAnuncio.php?idAnuncio={$coluna['id']}'> EXCLUIR ANÚNCIO </a>";
-                                echo "</div>"; //
-                                echo "<br>";
+                                echo "</li>"; //
                             }
                         }
-                        //echo "---------------------------";
-                        echo "</div>"; // 
-                        echo "</div>"; //
+                        echo "</ul>".
+                        "</a>";
                     }
 
-                    echo "<br>";
                     echo "<h2> <a href='site.php'> VOLTAR </a> </h2>";
-
 
                 ?>
 				

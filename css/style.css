@@ -35,7 +35,13 @@ nav,
 section {
     display: block;
 }
-
+.clearfix{
+    color: #1b6e5c;
+    font-weight: 900;
+    opacity: 0.8;
+    font-size: 60px;
+    margin-bottom: 30px;
+}
 #conteudo2{ 
     display: none;
 }
@@ -284,7 +290,7 @@ li:hover a {
 .list-group-item:nth-child(2){
     font-size: 19px;
 }
-li > a > img {
+#telaprodutos img {
     border-radius: 50%;
     border: solid 2px #088000;
     max-width: 150px;
@@ -774,4 +780,36 @@ a:hover {
     font-size: 60px;
     margin-bottom: 30px;
 }
+/*Página allAnuncio.php*/
+#imgAnuncio > img{
+    border-radius: 50%;
+    border: solid 2px #088000;
+    max-width: 150px;
+    margin-left: 25px;
+}
+.chamadaPrincipal{
+    color: #1b6e5c;
+    font-weight: 900;
+    opacity: 0.8;
+    font-size: 60px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+#ulAnuncio > li{
+    padding: 0;
+}
 /*Página criarAnuncio.php*/
+
+
+
+
+
+
+
+.clearmix{
+    color: #1b6e5c;
+    font-weight: 900;
+    /*opacity: 0.8;
+    font-size: 60px;*/
+    margin-bottom: 30px;
+}
