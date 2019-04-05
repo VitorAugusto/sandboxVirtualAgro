@@ -60,9 +60,9 @@ session_start();
 	?>
 	<div class="all">
 		<section class="conteudo">
-			<form action="preAnuncio.php" method="post">
+			<form action="preAnuncioEditar.php" method="post">
 
-				<label> QUERO ANUNCIAR </label>
+				<label> EDITAR ANÚNCIO </label>
 				<select required="" name="produto">
 					<option value="">--</option>
 					<!-- VAI CONSTRUIR OS OPTION -->
@@ -73,35 +73,35 @@ session_start();
 
 				<div class="linha">
 					<div class="check-box">
-						<input id="" class="" type="radio" name="atributo" value="kg" alt="Kg" checked>
+						<input id="" class="" type="radio" name="medida" value="kg" alt="Kg" checked>
 						<label for="">
 							<span class="icon-menu"><span class="icon"></span></span>
 							<span class="icon-text"><b>KG</b></span>
 						</label>
 					</div>                    
 					<div class="check-box">
-						<input id="" class="" type="radio" name="atributo" value="un" alt="Unidade">
+						<input id="" class="" type="radio" name="medida" value="un" alt="Unidade">
 						<label for="">
 							<span class="icon-menu"><span class="icon"></span></span>
 							<span class="icon-text">UNIDADE</span>
 						</label>
 					</div>
 					<div class="check-box">
-						<input id="" class="" type="radio" name="atributo" value="1/2kg" alt="1/2kg">
+						<input id="" class="" type="radio" name="medida" value="1/2kg" alt="1/2kg">
 						<label for="">
 							<span class="icon-menu"><span class="icon"></span></span>
 							<span class="icon-text">1/2KG</span>
 						</label>
 					</div>
 					<div class="check-box">
-						<input id="" class="" type="radio" name="atributo" value="pacote" alt="Pacote">
+						<input id="" class="" type="radio" name="medida" value="pacote" alt="Pacote">
 						<label for="">
 							<span class="icon-menu"><span class="icon"></span></span>
 							<span class="icon-text">PACOTE</span>
 						</label>
 					</div>
 					<div class="check-box">
-						<input id="" class="" type="radio" name="atributo" value="bandeja" alt="Bandeja">
+						<input id="" class="" type="radio" name="medida" value="bandeja" alt="Bandeja">
 						<label for="">
 							<span class="icon-menu"><span class="icon"></span></span>
 							<span class="icon-text">BANDEJA</span>

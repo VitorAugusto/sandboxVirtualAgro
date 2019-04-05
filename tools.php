@@ -161,7 +161,7 @@ function construirTabelaAnunciantes(){
 
 	echo "<table cellpadding='5px'spacepadding='5px'>"; 
 
-	echo "<th>NOME AGRICULTOR</th>";
+	echo "<th>AGRICULTOR</th>";
 	echo "<th>DESCRIÇÃO</th>";
 	echo "<th>PREÇO</th>";
 	echo "<th>ENTRAR EM CONTATO</th>";
