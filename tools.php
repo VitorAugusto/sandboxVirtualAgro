@@ -306,6 +306,7 @@ function getAnunciantes($produto){ //RETORNA OS ANUNCIANTES DAQUELE CERTO produt
 		echo "</div> ";
 	}
 
+
 	function construirMenuLogin(){
 		echo "<button type=button class='btn-login'>";
 		echo "<span class='icon-menu'><i class='fas fa-sign-in-alt'></i></span>";
