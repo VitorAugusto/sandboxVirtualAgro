@@ -209,115 +209,117 @@ function getAnunciantes($produto){ //RETORNA OS ANUNCIANTES DAQUELE CERTO produt
 			echo "<td>". $coluna['texto_anuncio'] . "</td>"; //PREENCHE O TEXTO DO ANÚNCIO
 			echo "<td>" . "R$".$coluna['preco']. "</td>"; //PREÇO DO ANÚNCIO
 			echo "<td>" .
-			 "<a href='tel:{$telefoneFull}' class='btn btn-info btn-lg'>
-			 <span class='glyphicon glyphicon-earphone'></span> LIGAR
-			 </a>" .
-			 "<a href='https://api.whatsapp.com/send?phone={$telefoneFull}&text={$textoBasico}'>
-			 <span class='fab fa-whatsapp' style='color:#088000;font-size: 45px;position: absolute;margin-inline-start: 50px;'></span>
-			 </a>" 
+			"<a href='tel:{$telefoneFull}' class='btn btn-info btn-lg'>
+			<span class='glyphicon glyphicon-earphone'></span> LIGAR
+			</a>" .
+			"<a href='https://api.whatsapp.com/send?phone={$telefoneFull}&text={$textoBasico}'>
+			<span class='fab fa-whatsapp' style='color:#088000;font-size: 45px;position: absolute;margin-inline-start: 50px;'></span>
+			</a>" 
 			 ."</td>"; //EM CONT
-			echo "</tr>";
+			 echo "</tr>";
+			}
 		}
 	}
-}
 
-function getNumeroAnunciantes($produto){
+	function getNumeroAnunciantes($produto){
 
-	if(existemAnunciantes($produto)){
+		if(existemAnunciantes($produto)){
 
-		$comandoGetNumeroAnuciantes = "SELECT * from anuncios WHERE id_produto = '$produto'";
+			$comandoGetNumeroAnuciantes = "SELECT * from anuncios WHERE id_produto = '$produto'";
 
-		$display = mysqli_query($GLOBALS['dao'], $comandoGetNumeroAnuciantes);
+			$display = mysqli_query($GLOBALS['dao'], $comandoGetNumeroAnuciantes);
 
-		return (mysqli_num_rows($display));
-	}else{
-		return ('0');
+			return (mysqli_num_rows($display));
+		}else{
+			return ('0');
+		}
+
 	}
 
-}
+	function listarTodosProdutos(){
 
-function listarTodosProdutos(){
+		$comandoListarProdutos = "SELECT nome FROM produtos";
 
-	$comandoListarProdutos = "SELECT nome FROM produtos";
+		mysqli_query($GLOBALS['dao'], "set names 'utf8'");
 
-	mysqli_query($GLOBALS['dao'], "set names 'utf8'");
+		$display = mysqli_query($GLOBALS['dao'], $comandoListarProdutos);
 
-	$display = mysqli_query($GLOBALS['dao'], $comandoListarProdutos);
-
-	while($coluna = mysqli_fetch_array($display)){
+		while($coluna = mysqli_fetch_array($display)){
 		//echo "<option value=$coluna[nome]>". ($coluna['nome']) ."</option>";
-		echo '<option value="'.$coluna['nome'].'">'.$coluna['nome'].'</option>';
+			echo '<option value="'.$coluna['nome'].'">'.$coluna['nome'].'</option>';
+		}
 	}
-}
 
-function getIdProdutoPeloNome($nome){
-	$comandoGetId = "SELECT id from produtos WHERE nome = '$nome'";
+	function getIdProdutoPeloNome($nome){
+		$comandoGetId = "SELECT id from produtos WHERE nome = '$nome'";
 
-	mysqli_query($GLOBALS['dao'], "set names 'utf8'");
-	$display = mysqli_query($GLOBALS['dao'], $comandoGetId);
+		mysqli_query($GLOBALS['dao'], "set names 'utf8'");
+		$display = mysqli_query($GLOBALS['dao'], $comandoGetId);
 
-	return(mysqli_fetch_row($display)[0]);
-}
-function getNomeProdutoPeloID($id){
-	$comandoGetNome = "SELECT nome from produtos WHERE id = '$id'";
+		return(mysqli_fetch_row($display)[0]);
+	}
+	function getNomeProdutoPeloID($id){
+		$comandoGetNome = "SELECT nome from produtos WHERE id = '$id'";
 
-	mysqli_query($GLOBALS['dao'], "set names 'utf8'");
-	$display = mysqli_query($GLOBALS['dao'], $comandoGetNome);
+		mysqli_query($GLOBALS['dao'], "set names 'utf8'");
+		$display = mysqli_query($GLOBALS['dao'], $comandoGetNome);
 
-	return(mysqli_fetch_row($display)[0]);
-}
+		return(mysqli_fetch_row($display)[0]);
+	}
 
-function getCategoriaProdutoPeloId($id){
+	function getCategoriaProdutoPeloId($id){
 
-	$comandoGetCategoria = "SELECT categoria from produtos WHERE id = '$id'";
+		$comandoGetCategoria = "SELECT categoria from produtos WHERE id = '$id'";
 
-	mysqli_query($GLOBALS['dao'], "set names 'utf8'");
+		mysqli_query($GLOBALS['dao'], "set names 'utf8'");
 
-	$display = mysqli_query($GLOBALS['dao'],$comandoGetCategoria);
+		$display = mysqli_query($GLOBALS['dao'],$comandoGetCategoria);
 
-	return(mysqli_fetch_row($display)[0]);
-}
+		return(mysqli_fetch_row($display)[0]);
+	}
 
-function construirMenuLateralSemLogin(){
+	function construirMenuLateralSemLogin(){
 
-	echo "<div class='box-menu'>";
-	echo "<ul class='submenu'>";
-	echo "<li><a href='home.php'>Home</a></li>";
-	echo "<li><a href='index.php'>Login</a></li>";
-	echo "<li><a href='cadastro.php'>Cadastre-se</a></li>";
-	echo "<li><a href='faleconosco.php'>Fale Conosco</a></li>";
-	echo "<li><a href='faq.php'>Dúvidas</a></li>";
-	echo "</ul>";
-	echo "</div>";
-}
+		echo "<div class='box-menu'>";
+		echo "<ul class='submenu'>";
+		echo "<li><a href='home.php'>Home</a></li>";
+		echo "<li><a href='index.php'>Login</a></li>";
+		echo "<li><a href='cadastro.php'>Cadastre-se</a></li>";
+		echo "<li><a href='faleconosco.php'>Fale Conosco</a></li>";
+		echo "<li><a href='faq.php'>Dúvidas</a></li>";
+		echo "</ul>";
+		echo "</div>";
+	}
 
-function construirMenuLateralComLogin(){
+	function construirMenuLateralComLogin(){
 
-	echo " <div class='box-menu'>";
-	echo "<ul class='submenu'>";
-	echo "<li><a href='home.php'>Home</a></li>";
-	echo "<li><a href='criarAnuncio.php'>Criar Anúncio</a></li>";
-	echo "<li><a href='meusAnuncios.php'>Meus Anúncios</a></li>";
-	echo "<li><a href='faleconosco.php'>Fale Conosco</a></li>";
-	echo "<li><a href='faq.php'>Dúvidas</a></li>";
-	echo "<li><a href='logout.php'>Deslogar</a></li>";
-	echo "</ul>";
-	echo "</div> ";
-}
+		echo " <div class='box-menu'>";
+		echo "<ul class='submenu'>";
+		echo "<li><a href='home.php'>Home</a></li>";
+		echo "<li><a href='site.php'>Minha Conta</a></li>";
+		echo "<li><a href='criarAnuncio.php'>Criar Anúncio</a></li>";
+		echo "<li><a href='meusAnuncios.php'>Meus Anúncios</a></li>";
+		echo "<li><a href='faleconosco.php'>Fale Conosco</a></li>";
+		echo "<li><a href='faq.php'>Dúvidas</a></li>";
+		echo "<li><a href='logout.php'>Sair</a></li>";
+		echo "</ul>";
+		echo "</div> ";
+	}
 
-function construirMenuLogin(){
-	echo "<button type=button class='btn-login'>";
-	echo "<span class='icon-menu'><i class='fas fa-sign-in-alt'></i></span>";
-	echo "<a href='index.php'>login";
-	echo "</a>";
-	echo "</button>";
-}
 
-function excluirAnuncio($idAnun){
+	function construirMenuLogin(){
+		echo "<button type=button class='btn-login'>";
+		echo "<span class='icon-menu'><i class='fas fa-sign-in-alt'></i></span>";
+		echo "<a href='index.php'>login";
+		echo "</a>";
+		echo "</button>";
+	}
 
-	$comandoExcluirAnuncio = "DELETE FROM anuncios WHERE id = '$idAnun'";
+	function excluirAnuncio($idAnun){
 
-	mysqli_query($GLOBALS['dao'],$comandoExcluirAnuncio);
-}
+		$comandoExcluirAnuncio = "DELETE FROM anuncios WHERE id = '$idAnun'";
 
-?>
+		mysqli_query($GLOBALS['dao'],$comandoExcluirAnuncio);
+	}
+
+	?>

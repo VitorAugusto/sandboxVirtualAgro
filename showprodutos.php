@@ -27,7 +27,7 @@
 					document.getElementById("campo").innerHTML += this.responseText;
 				}
 			};
-			xhttp.open("GET", "search.php?categoria="+ categorias, true);
+			xhttp.open("GET", "searchHome.php?categoria="+ categorias, true);
 
 			//xhttp.setRequestHeader("Content-Type", "application/json");
 
