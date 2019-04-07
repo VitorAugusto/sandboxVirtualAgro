@@ -6,6 +6,7 @@
 
 
 include_once('tools.php');
+header("Content-type: image/jpeg");
 
 //echo "<h2> <a href='' onclick=voltar()> VOLTAR </a> </h2>";
 
@@ -13,6 +14,7 @@ echo "<div id=telaprodutos>";
 
 if(empty($_GET['categoria'])){
 	// SE NÃO MANDOU NENHUMA CATEGORIA NO GET, IMPRIMIR TODOS OS PRODUTOS.
+	header("Content-type: image/jpeg");
 
 	$comando = "SELECT nome,id FROM produtos";
 
@@ -52,7 +54,7 @@ if(empty($_GET['categoria'])){
 
 }else{ //MANDOU CATEGORIA, ou um array de categorias
 
-
+	header("Content-type: image/jpeg");
 	$cat = $_GET['categoria'];
 
 	$array = explode(',', $cat);

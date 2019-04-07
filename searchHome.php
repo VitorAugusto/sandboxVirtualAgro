@@ -7,12 +7,14 @@
 //ESSE PÁGINA ESTÁ ACOPLADA À HOME.
 
 include_once('tools.php');
+header("Content-type: image/jpeg");
 
 //echo "<h2> <a href='' onclick=voltar()> VOLTAR </a> </h2>";
 
 echo "<div id=telaprodutos>";
 
 if(empty($_GET['categoria'])){
+	header("Content-type: image/jpeg");
 	// SE NÃO MANDOU NENHUMA CATEGORIA NO GET, IMPRIMIR TODOS OS PRODUTOS.
 
 	$comando = "SELECT nome,id FROM produtos";
@@ -36,16 +38,16 @@ if(empty($_GET['categoria'])){
 		//echo "<td>". getImagemProduto($coluna['id']) . "</td>"; // IMAGEM SEM LINK
 		echo "<li class='list-group-item'>" .
 		"<span class='spanProdutos'>".
-		 mb_strtoupper($coluna['nome']) . 
-		 "</span>". 
+		mb_strtoupper($coluna['nome']) . 
+		"</span>". 
 		// "<span class='badge badge-primary badge-pill'>14</span>".
-		 "</li>";
-		 echo "<li class='list-group-item'>".
-		 "<span class='spanProdutos'> ANUNCIANTES : </span>". 
-		 "<span class='badge badge-primary badge-pill'>". 
-		 getNumeroAnunciantes($coluna['id']) . 
-		 "</span>". 
-		 "</li>";
+		"</li>";
+		echo "<li class='list-group-item'>".
+		"<span class='spanProdutos'> ANUNCIANTES : </span>". 
+		"<span class='badge badge-primary badge-pill'>". 
+		getNumeroAnunciantes($coluna['id']) . 
+		"</span>". 
+		"</li>";
 		//echo "</tr>";
 		echo "</ul>".
 		"</a>";
@@ -55,7 +57,7 @@ if(empty($_GET['categoria'])){
 
 }else{ //MANDOU CATEGORIA, ou um array de categorias
 
-
+	header("Content-type: image/jpeg");
 	$cat = $_GET['categoria'];
 
 	$array = explode(',', $cat);
@@ -85,16 +87,16 @@ if(empty($_GET['categoria'])){
 		//echo "<td>". getImagemProduto($coluna['id']) . "</td>"; // IMAGEM SEM LINK
 		echo "<li class='list-group-item'>" .
 		"<span class='spanProdutos'>".
-		 mb_strtoupper($coluna['nome']) . 
-		 "</span>". 
+		mb_strtoupper($coluna['nome']) . 
+		"</span>". 
 		// "<span class='badge badge-primary badge-pill'>14</span>".
-		 "</li>";
-		 echo "<li class='list-group-item'>".
-		 "<span class='spanProdutos'> ANUNCIANTES : </span>". 
-		 "<span class='badge badge-primary badge-pill'>". 
-		 getNumeroAnunciantes($coluna['id']) . 
-		 "</span>". 
-		 "</li>";
+		"</li>";
+		echo "<li class='list-group-item'>".
+		"<span class='spanProdutos'> ANUNCIANTES : </span>". 
+		"<span class='badge badge-primary badge-pill'>". 
+		getNumeroAnunciantes($coluna['id']) . 
+		"</span>". 
+		"</li>";
 		//echo "</tr>";
 		echo "</ul>".
 		"</a>";
