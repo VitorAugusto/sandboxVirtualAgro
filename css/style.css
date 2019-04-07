@@ -112,7 +112,7 @@ footer .copyright {
 }
 
 footer .logo {
-    width: 246px;
+    max-width: 246px;
     margin: 0 auto;
 }
 

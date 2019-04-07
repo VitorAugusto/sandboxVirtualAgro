@@ -10,6 +10,8 @@
 	<link href="css/style.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" />
 	<!-- ESSE NOVO LINK PRO NOSSO CSS IMPEDE AQUELE BUG QUE A GENTE MUDAVA NO CSS, MAS NÃO MUDAVA NO SITE. -->
 	<!-- REPLICAR EM TODAS AS PÁGINAS INTERATIVAS -->
+    <meta name="viewport" content="width=device-width, initial-scale=0.7">
+
 </head>
 <body>
 	<header class="navigation">
