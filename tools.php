@@ -299,7 +299,7 @@ function construirMenuLateralComLogin(){
 	echo "<li><a href='criarAnuncio.php'>Criar Anúncio</a></li>";
 	echo "<li><a href='meusAnuncios.php'>Meus Anúncios</a></li>";
 	echo "<li><a href='faleconosco.php'>Fale Conosco</a></li>";
-	echo "<li><a href='faq.php'>FAQ</a></li>";
+	echo "<li><a href='faq.php'>Dúvidas</a></li>";
 	echo "<li><a href='logout.php'>Deslogar</a></li>";
 	echo "</ul>";
 	echo "</div> ";

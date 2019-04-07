@@ -97,8 +97,4 @@ if(empty($_GET['categoria'])){
 
 echo "</div>";
 
-
-
-
-
 ?>
