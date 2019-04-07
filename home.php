@@ -136,7 +136,6 @@ session_start();
             </div>
         </section>
         <section class="conteudo" id="conteudo2">
-            <h2> PÁGINA EM MANUTENÇÃO !!! </h2>
             <h2> <a href='#' onclick="voltar()" id="botaoVoltar"> VOLTAR </a> </h2>
         </section>
     </div>

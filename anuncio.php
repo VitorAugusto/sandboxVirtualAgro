@@ -95,7 +95,7 @@
 					echo $colunaAnuncio['texto_anuncio'];
 				?>
 
-				<h2> <a href='allAnuncios.php'> VOLTAR </a> </h2>
+				<h2> <a href='<?php  echo $_SERVER['HTTP_REFERER'] ?>'> VOLTAR </a> </h2>
 			</section>
 		</div>		               
 		<footer>

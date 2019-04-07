@@ -38,6 +38,8 @@
 		</header>
 		<div class="all">
 			<section class="conteudo">
+				<h2> <a href='site.php'> VOLTAR </a> </h2>
+				<h1 class='chamadaPrincipal'>Meus Anúncios</h1>
 				<?php 
 
 					if (!isset($_SESSION['id'])) {
@@ -86,7 +88,6 @@
 							echo "</div>";
 						}
 
-						echo "<h2> <a href='site.php'> VOLTAR </a> </h2>";
 					}
 
 				?>

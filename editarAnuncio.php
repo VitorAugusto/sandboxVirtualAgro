@@ -58,6 +58,7 @@ session_start();
 	?>
 	<div class="all">
 		<section class="conteudo">
+			<h2> <a href='<?php  echo $_SERVER['HTTP_REFERER'] ?>'> VOLTAR </a> </h2>
 			<form action="newEditarAnuncio.php" method="post">
 
 				<input type="hidden" id="idanunciohelper" name="idanunciohelper" value="<?php  echo $_GET['idAnuncio']; ?>">

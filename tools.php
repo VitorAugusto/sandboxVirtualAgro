@@ -296,11 +296,12 @@ function construirMenuLateralComLogin(){
 	echo " <div class='box-menu'>";
 	echo "<ul class='submenu'>";
 	echo "<li><a href='home.php'>Home</a></li>";
+	echo "<li><a href='site.php'>Minha Conta</a></li>";
 	echo "<li><a href='criarAnuncio.php'>Criar Anúncio</a></li>";
 	echo "<li><a href='meusAnuncios.php'>Meus Anúncios</a></li>";
 	echo "<li><a href='faleconosco.php'>Fale Conosco</a></li>";
-	echo "<li><a href='faq.php'>FAQ</a></li>";
-	echo "<li><a href='logout.php'>Deslogar</a></li>";
+	echo "<li><a href='faq.php'>Dúvidas</a></li>";
+	echo "<li><a href='logout.php'>Sair</a></li>";
 	echo "</ul>";
 	echo "</div> ";
 }

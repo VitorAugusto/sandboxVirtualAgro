@@ -42,6 +42,8 @@
 		</header>
 		<div class="all">
 			<section class="conteudo">
+                <h2> <a href='site.php'> VOLTAR </a> </h2>
+                <h1 class='chamadaPrincipal'>Todos os Anuncios</h1>
                 <?php
 
 
@@ -50,7 +52,6 @@
 
                     $displayTodosAnuncios = mysqli_query($GLOBALS['dao'], $selectTodosAnuncios);
                     
-                    echo "<h1 class='chamadaPrincipal'>Todos os Anuncios</h1>";
                     while($coluna = mysqli_fetch_array($displayTodosAnuncios)){
                         echo "<a href='anuncio.php?idAnuncio={$coluna['id']}'>";
                         echo "<ul class='list-group' id='ulAnuncio'>";
