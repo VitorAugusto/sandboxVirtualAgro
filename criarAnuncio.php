@@ -65,7 +65,7 @@
 								<li class="list-group-item">
 									<a href="#" class="escolherCategoria"> 
 										<img src="imagens/fruta/main.jpg">
-										<span class="badge badge-primary badge-pill">FRUTAS</span>
+										<span class="spanNome badge badge-primary badge-pill">FRUTAS</span>
 									</a>
 									<input type="hidden" name="categoria" value="'FRUTA'">
 								</li>
@@ -73,7 +73,7 @@
 								<li class="list-group-item">
 									<a href="#" class="escolherCategoria"> 
 										<img src="imagens/verdura/main.jpg">
-										<span class="badge badge-primary badge-pill">VERDURAS</span>
+										<span class="spanNome badge badge-primary badge-pill">VERDURAS</span>
 									</a>
 									<input type="hidden" name="categoria" value="'VERDURA'">
 								</li>
@@ -81,7 +81,7 @@
 								<li class="list-group-item">
 									<a href="#" class="escolherCategoria"> 
 										<img src="imagens/legume/main.jpg">
-										<span class="badge badge-primary badge-pill">LEGUMES</span>
+										<span class="spanNome badge badge-primary badge-pill">LEGUMES</span>
 									</a>
 									<input type="hidden" name="categoria" value="'LEGUME'">
 								</li>
@@ -89,7 +89,7 @@
 								<li class="list-group-item">
 									<a href="#" class="escolherCategoria"> 
 										<img src="imagens/grãos/main.jpg">
-										<span class="badge badge-primary badge-pill">GRÃOS</span>
+										<span class="spanNome badge badge-primary badge-pill">GRÃOS</span>
 									</a>
 									<input type="hidden" name="categoria" value="'GRÃOS'">
 								</li>
@@ -97,7 +97,7 @@
 								<li class="list-group-item">
 									<a href="#" class="escolherCategoria"> 
 										<img src="imagens/tempero/main.jpg">
-										<span class="badge badge-primary badge-pill">TEMPERO</span>
+										<span class="spanNome badge badge-primary badge-pill">TEMPERO</span>
 									</a>
 									<input type="hidden" name="categoria" value="'TEMPERO'">
 								</li>
@@ -105,7 +105,7 @@
 								<li class="list-group-item">
 									<a href="#" class="escolherCategoria"> 
 										<img src="imagens/especiaria/main.jpg">
-										<span class="badge badge-primary badge-pill">ESPECIARIA</span>
+										<span class="spanNome badge badge-primary badge-pill">ESPECIARIA</span>
 									</a>
 									<input type="hidden" name="categoria" value="'ESPECIARIA'">
 								</li>
@@ -113,7 +113,7 @@
 								<li class="list-group-item">
 									<a href="#" class="escolherCategoria"> 
 										<img src="imagens/outro/main.jpg">
-										<span class="badge badge-primary badge-pill">OUTROS</span>
+										<span class="spanNome badge badge-primary badge-pill">OUTROS</span>
 									</a>
 									<input type="hidden" name="categoria" value="'OUTRO'">
 								</li>

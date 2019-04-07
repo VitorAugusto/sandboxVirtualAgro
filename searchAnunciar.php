@@ -79,7 +79,7 @@ if(empty($_GET['categoria'])){
 
 		//echo "<td>". "<a href=produto?idProduto=$coluna[id]>".getImagemProduto($coluna['id']) . "</a>". "</td>"; // IMAGEM COM LINK
 		echo "<li class='list-group-item d-flex justify-content-between align-items-center'>". "<a href='#' class='escolherProduto'>". getImagemProduto($coluna['id']) . 
-		"<span class='badge badge-primary badge-pill' name='produto'>". mb_strtoupper($coluna['nome']) . "</span>".
+		"<span class='spanNome badge badge-primary badge-pill' name='produto'>". mb_strtoupper($coluna['nome']) . "</span>".
 		"</a>" . 
 		"</li>";
 

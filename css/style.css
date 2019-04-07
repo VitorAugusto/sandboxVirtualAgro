@@ -813,7 +813,7 @@ a:hover {
     padding: 0;
     margin: 0;
 }
-#cadastrarAnuncio span{
+#cadastrarAnuncio .spanNome{
     color: #fff;
     background-color: #1b6e5c;
     font-size: 15px;
@@ -827,9 +827,10 @@ a:hover {
     border-radius: 50%;
     max-width: 140px;
 }
-#etapa1CriarAnuncio{
+#cadastrarAnuncio > fieldset{
     position:inherit;
     margin-top: 40px;
+
 }
 #etapa1CriarAnuncio img{
     padding: 30% 0;
@@ -841,10 +842,15 @@ a:hover {
     margin: 30px 30px;
     margin-left: 0;
     width: 140px;
-    height: 150px;;
+    height: 150px;
 }
 #etapa1CriarAnuncio > ul > li:last-child{
     margin-left: 170px;
+}
+
+#etapa2CriarAnuncio ul, li{
+    max-width: 170px;
+    background-color: transparent;
 }
 .clearmix{
     color: #1b6e5c;
@@ -852,6 +858,19 @@ a:hover {
     /*opacity: 0.8;
     font-size: 60px;*/
     margin-bottom: 30px;
+}
+/* Página anuncio.php */
+
+.telaAnuncio{
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .1);
+    font-weight: bolder;
+    font-size: 25px;
+}
+.telaAnuncio h3{
+    font-size: 20px;
 }
 /* linha pra separar na tabela */
 .separador {

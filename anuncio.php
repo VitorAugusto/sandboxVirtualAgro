@@ -5,7 +5,6 @@
 			include_once('tools.php');
 
 			if(anuncioExiste($_GET['idAnuncio'])){
-				echo "ANÚNCIO EXISTE";
 			}else{
 
 				ECHO "ANÚNCIO NÃO EXISTE";
@@ -59,42 +58,45 @@
 			</div>            
 		</header>
 		<div class="all">
-			<section class="conteudo">				
-				<?php
-					$comandoGetIdProduto = "SELECT id_produto FROM anuncios WHERE id = '$_GET[idAnuncio]'";
+			<section class="conteudo">	
+				<div class="telaAnuncio">
+					<?php
+						$comandoGetIdProduto = "SELECT id_produto FROM anuncios WHERE id = '$_GET[idAnuncio]'";
 
-					$display = mysqli_query($GLOBALS['dao'], $comandoGetIdProduto);
-					getImagemProduto(mysqli_fetch_row($display)[0]);
-				?>
+						$display = mysqli_query($GLOBALS['dao'], $comandoGetIdProduto);
+						echo "<div class='borda'>";
+						echo getImagemProduto(mysqli_fetch_row($display)[0]);
+						echo "</div>";
 
-				<h1> NOME DO AGRICULTOR </h1>
+					?>
 
-				<?php
-					//echo $colunaAnuncio['id_anunciante'];
-					echo nomeDoAnunciante($colunaAnuncio['id_anunciante']);
-				?>
+					<h3> NOME DO AGRICULTOR </h3>
 
-				<h1> CATEGORIA </h1>
+					<?php
+						echo nomeDoAnunciante($colunaAnuncio['id_anunciante']);
+					?>
 
-				<?php
-					echo $colunaAnuncio['categoria'];
-				?>
+					<h3> CATEGORIA </h3>
 
-				<h1> CONTATO DO AGRICULTOR </h1>
+					<?php
+						echo $colunaAnuncio['categoria'];
+					?>
 
-				<?php
-							$telefone = getTelefone($colunaAnuncio['id_anunciante']);
-							$ddd = substr($telefone, 0, 2);
-							$numero = substr($telefone, 2);
-							echo '(' . $ddd . ')' . " ".$numero ;
-				?>
+					<h3> CONTATO DO AGRICULTOR </h3>
 
-				<h2> CONTEÚDO DO ANÚNCIO</h2>
+					<?php
+								$telefone = getTelefone($colunaAnuncio['id_anunciante']);
+								$ddd = substr($telefone, 0, 2);
+								$numero = substr($telefone, 2);
+								echo '(' . $ddd . ')' . " ".$numero ;
+					?>
 
-				<?php
-					echo $colunaAnuncio['texto_anuncio'];
-				?>
+					<h3> CONTEÚDO DO ANÚNCIO</h3>
 
+					<?php
+						echo $colunaAnuncio['texto_anuncio'];
+					?>
+				</div>
 				<h2> <a href='<?php  echo $_SERVER['HTTP_REFERER'] ?>'> VOLTAR </a> </h2>
 			</section>
 		</div>		               
