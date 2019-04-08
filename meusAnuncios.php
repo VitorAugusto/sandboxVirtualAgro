@@ -56,16 +56,15 @@
 						$displayMeusAnuncios = mysqli_query($GLOBALS['dao'],$selectMeusAnuncios);
 
 						while($coluna = mysqli_fetch_array($displayMeusAnuncios)) {
-							echo "<div class='meuAnuncio'>";	 //
-							$comandoGetIdProduto = "SELECT id_produto FROM anuncios WHERE id = '$coluna[id]'";  //ESSE MÓDULO AQUI ADICIONA AS IMAGENS NO ALL ANUNCIOS
-							$display = mysqli_query($GLOBALS['dao'], $comandoGetIdProduto);
+							echo "<div class='meuAnuncio'>";
+							$idProd = $coluna['id_produto'];
 							echo "<div class='borda'>";
 							echo "<div >"; //
-							echo getImagemProduto(mysqli_fetch_row($display)[0]);
+							echo getImagemProduto($idProd);
 							echo "</div>"; //
 							echo "</div>"; //
 							echo "<h3>"; //
-							echo getNomeProdutoPeloID($coluna['id']);
+							echo getNomeProdutoPeloID($idProd);
 							echo "</h3>";
 							echo "<div class='info'>"; //
 							echo "<b>CATEGORIA:</b>" . $coluna['categoria'] ;
