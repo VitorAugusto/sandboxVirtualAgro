@@ -274,7 +274,7 @@ li:hover a {
     color: #ffffff;
 }
 .list-group{
-    max-width: 220px;
+    max-width: 29%;
     max-height: 297px;
     border-radius: 20px;
     padding: 10px;
@@ -285,6 +285,7 @@ li:hover a {
     margin: 10px;
 }
 .list-group-item{
+    padding: 5%;
     border: none;
 }
 .list-group-item:nth-child(2){
@@ -293,7 +294,7 @@ li:hover a {
 #telaprodutos img {
     border-radius: 50%;
     border: solid 2px #088000;
-    max-width: 150px;
+    max-width: 100%;
 }
 .check-box { 
     position: relative;
@@ -645,7 +646,7 @@ form.form-anuncio .progresso li{
     text-transform: uppercase;
     font-size: 20px;
     float: left;
-    width: 20.33%;
+    width: 24.33%;
     position: relative;    
 
 }
@@ -829,8 +830,9 @@ a:hover {
 }
 #cadastrarAnuncio > fieldset{
     position:inherit;
+    width: 90%;
+    margin: 0 5%;
     margin-top: 40px;
-
 }
 #etapa1CriarAnuncio img{
     padding: 30% 0;
@@ -839,10 +841,7 @@ a:hover {
 #etapa1CriarAnuncio > ul > li{
     float: left;
     display: inline-block;
-    margin: 30px 30px;
     margin-left: 0;
-    width: 140px;
-    height: 150px;
 }
 #etapa1CriarAnuncio > ul > li:last-child{
     margin-left: 170px;
@@ -850,6 +849,7 @@ a:hover {
 
 #etapa2CriarAnuncio ul, li{
     max-width: 170px;
+    max-height: 215px;
     background-color: transparent;
 }
 .clearmix{
@@ -872,6 +872,54 @@ a:hover {
 .telaAnuncio h3{
     font-size: 20px;
 }
+/* Página meusAnuncios.php */
+.meuAnuncio{
+    background-color: #fff;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .1);
+    margin: 5% auto;
+    padding: 5%;
+    border-radius: 20px;
+    max-height: 5%;
+    float: left;
+}
+.meuAnuncio .info{
+    padding: 1%;
+    margin-left: 60%;
+}
+.meuAnuncio > .borda{
+    width: 50%;
+    height: auto;
+    margin: 0;
+    float: left;
+}
+.meuAnuncio > .borda img{
+    width: 94%;
+}
+.meuAnuncio h3{
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: bolder;
+}
+.meuAnuncio .editar, .excluir, .visitar{
+    padding: 1%;
+    margin-left: 60%;
+
+    font-weight: bolder;
+    font-size: 18px;
+    text-align: center;
+    margin-left: 10%;
+}
+.meuAnuncio .editar{
+    background-color: #1b6e5c;
+}
+.meuAnuncio .excluir{
+    background-color: #f13e3e;
+}
+.meuAnuncio .visitar{
+    border-top-right-radius: 20px;
+    background-color: #344fa5;
+}
+
 /* linha pra separar na tabela */
 .separador {
   border-left: 2px solid green;
