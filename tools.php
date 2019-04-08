@@ -176,6 +176,7 @@ function construirTabelaAnunciantes(){
 
 	echo "<th>AGRICULTOR</th>";
 	echo "<th>DESCRIÇÃO</th>";
+	echo "<th>MEDIDA</th>";
 	echo "<th>PREÇO</th>";
 	echo "<th>ENTRAR EM CONTATO</th>";
 
@@ -206,6 +207,7 @@ function getAnunciantes($produto){ //RETORNA OS ANUNCIANTES DAQUELE CERTO produt
 			nomeDoAnunciante($coluna['id_anunciante']);  //PREENCHE NOME
 			echo "</td>";
 			//echo "<td>". '(' . $ddd . ')' . " ".$numero . "</td>"; //PREENCHE TELEFONE
+			echo "<td>". $coluna['observacao'] . "</td>";
 			echo "<td>". $coluna['texto_anuncio'] . "</td>"; //PREENCHE O TEXTO DO ANÚNCIO
 			echo "<td>" . "R$".$coluna['preco']. "</td>"; //PREÇO DO ANÚNCIO
 			echo "<td>" .
@@ -213,7 +215,7 @@ function getAnunciantes($produto){ //RETORNA OS ANUNCIANTES DAQUELE CERTO produt
 			<span class='glyphicon glyphicon-earphone'></span> LIGAR
 			</a>" .
 			"<a href='https://api.whatsapp.com/send?phone={$telefoneFull}&text={$textoBasico}'>
-			<span class='fab fa-whatsapp' style='color:#088000;font-size: 45px;position: absolute;margin-inline-start: 50px;'></span>
+			<span class='fab fa-whatsapp' style='color:#088000;font-size: 45px;position: absolute;margin-inline-start: auto;'></span>
 			</a>" 
 			 ."</td>"; //EM CONT
 			 echo "</tr>";

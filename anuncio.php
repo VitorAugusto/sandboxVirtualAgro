@@ -4,6 +4,8 @@
 		<?php
 			include_once('tools.php');
 
+			$origem = $_SERVER['HTTP_REFERER'];
+
 			if(anuncioExiste($_GET['idAnuncio'])){
 			}else{
 
@@ -85,22 +87,35 @@
 						echo $colunaAnuncio['categoria'];
 					?>
 
+					<h3> MEDIDA </h3>
+
+					<?php
+					echo $colunaAnuncio['texto_anuncio'];
+					?>
+
 					<h3> CONTATO DO AGRICULTOR </h3>
 
 					<?php
 								$telefone = getTelefone($colunaAnuncio['id_anunciante']);
+								$telefoneFull = "55".$telefone;
 								$ddd = substr($telefone, 0, 2);
 								$numero = substr($telefone, 2);
 								echo '(' . $ddd . ')' . " ".$numero ;
+
 					?>
+					<br>
+						<a href='tel:<?php echo $telefoneFull ?>' class='btn btn-info btn-lg'>
+			<span class='glyphicon glyphicon-earphone'></span> LIGAR
+			</a>
 
 					<h3> CONTEÚDO DO ANÚNCIO</h3>
 
 					<?php
-						echo $colunaAnuncio['texto_anuncio'];
+						echo $colunaAnuncio['observacao'];
 					?>
+
 				</div>
-				<h2> <a href='<?php  echo $_SERVER['HTTP_REFERER'] ?>'> VOLTAR </a> </h2>
+				<h2> <a href='<?php  echo $origem ?>'> VOLTAR </a> </h2>
 			</section>
 		</div>		               
 		<footer>
