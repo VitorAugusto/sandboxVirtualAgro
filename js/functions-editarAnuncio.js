@@ -41,49 +41,25 @@ var medida;
 var observacao;
 var preco;
 
-window.onload = capturarCampos();
+window.onload = capturarInfoAnuncio();
 
 
-function getMedidaProduto(){
+function capturarInfoAnuncio(){
 
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
-			medida = this.responseText;
+			var campos = this.responseText.split("|");
+			medida = campos[0];
+			observacao = campos[1];
+			preco = campos[2];
+
+			changePreco();
+			changeObservacao();
 			changeMedida();
 		}
 	};
-	xhttp.open("POST", "consultarAnuncioHelper.php?action=getMedidaProduto" , true);
-	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xhttp.send("idAnuncio="+idAnuncio);
-
-}
-
-function getObservacaoProduto(){
-
-	var xhttp = new XMLHttpRequest();
-	xhttp.onreadystatechange = function() {
-		if (this.readyState == 4 && this.status == 200) {
-			observacao = this.responseText;
-			changeObservacao();
-		}
-	};
-	xhttp.open("POST", "consultarAnuncioHelper.php?action=getObservacaoProduto" , true);
-	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xhttp.send("idAnuncio="+idAnuncio);
-
-}
-
-function getPrecoProduto(){
-
-	var xhttp = new XMLHttpRequest();
-	xhttp.onreadystatechange = function() {
-		if (this.readyState == 4 && this.status == 200) {
-			preco = this.responseText;
-			changePreco();
-		}
-	};
-	xhttp.open("POST", "consultarAnuncioHelper.php?action=getPrecoProduto" , true);
+	xhttp.open("POST", "consultarAnuncioHelper.php" , true);
 	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xhttp.send("idAnuncio="+idAnuncio);
 
@@ -100,13 +76,3 @@ function changeObservacao(){
 function changeMedida(){
 	document.getElementById(medida).checked = true;
 }
-
-
-
-function capturarCampos(){
-	getMedidaProduto();
-	getObservacaoProduto();
-	getPrecoProduto();
-}
-
-
