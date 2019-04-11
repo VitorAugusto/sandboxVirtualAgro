@@ -36,7 +36,7 @@ $medida = $_POST['medida'];
 	<div class="form-group basic-textarea rounded-corners">
 		<textarea class="form-control z-depth-1" id="obs" rows="3" name="observacao" placeholder="Detalhes...observações..."></textarea>
 	</div>
-	<input type="button" name="publicarButton" value="PUBLICAR" placeholder="PUBLICAR" class="btn btn-success" onclick="final()"> 
+	<input type="button" name="publicarButton" value="PUBLICAR" placeholder="PUBLICAR" class="btn btn-success" onclick="final()" id="botaoPublicar"> 
 	<input type="button" name="prev" class="prev acao" value="VOLTAR">
 
 

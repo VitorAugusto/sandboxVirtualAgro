@@ -45,30 +45,6 @@
 	</header>
 	<div class="all">
 		<section class="conteudo">
-				<!-- <form action="accessManager.php?tipoOperacao=cadastro" method="POST">
-					<div class="login-senha">
-						<input type="text" name="campoNome" required="" placeholder="NOME">
-						<button class="login" type="submit" disabled="disabled">
-							<i class="fas fa-user-check"></i>
-						</button>
-					</div>
-					<div class="login-senha">
-						<input type="text" name="campoUsername" required="" placeholder="USERNAME">
-						<button class="login" type="submit" disabled="disabled">
-							<i class="fas fa-user"></i>
-						</button>
-					</div>
-					<div class="login-senha">
-					<input type="password" name="campoSenha" required="" placeholder="SENHA">
-						<button class="login" type="submit" disabled="disabled">
-							<i class="fas fa-key"></i>
-						</button>
-					</div>
-					<button class="buscar" type="submit">
-                		<span class="icon-text">ENVIAR</span>
-            	        <span class="icon-menu"><i class="fa fa-chevron-circle-right"></i></span>
-        	    	</button>				
-        	    </form> -->
 
         	    <form class="form-cadastro" name="formulario">
         	    	<ul class="progresso">
@@ -111,7 +87,7 @@
         	    		<input type="password" name="confirmaSenha" required="" placeholder="Confirme O PIN." maxlength="4" pattern="[0-9]+">
         	    		<input type="button" name="prev" class="prev acao" value="Anterior">
 
-        	    		<input type="submit" name="cadastrar" class="acao" value="Finalizar">
+        	    		<input type="submit" name="cadastrar" class="acao" value="Finalizar" id="botaoCadastrar">
         	    	</fieldset>
         	    	
 
@@ -131,10 +107,5 @@
         		<div class="copyright">Copyright 2019 © <a href="#"><b>Virtual Agro</b></a>.</div>
         	</div>
         </footer>
-
-        <?php
-
-        ?>
-
     </body>
     </html>

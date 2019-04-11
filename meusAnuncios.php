@@ -49,13 +49,9 @@
 					}else{
 						$meuid = $_SESSION['id'];
 
-						$selectMeusAnuncios = "SELECT * from anuncios WHERE id_anunciante = '$meuid' ORDER BY id DESC";
-						
-						mysqli_query($GLOBALS['dao'], "set names 'utf8'");
+						$meusAnuncios = getAllMeusAnuncios($meuid);
 
-						$displayMeusAnuncios = mysqli_query($GLOBALS['dao'],$selectMeusAnuncios);
-
-						while($coluna = mysqli_fetch_array($displayMeusAnuncios)) {
+						while($coluna = mysqli_fetch_array($meusAnuncios)) {
 							echo "<div class='meuAnuncio'>";
 							$idProd = $coluna['id_produto'];
 							echo "<div class='borda'>";
@@ -67,10 +63,10 @@
 							echo getNomeProdutoPeloID($idProd);
 							echo "</h3>";
 							echo "<div class='info'>"; //
-							echo "<b>CATEGORIA:</b>" . $coluna['categoria'] ;
+							echo "<b>CATEGORIA: </b>" . $coluna['categoria'] ;
 							echo "</div>"; //
 							echo "<div class='info'>"; //
-							echo "<b>TEXTO DO ANÚNCIO:</b>" . $coluna['texto_anuncio'];
+							echo "<b>CONTEÚDO : </b>" . $coluna['observacao'];
 							echo "</div>"; //
 							echo "<div class='visitar'>"; //
 							echo "<a href='anuncio.php?idAnuncio={$coluna['id']}'> VISITAR ANÚNCIO </a>";

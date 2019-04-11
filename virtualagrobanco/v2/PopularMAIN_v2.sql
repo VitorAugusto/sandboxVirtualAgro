@@ -5,7 +5,7 @@ use virtualagro;
 
 CREATE table cadastros(id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
   nome LONGTEXT NOT NULL,
-  telefone VARCHAR(50)NOT NULL,
+  telefone VARCHAR(50) UNIQUE NOT NULL,
   pin VARCHAR(50)NOT NULL);
 
 INSERT INTO cadastros(nome, telefone, pin) VALUES ('NOME TESTE 1', 11111111111, MD5(1234) );

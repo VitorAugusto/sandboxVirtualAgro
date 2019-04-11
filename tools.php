@@ -83,6 +83,35 @@ function meuAnuncio($idAnunciante,$meuId){
 	return ($idAnunciante == $meuId);
 }
 
+function getAllInfoAnuncio($idAnun){
+
+	$comandoSelectAnuncio = "SELECT * from anuncios WHERE id = '$idAnun'";
+	mysqli_query($GLOBALS['dao'], "set names 'utf8'");
+
+	$displayAnuncio = mysqli_query($GLOBALS['dao'], $comandoSelectAnuncio);
+
+	return (mysqli_fetch_array($displayAnuncio));
+}
+
+function getAllMeusAnuncios($meuId){
+
+	$selectMeusAnuncios = "SELECT * from anuncios WHERE id_anunciante = '$meuId' ORDER BY id DESC";
+	mysqli_query($GLOBALS['dao'], "set names 'utf8'");
+
+	$displayMeusAnuncios = mysqli_query($GLOBALS['dao'],$selectMeusAnuncios);
+
+	return($displayMeusAnuncios);
+}
+
+function getAllAnunciosDESC(){
+
+	$selectTodosAnuncios = "SELECT * from anuncios ORDER BY id DESC";
+	mysqli_query($GLOBALS['dao'], "set names 'utf8'");
+	$displayAllAnunciosDESC = mysqli_query($GLOBALS['dao'], $selectTodosAnuncios);
+
+	return ($displayAllAnunciosDESC);
+}
+
 function produtoExiste($idProd){
 	$comandoProdutoExiste = "SELECT * from produtos WHERE id = '$idProd'";
 

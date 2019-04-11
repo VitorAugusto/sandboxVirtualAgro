@@ -1,6 +1,6 @@
 /* Máscaras ER */
 
-console.log("v2 javcstro");
+console.log("v2 cadastro");
 
 //-X-X-X-X-X-X-X-X-X-X-X-X-X-X-X- MÁSCARA DE NÚMERO TELEFONE -X-X-X-X-X-X
 
@@ -175,6 +175,8 @@ $(function(){
 
          }else{
 
+            fecharBotao();
+
             pin = array[2].value;
 
             console.log("cadastro completo");
@@ -218,6 +220,10 @@ function telefoneJaCadastrado(){
     }else{
         return false;
     }
+}
+
+function fecharBotao(){
+    document.getElementById("botaoCadastrar").disabled = true;
 }
 
 function lancarErro(codigoErro){

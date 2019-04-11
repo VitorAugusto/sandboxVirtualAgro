@@ -25,12 +25,6 @@ window.onload = function(){
 }
 
 
-function doLogin(){
-
-}
-
-
-
 
 $('#botao').on('click', function(e){
 

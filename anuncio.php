@@ -5,18 +5,18 @@
 			include_once('tools.php');
 
 			$origem = $_SERVER['HTTP_REFERER'];
+			$colunaAnuncio = '';
 
 			if(anuncioExiste($_GET['idAnuncio'])){
+				//rodar o coletar info anuncio
+				$colunaAnuncio = getAllInfoAnuncio($_GET['idAnuncio']);
+
 			}else{
 
 				ECHO "ANÚNCIO NÃO EXISTE";
 				header('location:index.php');
 			}
 
-			$comandoSelectAnuncio = "SELECT * from anuncios WHERE id = '$_GET[idAnuncio]'";
-			mysqli_query($GLOBALS['dao'], "set names 'utf8'");
-			$displayAnuncio = mysqli_query($GLOBALS['dao'], $comandoSelectAnuncio);
-			$colunaAnuncio = mysqli_fetch_array($displayAnuncio);
 		?>
 
 		<title>ANÚNCIO - VIRTUAL AGRO</title>
@@ -66,11 +66,9 @@
 			<section class="conteudo">	
 				<div class="telaAnuncio">
 					<?php
-						$comandoGetIdProduto = "SELECT id_produto FROM anuncios WHERE id = '$_GET[idAnuncio]'";
 
-						$display = mysqli_query($GLOBALS['dao'], $comandoGetIdProduto);
 						echo "<div class='borda'>";
-						echo getImagemProduto(mysqli_fetch_row($display)[0]);
+						echo getImagemProduto($colunaAnuncio['id_produto']);
 						echo "</div>";
 
 					?>

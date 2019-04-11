@@ -48,19 +48,13 @@
                 <h1 class='chamadaPrincipal'>Todos os Anuncios</h1>
                 <?php
 
-
-                    $selectTodosAnuncios = "SELECT * from anuncios ORDER BY id DESC";
-                    mysqli_query($GLOBALS['dao'], "set names 'utf8'");
-
-                    $displayTodosAnuncios = mysqli_query($GLOBALS['dao'], $selectTodosAnuncios);
+                $allAnuncios = getAllAnunciosDESC();
                     
-                    while($coluna = mysqli_fetch_array($displayTodosAnuncios)){
+                    while($coluna = mysqli_fetch_array($allAnuncios)){
                         echo "<a href='anuncio.php?idAnuncio={$coluna['id']}'>";
                         echo "<ul class='list-group' id='ulAnuncio'>";
-                        $comandoGetIdProduto = "SELECT id_produto FROM anuncios WHERE id = '$coluna[id]'";  //ESSE MÓDULO AQUI ADICIONA AS IMAGENS NO ALL ANUNCIOS
-                        $display = mysqli_query($GLOBALS['dao'], $comandoGetIdProduto);
                         echo "<li class='list-group-item' id='imgAnuncio'>"; //
-                        echo getImagemProduto(mysqli_fetch_row($display)[0]);
+                        echo getImagemProduto($coluna['id_produto']);
                         echo "</li>"; //
                         //
                         echo "<li class='list-group-item'>"; //
