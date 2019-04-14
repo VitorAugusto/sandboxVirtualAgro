@@ -129,8 +129,8 @@
 						<h1>Escolha um produto</h1>
 
 						<!-- 
-						<input type="button" name="proximo" class="next acao" value="Próximo">
-						<input type="button" name="prev" class="prev acao" value="Anterior"> -->
+						<input type="button" name="proximo" class="next acao" value="Próximo"> 
+						<input type="button" name="prev" class="prev acao" value="Anterior" id="botaoVoltarCategoria"> -->
 
 					</fieldset>
 
@@ -195,7 +195,7 @@
 
 				</form>
 
-				<h2> <a href='site.php'>VOLTAR</a> </h2>
+				<h2> <a href='site.php'>SAIR</a> </h2>
 
 			</section>
 		</div>		               

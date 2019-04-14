@@ -80,11 +80,16 @@ $('.escolherCategoria').click(function(){ //ETAPA 1 , AQUI ELE ESCOLHE A CATEGOR
 	console.log("categoria selecionada : " + val);
 	categoria = val;
 
-
+	//document.getElementById("etapa2CriarAnuncio").innerHTML = '';
 	mostrarProdutos(val);
 
 
 });
+
+// $('#botaoVoltarCategoria'). on("click", function(){
+// 	console.log("voltou");
+// 	document.getElementById("etapa2CriarAnuncio").innerHTML = '';
+// });
 
 
 $("body").on("click", ".escolherProduto", function(){ //ETAPA 2, AQUI ELE ESCOLHE O PRODUTO QUE QUER ANÚNCIAR
@@ -154,7 +159,7 @@ function mostrarProdutos(cat){
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
 			var botoes = document.querySelectorAll('input[type=button]')
-			document.getElementById("etapa2CriarAnuncio").innerHTML += this.responseText;
+			document.getElementById("etapa2CriarAnuncio").innerHTML = this.responseText;
 		}
 	};
 	xhttp.open("GET", "searchAnunciar.php?categoria="+ categoria, true);

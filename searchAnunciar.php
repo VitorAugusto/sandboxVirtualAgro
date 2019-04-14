@@ -9,7 +9,7 @@ include_once('tools.php');
 header("Content-type: image/jpeg");
 
 //echo "<h2> <a href='' onclick=voltar()> VOLTAR </a> </h2>";
-
+echo "<input type='button' name='prev' class='prev acao' value='VOLTAR' id = 'botaoVoltarCategoria'>";
 echo "<div id=telaprodutos>";
 
 if(empty($_GET['categoria'])){
@@ -93,8 +93,6 @@ if(empty($_GET['categoria'])){
 	}
 
 	//echo "</table>";
-
-
 }
 
 echo "</div>";
