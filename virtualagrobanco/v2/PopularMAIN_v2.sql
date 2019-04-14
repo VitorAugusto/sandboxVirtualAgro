@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS virtualagro;
+﻿CREATE DATABASE IF NOT EXISTS virtualagro;
 
 use virtualagro;
 
@@ -43,7 +43,7 @@ INSERT INTO virtualagro.categoria (id, nome, imagem) VALUES (7, 'OUTRO', 'outro/
 INSERT INTO virtualagro.produtos (id, nome, categoria, imagemprincipal, imagemadd1, imagemadd2) VALUES (1, 'abacate', 'FRUTA', 'fruta/abacate.jpg', null, null);
 INSERT INTO virtualagro.produtos (id, nome, categoria, imagemprincipal, imagemadd1, imagemadd2) VALUES (2, 'abacaxi', 'FRUTA', 'fruta/abacaxi.jpg', null, null);
 INSERT INTO virtualagro.produtos (id, nome, categoria, imagemprincipal, imagemadd1, imagemadd2) VALUES (3, 'acerola', 'FRUTA', 'fruta/acerola.jpg', null, null);
-INSERT INTO virtualagro.produtos (id, nome, categoria, imagemprincipal, imagemadd1, imagemadd2) VALUES (4, 'ameixa', 'FRUTA', 'fruta/ameixa.png', null, null);
+INSERT INTO virtualagro.produtos (id, nome, categoria, imagemprincipal, imagemadd1, imagemadd2) VALUES (4, 'ameixa', 'FRUTA', 'fruta/ameixa.jpg', null, null);
 INSERT INTO virtualagro.produtos (id, nome, categoria, imagemprincipal, imagemadd1, imagemadd2) VALUES (5, 'banana', 'FRUTA', 'fruta/banana.jpg', null, null);
 INSERT INTO virtualagro.produtos (id, nome, categoria, imagemprincipal, imagemadd1, imagemadd2) VALUES (6, 'cacau', 'FRUTA', 'fruta/cacau.jpg', null, null);
 INSERT INTO virtualagro.produtos (id, nome, categoria, imagemprincipal, imagemadd1, imagemadd2) VALUES (7, 'carambola', 'FRUTA', 'fruta/carambola.jpg', null, null);
@@ -130,8 +130,8 @@ INSERT INTO virtualagro.produtos (id, nome, categoria, imagemprincipal, imagemad
 INSERT INTO virtualagro.produtos (id, nome, categoria, imagemprincipal, imagemadd1, imagemadd2) VALUES (88, 'gengibre', 'ESPECIARIA', 'especiaria/gengibre.jpg', null, null);
 INSERT INTO virtualagro.produtos (id, nome, categoria, imagemprincipal, imagemadd1, imagemadd2) VALUES (89, 'gergelim', 'ESPECIARIA', 'especiaria/gergelim.jpg', null, null);
 INSERT INTO virtualagro.produtos (id, nome, categoria, imagemprincipal, imagemadd1, imagemadd2) VALUES (90, 'noz moscada', 'ESPECIARIA', 'especiaria/noz_moscada.jpg', null, null);
-INSERT INTO virtualagro.produtos (id, nome, categoria, imagemprincipal, imagemadd1, imagemadd2) VALUES (91, 'pimenta do reino', 'ESPECIARIA', 'especiaria/pimenta_do_reino.png', null, null);
-INSERT INTO virtualagro.produtos (id, nome, categoria, imagemprincipal, imagemadd1, imagemadd2) VALUES (92, 'ervilha', 'GRÃOS', 'grãos/ervilha.png', null, null);
+INSERT INTO virtualagro.produtos (id, nome, categoria, imagemprincipal, imagemadd1, imagemadd2) VALUES (91, 'pimenta do reino', 'ESPECIARIA', 'especiaria/pimenta_do_reino.jpg', null, null);
+INSERT INTO virtualagro.produtos (id, nome, categoria, imagemprincipal, imagemadd1, imagemadd2) VALUES (92, 'ervilha', 'GRÃOS', 'grãos/ervilha.jpg', null, null);
 INSERT INTO virtualagro.produtos (id, nome, categoria, imagemprincipal, imagemadd1, imagemadd2) VALUES (93, 'feijão branco', 'GRÃOS', 'grãos/feijão_branco.jpg', null, null);
 INSERT INTO virtualagro.produtos (id, nome, categoria, imagemprincipal, imagemadd1, imagemadd2) VALUES (94, 'feijão preto', 'GRÃOS', 'grãos/feijão_preto.jpg', null, null);
 INSERT INTO virtualagro.produtos (id, nome, categoria, imagemprincipal, imagemadd1, imagemadd2) VALUES (95, 'feijão vermelho', 'GRÃOS', 'grãos/feijão_vermelho.jpg', null, null);
