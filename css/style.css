@@ -275,7 +275,7 @@ li:hover a {
 }
 .list-group{
     max-width: 29%;
-    height: 274px;
+    height: 255px;
     border-radius: 20px;
     padding: 10px;
     background-color: #fff;
@@ -285,7 +285,7 @@ li:hover a {
     margin: 10px;
 }
 .list-group-item{
-    padding: 4%;
+    padding: 3%;
     border: none;
 }
 .list-group-item:nth-child(2){
@@ -295,7 +295,6 @@ li:hover a {
     border-radius: 50%;
     border: solid 2px #088000;
     max-width: 100%;
-    height: 153px;
 }
 .check-box { 
     position: relative;
@@ -697,6 +696,14 @@ a:hover {
     color: #ffffff;
 }
 /*Página produto.php*/
+i.fab.fa-whatsapp{
+    color:#088000;
+    font-size: 45px;
+    position: absolute;
+    margin-inline-start: auto;
+    margin-left: 1%;
+    display: contents;
+}
 .borda{
     /*Borda gradiente da imagem principal;*/
     width: 320px;
@@ -726,12 +733,12 @@ a:hover {
 }
 #detalhesproduto table{
     width: 100%;
+    text-align: center;
 }
 #detalhesproduto tr:first-child{
     border-bottom: solid 1px #1b6e5c;
     color: #1b6e5c;
     font-weight: bolder;
-    font-size: 20px;
 }
 #detalhesproduto h3{
     color: #1b6e5c;
@@ -747,6 +754,7 @@ a:hover {
     font-size: 20px;
     padding: 20px;
 }
+
 /*Página site.php*/
 #menu-anunciante{
     background-color: #fff;

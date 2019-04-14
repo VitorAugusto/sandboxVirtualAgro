@@ -241,10 +241,10 @@ function getAnunciantes($produto){ //RETORNA OS ANUNCIANTES DAQUELE CERTO produt
 			echo "<td>" . "R$".$coluna['preco']. "</td>"; //PREÇO DO ANÚNCIO
 			echo "<td>" .
 			"<a href='tel:{$telefoneFull}' class='btn btn-info btn-lg'>
-			<span class='glyphicon glyphicon-earphone'></span> LIGAR
+			<span class='glyphicon glyphicon-earphone'>LIGAR</span>
 			</a>" .
 			"<a href='https://api.whatsapp.com/send?phone={$telefoneFull}&text={$textoBasico}'>
-			<span class='fab fa-whatsapp' style='color:#088000;font-size: 45px;position: absolute;margin-inline-start: auto;'></span>
+			<span><i class='fab fa-whatsapp'></i></span>
 			</a>" 
 			 ."</td>"; //EM CONT
 			 echo "</tr>";

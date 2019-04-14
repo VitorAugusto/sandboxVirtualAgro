@@ -100,6 +100,7 @@ $("body").on("click", ".escolherProduto", function(){ //ETAPA 2, AQUI ELE ESCOLH
 
 });
 
+
 // $("#etapa3CriarAnuncio").on("click", $("input[name='proximo']"), function(){ //ETAPA 3 , CAPTURA O ATRIBUTO DO ANÚNCIO, KG , 1/2KG, BANDEJA, ETC
 // 	// var atributo = $("input[name='atributo']:checked").val();
 
