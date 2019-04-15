@@ -64,6 +64,7 @@
 		</header>
 		<div class="all">
 			<section class="conteudo">	
+				<h2> <a href='<?php  echo $origem ?>'> VOLTAR </a> </h2>
 				<div class="telaAnuncio">
 					<?php
 
@@ -113,7 +114,6 @@
 					?>
 
 				</div>
-				<h2> <a href='<?php  echo $origem ?>'> VOLTAR </a> </h2>
 			</section>
 		</div>		               
 		<footer>
