@@ -184,6 +184,7 @@ footer hr {
 	float: left;
 	display: block;
 	position: relative;
+    height: 40px;
 }
 
 .box-menu > a {
