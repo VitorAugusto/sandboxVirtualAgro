@@ -796,8 +796,7 @@ i.fab.fa-whatsapp{
 #imgAnuncio > img{
     border-radius: 50%;
     border: solid 2px #088000;
-    max-width: 150px;
-    margin-left: 25px;
+    max-width: 100%;
 }
 .chamadaPrincipal{
     color: #1b6e5c;
@@ -917,8 +916,9 @@ i.fab.fa-whatsapp{
 
     font-weight: bolder;
     font-size: 18px;
-    text-align: center;
+    text-align: right;
     margin-left: 10%;
+    padding-right: 3%;
 }
 .meuAnuncio .editar{
     background-color: #1b6e5c;
