@@ -71,7 +71,7 @@ function nomeDoAnunciante($idAnun){
 
 function anuncioExiste($idAnun){
 
-	$comandoAnuncioExiste = "SELECT * from anuncios WHERE id = '$idAnun'";
+	$comandoAnuncioExiste = "SELECT id from anuncios WHERE id = '$idAnun'";
 
 	$display = mysqli_query($GLOBALS['dao'], $comandoAnuncioExiste);
 
@@ -129,7 +129,7 @@ function getAllAnunciosDESC(){
 }
 
 function produtoExiste($idProd){
-	$comandoProdutoExiste = "SELECT * from produtos WHERE id = '$idProd'";
+	$comandoProdutoExiste = "SELECT id from produtos WHERE id = '$idProd'";
 
 	$display = mysqli_query($GLOBALS['dao'], $comandoProdutoExiste);
 
@@ -208,7 +208,7 @@ function getImagensAdicionais($idProd){
 }
 
 function existemAnunciantes($produto){ //RETORNA SE EXISTEM ANUNCIANTES DAQUELE PRODUTO
-	$comandoExistemAnunciantes = "SELECT * from anuncios WHERE id_produto = '$produto'";
+	$comandoExistemAnunciantes = "SELECT id from anuncios WHERE id_produto = '$produto'";
 
 	$display = mysqli_query($GLOBALS['dao'],$comandoExistemAnunciantes);
 
@@ -283,7 +283,7 @@ function getAnunciantes($produto){ //RETORNA OS ANUNCIANTES DAQUELE CERTO produt
 
 		if(existemAnunciantes($produto)){
 
-			$comandoGetNumeroAnuciantes = "SELECT * from anuncios WHERE id_produto = '$produto'";
+			$comandoGetNumeroAnuciantes = "SELECT id from anuncios WHERE id_produto = '$produto'";
 
 			$display = mysqli_query($GLOBALS['dao'], $comandoGetNumeroAnuciantes);
 
