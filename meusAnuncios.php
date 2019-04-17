@@ -56,18 +56,24 @@
 							$idProd = $coluna['id_produto'];
 							echo "<div class='borda'>";
 							echo "<div >"; //
+							echo "<a href='anuncio.php?idAnuncio={$coluna['id']}'>";
 							echo getImagemProduto($idProd);
+							echo "</a>";
 							echo "</div>"; //
 							echo "</div>"; //
 							echo "<h3>"; //
 							echo getNomeProdutoPeloID($idProd);
 							echo "</h3>";
 							echo "<div class='info'>"; //
-							echo "<b>CATEGORIA: </b>" . $coluna['categoria'] ;
+							//echo "<b>CATEGORIA: </b>" . $coluna['categoria'] ;
 							echo "</div>"; //
 							echo "<div class='info'>"; //
-							echo "<b>CONTEÚDO : </b>" . $coluna['observacao'];
+							echo "<b>CONTEÚDO</b>" . "<p style=font-size:25px;font-weight:bolder;>". $coluna['observacao'];
 							echo "</div>"; //
+							echo "<div class='info'>"; //
+							echo "<b>PREÇO</b>" . "<p style=font-size:25px;font-weight:bolder;> R$". $coluna['preco'] . " - " . $coluna['texto_anuncio'];
+							echo "</div>"; //
+
 							echo "<div class='visitar'>"; //
 							echo "<a href='anuncio.php?idAnuncio={$coluna['id']}'> VISITAR ANÚNCIO </a>";
 							echo "</div>"; //
@@ -79,7 +85,6 @@
 							echo "</div>"; //
 							echo "</div>";
 						}
-
 					}
 
 				?>

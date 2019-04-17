@@ -74,6 +74,12 @@
 
 					?>
 
+					<?php
+					$nomeProduto = getNomeProdutoPeloID($colunaAnuncio['id_produto']);
+					?>
+					<h3 style="text-transform: uppercase;font-size: 30px;font-weight: bolder; text-align: center;"><?php echo $nomeProduto ?></h3>
+
+
 					<h3> NOME DO AGRICULTOR </h3>
 
 					<?php
@@ -86,10 +92,10 @@
 						echo $colunaAnuncio['categoria'];
 					?>
 
-					<h3> MEDIDA </h3>
+					<h3> PREÇO </h3>
 
 					<?php
-					echo $colunaAnuncio['texto_anuncio'];
+					echo "R$ ". $colunaAnuncio['preco'] ." - ". $colunaAnuncio['texto_anuncio'];
 					?>
 
 					<h3> CONTATO DO AGRICULTOR </h3>
@@ -101,11 +107,16 @@
 								$numero = substr($telefone, 2);
 								echo '(' . $ddd . ')' . " ".$numero ;
 
+								$textoBasico = "Olá, quero saber mais sobre seu anúncio de ". mb_strtoupper($nomeProduto) ." no VirtualAgro.net ";
+
 					?>
 					<br>
 						<a href='tel:<?php echo $telefoneFull ?>' class='btn btn-info btn-lg'>
 			<span class='glyphicon glyphicon-earphone'></span> LIGAR
 			</a>
+								<a href='https://api.whatsapp.com/send?phone=<?php echo $telefoneFull ?>&text=<?php echo $textoBasico ?>'>
+						<span><i class='fab fa-whatsapp'></i></span>
+					</a>
 
 					<h3> CONTEÚDO DO ANÚNCIO</h3>
 

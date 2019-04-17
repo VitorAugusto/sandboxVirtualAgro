@@ -78,6 +78,14 @@ function anuncioExiste($idAnun){
 	return(mysqli_num_rows($display) > 0);
 }
 
+function perfilExiste($idPerfil){
+	$comandoPerfilExiste = "SELECT id from cadastros WHERE id = '$idPerfil'";
+	$display = mysqli_query($GLOBALS['dao'], $comandoPerfilExiste);
+
+	return(mysqli_num_rows($display) > 0);
+}
+
+
 function meuAnuncio($idAnunciante,$meuId){
 
 	return ($idAnunciante == $meuId);
@@ -91,6 +99,14 @@ function getAllInfoAnuncio($idAnun){
 	$displayAnuncio = mysqli_query($GLOBALS['dao'], $comandoSelectAnuncio);
 
 	return (mysqli_fetch_array($displayAnuncio));
+}
+
+function getAllInfoPerfil($idPerfil){
+	$comandoInfoPerfil = "SELECT nome,telefone from cadastros WHERE id = '$idPerfil'";
+
+	$displayInfoPerfil = mysqli_query($GLOBALS['dao'], $comandoInfoPerfil);
+
+	return (mysqli_fetch_array($displayInfoPerfil));
 }
 
 function getAllMeusAnuncios($meuId){
@@ -233,7 +249,9 @@ function getAnunciantes($produto){ //RETORNA OS ANUNCIANTES DAQUELE CERTO produt
 
 			echo "<tr>";
 			echo "<td>";
+			echo "<a href=perfil.php?id=$coluna[id_anunciante] class='linkPerfil' target=_blank>";
 			nomeDoAnunciante($coluna['id_anunciante']);  //PREENCHE NOME
+			echo "</a>";
 			echo "</td>";
 			//echo "<td>". '(' . $ddd . ')' . " ".$numero . "</td>"; //PREENCHE TELEFONE
 			echo "<td>". $coluna['observacao'] . "</td>";
