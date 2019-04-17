@@ -146,3 +146,5 @@ INSERT INTO virtualagro.anuncios (id, id_anunciante, categoria, texto_anuncio, i
 INSERT INTO virtualagro.anuncios (id, id_anunciante, categoria, texto_anuncio, id_produto, observacao, preco) VALUES (39, 1, 'ESPECIARIA', 'PACOTE', 87, 'pacote pequeno, pra vender rápido.', '4,00');
 
 SET PASSWORD FOR 'root'@'localhost' = PASSWORD('virtualagroeunapolisbahia');
+CREATE USER 'user'@'localhost' IDENTIFIED BY 'virtualagroeunapolisbahia';
+GRANT ALL PRIVILEGES ON virtualagro.* TO 'user'@'localhost';

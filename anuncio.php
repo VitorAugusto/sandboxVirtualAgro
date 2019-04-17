@@ -86,6 +86,11 @@
 						echo nomeDoAnunciante($colunaAnuncio['id_anunciante']);
 					?>
 
+					<h3> REGIÃO </h3>
+
+					<p id="regiao"></p> <!-- AQUI SERÁ INSERIDO A REGIÃO DO AGRICULTOR-->
+
+
 					<h3> CATEGORIA </h3>
 
 					<?php
@@ -110,6 +115,8 @@
 								$textoBasico = "Olá, quero saber mais sobre seu anúncio de ". mb_strtoupper($nomeProduto) ." no VirtualAgro.net ";
 
 					?>
+
+					<input type="hidden" name="ddd" id="ddd" class="ddd" value="<?php echo $ddd ?>">
 					<br>
 						<a href='tel:<?php echo $telefoneFull ?>' class='btn btn-info btn-lg'>
 			<span class='glyphicon glyphicon-earphone'></span> LIGAR
@@ -125,6 +132,7 @@
 					?>
 
 				</div>
+				<script type="text/javascript" src="js/getRegiaoUnica.js"></script>
 			</section>
 		</div>		               
 		<footer>

@@ -71,6 +71,10 @@
 						echo $infoPerfil['nome'];
 					?>
 
+					<h3> REGIÃO </h3>
+
+					<p id="regiao"></p> <!-- AQUI SERÁ INSERIDO A REGIÃO DO AGRICULTOR-->
+
 					<h3> CONTATO DO AGRICULTOR </h3>
 
 					<?php
@@ -83,6 +87,7 @@
 								$textoBasico = "Olá, quero saber mais sobre seus produtos anunciados no VirtualAgro.net ";
 
 					?>
+					<input type="hidden" name="ddd" id="ddd" class="ddd" value="<?php echo $ddd ?>">
 
 					<a href='https://api.whatsapp.com/send?phone=<?php echo $telefoneFull ?>&text=<?php echo $textoBasico ?>'>
 						<span><i class='fab fa-whatsapp'></i></span>
@@ -137,6 +142,8 @@
 					?>
 
 				</div>
+
+				<script type="text/javascript" src="js/getRegiaoUnica.js"></script>
 
 		</section>
 	</div>		               

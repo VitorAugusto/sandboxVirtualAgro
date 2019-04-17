@@ -220,14 +220,17 @@ function construirTabelaAnunciantes(){
 	echo "<table cellpadding='5px'spacepadding='5px'>"; 
 
 	echo "<th>AGRICULTOR</th>";
+	echo "<th>LOCALIDADE</th>";
 	echo "<th>DESCRIÇÃO</th>";
 	echo "<th>MEDIDA</th>";
 	echo "<th>PREÇO</th>";
-	echo "<th>ENTRAR EM CONTATO</th>";
+	echo "<th>CONTATO</th>";
 
 }
 
 function getAnunciantes($produto){ //RETORNA OS ANUNCIANTES DAQUELE CERTO produto
+
+	include_once('consultaDDD.php');
 
 	$comandoGetAnunciantes = "SELECT * from anuncios WHERE id_produto = '$produto'";
 
@@ -253,9 +256,15 @@ function getAnunciantes($produto){ //RETORNA OS ANUNCIANTES DAQUELE CERTO produt
 			nomeDoAnunciante($coluna['id_anunciante']);  //PREENCHE NOME
 			echo "</a>";
 			echo "</td>";
+			//região !!
+			echo "<td>";
+			echo "<p class=regiao>";
+			getMyRegiao($ddd);
+			echo "</p>";
+			echo "</td>";
 			//echo "<td>". '(' . $ddd . ')' . " ".$numero . "</td>"; //PREENCHE TELEFONE
-			echo "<td>". $coluna['observacao'] . "</td>";
-			echo "<td>". $coluna['texto_anuncio'] . "</td>"; //PREENCHE O TEXTO DO ANÚNCIO
+			echo "<td>".  $coluna['observacao'] . "</td>";
+			echo "<td>".  $coluna['texto_anuncio'] . "</td>"; //PREENCHE O TEXTO DO ANÚNCIO
 			echo "<td>" . "R$".$coluna['preco']. "</td>"; //PREÇO DO ANÚNCIO
 			echo "<td>" .
 			"<a href='tel:{$telefoneFull}' class='btn btn-info btn-lg'>

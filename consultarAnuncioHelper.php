@@ -1,14 +1,16 @@
 <?php
 
-include_once('tools.php');
+//include_once('tools.php');
+
+include_once('microDAO.php');
 
 $idAnuncio = $_POST['idAnuncio'];
 
 $comandoConsultarAnuncio = "SELECT texto_anuncio, observacao, preco from anuncios WHERE id = '$idAnuncio'";
 
-mysqli_query($GLOBALS['dao'], "set names 'utf8'");
+mysqli_query($GLOBALS['daomicro'], "set names 'utf8'");
 
-$display = mysqli_query($GLOBALS['dao'], $comandoConsultarAnuncio);
+$display = mysqli_query($GLOBALS['daomicro'], $comandoConsultarAnuncio);
 
 
 $coluna = mysqli_fetch_array($display);

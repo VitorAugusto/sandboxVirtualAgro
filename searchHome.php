@@ -28,7 +28,7 @@ if(empty($_GET['categoria'])){
 	//echo "<th> NOME </th>";
 
 	while ($coluna = mysqli_fetch_array($display)) { // CADA COLUNA PRA SER PREENCHIDA É UM <tr>, CADA VALOR DESSA COLUNA É UM <td>
-		echo "<a href=# onclick=exibirProdutoDetails($coluna[id])>".
+		echo "<a href=# onclick=exibirProdutoDetails($coluna[id]);>".
 		"<ul class='list-group'>";
 		//echo "<tr>";
 		echo "<li class='list-group-item d-flex justify-content-between align-items-center'>". 

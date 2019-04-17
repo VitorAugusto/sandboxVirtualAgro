@@ -134,6 +134,7 @@ session_start();
         </section>
         <section class="conteudo" id="conteudo2">
             <h2> <a href='#' onclick="voltar()" id="botaoVoltar"> VOLTAR </a> </h2>
+            <script type="text/javascript" src="js/getRegiaoMultipla.js?v=<?php echo time(); ?>"></script>
         </section>
     </div>
 
