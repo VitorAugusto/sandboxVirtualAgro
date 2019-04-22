@@ -68,7 +68,10 @@
           echo "<div>";
           echo "<a href='mudarTelefone.php' class=botaoAdicional><img src=imagens/icon/16-512-2.png width=160px>Mudar Telefone</a>";
           echo "</div>";
-          echo "</div>"
+          echo "<div>";
+          echo "<a href='perfil.php?id=$_SESSION[id]' class=botaoAdicional target=_blank><span><i class='fas fa-user'></i></span>Meu Perfil</a>";
+          echo "</div>";
+          echo "</div>";
         ?>
 
 

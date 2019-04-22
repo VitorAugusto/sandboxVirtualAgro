@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>MEU PERFIL - Virtual Agro</title>
+	<title>PERFIL AGRICULTOR - Virtual Agro</title>
 	<meta charset="UTF-8">
 	<link rel="icon" type="image/png" sizes="64x64" href="imagens/logo/virtual-agro-logo-png.png">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
@@ -15,6 +15,8 @@
 
 </head>
 <body>
+	<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.2"></script>
 	<header class="navigation">
 		<div class="container-header">
 			<div class="left-side">
@@ -61,11 +63,15 @@
 
 
 			<div class="telaAnuncio">
-					<?php
-
-					?>
 
 					<h3> NOME DO AGRICULTOR </h3>
+
+
+					<?php
+					$fullname = $infoPerfil['nome'];
+                    $fullname = trim($fullname); // remove double space
+                    $firstname = substr($fullname, 0, strpos($fullname, ' '));
+                    ?>
 
 					<?php
 						echo $infoPerfil['nome'];
@@ -87,6 +93,7 @@
 								$textoBasico = "Olá, quero saber mais sobre seus produtos anunciados no VirtualAgro.net ";
 
 					?>
+
 					<input type="hidden" name="ddd" id="ddd" class="ddd" value="<?php echo $ddd ?>">
 
 					<a href='https://api.whatsapp.com/send?phone=<?php echo $telefoneFull ?>&text=<?php echo $textoBasico ?>'>
@@ -97,11 +104,30 @@
 			<span class='glyphicon glyphicon-earphone'></span> LIGAR
 			</a>
 
+			<h3>DIVULGAR</h3>
 			<?php
-			$fullname = $infoPerfil['nome'];
-            $fullname = trim($fullname); // remove double space
-            $firstname = substr($fullname, 0, strpos($fullname, ' '));
+			//$linkPerfil = $_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']."?id=".$_GET['id'];
+			$linkPerfil = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']."?id=".$_GET['id'];
+
+			$linkBasico = 'http://'.'virtualagro.net/perfil.php?id=6';
+
+			$cu = urlencode($linkPerfil);
+
+			$textoCompartilhar = '';
+			if (isset($_SESSION['id'])) {
+				if ($_SESSION['id'] == $_GET['id']) {
+				$textoCompartilhar = "Olá, visite minha tenda de frutas,verduras e legumes ! " . $linkPerfil ;	
+				}else{
+					$textoCompartilhar = "Olá, visite a tenda de frutas,verduras e legumes do " . $firstname . " ! " . $linkPerfil ;
+				}
+			}else{
+				$textoCompartilhar = "Olá, visite a tenda de frutas,verduras e legumes do " . $firstname . " ! " . $linkPerfil ;
+			}
 			?>
+				<a href='https://wa.me/?text=<?php echo $textoCompartilhar ?>' target=_blank> 
+					<span><i class='fab fa-whatsapp'></i></span>
+				</a> 
+				<iframe src="https://www.facebook.com/plugins/share_button.php?href=<?php echo $cu ?>&layout=button&size=large&width=117&height=28&appId" width="117" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
 
 			<h3 style="text-align: center;font-size: 25px;font-weight: bold;"> ANÚNCIOS DO <?php  echo $firstname ?> : </h3>
 
