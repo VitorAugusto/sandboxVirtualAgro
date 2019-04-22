@@ -56,3 +56,9 @@ desc cadastros2;
 
 INSERT INTO cadastros2(nome, telefone, pin) VALUES ("VITOR AUGUSTO RIBEIRO", 73999598620, MD5(9715));
 
+
+
+UPDATE cadastros SET telefone = '739' WHERE id = 6;
+
+select * from cadastros;
+

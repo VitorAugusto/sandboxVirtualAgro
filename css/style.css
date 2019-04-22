@@ -938,6 +938,11 @@ i.fab.fa-whatsapp{
 }
 /* oi oi oi */
 
+.botaoAdicional{
+    font-size: 22px;
+    font-weight: bolder;
+}
+
 .meuAnuncio2{
     background-color: lightgrey;
     box-shadow: 0 10px 5px 0 rgba(0, 0, 0, .1);

@@ -94,5 +94,16 @@ switch ($tipoOperacao) {
     }
 
     break;
+
+
+    case 'atualizar_telefone':
+    $telefone = $_POST['telefone'];
+    $newTel = preg_replace("/[^a-fA-F0-9]/",'',$telefone);
+
+    $comandoAtualizarTelefone = "UPDATE cadastros SET telefone = '$newTel' WHERE id = $_SESSION[id]";
+
+    mysqli_query($GLOBALS['dao'],$comandoAtualizarTelefone);
+    
+    break;
   }
   ?>
