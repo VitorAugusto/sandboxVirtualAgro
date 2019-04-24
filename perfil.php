@@ -59,6 +59,13 @@
 				echo "NÃO HÁ CADASTRO";
 				header('location:index.php');
 			}
+
+			function split_name($name) {
+				$name = trim($name);
+				$last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
+				$first_name = trim( preg_replace('#'.$last_name.'#', '', $name ) );
+				return array($first_name, $last_name);
+			}
 			?>
 
 
@@ -68,13 +75,12 @@
 
 
 					<?php
-					$fullname = $infoPerfil['nome'];
-                    $fullname = trim($fullname); // remove double space
-                    $firstname = substr($fullname, 0, strpos($fullname, ' '));
-                    ?>
+					echo $infoPerfil['nome'];
 
-					<?php
-						echo $infoPerfil['nome'];
+					$nomeCompleto = split_name($infoPerfil['nome']);
+					$primeiroNome = $nomeCompleto[0];
+					$segundoNome = $nomeCompleto[1];
+
 					?>
 
 					<h3> REGIÃO </h3>
@@ -109,27 +115,26 @@
 			//$linkPerfil = $_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']."?id=".$_GET['id'];
 			$linkPerfil = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']."?id=".$_GET['id'];
 
-			$linkBasico = 'http://'.'virtualagro.net/perfil.php?id=6';
 
-			$cu = urlencode($linkPerfil);
+			$linkencoded = urlencode($linkPerfil);
 
 			$textoCompartilhar = '';
 			if (isset($_SESSION['id'])) {
 				if ($_SESSION['id'] == $_GET['id']) {
 				$textoCompartilhar = "Olá, visite minha tenda de frutas,verduras e legumes ! " . $linkPerfil ;	
 				}else{
-					$textoCompartilhar = "Olá, visite a tenda de frutas,verduras e legumes do " . $firstname . " ! " . $linkPerfil ;
+					$textoCompartilhar = "Olá, visite a tenda de frutas,verduras e legumes do " . $primeiroNome . " ! " . $linkPerfil ;
 				}
 			}else{
-				$textoCompartilhar = "Olá, visite a tenda de frutas,verduras e legumes do " . $firstname . " ! " . $linkPerfil ;
+				$textoCompartilhar = "Olá, visite a tenda de frutas,verduras e legumes do " . $primeiroNome . " ! " . $linkPerfil ;
 			}
 			?>
 				<a href='https://wa.me/?text=<?php echo $textoCompartilhar ?>' target=_blank> 
 					<span><i class='fab fa-whatsapp'></i></span>
 				</a> 
-				<iframe src="https://www.facebook.com/plugins/share_button.php?href=<?php echo $cu ?>&layout=button&size=large&width=117&height=28&appId" width="117" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+				<iframe src="https://www.facebook.com/plugins/share_button.php?href=<?php echo $linkencoded ?>&layout=button&size=large&width=117&height=28&appId" width="117" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
 
-			<h3 style="text-align: center;font-size: 25px;font-weight: bold;"> ANÚNCIOS DO <?php  echo $firstname ?> : </h3>
+			<h3 style="text-align: center;font-size: 25px;font-weight: bold;"> ANÚNCIOS DE <?php  echo $primeiroNome ?> : </h3>
 
 					<?php
 

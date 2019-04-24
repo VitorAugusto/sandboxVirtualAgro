@@ -17,6 +17,14 @@
 				header('location:index.php');
 			}
 
+			
+			function split_name($name) {
+				$name = trim($name);
+				$last_name = (strpos($name, ' ') === false) ? '' : preg_replace('#.*\s([\w-]*)$#', '$1', $name);
+				$first_name = trim( preg_replace('#'.$last_name.'#', '', $name ) );
+				return array($first_name, $last_name);
+			}
+
 		?>
 
 		<title>ANÚNCIO - VIRTUAL AGRO</title>
@@ -81,9 +89,18 @@
 
 
 					<h3> NOME DO AGRICULTOR </h3>
+					<?php
+
+                    $nomeCompleto = split_name(nomeDoAnunciante($colunaAnuncio['id_anunciante']));
+
+                    $primeiroNome = $nomeCompleto[0];
+                    $segundoNome = $nomeCompleto[1];
+                    ?>
+
+
 
 					<?php
-						echo nomeDoAnunciante($colunaAnuncio['id_anunciante']);
+					echo $primeiroNome . " " . $segundoNome;
 					?>
 
 					<h3> REGIÃO </h3>
@@ -130,6 +147,31 @@
 					<?php
 						echo $colunaAnuncio['observacao'];
 					?>
+
+					<h3>DIVULGAR</h3>
+
+					<?php
+					$linkAnuncio = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']."?id=".$_GET['idAnuncio'];
+					$linkencoded = urlencode($linkAnuncio);
+
+					$textoCompartilhar = '';
+					if (isset($_SESSION['id'])) {
+						if ($_SESSION['id'] == $_GET['idAnuncio']) {
+							$textoCompartilhar = "Olá, visite meu anúncio no VirtualAgro ! " . $linkAnuncio ;	
+						}else{
+							$textoCompartilhar = "Olá, visite o anúncio de " . $primeiroNome . " no VirtualAgro ! " . $linkAnuncio ;
+						}
+					}else{
+						$textoCompartilhar = "Olá, visite o anúncio de " . $primeiroNome . " no VirtualAgro ! " . $linkAnuncio ;
+					}
+					?>
+
+					<a href='https://wa.me/?text=<?php echo $textoCompartilhar ?>' target=_blank> 
+						<span><i class='fab fa-whatsapp'></i></span>
+					</a> 
+
+					<iframe src="https://www.facebook.com/plugins/share_button.php?href=<?php echo $linkencoded ?>&layout=button&size=large&width=117&height=28&appId" width="117" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+
 
 				</div>
 				<script type="text/javascript" src="js/getRegiaoUnica.js"></script>

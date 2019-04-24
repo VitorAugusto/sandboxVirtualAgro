@@ -64,9 +64,10 @@ function nomeDoAnunciante($idAnun){
 
 	$displayAnunciante = mysqli_query($GLOBALS['dao'],$selectNomeAnunciante);
 
-	while ($coluna = mysqli_fetch_array($displayAnunciante)) {
-		echo $coluna['nome'];
-	}
+	$coluna = mysqli_fetch_array($displayAnunciante);
+
+	return($coluna['nome']);
+
 }
 
 function anuncioExiste($idAnun){
@@ -253,7 +254,7 @@ function getAnunciantes($produto){ //RETORNA OS ANUNCIANTES DAQUELE CERTO produt
 			echo "<tr>";
 			echo "<td>";
 			echo "<a href=perfil.php?id=$coluna[id_anunciante] class='linkPerfil' target=_blank>";
-			nomeDoAnunciante($coluna['id_anunciante']);  //PREENCHE NOME
+			echo nomeDoAnunciante($coluna['id_anunciante']);  //PREENCHE NOME
 			echo "</a>";
 			echo "</td>";
 			//região !!
