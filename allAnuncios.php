@@ -46,45 +46,57 @@
 			<section class="conteudo">
                 <h2> <a href='site.php'> VOLTAR </a> </h2>
                 <h1 class='chamadaPrincipal'>Todos os Anuncios</h1>
+                <div class='telaAnuncio'>
                 <?php
 
                 $allAnuncios = getAllAnunciosDESC();
                     
                     while($coluna = mysqli_fetch_array($allAnuncios)){
+                        echo "<div class='meuAnuncio2'>";
+                        $idProd = $coluna['id_produto'];
+                        echo "<div class='borda'>";
+                        echo "<div>"; //
                         echo "<a href='anuncio.php?idAnuncio={$coluna['id']}'>";
-                        echo "<ul class='list-group' id='ulAnuncio'>";
-                        echo "<li class='list-group-item' id='imgAnuncio'>"; //
-                        echo getImagemProduto($coluna['id_produto']);
-                        echo "</li>"; //
-                        //
-                        echo "<li class='list-group-item'>"; //
-                        echo "<span class='spanProdutos'>Anunciante:"; nomeDoAnunciante($coluna['id_anunciante'])."</span>"; // TEM Q MOSTRAR O NOME DO ANUNCIANTE
-                        echo "</li>"; //
-                        echo "<li class='list-group-item'>"; //
-                        echo "<span class='spanProdutos'>Categoria:</span><p>". $coluna['categoria']."</p>";
-                        echo "</li>"; //
-                        echo "<li class='list-group-item'>"; //
-                        echo "<span class='spanProdutos'>TEXTO DO ANÚNCIO:" . $coluna['texto_anuncio']."</span>";
-                        echo "</li>"; //
+                        echo getImagemProduto($idProd);
+                        echo "</a>";
+                        echo "</div>"; //
+                        echo "</div>"; //
+                        echo "<h3>"; //
+                        echo getNomeProdutoPeloID($idProd);
+                        echo "</h3>";
+                        //echo "<div class='info'>"; //
+                        //echo "<b>CATEGORIA </b>" . "<p>". $coluna['categoria'] ;
+                        //echo "</div>"; //
+                        echo "<div class='info'>"; //
+                        echo "<b>CONTEÚDO</b>" . "<p>". $coluna['observacao'];
+                        echo "</div>"; //
+
+                        echo "<div class='info'>"; //
+                        echo "<b>PREÇO</b>" . "<p> R$". $coluna['preco'];
+                        echo "</div>"; //
+
+                        echo "<div class='visitar'>"; //
+                        echo "<a href='anuncio.php?idAnuncio={$coluna['id']}'> VISITAR ANÚNCIO </a>";
+                        echo "</div>"; //
 
                         if(isset($_SESSION['id'])){ //CASO ESTEJA LOGADO
                             if(meuAnuncio($coluna['id_anunciante'], $_SESSION['id'])){ //CASO APAREÇA ALGUM ANÚNCIO DELE NA PÁGINA - TODOS OS ANÚNCIOS-
-                                echo "<li class='list-group-item'>"; //
+                                echo "<div class='editar'>"; //
                                 echo "<a href='editarAnuncio.php?idAnuncio={$coluna['id']}'> EDITAR ANÚNCIO </a>";
-                                echo "</li>"; //
-                                echo "<li class='list-group-item'>"; //
+                                echo "</div>"; //
+                                echo "<div class='excluir'>"; //
                                 echo "<a href='excluirAnuncio.php?idAnuncio={$coluna['id']}'> EXCLUIR ANÚNCIO </a>";
-                                echo "</li>"; //
+                                echo "</div>"; //
                             }
                         }
-                        echo "</ul>".
-                        "</a>";
+                        echo "</div>"; 
                     }
 
                     echo "<h2> <a href='site.php'> VOLTAR </a> </h2>";
 
                 ?>
-				
+	            </div>
+
 			</section>
 		</div>		               
 		<footer>

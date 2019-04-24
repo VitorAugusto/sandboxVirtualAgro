@@ -100,7 +100,6 @@ session_start();
                             <span class="icon-text">GRÃOS</span>
                         </label>
                     </div>
-
                     <div class="check-box">
                         <input id="" class="" type="checkbox" name="categoria" value="'TEMPERO'">
                         <label for="">
@@ -116,7 +115,6 @@ session_start();
                             <span class="icon-text">OUTROS</span>
                         </label>
                     </div>
-
                     <div class="check-box">
                         <input id="" class="" type="checkbox" name="categoria" value="'ESPECIARIA'">
                         <label for="">

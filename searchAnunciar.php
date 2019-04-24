@@ -71,7 +71,8 @@ if(empty($_GET['categoria'])){
 	//echo "<table border=5>";
 	//echo "<th> IMAGEM </th>";
 	//echo "<th> NOME </th>";
-
+	echo "<h1>Escolha um produto</h1>";
+	
 	while ($coluna = mysqli_fetch_array($display)) { // CADA COLUNA PRA SER PREENCHIDA É UM <tr>, CADA VALOR DESSA COLUNA É UM <td>
 		//echo "<tr>";
 
