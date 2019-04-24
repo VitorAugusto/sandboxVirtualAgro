@@ -151,7 +151,7 @@
 					<h3>DIVULGAR</h3>
 
 					<?php
-					$linkAnuncio = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']."?id=".$_GET['idAnuncio'];
+					$linkAnuncio = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']."?idAnuncio=".$_GET['idAnuncio'];
 					$linkencoded = urlencode($linkAnuncio);
 
 					$textoCompartilhar = '';
