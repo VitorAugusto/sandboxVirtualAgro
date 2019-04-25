@@ -1,6 +1,8 @@
 <?php
 
-include_once('tools.php');
+//include_once('tools.php');
+
+include_once('microDAO.php');
 
 echo "<h2>";
 echo "</h2>";
@@ -27,14 +29,14 @@ texto_anuncio = '$medidaProduto',
 observacao =  '$observacaoProduto',
 preco = '$precoProduto' WHERE id = '$idAnuncio'";
 
-mysqli_query($GLOBALS['dao'], "set names 'utf8'");
+mysqli_query($GLOBALS['daomicro'], "set names 'utf8'");
 
-if(mysqli_query($GLOBALS['dao'], $comandoUpdateAnuncio)){
+if(mysqli_query($GLOBALS['daomicro'], $comandoUpdateAnuncio)){
 	echo " <h2> EDITADO COM SUCESSO ! </h2>";
 	header('location: meusAnuncios.php');
 }else{
 
-	echo mysqli_error($GLOBALS['dao']);
+	echo mysqli_error($GLOBALS['daomicro']);
 }
 
 
