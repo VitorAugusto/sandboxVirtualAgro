@@ -60,13 +60,11 @@ session_start();
 	?>
 	<div class="all">
 		<section class="conteudo">
-			<h2> <a href='<?php  echo $_SERVER['HTTP_REFERER'] ?>'> VOLTAR </a> </h2>
+			<h1 class="chamadaPrincipal">Editar Anúncio</h1>
+			<div class="meuAnuncio2">
 			<form action="newEditarAnuncio.php" method="post">
 
 				<input type="hidden" id="idanunciohelper" name="idanunciohelper" value="<?php  echo $_GET['idAnuncio']; ?>">
-				<p>
-					<p></p>
-
 
 					<h5> MUDAR A MEDIDA </h5>
 					<div class="linha">
@@ -107,17 +105,14 @@ session_start();
 						</div>												
 					</div>
 
-					<h6>Mais algum detalhe ?</h6>
+					<h5>Mais algum detalhe ?</h5>
 					<div class="form-group basic-textarea rounded-corners">
 						<textarea class="form-control z-depth-1" id="obs" rows="3" name="observacao" placeholder="Detalhes...observações..."></textarea>
 					</div>
 
 
 					<h5>Preço</h5>
-					R$<input type="text" name="valor" placeholder="PREÇO" onKeyPress="return(moeda(this,'.',',',event))" id="preco" required="" onfocus="this.value=''">
-
-
-
+					<b>R$</b> <input type="text" name="valor" placeholder="PREÇO" onKeyPress="return(moeda(this,'.',',',event))" id="preco" required="" onfocus="this.value=''">
 
 					<button class="buscar" type="submit">
 						<span class="icon-text">ENVIAR</span>
@@ -127,6 +122,9 @@ session_start();
 					<script type="text/javascript" src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 					<script type="text/javascript" src="js/functions-editarAnuncio.js?v=<?php echo time(); ?>"></script>
 				</form>
+				</div>
+				<h2> <a href='<?php  echo $_SERVER['HTTP_REFERER'] ?>'> VOLTAR </a> </h2>
+
 			</section>
 		</div>		               
 		<footer>
