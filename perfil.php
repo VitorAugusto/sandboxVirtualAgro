@@ -175,6 +175,7 @@
 				</div>
 
 				<script type="text/javascript" src="js/getRegiaoUnica.js"></script>
+				<h2> <a href='<?php  echo $_SERVER['HTTP_REFERER'] ?>'> VOLTAR </a> </h2>
 
 		</section>
 	</div>		               

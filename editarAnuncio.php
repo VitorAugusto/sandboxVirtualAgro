@@ -65,8 +65,15 @@ session_start();
 			<form action="newEditarAnuncio.php" method="post">
 
 				<input type="hidden" id="idanunciohelper" name="idanunciohelper" value="<?php  echo $_GET['idAnuncio']; ?>">
+					<?php 
+						$colunaAnuncio = getAllInfoAnuncio($_GET['idAnuncio']);
 
-					<h5> MUDAR A MEDIDA </h5>
+						echo "<div class='borda'>".
+						getImagemProduto($colunaAnuncio['id_produto']).
+						"</div>";
+					?>
+
+					<h5>Mudar a medida</h5>
 					<div class="linha">
 						<div class="check-box">
 							<input id="KG" class="" type="radio" name="medida" value="KG" alt="Kg">
@@ -105,7 +112,7 @@ session_start();
 						</div>												
 					</div>
 
-					<h5>Mais algum detalhe ?</h5>
+					<h5>Mais algum detalhe?</h5>
 					<div class="form-group basic-textarea rounded-corners">
 						<textarea class="form-control z-depth-1" id="obs" rows="3" name="observacao" placeholder="Detalhes...observações..."></textarea>
 					</div>
