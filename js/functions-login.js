@@ -25,6 +25,28 @@ window.onload = function(){
 }
 
 
+//AO APERTAR ENTER NO LOGIN.
+
+var input = document.getElementById("telefone");
+
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("botao").click();
+  }
+});
+
+var input2 = document.getElementById("pin");
+
+input2.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("botao").click();
+  }
+});
+
+
+
 
 $('#botao').on('click', function(e){
 
