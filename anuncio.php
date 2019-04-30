@@ -3,8 +3,12 @@
 	<head>
 		<?php
 			include_once('tools.php');
-
-			$origem = $_SERVER['HTTP_REFERER'];
+			$origem = '';
+			if(isset($_SERVER['HTTP_REFERER'])){
+				$origem = $_SERVER['HTTP_REFERER'];
+			}else{
+				$origem = NULL;
+			}
 			$colunaAnuncio = '';
 
 			if(anuncioExiste($_GET['idAnuncio'])){
@@ -72,7 +76,12 @@
 		</header>
 		<div class="all">
 			<section class="conteudo">	
-				<h2> <a href='<?php  echo $origem ?>'> VOLTAR </a> </h2>
+
+				<?php
+				if(!is_null($origem)){
+					echo "<h2>". "<a href=". $origem . "> VOLTAR </a> </h2>";
+				}
+				?>
 				<div class="telaAnuncio">
 					<?php
 
@@ -100,8 +109,14 @@
 
 
 					<?php
-					echo $primeiroNome . " " . $segundoNome;
+
+
+					echo "<a href=perfil.php?id=$colunaAnuncio[id_anunciante] class='linkPerfil' target=_blank>";
+			        echo $primeiroNome . " " . $segundoNome;  //PREENCHE NOME
+			        echo "</a>";
 					?>
+
+
 
 					<h3> REGIÃO </h3>
 

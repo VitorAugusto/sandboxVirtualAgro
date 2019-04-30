@@ -134,7 +134,7 @@
 				</a> 
 				<iframe src="https://www.facebook.com/plugins/share_button.php?href=<?php echo $linkencoded ?>&layout=button&size=large&width=117&height=28&appId" width="117" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
 
-			<h3 style="text-align: center;font-size: 25px;font-weight: bold;"> ANÚNCIOS DE <?php  echo $primeiroNome ?> : </h3>
+			<h3 style="text-align: center;font-size: 25px;font-weight: bold;"> ANÚNCIOS DE <?php  echo strtoupper($primeiroNome); ?> : </h3>
 
 					<?php
 
@@ -175,7 +175,6 @@
 				</div>
 
 				<script type="text/javascript" src="js/getRegiaoUnica.js"></script>
-				<h2> <a href='<?php  echo $_SERVER['HTTP_REFERER'] ?>'> VOLTAR </a> </h2>
 
 		</section>
 	</div>		               

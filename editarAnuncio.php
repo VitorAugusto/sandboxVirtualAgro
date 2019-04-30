@@ -6,6 +6,13 @@
 include_once('tools.php');
 session_start();
 
+$origem = '';
+if(isset($_SERVER['HTTP_REFERER'])){
+	$origem = $_SERVER['HTTP_REFERER'];
+}else{
+	$origem = NULL;
+}
+
 ?>
 <head>
 	<title>EDITAR ANÚNCIO - VIRTUAL AGRO</title>
@@ -50,7 +57,7 @@ session_start();
 	</header>
 	<?php
 
-	if(!anuncioExiste($_GET['idAnuncio']) AND !meuAnuncio(getIdAnuncianteIdAnuncio($_GET['idAnuncio']), $_SESSION['id'])){ //VERIFICA SE É MEU ANÚNCIO
+	if(!anuncioExiste($_GET['idAnuncio']) OR !meuAnuncio(getIdAnuncianteIdAnuncio($_GET['idAnuncio']), $_SESSION['id'])){ //VERIFICA SE É MEU ANÚNCIO
 
 		ECHO "ESSE ANÚNCIO NÃO TE PERTENCE OU NÃO EXISTE";
 		header('location: meusAnuncios.php');
@@ -60,17 +67,22 @@ session_start();
 	?>
 	<div class="all">
 		<section class="conteudo">
+			<?php
+			if(!is_null($origem)){
+				echo "<h2>". "<a href=". $origem . "> VOLTAR </a> </h2>";
+			}
+			?>
 			<h1 class="chamadaPrincipal">Editar Anúncio</h1>
 			<div class="meuAnuncio2">
-			<form action="newEditarAnuncio.php" method="post">
+				<form action="newEditarAnuncio.php" method="post">
 
-				<input type="hidden" id="idanunciohelper" name="idanunciohelper" value="<?php  echo $_GET['idAnuncio']; ?>">
+					<input type="hidden" id="idanunciohelper" name="idanunciohelper" value="<?php  echo $_GET['idAnuncio']; ?>">
 					<?php 
-						$colunaAnuncio = getAllInfoAnuncio($_GET['idAnuncio']);
+					$colunaAnuncio = getAllInfoAnuncio($_GET['idAnuncio']);
 
-						echo "<div class='borda'>".
-						getImagemProduto($colunaAnuncio['id_produto']).
-						"</div>";
+					echo "<div class='borda'>".
+					getImagemProduto($colunaAnuncio['id_produto']).
+					"</div>";
 					?>
 
 					<h5>Mudar a medida</h5>
@@ -129,19 +141,18 @@ session_start();
 					<script type="text/javascript" src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 					<script type="text/javascript" src="js/functions-editarAnuncio.js?v=<?php echo time(); ?>"></script>
 				</form>
-				</div>
-				<h2> <a href='<?php  echo $_SERVER['HTTP_REFERER'] ?>'> VOLTAR </a> </h2>
-
-			</section>
-		</div>		               
-		<footer>
-			<div>
-				<a class="brand" href="#">
-					<img class="logo" src="./imagens/logo/virtual-agro-logo-png.png" alt="">            
-				</a>
-				<hr>
-				<div class="copyright">Copyright 2019 © <a href="#"><b>Virtual Agro</b></a>.</div>
 			</div>
-		</footer>
-	</body>
-	</html>
+
+		</section>
+	</div>		               
+	<footer>
+		<div>
+			<a class="brand" href="#">
+				<img class="logo" src="./imagens/logo/virtual-agro-logo-png.png" alt="">            
+			</a>
+			<hr>
+			<div class="copyright">Copyright 2019 © <a href="#"><b>Virtual Agro</b></a>.</div>
+		</div>
+	</footer>
+</body>
+</html>
