@@ -171,6 +171,10 @@
 						}
 
 					?>
+										<hr style="border-width: 4px;">
+					<p style="font-size: small;">
+						* As imagens dos produtos são meramente ilustrativas e não representam o produto final.
+					</p>
 
 				</div>
 

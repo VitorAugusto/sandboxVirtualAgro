@@ -44,6 +44,7 @@
 		<div class="all">
 			<section class="conteudo">
 				<h1>Dúvidas Frequentes</h1>
+				<p>O Virtual Agro foi criado para proporcionar uma maior facilidade na aquisição de seus produtos orgânicos! Com alimentos de alta qualidade, aliado a uma parceria entre agricultores familiares comprometidos a levar o melhor à sua residência ou comercio.</p>
 			</section>
 		</div>		               
 		<footer>

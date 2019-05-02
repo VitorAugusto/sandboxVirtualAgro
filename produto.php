@@ -20,6 +20,15 @@
 		getAnunciantes($_GET['idProduto']);
 
 		echo "</table>";
+
+
+		echo "<hr style='border-width: 4px;'>";
+		echo "<p style='font-size: small;'>";
+		echo "* As imagens dos produtos são meramente ilustrativas e não representam o produto final.";
+		echo "</p>";
+
+
+
 	}else{
 		echo "<div class='semAnunciantes'>";
 		echo "<h3>Oops!</h3>";

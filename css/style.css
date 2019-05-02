@@ -741,6 +741,7 @@ i.fab.fa-whatsapp{
 #detalhesproduto table{
     width: 100%;
     text-align: center;
+    table-layout: fixed;
 }
 #detalhesproduto tr:first-child{
     border-bottom: solid 1px #1b6e5c;

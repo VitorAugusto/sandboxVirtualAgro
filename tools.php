@@ -209,9 +209,9 @@ function construirTabelaAnunciantes(){
 	echo "<table cellpadding='5px'spacepadding='5px'>"; 
 
 	echo "<th>AGRICULTOR</th>";
-	echo "<th>LOCALIDADE</th>";
+	echo "<th>LOCAL</th>";
 	echo "<th>DESCRIÇÃO</th>";
-	echo "<th>MEDIDA</th>";
+	//echo "<th>MEDIDA</th>";
 	echo "<th>PREÇO</th>";
 	echo "<th>CONTATO</th>";
 
@@ -239,7 +239,8 @@ function getAnunciantes($produto){ //RETORNA OS ANUNCIANTES DAQUELE CERTO produt
 
 		// CADA COLUNA PRA SER PREENCHIDA É UM <tr>, CADA VALOR DESSA COLUNA É UM <td>
 
-			echo "<tr>";
+			echo "<tr style='border-bottom: 1px solid rgba(0,123,255,.5);'>";
+			//echo "<tr>";
 			echo "<td>";
 			echo "<a href=perfil.php?id=$coluna[id_anunciante] class='linkPerfil' target=_blank>";
 			echo nomeDoAnunciante($coluna['id_anunciante']);  //PREENCHE NOME
@@ -253,8 +254,8 @@ function getAnunciantes($produto){ //RETORNA OS ANUNCIANTES DAQUELE CERTO produt
 			echo "</td>";
 			//echo "<td>". '(' . $ddd . ')' . " ".$numero . "</td>"; //PREENCHE TELEFONE
 			echo "<td>".  $coluna['observacao'] . "</td>";
-			echo "<td>".  $coluna['texto_anuncio'] . "</td>"; //PREENCHE O TEXTO DO ANÚNCIO
-			echo "<td>" . "R$".$coluna['preco']. "</td>"; //PREÇO DO ANÚNCIO
+			//echo "<td>".  $coluna['texto_anuncio'] . "</td>"; //PREENCHE O TEXTO DO ANÚNCIO
+			echo "<td>" . "R$".$coluna['preco']. "<br> " . "<b>". $coluna['texto_anuncio'] ."</b>" . "</td>"; //PREÇO DO ANÚNCIO
 			echo "<td>" .
 			"<a href='tel:{$telefoneFull}' class='btn btn-info btn-lg'>
 			<span class='glyphicon glyphicon-earphone'>LIGAR</span>

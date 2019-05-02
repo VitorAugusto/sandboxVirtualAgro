@@ -187,7 +187,10 @@
 
 					<iframe src="https://www.facebook.com/plugins/share_button.php?href=<?php echo $linkencoded ?>&layout=button&size=large&width=117&height=28&appId" width="117" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
 
-
+					<hr style="border-width: 4px;">
+					<p style="font-size: small;">
+						* As imagens dos produtos são meramente ilustrativas e não representam o produto final.
+					</p>
 				</div>
 				<script type="text/javascript" src="js/getRegiaoUnica.js"></script>
 			</section>
