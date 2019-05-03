@@ -67,8 +67,9 @@ session_start();
         </div>
         <div class="search-content">
             <!-- <form id="home"> -->
-                <p class="search-label description">Com o Virtual Agro você pode conferir os números de telefone e whatsapp de agricultores de sua região. Com isso oferecemos uma opção pra quem deseja consumir produtos 100% orgânicos e sem agrotóxicos. Confira!
+                <p class="search-label description">O Virtual Agro foi criado para proporcionar uma maior facilidade na aquisição de seus produtos orgânicos! Com alimentos de alta qualidade, aliado a uma parceria entre agricultores familiares comprometidos a levar o melhor à sua residência ou comercio. Confira !
                 </p>
+
                 <br>
                 <div class="label-chamada">O que você procura?</div>
                 <div class="linha">
