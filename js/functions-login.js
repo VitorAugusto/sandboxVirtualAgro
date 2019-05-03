@@ -24,6 +24,15 @@ window.onload = function(){
 	}
 }
 
+document.getElementById("pin").addEventListener("input", allowOnlyDigits);
+
+function allowOnlyDigits() {  
+  if (this.validity.valid) {
+    this.setAttribute('current-value', this.value.replace(/[^\d]/g, ""));
+  }
+  this.value = this.getAttribute('current-value');
+}
+
 
 //AO APERTAR ENTER NO LOGIN.
 

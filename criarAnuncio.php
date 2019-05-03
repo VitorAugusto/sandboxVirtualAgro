@@ -192,7 +192,7 @@
 
 					<script type="text/javascript" src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 					<script type="text/javascript" src="js/functions-criarAnuncio.js?v=<?php echo time(); ?>"></script>
-
+					<script type="text/javascript" src="js/jquery.mask.js?v=<?php echo time(); ?>"></script>
 				</form>
 
 				<h2> <a href='site.php'>SAIR</a> </h2>

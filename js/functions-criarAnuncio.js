@@ -141,6 +141,7 @@ $('#showPreAnuncio').on('click', function(){ //ETAPA 5 , MOSTRAR O PRÉ ANÚNCIO
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
 			document.getElementById("etapa5CriarAnuncio").innerHTML = this.responseText;
+			$('#preco').mask('000.000.000.000.000,00', {reverse: true});
 		}
 	};
 	xhttp.open("POST", "preAnuncio.php" , true);

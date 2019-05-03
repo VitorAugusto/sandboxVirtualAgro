@@ -60,13 +60,17 @@
 
 
 						<div class="login-senha">
-							<input type="text" name="telefone" placeholder="TELEFONE" maxlength="15" id="telefone">
+							<input type="tel" name="telefone" placeholder="TELEFONE" maxlength="15" id="telefone">
 							<button class="login" type="submit" disabled="disabled">
 								<i class="fas fa-user"></i>
 							</button>
 						</div>			
 						<div class="login-senha">
-							<input type="password" name="pin" placeholder="PIN DE ACESSO" maxlength="4" id="pin">
+<!-- 							<input type="tel" onKeyPress="if(this.value.length==2) return false;" />
+							<input type="text" pattern="\d*" maxlength="2"> -->
+							<input type="number" pattern="\d*" name="pin" id="pin" placeholder="PIN DE ACESSO" onKeyPress="if(this.value.length==4) return false;" style="-webkit-text-security: disc;"> <!-- INPUT PIN DEFINITIVO -->
+
+							<!-- <input type="tel" name="pin" placeholder="PIN DE ACESSO" maxlength="4"  pattern="[0-9]*" id="pin"> -->
 							<button class="login" type="submit" disabled="disabled">
 								<i class="fas fa-key"></i>
 							</button>

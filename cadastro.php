@@ -70,7 +70,7 @@
 
         	    	<fieldset id="etapa2Cadastro"> <!-- VERIFICAÇÃO OPT , VIA SMS -->
         	    		<h2>Configurações da conta</h2>
-        	    		<h3>Um SMS foi enviado para você!</h3>
+        	    		<h3>Um SMS de 6 DÍGITOS foi enviado para você!</h3>
         	    		<input type="number" placeholder="Digite o código do sms..." id="sms" max="6" maxlength="6">
 
         	    		<input type="button" name="prev" class="prev acao" value="Anterior">
@@ -83,8 +83,26 @@
         	    	<fieldset id="etapa3Cadastro"> <!-- DEFINE O PIN DE ACESSO 4 DÍGITOS -->
         	    		<h2>Configurações da conta</h2>
         	    		<h3>Insira PIN de 4 digitos - esse PIN servirá como sua senha</h3>
-        	    		<input type="password" name="campoSenha" required="" placeholder="Informe um PIN DE ACESSO..." maxlength="4" pattern="[0-9]+">
-        	    		<input type="password" name="confirmaSenha" required="" placeholder="Confirme O PIN." maxlength="4" pattern="[0-9]+">
+<!--         	    	<input type="password" name="campoSenha" required="" placeholder="Informe um PIN DE ACESSO..." maxlength="4" pattern="\d*">
+        	    	<input type="password" name="confirmaSenha" required="" placeholder="Confirme O PIN." maxlength="4" pattern="\d*"> -->
+
+                    <input name="campoSenha"
+                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                    type = "number"
+                    maxlength = "4"
+                    pattern="\d*"
+                    style="-webkit-text-security: disc;"
+                    />
+                    <input name="confirmaSenha"
+                    oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                    type = "number"
+                    maxlength = "4"
+                    pattern="\d*"
+                    style="-webkit-text-security: disc;"
+                    />
+
+
+
         	    		<input type="button" name="prev" class="prev acao" value="Anterior">
 
         	    		<input type="submit" name="cadastrar" class="acao" value="Finalizar" id="botaoCadastrar">

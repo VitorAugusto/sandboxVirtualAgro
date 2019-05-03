@@ -131,15 +131,23 @@ if(isset($_SERVER['HTTP_REFERER'])){
 
 
 					<h5>Preço</h5>
-					<b>R$</b> <input type="text" name="valor" placeholder="PREÇO" onKeyPress="return(moeda(this,'.',',',event))" id="preco" required="" onfocus="this.value=''">
+					<b style="font-size: 25px;">R$</b> 
+<!-- 					<input type="text" name="valor" placeholder="PREÇO" onKeyPress="return(moeda(this,'.',',',event))" id="preco" required="" onfocus="this.value=''"> campo digitar valor --> 
+
+					<input type="tel" id="preco" name="valor" />
+
 
 					<button class="buscar" type="submit">
 						<span class="icon-text">ENVIAR</span>
 						<span class="icon-menu"><i class="fa fa-chevron-circle-right"></i></span>
 					</button>
-
 					<script type="text/javascript" src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 					<script type="text/javascript" src="js/functions-editarAnuncio.js?v=<?php echo time(); ?>"></script>
+					<!-- <script type="text/javascript" src="js/jquery.maskMoney.js?v=<?php //echo time(); ?>"></script> -->
+					<script type="text/javascript" src="js/jquery.mask.js?v=<?php echo time(); ?>"></script>
+					<script>
+						$('#preco').mask('000.000.000.000.000,00', {reverse: true});
+					</script>
 				</form>
 			</div>
 
