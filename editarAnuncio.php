@@ -21,7 +21,7 @@ if(isset($_SERVER['HTTP_REFERER'])){
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link href="css/style.css" rel="stylesheet">
+	<link href="css/style.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" />
 	<meta name="viewport" content="width=device-width, initial-scale=0.7">
 
 </head>
@@ -87,7 +87,9 @@ if(isset($_SERVER['HTTP_REFERER'])){
 
 					<h5>Mudar a medida</h5>
 					<div class="linha">
-						<div class="check-box">
+
+
+<!-- 						<div class="check-box">
 							<input id="KG" class="" type="radio" name="medida" value="KG" alt="Kg">
 							<label for="">
 								<span class="icon-menu"><span class="icon"></span></span>
@@ -121,7 +123,48 @@ if(isset($_SERVER['HTTP_REFERER'])){
 								<span class="icon-menu"><span class="icon"></span></span>
 								<span class="icon-text">BANDEJA</span>
 							</label>
-						</div>												
+						</div>	 -->
+
+
+						<!-- novo -->
+						<div class="medidaEscolher">
+						<label>
+							<input id="KG" class="" type="radio" name="medida" value="KG" alt="Kg" checked="">
+							<img src="imagens/medida/kg100.png" width="100px" height="100px">
+						</label>
+						</div> 
+
+						<div class="medidaEscolher">
+						<label>
+							<input id="1/2KG" class="" type="radio" name="medida" value="1/2KG" alt="1/2kg">
+							<img src="imagens/medida/kg100v2.png" width="100px" height="100px">
+						</label>
+						</div> 
+
+
+						<div class="medidaEscolher">
+							<label>
+							<input id="PACOTE" class="" type="radio" name="medida" value="PACOTE" alt="Pacote">
+							<img src="imagens/medida/pacotev2.png" width="100px" height="100px">
+						</label>
+						</div>
+
+
+						<div class="medidaEscolher">
+							<label>
+							<input id="BANDEJA" class="" type="radio" name="medida" value="BANDEJA" alt="Bandeja">
+							<img src="imagens/medida/bandejav2.png" width="100px" height="100px">
+						</label>
+						</div>
+
+						<div class="medidaEscolher">
+						<label>
+							<input id="UNIDADE" class="" type="radio" name="medida" value="UNIDADE" alt="Unidade">
+							<img src="imagens/medida/unidadev2.png" width="100px" height="100px"> <!-- FALTA IMAGEM !! -->
+						</label>
+						</div>
+
+						<!-- novo -->											
 					</div>
 
 					<h5>Mais algum detalhe?</h5>

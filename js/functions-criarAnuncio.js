@@ -2,11 +2,12 @@ document.getElementById("etapa2CriarAnuncio").style.display = 'none';
 document.getElementById("etapa3CriarAnuncio").style.display = 'none';
 document.getElementById("etapa5CriarAnuncio").style.display = 'none';
 
-
 var categoria;
 var produto;
 var medida;
 var observacao;
+
+window.onload = descerScroll();
 
 
 function moeda(a, e, r, t) {
@@ -64,6 +65,7 @@ $("body").on("click", ".prev", function(){
 	$('.progresso li').eq($('fieldset').index(atual_fs)).removeClass('ativo');
 	atual_fs.hide(800);
 	prev_fs.show(800);
+	descerScroll();
 });
 
 $('input[name=proximo]').click(function(){
@@ -75,13 +77,15 @@ $('input[name=proximo]').click(function(){
 $('.escolherCategoria').click(function(){ //ETAPA 1 , AQUI ELE ESCOLHE A CATEGORIA
 	proximo($('a[name=lol]'));  //QUANDO CLICAR NA CATEGORIA ESSA FUNÇÃO É DISPARADA. 
 
-
 	var val = $(this).closest("li").find("input[name='categoria']").val(); //CAPTURA A CATEGORIA SELECIONADA
 	console.log("categoria selecionada : " + val);
 	categoria = val;
 
 	//document.getElementById("etapa2CriarAnuncio").innerHTML = '';
 	mostrarProdutos(val);
+
+
+
 
 
 });
@@ -137,6 +141,8 @@ $('#showPreAnuncio').on('click', function(){ //ETAPA 5 , MOSTRAR O PRÉ ANÚNCIO
 
 	console.log("tela de pré anúncio");
 
+	window.scrollBy(0,150);
+
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
@@ -161,6 +167,7 @@ function mostrarProdutos(cat){
 		if (this.readyState == 4 && this.status == 200) {
 			var botoes = document.querySelectorAll('input[type=button]')
 			document.getElementById("etapa2CriarAnuncio").innerHTML = this.responseText;
+			descerScroll();
 		}
 	};
 	xhttp.open("GET", "searchAnunciar.php?categoria="+ categoria, true);
@@ -202,6 +209,14 @@ function final(){
 
 function fecharBotao(){
 	document.getElementById("botaoPublicar").disabled = true;
+}
+
+function descerScroll(){
+	window.scrollBy(0,135);
+}
+
+function resetarScroll(){
+	window.scrollTo(0,0);
 }
 
 

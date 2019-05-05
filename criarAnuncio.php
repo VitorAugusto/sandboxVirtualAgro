@@ -137,43 +137,45 @@
 					<fieldset id="etapa3CriarAnuncio" name="3"> <!-- AQUI ELE DEFINE A FORMA (ATRIBUTO) - KG , UNIDADE, PACOTE, BANDEJA, ETC-->
 						<h1>Escolha uma forma pra anunciar</h1>
 
-						<div class="check-box">
-							<input id="" class="" type="radio" name="atributo" value="KG" alt="Kg" checked=''>
-							<label for="">
-								<span class="icon-menu"><span class="icon"></span></span>
-								<span class="icon-text"><b>KG</b></span>
-							</label>
-						</div>                    
-						<div class="check-box">
-							<input id="" class="" type="radio" name="atributo" value="UNIDADE" alt="Unidade">
-							<label for="">
-								<span class="icon-menu"><span class="icon"></span></span>
-								<span class="icon-text">UNIDADE</span>
-							</label>
-						</div>
-						<div class="check-box">
+						<div class="medidaEscolher">
+						<label>
+							<input id="" class="" type="radio" name="atributo" value="KG" alt="Kg" checked="">
+							<img src="imagens/medida/kg100.png" width="100px" height="100px">
+						</label>
+						</div> 
+
+						<div class="medidaEscolher">
+						<label>
 							<input id="" class="" type="radio" name="atributo" value="1/2KG" alt="1/2kg">
-							<label for="">
-								<span class="icon-menu"><span class="icon"></span></span>
-								<span class="icon-text">1/2KG</span>
-							</label>
-						</div>
-						<div class="check-box">
+							<img src="imagens/medida/kg100v2.png" width="100px" height="100px">
+						</label>
+						</div> 
+
+
+						<div class="medidaEscolher">
+							<label>
 							<input id="" class="" type="radio" name="atributo" value="PACOTE" alt="Pacote">
-							<label for="">
-								<span class="icon-menu"><span class="icon"></span></span>
-								<span class="icon-text">PACOTE</span>
-							</label>
+							<img src="imagens/medida/pacotev2.png" width="100px" height="100px">
+						</label>
 						</div>
-						<div class="check-box">
+
+
+						<div class="medidaEscolher">
+							<label>
 							<input id="" class="" type="radio" name="atributo" value="BANDEJA" alt="Bandeja">
-							<label for="">
-								<span class="icon-menu"><span class="icon"></span></span>
-								<span class="icon-text">BANDEJA</span>
-							</label>
+							<img src="imagens/medida/bandejav2.png" width="100px" height="100px">
+						</label>
 						</div>
-						<input type="button" name="prev" class="prev acao" value="Voltar">
-						<input type="button" name="proximo" class="next acao" value="Pronto" id="showPreAnuncio">
+
+						<div class="medidaEscolher">
+						<label>
+							<input id="" class="" type="radio" name="atributo" value="UNIDADE" alt="Unidade">
+							<img src="imagens/medida/unidadev2.png" width="100px" height="100px"> <!-- FALTA IMAGEM !! -->
+						</label>
+						</div>
+
+						<input type="button" name="proximo" class="next acao" value="Avançar" id="showPreAnuncio" style="width: 100%;">
+						<input type="button" name="prev" class="prev acao" value="Voltar" style="width: 100%;">
 
 					</fieldset>
 
