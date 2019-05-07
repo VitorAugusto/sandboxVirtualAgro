@@ -138,7 +138,20 @@
 
 					<?php
 
+					$conteudo = '';
+
 						$meusAnuncios = getAllMeusAnuncios($_GET['id']);
+
+						if(mysqli_num_rows($meusAnuncios) == 0){
+							echo "<div class='meuAnuncio2' style='text-align:center;'>";
+							//echo "<div id ='detalhesproduto'>";
+							//echo "<div class='semAnunciantes'>";
+							echo "<h3>Oops!</h3>";
+							echo "<p>SEM ANÚNCIOS :( </p>";
+							echo "<tr>";
+							//echo "</div>";
+							echo "</div>";
+						}
 
 						while($coluna = mysqli_fetch_array($meusAnuncios)) {
 							echo "<div class='meuAnuncio2'>";
@@ -157,7 +170,17 @@
 							//echo "<b>CATEGORIA </b>" . "<p>". $coluna['categoria'] ;
 							//echo "</div>"; //
 							echo "<div class='info'>"; //
-							echo "<b>CONTEÚDO</b>" . "<p>". $coluna['observacao'];
+
+							if (empty($coluna['observacao'])) {
+								$conteudo = "*SEM CONTEÚDO*";
+								echo "<p style='color:orangered;'>". $conteudo;
+							}else{
+								echo "<b>CONTEÚDO</b>";
+								$conteudo = $coluna['observacao'];
+								echo "<p>". $conteudo;
+							}
+
+
 							echo "</div>"; //
 
 							echo "<div class='info'>"; //

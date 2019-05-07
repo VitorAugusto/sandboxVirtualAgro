@@ -44,12 +44,24 @@
 				<h1 class='chamadaPrincipal'>Meus Anúncios</h1>
 				<?php 
 
+				$conteudo = '';
+
 					if (!isset($_SESSION['id'])) {
 						ECHO "ACESSO NÃO AUTORIZADO";
 					}else{
 						$meuid = $_SESSION['id'];
 
 						$meusAnuncios = getAllMeusAnuncios($meuid);
+
+						if(mysqli_num_rows($meusAnuncios) == 0){
+							echo "<div id ='detalhesproduto'>";
+							echo "<div class='semAnunciantes'>";
+							echo "<h3>Oops!</h3>";
+							echo "<p>VOCÊ AINDA NÃO TEM ANÚNCIOS PUBLICADOS ! </p>";
+							echo "<tr>";
+							echo "</div>";
+							echo "</div>";
+						}
 
 						while($coluna = mysqli_fetch_array($meusAnuncios)) {
 							echo "<div class='meuAnuncio'>";
@@ -68,7 +80,16 @@
 							//echo "<b>CATEGORIA: </b>" . $coluna['categoria'] ;
 							echo "</div>"; //
 							echo "<div class='info'>"; //
-							echo "<b>CONTEÚDO</b>" . "<p style=font-size:25px;font-weight:bolder;>". $coluna['observacao'];
+
+							if (empty($coluna['observacao'])) {
+								$conteudo = "* SEM CONTEÚDO *";
+								echo "<p style=font-size:25px;font-weight:bolder;color:orangered;>". $conteudo;
+							}else{
+								echo "<b>CONTEÚDO</b>";
+								$conteudo = $coluna['observacao'];
+								echo "<p style=font-size:25px;font-weight:bolder;>". $conteudo;
+							}
+
 							echo "</div>"; //
 							echo "<div class='info'>"; //
 							echo "<b>PREÇO</b>" . "<p style=font-size:25px;font-weight:bolder;> R$". $coluna['preco'] . " - " . $coluna['texto_anuncio'];
@@ -84,8 +105,8 @@
 							echo "<a href='excluirAnuncio.php?idAnuncio={$coluna['id']}'> EXCLUIR ANÚNCIO </a>";
 							echo "</div>"; //
 							echo "</div>";
+							}
 						}
-					}
 
 				?>
 			</section>

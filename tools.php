@@ -226,6 +226,7 @@ function getAnunciantes($produto){ //RETORNA OS ANUNCIANTES DAQUELE CERTO produt
 	mysqli_query($GLOBALS['dao'], "set names 'utf8'");
 
 	$display = mysqli_query($GLOBALS['dao'], $comandoGetAnunciantes);
+	$conteudo = '';
 
 	if(mysqli_num_rows($display) > 0 ){ //SE EXISTEM ANUNCIANTES DAQUELE PRODUTO
 
@@ -245,6 +246,9 @@ function getAnunciantes($produto){ //RETORNA OS ANUNCIANTES DAQUELE CERTO produt
 			echo "<a href=perfil.php?id=$coluna[id_anunciante] class='linkPerfil' target=_blank>";
 			echo nomeDoAnunciante($coluna['id_anunciante']);  //PREENCHE NOME
 			echo "</a>";
+			echo "<a href=perfil.php?id=$coluna[id_anunciante] class='btn btn-info btn-lg' target=_blank>";
+			echo "<span class='glyphicon glyphicon-earphone'></span>VISITAR";
+			echo "</a>";
 			echo "</td>";
 			//região !!
 			echo "<td>";
@@ -253,7 +257,14 @@ function getAnunciantes($produto){ //RETORNA OS ANUNCIANTES DAQUELE CERTO produt
 			echo "</p>";
 			echo "</td>";
 			//echo "<td>". '(' . $ddd . ')' . " ".$numero . "</td>"; //PREENCHE TELEFONE
-			echo "<td>".  $coluna['observacao'] . "</td>";
+			if(empty($coluna['observacao'])){
+				$conteudo = "SEM CONTEÚDO";
+				echo "<td style='color:orangered;'>". $conteudo . "</td>";
+			}else{
+				$conteudo = $coluna['observacao'];
+				echo "<td>".  $conteudo . "</td>";
+			}
+			//echo "<td>".  $coluna['observacao'] . "</td>";
 			//echo "<td>".  $coluna['texto_anuncio'] . "</td>"; //PREENCHE O TEXTO DO ANÚNCIO
 			echo "<td>" . "R$".$coluna['preco']. "<br> " . "<b>". $coluna['texto_anuncio'] ."</b>" . "</td>"; //PREÇO DO ANÚNCIO
 			echo "<td>" .

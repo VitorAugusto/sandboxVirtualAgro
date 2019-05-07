@@ -35,5 +35,5 @@
 		echo "<p>AINDA NÃO EXISTEM ANUNCIANTES PARA ESSE PRODUTO.</p>";
 		echo "<tr>";
 		echo "</div>";
-	}
+	} 
 ?>
