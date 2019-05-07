@@ -202,7 +202,7 @@
 
 					<hr style="border-width: 4px;">
 					<p style="font-size: small;">
-						* As imagens dos produtos são meramente ilustrativas e não representam o produto final.
+						* As imagens dos produtos são meramente ilustrativas.
 					</p>
 				</div>
 				<script type="text/javascript" src="js/getRegiaoUnica.js"></script>
