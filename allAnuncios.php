@@ -109,7 +109,7 @@
                 ?>
                                                         <hr style="border-width: 4px;">
                     <p style="font-size: small;">
-                        * As imagens dos produtos são meramente ilustrativas.
+                        * As imagens dos produtos são meramente ilustrativas e o preço não inclui frete.
                     </p>
 	            </div>
 

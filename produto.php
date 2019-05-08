@@ -24,7 +24,7 @@
 
 		echo "<hr style='border-width: 4px;'>";
 		echo "<p style='font-size: small;'>";
-		echo "* As imagens dos produtos são meramente ilustrativas.";
+		echo "* As imagens dos produtos são meramente ilustrativas e o preço não inclui frete.";
 		echo "</p>";
 
 

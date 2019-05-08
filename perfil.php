@@ -91,7 +91,8 @@
 
 					<?php
 								$telefone = $infoPerfil['telefone'];
-								$telefoneFull = "55".$telefone;
+								$telefoneFull_ligar = "+55".$telefone;
+								$telefoneFull_wpp = "55".$telefone;
 								$ddd = substr($telefone, 0, 2);
 								$numero = substr($telefone, 2);
 								echo '(' . $ddd . ')' . " ".$numero;
@@ -102,11 +103,11 @@
 
 					<input type="hidden" name="ddd" id="ddd" class="ddd" value="<?php echo $ddd ?>">
 
-					<a href='https://api.whatsapp.com/send?phone=<?php echo $telefoneFull ?>&text=<?php echo $textoBasico ?>'>
+					<a href='https://api.whatsapp.com/send?phone=<?php echo $telefoneFull_wpp ?>&text=<?php echo $textoBasico ?>'>
 						<span><i class='fab fa-whatsapp'></i></span>
 					</a> 
 					<br>
-						<a href='tel:<?php echo $telefoneFull ?>' class='btn btn-info btn-lg'>
+						<a href='tel:<?php echo $telefoneFull_ligar ?>' class='btn btn-info btn-lg'>
 			<span class='glyphicon glyphicon-earphone'></span> LIGAR
 			</a>
 
@@ -196,7 +197,7 @@
 					?>
 										<hr style="border-width: 4px;">
 					<p style="font-size: small;">
-						* As imagens dos produtos são meramente ilustrativas.
+						* As imagens dos produtos são meramente ilustrativas e o preço não inclui frete.
 					</p>
 
 				</div>

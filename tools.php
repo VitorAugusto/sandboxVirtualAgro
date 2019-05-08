@@ -234,7 +234,8 @@ function getAnunciantes($produto){ //RETORNA OS ANUNCIANTES DAQUELE CERTO produt
 			$telefone = getTelefone($coluna['id_anunciante']);
 			$ddd = substr($telefone, 0, 2);
 			$numero = substr($telefone, 2);
-			$telefoneFull = "55".$telefone;
+			$telefoneFull_ligar = "+55".$telefone;
+			$telefoneFull_wpp = "55".$telefone;
 			
 			$textoBasico = "Olá, quero saber mais sobre seu anúncio de ". mb_strtoupper(getNomeProdutoPeloID($coluna['id_produto'])) ." no VirtualAgro.net ";
 
@@ -246,7 +247,7 @@ function getAnunciantes($produto){ //RETORNA OS ANUNCIANTES DAQUELE CERTO produt
 			echo "<a href=perfil.php?id=$coluna[id_anunciante] class='linkPerfil' target=_blank>";
 			echo nomeDoAnunciante($coluna['id_anunciante']);  //PREENCHE NOME
 			echo "</a>";
-			echo "<a href=perfil.php?id=$coluna[id_anunciante] class='btn btn-info btn-lg' target=_blank>";
+			echo "<a href=anuncio.php?idAnuncio=$coluna[id] class='btn btn-info btn-lg' target=_blank>";
 			echo "<span class='glyphicon glyphicon-earphone'></span>VISITAR";
 			echo "</a>";
 			echo "</td>";
@@ -268,10 +269,10 @@ function getAnunciantes($produto){ //RETORNA OS ANUNCIANTES DAQUELE CERTO produt
 			//echo "<td>".  $coluna['texto_anuncio'] . "</td>"; //PREENCHE O TEXTO DO ANÚNCIO
 			echo "<td>" . "R$".$coluna['preco']. "<br> " . "<b>". $coluna['texto_anuncio'] ."</b>" . "</td>"; //PREÇO DO ANÚNCIO
 			echo "<td>" .
-			"<a href='tel:{$telefoneFull}' class='btn btn-info btn-lg'>
+			"<a href='tel:{$telefoneFull_ligar}' class='btn btn-info btn-lg'>
 			<span class='glyphicon glyphicon-earphone'>LIGAR</span>
 			</a>" .
-			"<a href='https://api.whatsapp.com/send?phone={$telefoneFull}&text={$textoBasico}'>
+			"<a href='https://api.whatsapp.com/send?phone={$telefoneFull_wpp}&text={$textoBasico}'>
 			<span><i class='fab fa-whatsapp'></i></span>
 			</a>" 
 			 ."</td>"; //EM CONT
