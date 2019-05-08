@@ -115,6 +115,11 @@
 			        echo $primeiroNome . " " . $segundoNome;  //PREENCHE NOME
 			        echo "</a>";
 					?>
+					<p></p>
+
+					<a href='perfil.php?id=<?php echo $colunaAnuncio['id_anunciante'] ?>' class='btn btn-info btn-lg'>
+						<span class='glyphicon glyphicon-earphone'></span> VISITAR PERFIL
+					</a>
 
 
 
@@ -160,7 +165,15 @@
 					<h3> CONTEÚDO DO ANÚNCIO</h3>
 
 					<?php
-						echo $colunaAnuncio['observacao'];
+					$conteudo = '';
+
+					if (empty($colunaAnuncio['observacao'])) {
+						$conteudo = "*SEM CONTEÚDO*";
+						echo "<p style='color:orangered;'>". $conteudo;
+					}else{
+						$conteudo = $colunaAnuncio['observacao'];
+						echo "<p>". $conteudo;
+					}
 					?>
 
 					<h3>DIVULGAR</h3>
@@ -189,7 +202,7 @@
 
 					<hr style="border-width: 4px;">
 					<p style="font-size: small;">
-						* As imagens dos produtos são meramente ilustrativas e não representam o produto final.
+						* As imagens dos produtos são meramente ilustrativas.
 					</p>
 				</div>
 				<script type="text/javascript" src="js/getRegiaoUnica.js"></script>

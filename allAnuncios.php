@@ -49,6 +49,8 @@
                 <div class='telaAnuncio'>
                 <?php
 
+                $conteudo = '';
+
                 $allAnuncios = getAllAnunciosDESC();
                     
                     while($coluna = mysqli_fetch_array($allAnuncios)){
@@ -68,7 +70,17 @@
                         //echo "<b>CATEGORIA </b>" . "<p>". $coluna['categoria'] ;
                         //echo "</div>"; //
                         echo "<div class='info'>"; //
-                        echo "<b>CONTEÚDO</b>" . "<p>". $coluna['observacao'];
+
+                        if (empty($coluna['observacao'])) {
+                            $conteudo = "*SEM CONTEÚDO*";
+                            echo "<p style='color:orangered;'>". $conteudo;
+                        }else{
+                            echo "<b>CONTEÚDO</b>";
+                            $conteudo = $coluna['observacao'];
+                            echo "<p>". $conteudo;
+                        }
+
+
                         echo "</div>"; //
 
                         echo "<div class='info'>"; //
@@ -97,7 +109,7 @@
                 ?>
                                                         <hr style="border-width: 4px;">
                     <p style="font-size: small;">
-                        * As imagens dos produtos são meramente ilustrativas e não representam o produto final.
+                        * As imagens dos produtos são meramente ilustrativas.
                     </p>
 	            </div>
 
