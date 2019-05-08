@@ -224,7 +224,7 @@ footer hr {
 
 .submenu {
     padding-inline-start: 0px;
-    position: absolute;
+    position: relative;
     display:none;
     top: 9px;
     left: 0px;
