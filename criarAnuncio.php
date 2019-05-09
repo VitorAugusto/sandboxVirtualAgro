@@ -64,6 +64,7 @@
 					<fieldset id="etapa1CriarAnuncio" name="1"> <!--  AQUI ELE ESCOLHE A CATEGORIA -->
 						<h1>Escolha uma categoria</h1>
 							<ul class="list-group">
+								
 								<li class="list-group-item">
 									<a href="#" class="escolherCategoria"> 
 										<img src="imagens/fruta/main.jpg">
