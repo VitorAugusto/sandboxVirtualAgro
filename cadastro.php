@@ -35,11 +35,13 @@
 			</div>
 			<img class="logo-header" src="imagens/logo/virtual-agro-logo-nome.png">
 			<div class="right-side">                                        
-				<?php
-				if(!isset($_SESSION['id'])) {
-					construirMenuLogin();
-				}
-				?>
+            <?php
+            if(!isset($_SESSION['id'])) {
+                construirMenuLogin();
+            }else{
+                construirLogout();
+            }
+            ?>
 			</div>                
 		</div>            
 	</header>

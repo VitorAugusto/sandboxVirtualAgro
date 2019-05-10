@@ -33,11 +33,13 @@
 				</div>
 				<img class="logo-header" src="imagens/logo/virtual-agro-logo-nome.png">
 				<div class="right-side">  
-					<?php
-                        if(!isset($_SESSION['id'])) {
-                            construirMenuLogin();
-                        }
-                    ?>                                      
+            <?php
+            if(!isset($_SESSION['id'])) {
+                construirMenuLogin();
+            }else{
+                construirLogout();
+            }
+            ?>                                      
 				</div>                
 			</div>            
 		</header>
@@ -46,7 +48,7 @@
                <h2>FALE CONOSCO</h2>
 			   <div class id='menu-anunciante'>
 			 <div style="font-size:75px; display:contents;">
-			   						<a href='tel:5573999598620' class='btn btn-info btn-lg' style="font-size:50px;">
+			   						<a href='tel:+5573999598620' class='btn btn-info btn-lg' style="font-size:50px;">
 			                        <span class='glyphicon glyphicon-earphone'></span> LIGAR
 			                        </a> 
 			</div>

@@ -369,11 +369,21 @@ function getAnunciantes($produto){ //RETORNA OS ANUNCIANTES DAQUELE CERTO produt
 
 	function construirMenuLogin(){
 		echo "<button type=button class='btn-login'>";
-		echo "<span class='icon-menu'><i class='fas fa-sign-in-alt'></i></span>";
 		echo "<a href='index.php'>login";
+		echo "<span class='icon-menu'><i class='fas fa-sign-in-alt' style='float:left; margin-top:6px;'></i></span>";
 		echo "</a>";
 		echo "</button>";
 	}
+
+	function construirLogout(){
+		echo "<button type=button class='btn-login'>";
+		echo "<a href='logout.php'>sair";
+		echo "<span class='icon-menu'><i class='fas fa-sign-out-alt' style='margin-top:6px; margin-left:5px;'></i></span>";
+		echo "</a>";
+		echo "</button>";
+	}
+
+
 
 	function excluirAnuncio($idAnun){
 

@@ -35,11 +35,13 @@
 			</div>
 			<img class="logo-header" src="imagens/logo/virtual-agro-logo-nome.png">
 			<div class="right-side">
-				<?php
-				if(!isset($_SESSION['id'])) {
-					construirMenuLogin();
-				}
-				?>                                      
+            <?php
+            if(!isset($_SESSION['id'])) {
+                construirMenuLogin();
+            }else{
+                construirLogout();
+            }
+            ?>                                      
 			</div>                
 		</div>            
 	</header>
@@ -84,13 +86,13 @@
 					<script type="text/javascript" src="js/functions-login.js?v=<?php echo time(); ?>"></script>
 
 					<h3>Não é cadastrado?</h3>
-					<a href="cadastro.php">
-						<b>CADASTRO</b>
+					<a href='cadastro.php' class='btn btn-info btn-lg'>
+						<span class='glyphicon glyphicon-earphone'></span> CADASTRO
 					</a>
 
 					<h4> QUER VER TODOS OS ANÚNCIOS?</h4>
-					<a href="allAnuncios.php">
-						<b>TODOS OS ANÚNCIOS</b>
+					<a href='allAnuncios.php' class='btn btn-info btn-lg'>
+						<span class='glyphicon glyphicon-earphone'></span> TODOS OS ANÚNCIOS
 					</a>
 				</section>
 			</div>		               

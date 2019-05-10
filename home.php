@@ -51,6 +51,8 @@ session_start();
             <?php
             if(!isset($_SESSION['id'])) {
                 construirMenuLogin();
+            }else{
+                construirLogout();
             }
             ?>
         </div>                
@@ -124,11 +126,17 @@ session_start();
                         </label>
                     </div>
                 </div>
-                <button class="buscar" type="submit" onclick="getProdutos()">
-                    <span class="icon-text">BUSCAR</span>
-                    <span class="icon-menu"><i class="fa fa-chevron-circle-right"></i></span>
+                <button class="buscar" type="submit" onclick="getProdutos()" style="width: 100%;">
+                    <span class="icon-text" style="font-size: 18px;">BUSCAR</span>
+                    <span class="icon-menu"><i class="fa fa-chevron-circle-right" style="font-size: 20px;"></i></span>
                 </button>
                 <!-- </form> -->
+            <div class="textoadd">
+                <h4> Ou deseja ver todos os anúncios ?</h4>
+                <a href='allAnuncios.php' class='btn btn-info btn-lg'>
+                    <span class='glyphicon glyphicon-earphone'></span> TODOS OS ANÚNCIOS
+                </a>
+            </div>
             </div>
         </section>
         <section class="conteudo" id="conteudo2">

@@ -33,18 +33,26 @@
 				</div>
 				<img class="logo-header" src="imagens/logo/virtual-agro-logo-nome.png">
 				<div class="right-side">  
-					<?php	
-                        if(!isset($_SESSION['id'])) {
-                            construirMenuLogin();
-                        }
-                    ?>                                      
+					<?php
+					if(!isset($_SESSION['id'])) {
+						construirMenuLogin();
+					}else{
+						construirLogout();
+					}
+					?>                                     
 				</div>                
 			</div>            
 		</header>
 		<div class="all">
 			<section class="conteudo">
-				<h1>Dúvidas Frequentes</h1>
-				<p>O Virtual Agro foi criado para proporcionar uma maior facilidade na aquisição de seus produtos orgânicos! Com alimentos de alta qualidade, aliado a uma parceria entre agricultores familiares comprometidos a levar o melhor à sua residência ou comercio.</p>
+				<h1>Manual</h1>
+				<p>O site Virtual Agro desenvolvido com o intuito de ajudar os agricultores a vender seus
+					produtos. O website tem um funcionamento bem simples com menus intuitivos e de fácil usabilidade,
+					as opções são de cadastro, login, criação, edição e exclusão dos anúncios.
+				</p>
+
+   <embed src="manual/manual.pdf" type="application/pdf" width="100%" height="600px" />
+
 			</section>
 		</div>		               
 		<footer>

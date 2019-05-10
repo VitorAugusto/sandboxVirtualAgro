@@ -36,10 +36,13 @@
 			  </div>
 			  <img class="logo-header" src="imagens/logo/virtual-agro-logo-nome.png">
 			  <div class="right-side">    
-          <button type=button class='btn-login'>
-	          <span class='icon-menu'><i class="fas fa-sign-out-alt"></i></span>
-            <a href="logout.php">sair</a>
-	        </button>                                    
+            <?php
+            if(!isset($_SESSION['id'])) {
+                construirMenuLogin();
+            }else{
+                construirLogout();
+            }
+            ?>                                  
 			  </div>                
 		  </div>            
 		</header>

@@ -408,8 +408,12 @@ li:hover a {
 
 .all {
     padding-top: 50px;
-    min-height: 100%;
+    /*min-height: 100%;*/
     position: relative;
+}
+
+.textoadd{
+    text-align: center;
 }
 
 .buscar {
