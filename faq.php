@@ -48,7 +48,7 @@
 			<section class="conteudo">
 				<h1 class="chamadaPrincipal">Manual</h1>
 				<div class="faleConosco">
-					<p class="p-FaleConosco">O site Virtual Agro desenvolvido com o intuito de ajudar os agricultores a vender seus
+					<p class="p-FaleConosco">O site Virtual Agro foi desenvolvido com o intuito de ajudar os agricultores a vender seus
 						produtos. O website tem um funcionamento bem simples com menus intuitivos e de fácil usabilidade,
 						as opções são de cadastro, login, criação, edição e exclusão dos anúncios.
 					</p>
