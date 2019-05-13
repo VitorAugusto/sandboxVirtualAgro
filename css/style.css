@@ -1035,4 +1035,27 @@ i.fab.fa-whatsapp{
   border-left: 2px solid green;
   height: 100px;
 }
-
+ /*Fale Conosco*/
+ .p-FaleConosco {
+    font-weight: normal;
+    font-size: 25px;
+ }
+ .faleConosco {
+    width: 100%;
+    padding: 5%;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .1);
+    text-align: center;
+ }
+ .faleConosco i.fab.fa-whatsapp {
+    font-size: 100px;
+ }
+ .faleConosco a.btn.btn-info.btn-lg {
+     font-size: 50px;
+ }
+ .sac {
+    font-size: 100px;
+    opacity: 0.8;
+    color: #1b6e5c;
+}

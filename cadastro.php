@@ -11,6 +11,7 @@
 	<!-- ESSE NOVO LINK PRO NOSSO CSS IMPEDE AQUELE BUG QUE A GENTE MUDAVA NO CSS, MAS NÃO MUDAVA NO SITE. -->
 	<!-- REPLICAR EM TODAS AS PÁGINAS INTERATIVAS -->
 	<meta name="viewport" content="width=device-width, initial-scale=0.7">
+	<meta name="theme-color" content="#2a7766">
 
 </head>
 <body>

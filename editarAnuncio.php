@@ -23,6 +23,8 @@ if(isset($_SERVER['HTTP_REFERER'])){
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link href="css/style.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" />
 	<meta name="viewport" content="width=device-width, initial-scale=0.7">
+	<meta name="theme-color" content="#2a7766">
+
 
 </head>
 <body>

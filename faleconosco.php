@@ -9,6 +9,7 @@
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<link href="css/style.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" />
 		<meta name="viewport" content="width=device-width, initial-scale=0.7">
+		<meta name="theme-color" content="#2a7766">
 
 	</head>
 	<body>
@@ -45,20 +46,25 @@
 		</header>
 		<div class="all">
 			<section class="conteudo">
-               <h2>FALE CONOSCO</h2>
-			   <div class id='menu-anunciante'>
-			 <div style="font-size:75px; display:contents;">
-			   						<a href='tel:+5573999598620' class='btn btn-info btn-lg' style="font-size:50px;">
-			                        <span class='glyphicon glyphicon-earphone'></span> LIGAR
-			                        </a> 
-			</div>
+            	<h1 class="chamadaPrincipal">FALE CONOSCO</h1>
+				<div class="faleConosco">
+					<span class="sac"><i class="fas fa-headset"></i></span>
+					<p class="p-FaleConosco">Conte com o <b>Fale Conosco</b> do Virtual Agro<br>
+					para esclarecer as suas dúvidas, registrar elogios<br>
+					ou dar sugestões.
+					</p>
+					<div style="width: 50%;float: left;">
+						<a href='tel:+5573999598620' class='btn btn-info btn-lg'>
+							<span class='glyphicon glyphicon-earphone'></span> LIGAR
+						</a> 
+					</div>
 			
-			<div style="display:contents;">
-								<a href='https://api.whatsapp.com/send?phone=5573999598620&text=PRECISO DE AJUDA NO VirtualAgro.net'>
-						        <span><i class='fab fa-whatsapp'></i></span>
-					            </a>
-			</div>
-			</div>
+					<div>
+						<a href='https://api.whatsapp.com/send?phone=5573999598620&text=PRECISO DE AJUDA NO VirtualAgro.net'>
+							<span><i class='fab fa-whatsapp'></i></span>
+						</a>
+					</div>
+				</div>
 			
 			</section>
 		</div>		               
