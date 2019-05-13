@@ -42,7 +42,7 @@
 						construirLogout();
 					}
 					?>                   
-</div>                
+				</div>                
 			</div>            
 		</header>
 		<div class="all">
@@ -65,8 +65,8 @@
 							<li>PRÉ-ANÚNCIO</li>					
 					</ul>
 					<div class="erro"></div>
-<fieldset id="etapa1CriarAnuncio" name="1"> <!--  AQUI ELE ESCOLHE A CATEGORIA -->
-						<h1>Escolha uma categoria</h1>
+						<fieldset id="etapa1CriarAnuncio" name="1"> <!--  AQUI ELE ESCOLHE A CATEGORIA -->
+							<h1>Escolha uma categoria</h1>
 							<ul class="list-group">
 
 								<li class="list-group-item">
@@ -90,7 +90,7 @@
 									</a>
 									<input type="hidden" name="categoria" value="'LEGUME'">
 								</li>
-<li class="list-group-item">
+								<li class="list-group-item">
 									<a href="#" class="escolherCategoria"> 
 										<img src="imagens/grãos/main.jpg">
 										<span class="spanNome badge badge-primary badge-pill">GRÃOS</span>
@@ -129,39 +129,37 @@
 						<!-- 
 						<input type="button" name="proximo" class="next acao" value="Próximo"> 
 						<input type="button" name="prev" class="prev acao" value="Anterior" id="botaoVoltarCategoria"> -->
-</fieldset>
+					</fieldset>
 
 					<fieldset id="etapa3CriarAnuncio" name="3"> <!-- AQUI ELE DEFINE A FORMA (ATRIBUTO) - KG , UNIDADE, PACOTE, BANDEJA, ETC-->
 						<h1>Escolha uma forma pra anunciar</h1>
 
 						<div class="medidaEscolher">
-						<label>
-							<input id="" class="" type="radio" name="atributo" value="KG" alt="Kg" checked="">
-							<img src="imagens/medida/kg100.png" width="100px" height="100px">
-						</label>
+							<label>
+								<input id="" class="" type="radio" name="atributo" value="KG" alt="Kg" checked="">
+								<img src="imagens/medida/kg100.png" width="100px" height="100px">
+							</label>
 						</div> 
 
 						<div class="medidaEscolher">
-						<label>
-							<input id="" class="" type="radio" name="atributo" value="1/2KG" alt="1/2kg">
-							<img src="imagens/medida/kg100v2.png" width="100px" height="100px">
-						</label>
+							<label>
+								<input id="" class="" type="radio" name="atributo" value="1/2KG" alt="1/2kg">
+								<img src="imagens/medida/kg100v2.png" width="100px" height="100px">
+							</label>
 						</div> 
 
+						<div class="medidaEscolher">
+							<label>
+								<input id="" class="" type="radio" name="atributo" value="PACOTE" alt="Pacote">
+								<img src="imagens/medida/pacotev2.png" width="100px" height="100px">
+							</label>
+						</div>
 
 						<div class="medidaEscolher">
 							<label>
-<input id="" class="" type="radio" name="atributo" value="PACOTE" alt="Pacote">
-							<img src="imagens/medida/pacotev2.png" width="100px" height="100px">
-						</label>
-</div>
-
-
-						<div class="medidaEscolher">
-							<label>
-<input id="" class="" type="radio" name="atributo" value="BANDEJA" alt="Bandeja">
-							<img src="imagens/medida/bandejav2.png" width="100px" height="100px">
-						</label>
+								<input id="" class="" type="radio" name="atributo" value="BANDEJA" alt="Bandeja">
+								<img src="imagens/medida/bandejav2.png" width="100px" height="100px">
+							</label>
 						</div>
 
 						<div class="medidaEscolher">
@@ -169,11 +167,11 @@
 							<input id="" class="" type="radio" name="atributo" value="UNIDADE" alt="Unidade">
 							<img src="imagens/medida/unidadev2.png" width="100px" height="100px"> <!-- FALTA IMAGEM !! -->
 						</label>
-</div>
+						</div>
 
 						<input type="button" name="proximo" class="next acao" value="Avançar" id="showPreAnuncio" style="width: 100%;">
 						<input type="button" name="prev" class="prev acao" value="Voltar" style="width: 100%;">
-</fieldset>
+					</fieldset>
 
 					<!-- <fieldset id="etapa4CriarAnuncio" name="4"> --> <!-- AQUI ELE COLOCA AS OBSERVAÇÕES -->
 					<!-- <input type="textarea" name="observacoes" placeholder="INSIRA AQUI A SUA OBSERVAÇÃO"> -->
@@ -188,8 +186,8 @@
 					<script type="text/javascript" src="js/functions-criarAnuncio.js?v=<?php echo time(); ?>"></script>
 					<script type="text/javascript" src="js/jquery.mask.js?v=<?php echo time(); ?>"></script>
 				</form>
-<h2> <a href='site.php'>SAIR</a> </h2>
-</section>
+				<h2> <a href='site.php'>SAIR</a> </h2>
+			</section>
 		</div>		               
 		<footer>
 			<div>
